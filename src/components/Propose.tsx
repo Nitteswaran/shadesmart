@@ -89,8 +89,11 @@ export function ProposeOverlay({
   onCancel,
   onSubmit,
   compact,
+  part,
 }: {
   compact?: boolean
+  /** small screens split the overlay: tool strip on the map, proposal sheet below it */
+  part?: 'tools' | 'sheet'
   tool: Tool | null
   setTool: (t: Tool | null) => void
   draft: Placement[]
@@ -114,7 +117,7 @@ export function ProposeOverlay({
   return (
     <>
       {/* tool picker */}
-      {compact ? (
+      {part === 'sheet' ? null : compact ? (
         <motion.div
           initial={{ opacity: 0, y: -8 }}
           animate={{ opacity: 1, y: 0 }}
@@ -154,11 +157,15 @@ export function ProposeOverlay({
 
       )}
       {/* proposal sheet: compact while placing, expands for details */}
+      {part !== 'tools' && (
       <motion.div
         layout
         initial={{ opacity: 0, y: 24 }}
         animate={{ opacity: 1, y: 0 }}
-        className="absolute bottom-3 left-1/2 z-20 w-[min(560px,calc(100%-24px))] -translate-x-1/2 rounded-[22px] border border-line bg-card/97 p-3.5 shadow-float backdrop-blur md:bottom-4"
+        className={clsx(
+          'rounded-[22px] border border-line bg-card/97 p-3.5 shadow-float backdrop-blur',
+          part === 'sheet' ? 'w-full' : 'absolute bottom-3 left-1/2 z-20 w-[min(560px,calc(100%-24px))] -translate-x-1/2 md:bottom-4',
+        )}
       >
         {step === 'place' ? (
           <div className="flex items-center gap-3">
@@ -235,6 +242,7 @@ export function ProposeOverlay({
           </div>
         )}
       </motion.div>
+      )}
     </>
   )
 }

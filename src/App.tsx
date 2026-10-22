@@ -350,6 +350,7 @@ function CityApp({
               }}
               onSubmit={submitProposal}
               compact={!desktop}
+              part={desktop ? undefined : 'tools'}
             />
           )}
           {desktop && (
@@ -375,7 +376,7 @@ function CityApp({
               />
             )}
           </AnimatePresence>
-          {!draft && <MapLegend night={cond.night} rainy={cond.weather === 'rainy'} kinds={[...new Set(badges.map((b) => b.kind))]} />}
+          {desktop && !draft && <MapLegend night={cond.night} rainy={cond.weather === 'rainy'} kinds={[...new Set(badges.map((b) => b.kind))]} />}
         </>
       ) : (
         <PlannerMapOverlay
@@ -497,6 +498,24 @@ function CityApp({
                 </div>
               )}
             </AnimatePresence>
+            {view === 'navigate' && draft && (
+              <div className="px-3 pt-3">
+                <ProposeOverlay
+                  part="sheet"
+                  compact
+                  tool={proposeTool}
+                  setTool={setProposeTool}
+                  draft={draft}
+                  onUndo={() => setDraft(draft.slice(0, -1))}
+                  onClear={() => setDraft([])}
+                  onCancel={() => {
+                    setDraft(null)
+                    setProposeTool(null)
+                  }}
+                  onSubmit={submitProposal}
+                />
+              </div>
+            )}
             {view === 'navigate' && <div className="px-3 pt-3">{compareInline}</div>}
             <AnimatePresence mode="wait" initial={false}>
               <motion.div
