@@ -16,6 +16,8 @@ import {
   Siren,
   Sun,
   Trash2,
+  Undo2,
+  MousePointerClick,
   Trees,
   TrendingUp,
   Umbrella,
@@ -60,6 +62,8 @@ import {
   type Intervention,
 } from '../lib/planner'
 import type { PlannerLayer } from './MapView'
+import { TOOL_INFO, type Tool } from '../lib/placements'
+import { WalkOrDrive } from './WalkOrDrive'
 import { Card, Eyebrow, Range, Segmented } from './ui'
 
 export interface PlanItem {
@@ -76,16 +80,140 @@ const tooltipStyle = { borderRadius: 12, border: '1px solid #e0d9ca', background
 
 // ---------- map overlays ----------
 
+export interface PlantImpact {
+  cost: number
+  before: number
+  after: number
+  localBefore: number
+  localAfter: number
+  localLen: number
+  walkers: number
+  counts: Record<Tool, number>
+}
+
+const TOOL_ICON: Record<Tool, LucideIcon> = { tree: Trees, canopy: Umbrella, light: Lightbulb }
+const TOOL_COLOR: Record<Tool, string> = { tree: '#1d7a4b', canopy: '#3b6fd8', light: '#c98a0b' }
+
+function PlantToolbar({
+  tool,
+  setTool,
+  impact,
+  count,
+  onUndo,
+  onClear,
+}: {
+  tool: Tool | null
+  setTool: (t: Tool | null) => void
+  impact: PlantImpact
+  count: number
+  onUndo: () => void
+  onClear: () => void
+}) {
+  const delta = (impact.after - impact.before) * 100
+  return (
+    <div className="absolute right-3 top-[64px] z-10 w-[236px] md:right-4 md:top-4">
+      <div className="rounded-[20px] border border-line bg-card/95 p-3 shadow-float backdrop-blur">
+        <div className="flex items-center justify-between px-1">
+          <Eyebrow>Plant it yourself</Eyebrow>
+          <div className="flex gap-1">
+            <button aria-label="Undo last placement" disabled={!count} onClick={onUndo} className="grid size-7 place-items-center rounded-lg text-ink-2 hover:bg-paper-2 disabled:opacity-30">
+              <Undo2 size={14} />
+            </button>
+            <button aria-label="Clear all placements" disabled={!count} onClick={onClear} className="grid size-7 place-items-center rounded-lg text-ink-2 hover:bg-paper-2 hover:text-heat disabled:opacity-30">
+              <Trash2 size={14} />
+            </button>
+          </div>
+        </div>
+        <div className="mt-2 space-y-1.5">
+          {(['tree', 'canopy', 'light'] as Tool[]).map((t) => {
+            const Icon = TOOL_ICON[t]
+            const active = tool === t
+            return (
+              <button
+                key={t}
+                onClick={() => setTool(active ? null : t)}
+                aria-pressed={active}
+                className={clsx(
+                  'flex w-full items-center gap-2.5 rounded-xl border px-2 py-1.5 text-left transition-all',
+                  active ? 'border-ink bg-ink text-white shadow-soft' : 'border-transparent hover:bg-paper-2',
+                )}
+              >
+                <span className="grid size-7 shrink-0 place-items-center rounded-lg text-white" style={{ background: TOOL_COLOR[t] }}>
+                  <Icon size={14} strokeWidth={2.4} />
+                </span>
+                <span className="min-w-0 flex-1">
+                  <span className="block text-[12.5px] font-semibold leading-tight">{TOOL_INFO[t].label}</span>
+                  <span className={clsx('block text-[10.5px]', active ? 'text-white/60' : 'text-ink-3')}>
+                    {fmtRM(TOOL_INFO[t].cost)} · {TOOL_INFO[t].note}
+                  </span>
+                </span>
+                {impact.counts[t] > 0 && (
+                  <span className={clsx('rounded-full px-1.5 font-mono text-[11px] font-bold tabular', active ? 'bg-white/15' : 'bg-paper-2')}>
+                    {impact.counts[t]}
+                  </span>
+                )}
+              </button>
+            )
+          })}
+        </div>
+        {tool ? (
+          <div className="mt-2 flex items-center gap-1.5 rounded-xl bg-sun/20 px-2.5 py-2 text-[11px] font-semibold text-[#7a5200]">
+            <MousePointerClick size={13} /> Click along any path to place
+          </div>
+        ) : (
+          !count && <div className="mt-2 px-1 text-[11px] leading-snug text-ink-3">Pick a tool, then click red streets to watch them turn green.</div>
+        )}
+        {count > 0 && (
+          <div className="mt-2.5 border-t border-line px-1 pt-2.5">
+            <div className="flex items-baseline justify-between">
+              <span className="text-[11px] font-semibold text-ink-2">Shade at 1pm · {Math.round(impact.localLen)} m improved</span>
+            </div>
+            <div className="mt-1 font-display text-[24px] font-extrabold leading-none tabular">
+              {Math.round(impact.localBefore * 100)}% <span className="text-ink-3">→</span>{' '}
+              <span className="text-leaf">{Math.round(impact.localAfter * 100)}%</span>
+            </div>
+            <div className="mt-1 font-mono text-[10.5px] text-ink-3 tabular">
+              whole township {(impact.before * 100).toFixed(1)}% → {(impact.after * 100).toFixed(1)}% (+{delta.toFixed(2)})
+            </div>
+            <div className="mt-2 grid grid-cols-2 gap-2">
+              <div>
+                <div className="font-display text-[16px] font-extrabold tabular">{fmtRM(impact.cost)}</div>
+                <div className="text-[10px] text-ink-3">capex</div>
+              </div>
+              <div>
+                <div className="font-display text-[16px] font-extrabold tabular">{impact.walkers.toLocaleString()}</div>
+                <div className="text-[10px] text-ink-3">walkers/day feel it</div>
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+    </div>
+  )
+}
+
 export function PlannerMapOverlay({
   layer,
   setLayer,
   hour,
   setHour,
+  tool,
+  setTool,
+  impact,
+  placementCount,
+  onUndo,
+  onClear,
 }: {
   layer: PlannerLayer
   setLayer: (l: PlannerLayer) => void
   hour: number
   setHour: (h: number) => void
+  tool: Tool | null
+  setTool: (t: Tool | null) => void
+  impact: PlantImpact
+  placementCount: number
+  onUndo: () => void
+  onClear: () => void
 }) {
   const [playing, setPlaying] = useState(false)
   useEffect(() => {
@@ -101,7 +229,8 @@ export function PlannerMapOverlay({
   const dark = layer === 'night'
   return (
     <>
-      <div className="absolute left-3 top-3 z-10 w-[min(420px,calc(100%-24px))] md:left-4 md:top-4">
+      <PlantToolbar tool={tool} setTool={setTool} impact={impact} count={placementCount} onUndo={onUndo} onClear={onClear} />
+      <div className="absolute left-3 right-3 top-3 z-10 md:left-4 md:right-auto md:top-4 md:w-[min(400px,calc(100%-284px))]">
         <div className={clsx('rounded-full p-0 shadow-float', dark ? 'bg-night' : 'bg-card')}>
           <Segmented
             size="sm"
@@ -269,11 +398,11 @@ function Overview({ stats, hour, onPick }: { stats: CorridorStats[]; hour: numbe
   const dark = town.edges.filter((e) => e.lit < 0.4).reduce((s, e) => s + e.len, 0)
 
   const radar = [
-    { k: 'Thermal comfort', v: noon },
-    { k: 'Night safety', v: Math.round((1 - dark / totalLen) * 100) },
-    { k: 'Flood resilience', v: Math.round((1 - flooded / totalLen) * 100) },
-    { k: 'Accessibility', v: Math.round((town.edges.filter((e) => e.wheelchair).reduce((s, e) => s + e.len, 0) / totalLen) * 100) },
-    { k: 'Connectivity', v: 74 },
+    { k: 'Thermal', v: noon },
+    { k: 'Safety', v: Math.round((1 - dark / totalLen) * 100) },
+    { k: 'Flood', v: Math.round((1 - flooded / totalLen) * 100) },
+    { k: 'Access', v: Math.round((town.edges.filter((e) => e.wheelchair).reduce((s, e) => s + e.len, 0) / totalLen) * 100) },
+    { k: 'Connect', v: 74 },
   ]
   const donut = (['canopy', 'covered', 'building', 'open'] as const)
     .map((k) => ({ k, name: SURFACE_META[k].label, v: Math.round(mix[k]), color: SURFACE_META[k].color }))
@@ -323,6 +452,8 @@ function Overview({ stats, hour, onPick }: { stats: CorridorStats[]; hour: numbe
           Shade collapses to <b>{noon}%</b> at 1pm — exactly when the lunch crowd walks to the shops.
         </p>
       </Card>
+
+      <WalkOrDrive />
 
       <div className="grid grid-cols-2 gap-3">
         <Card className="p-4">

@@ -1,5 +1,6 @@
 import clsx from 'clsx'
 import { CircleCheck, CloudRain, Moon, Siren, Sun, TriangleAlert } from 'lucide-react'
+import { AnimatePresence } from 'motion/react'
 import { useCallback, useMemo, useRef, useState } from 'react'
 import { Header, Toasts, type Toast, type View } from './components/Chrome'
 import MapView, { type PlannerLayer } from './components/MapView'
@@ -9,6 +10,8 @@ import { SOSButton, SOSSheet, type Phase } from './components/SOS'
 import { dijkstra, edgeCost, placeById, routeStats, town, type Conditions } from './lib/engine'
 import { routeBadges } from './lib/features'
 import { isNightHour } from './lib/daylight'
+import { computeOverrides, placementImpact, snapToNetwork, type Placement, type Tool } from './lib/placements'
+import { RaceHUD, type MapApi } from './components/Race'
 import { BadgeIcon, BADGE_META } from './components/icons'
 import type { BadgeKind } from './lib/features'
 
@@ -28,7 +31,13 @@ export default function App() {
   })
   const [scenario, setScenario] = useState<string | null>(DEFAULT.id)
   const [showNetwork, setShowNetwork] = useState(false)
-  const [walking, setWalking] = useState(false)
+  const [walking, setWalking] = useState(false) // heat race running
+  const mapApi = useRef<MapApi | null>(null)
+  const [placements, setPlacements] = useState<Placement[]>([])
+  const [plantTool, setPlantTool] = useState<Tool | null>(null)
+  const placeId = useRef(0)
+  const overrides = useMemo(() => computeOverrides(placements), [placements])
+  const impact = useMemo(() => placementImpact(placements, overrides), [placements, overrides])
   const [toasts, setToasts] = useState<Toast[]>([])
   const [sos, setSos] = useState<Phase>('idle')
   const [silent, setSilent] = useState(false)
@@ -50,11 +59,11 @@ export default function App() {
 
   const shortRoute = useMemo(() => dijkstra(o.node, d.node, (e) => e.len), [o, d])
   const smartRoute = useMemo(() => {
-    const r = dijkstra(o.node, d.node, (e) => edgeCost(e, cond))
+    const r = dijkstra(o.node, d.node, (e) => edgeCost(overrides.get(e.id) ?? e, cond))
     return r.found ? r : shortRoute
-  }, [o, d, cond, shortRoute])
-  const shortStats = useMemo(() => (shortRoute.found ? routeStats(shortRoute, cond) : null), [shortRoute, cond])
-  const smartStats = useMemo(() => (smartRoute.found ? routeStats(smartRoute, cond) : null), [smartRoute, cond])
+  }, [o, d, cond, shortRoute, overrides])
+  const shortStats = useMemo(() => (shortRoute.found ? routeStats(shortRoute, cond, overrides) : null), [shortRoute, cond, overrides])
+  const smartStats = useMemo(() => (smartRoute.found ? routeStats(smartRoute, cond, overrides) : null), [smartRoute, cond, overrides])
   const badges = useMemo(
     () => routeBadges(shortRoute.found ? shortRoute : null, smartRoute.found ? smartRoute : null, cond),
     [shortRoute, smartRoute, cond],
@@ -194,8 +203,15 @@ export default function App() {
               plannerHour={plannerHour}
               selectedCorridor={selectedCorridor}
               onSelectCorridor={setSelectedCorridor}
-              walking={walking}
-              onWalkEnd={() => setWalking(false)}
+              apiRef={mapApi}
+              overrides={overrides}
+              placements={placements}
+              plantTool={view === 'planner' ? plantTool : null}
+              onPlace={(click, tolerance) => {
+                const at = snapToNetwork(click, tolerance)
+                if (!at || !plantTool) return
+                setPlacements((ps) => [...ps, { id: ++placeId.current, tool: plantTool, at }])
+              }}
               floodHazards={floodHazards}
               badges={badges}
               fitKey={fitKey}
@@ -210,14 +226,38 @@ export default function App() {
                   onPreview={() => setWalking(true)}
                   rerouted={cond.weather === 'rainy' && (shortStats?.floodSegments.length ?? 0) > 0}
                 />
+                <AnimatePresence>
+                  {walking && shortRoute.found && smartRoute.found && (
+                    <RaceHUD
+                      key={`${origin}-${dest}`}
+                      shortRoute={shortRoute}
+                      smartRoute={smartRoute}
+                      cond={cond}
+                      ov={overrides}
+                      mapApi={mapApi}
+                      onClose={() => setWalking(false)}
+                    />
+                  )}
+                </AnimatePresence>
                 <MapLegend night={cond.night} rainy={cond.weather === 'rainy'} kinds={[...new Set(badges.map((b) => b.kind))]} />
               </>
             ) : (
-              <PlannerMapOverlay layer={plannerLayer} setLayer={setPlannerLayer} hour={plannerHour} setHour={setPlannerHour} />
+              <PlannerMapOverlay
+                layer={plannerLayer}
+                setLayer={setPlannerLayer}
+                hour={plannerHour}
+                setHour={setPlannerHour}
+                tool={plantTool}
+                setTool={setPlantTool}
+                impact={impact}
+                placementCount={placements.length}
+                onUndo={() => setPlacements((ps) => ps.slice(0, -1))}
+                onClear={() => setPlacements([])}
+              />
             )}
           </div>
           {view === 'navigate' && (
-            <InsightsStrip cond={cond} shortRoute={shortRoute} smartRoute={smartRoute} short={shortStats} smart={smartStats} />
+            <InsightsStrip cond={cond} shortRoute={shortRoute} smartRoute={smartRoute} short={shortStats} smart={smartStats} ov={overrides} onHour={(h) => setCond({ hour: h })} />
           )}
         </section>
 

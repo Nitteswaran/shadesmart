@@ -1,7 +1,7 @@
 import * as maplibregl from 'maplibre-gl'
 import type { GeoJSONSource, LngLatBoundsLike } from 'maplibre-gl'
 import workerUrl from 'maplibre-gl/dist/maplibre-gl-worker.mjs?url'
-import { Flag, Home, ShieldCheck, TriangleAlert, Footprints } from 'lucide-react'
+import { Flag, Home, Lightbulb, ShieldCheck, Trees, TriangleAlert, Umbrella } from 'lucide-react'
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { renderToStaticMarkup } from 'react-dom/server'
 import {
@@ -17,6 +17,8 @@ import {
 } from '../lib/engine'
 import { SHADE_STOPS } from '../lib/meta'
 import { dayTint } from '../lib/daylight'
+import type { Overrides, Placement, Tool } from '../lib/placements'
+import type { MapApi } from './Race'
 import type { Badge } from '../lib/features'
 import { BADGE_META, BadgeIcon } from './icons'
 
@@ -36,8 +38,11 @@ interface Props {
   plannerHour: number
   selectedCorridor: string | null
   onSelectCorridor: (id: string | null) => void
-  walking: boolean
-  onWalkEnd: () => void
+  apiRef: React.RefObject<MapApi | null>
+  overrides: Overrides
+  placements: Placement[]
+  plantTool: Tool | null
+  onPlace: (at: LngLat, toleranceMetres: number) => void
   floodHazards: Edge[]
   badges: Badge[]
   fitKey: string
@@ -215,13 +220,13 @@ function installLayers(map: maplibregl.Map) {
     id: 'walker-halo',
     type: 'circle',
     source: 'walker',
-    paint: { 'circle-radius': 18, 'circle-color': '#2fbf71', 'circle-opacity': 0.25 },
+    paint: { 'circle-radius': 17, 'circle-color': ['get', 'c'], 'circle-opacity': 0.25 },
   })
   map.addLayer({
     id: 'walker',
     type: 'circle',
     source: 'walker',
-    paint: { 'circle-radius': 7, 'circle-color': '#17663f', 'circle-stroke-color': '#fff', 'circle-stroke-width': 3 },
+    paint: { 'circle-radius': 8, 'circle-color': ['get', 'c'], 'circle-stroke-color': '#fff', 'circle-stroke-width': 3 },
   })
 }
 
@@ -246,9 +251,14 @@ export default function MapView(p: Props) {
   const popup = useRef<maplibregl.Popup | null>(null)
   const onSelectRef = useRef(p.onSelectCorridor)
   const viewRef = useRef(p.view)
+  const toolRef = useRef(p.plantTool)
+  const onPlaceRef = useRef(p.onPlace)
+  const placeMarkers = useRef<maplibregl.Marker[]>([])
   useEffect(() => {
     onSelectRef.current = p.onSelectCorridor
     viewRef.current = p.view
+    toolRef.current = p.plantTool
+    onPlaceRef.current = p.onPlace
   })
 
   // ---------- init ----------
@@ -272,7 +282,7 @@ export default function MapView(p: Props) {
     })
     popup.current = new maplibregl.Popup({ closeButton: false, closeOnClick: false, offset: 10, maxWidth: '260px' })
     map.on('mousemove', 'network', (e) => {
-      if (viewRef.current !== 'planner') return
+      if (viewRef.current !== 'planner' || toolRef.current) return
       map.getCanvas().style.cursor = 'pointer'
       const f = e.features?.[0]
       if (!f) return
@@ -285,12 +295,25 @@ export default function MapView(p: Props) {
       map.getCanvas().style.cursor = ''
       popup.current!.remove()
     })
+    map.on('click', (e) => {
+      if (viewRef.current !== 'planner' || !toolRef.current) return
+      // accept clicks within ~28px of a path at the current zoom
+      const mpp = (156543.03 * Math.cos((e.lngLat.lat * Math.PI) / 180)) / 2 ** map.getZoom()
+      onPlaceRef.current([e.lngLat.lng, e.lngLat.lat], Math.max(25, 28 * mpp))
+    })
     map.on('click', 'network', (e) => {
-      if (viewRef.current !== 'planner') return
+      if (viewRef.current !== 'planner' || toolRef.current) return
       const cid = e.features?.[0]?.properties?.cid
       if (cid) onSelectRef.current(cid)
     })
     mapRef.current = map
+    p.apiRef.current = {
+      setWalkers: (ws) =>
+        (map.getSource('walker') as GeoJSONSource | undefined)?.setData({
+          type: 'FeatureCollection',
+          features: ws.map((w) => ({ type: 'Feature', properties: { c: w.color }, geometry: { type: 'Point', coordinates: w.at } })),
+        }),
+    }
     const ro = new ResizeObserver(() => map.resize())
     ro.observe(box.current!)
     return () => {
@@ -325,7 +348,8 @@ export default function MapView(p: Props) {
     const corridorName = new Map(town.corridors.map((c) => [c.id, c.name]))
     return {
       type: 'FeatureCollection',
-      features: town.edges.map((e) => {
+      features: town.edges.map((base) => {
+        const e = p.overrides.get(base.id) ?? base
         let v: number
         let label: string
         if (!isPlanner) {
@@ -351,7 +375,7 @@ export default function MapView(p: Props) {
         }
       }),
     }
-  }, [p.view, p.cond, p.plannerLayer, p.plannerHour, p.showNetwork])
+  }, [p.view, p.cond, p.plannerLayer, p.plannerHour, p.showNetwork, p.overrides])
 
   useEffect(() => {
     ;(mapRef.current?.getSource('network') as GeoJSONSource | undefined)?.setData(networkData)
@@ -489,55 +513,34 @@ export default function MapView(p: Props) {
     }
   }, [p.selectedCorridor, p.view, styleTick])
 
-  // ---------- walk preview ----------
+  // ---------- planner placements ----------
   useEffect(() => {
     const map = mapRef.current
-    const walker = map?.getSource('walker') as GeoJSONSource | undefined
-    if (!map || !walker) return
-    if (!p.walking || !p.smart?.coords.length) {
-      walker.setData(emptyFC)
-      return
+    if (!map) return
+    for (const m of placeMarkers.current) m.remove()
+    placeMarkers.current = []
+    if (p.view !== 'planner') return
+    const look = {
+      tree: { icon: <Trees size={14} strokeWidth={2.4} />, bg: '#1d7a4b' },
+      canopy: { icon: <Umbrella size={14} strokeWidth={2.4} />, bg: '#3b6fd8' },
+      light: { icon: <Lightbulb size={14} strokeWidth={2.4} />, bg: '#c98a0b' },
     }
-    const coords = p.smart.coords
-    const cum = [0]
-    for (let i = 1; i < coords.length; i++) {
-      const dx = (coords[i][0] - coords[i - 1][0]) * Math.cos((coords[i][1] * Math.PI) / 180)
-      const dy = coords[i][1] - coords[i - 1][1]
-      cum.push(cum[i - 1] + Math.hypot(dx, dy))
+    for (const pl of p.placements) {
+      const el = document.createElement('div')
+      el.className = 'ss-place'
+      el.innerHTML = `<span class="ss-badge" style="--c:${look[pl.tool].bg};width:26px;height:26px">${icon(look[pl.tool].icon)}</span>`
+      placeMarkers.current.push(new maplibregl.Marker({ element: el }).setLngLat(pl.at).addTo(map))
     }
-    const total = cum[cum.length - 1]
-    const duration = 8000
-    const t0 = performance.now()
-    let raf = 0
-    const frame = (t: number) => {
-      const k = Math.min(1, (t - t0) / duration)
-      const ease = k < 0.5 ? 2 * k * k : 1 - (-2 * k + 2) ** 2 / 2
-      const target = ease * total
-      let i = 1
-      while (i < cum.length - 1 && cum[i] < target) i++
-      const seg = cum[i] - cum[i - 1] || 1
-      const f = (target - cum[i - 1]) / seg
-      const pt: LngLat = [
-        coords[i - 1][0] + (coords[i][0] - coords[i - 1][0]) * f,
-        coords[i - 1][1] + (coords[i][1] - coords[i - 1][1]) * f,
-      ]
-      walker.setData(pointFC([pt]))
-      if (k < 1) raf = requestAnimationFrame(frame)
-      else setTimeout(() => p.onWalkEnd(), 600)
-    }
-    raf = requestAnimationFrame(frame)
-    return () => cancelAnimationFrame(raf)
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [p.walking, p.smart, styleTick])
+  }, [p.placements, p.view])
+
+  useEffect(() => {
+    const canvas = mapRef.current?.getCanvas()
+    if (canvas) canvas.style.cursor = p.view === 'planner' && p.plantTool ? 'crosshair' : ''
+  }, [p.plantTool, p.view])
 
   return (
     <div className="absolute inset-0">
       <div ref={box} style={{ position: 'absolute', inset: 0 }} />
-      {p.walking && (
-        <div className="pointer-events-none absolute bottom-5 left-1/2 flex -translate-x-1/2 items-center gap-2 rounded-full bg-ink px-4 py-2 text-[12.5px] font-semibold text-white shadow-float">
-          <Footprints size={15} /> Previewing your shaded walk
-        </div>
-      )}
     </div>
   )
 }

@@ -243,7 +243,10 @@ export interface RouteStats {
   cctvCoverage: number
 }
 
-export function routeStats(r: Route, c: Conditions): RouteStats {
+/** Optional what-if edits from the planner, keyed by edge id. */
+export type EdgeOverrides = Map<number, Edge>
+
+export function routeStats(r: Route, c: Conditions, ov?: EdgeOverrides): RouteStats {
   const surface: Record<Surface, number> = { open: 0, covered: 0, canopy: 0, building: 0 }
   let distance = 0
   let shade = 0
@@ -252,7 +255,8 @@ export function routeStats(r: Route, c: Conditions): RouteStats {
   let crossings = 0
   let cctv = 0
   const floodSegments: Edge[] = []
-  for (const { edge: e } of r.steps) {
+  for (const { edge: base } of r.steps) {
+    const e = ov?.get(base.id) ?? base
     distance += e.len
     shade += shadeAt(e, c.hour) * e.len
     cover += rainCover(e) * e.len
@@ -288,7 +292,7 @@ export function routeStats(r: Route, c: Conditions): RouteStats {
 }
 
 /** Coverage profile sampled along the route, for the exposure chart. */
-export function routeProfile(r: Route, c: Conditions, samples = 48) {
+export function routeProfile(r: Route, c: Conditions, samples = 48, ov?: EdgeOverrides) {
   const total = r.steps.reduce((s, x) => s + x.edge.len, 0)
   if (!total) return []
   const out: { d: number; v: number }[] = []
@@ -300,7 +304,7 @@ export function routeProfile(r: Route, c: Conditions, samples = 48) {
       acc += r.steps[i].edge.len
       i++
     }
-    out.push({ d: Math.round(target), v: Math.round(protectionAt(r.steps[i].edge, c) * 100) })
+    out.push({ d: Math.round(target), v: Math.round(protectionAt(ov?.get(r.steps[i].edge.id) ?? r.steps[i].edge, c) * 100) })
   }
   return out
 }

@@ -20,7 +20,7 @@ import {
   Umbrella,
   Zap,
 } from 'lucide-react'
-import { useMemo } from 'react'
+import { useMemo, useState } from 'react'
 import { Area, AreaChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts'
 import {
   protectionAt,
@@ -30,11 +30,13 @@ import {
   type Route,
   type RouteStats,
   type Surface,
+  type EdgeOverrides,
 } from '../lib/engine'
 import { DAY_END, DAY_START } from '../lib/daylight'
 import { fmtDist, fmtTime, KIND_META, KIND_ORDER, pct, SURFACE_META } from '../lib/meta'
 import { Card, Eyebrow, PlaceSelect, Range, Segmented, Toggle, type SelectOption } from './ui'
 import { SOSButton } from './SOS'
+import { SunShadow } from './SunShadow'
 
 export interface Scenario {
   id: string
@@ -389,10 +391,10 @@ export function RouteCompare({
           <button
             onClick={onPreview}
             disabled={walking}
-            aria-label="Preview walk"
+            aria-label="Race both routes"
             className="flex shrink-0 items-center gap-1 rounded-full bg-white/12 px-2 py-1 text-[11px] font-bold transition hover:bg-white/20 disabled:opacity-50 sm:px-2.5"
           >
-            <Play size={11} fill="currentColor" /> <span className="hidden sm:inline">{walking ? 'Walking' : 'Preview'}</span>
+            <Play size={11} fill="currentColor" /> <span className="hidden sm:inline">{walking ? 'Racing' : 'Race both'}</span>
           </button>
         </div>
         <div className="relative mt-2.5 flex items-baseline gap-1">
@@ -431,19 +433,24 @@ export function InsightsStrip({
   smartRoute,
   short,
   smart,
+  ov,
+  onHour,
 }: {
   cond: Conditions
   shortRoute: Route | null
   smartRoute: Route | null
   short: RouteStats | null
   smart: RouteStats | null
+  ov?: EdgeOverrides
+  onHour: (h: number) => void
 }) {
+  const [tab, setTab] = useState<'impact' | 'surface'>('impact')
   const profile = useMemo(() => {
     if (!shortRoute?.found || !smartRoute?.found) return []
-    const a = routeProfile(shortRoute, cond, 40)
-    const b = routeProfile(smartRoute, cond, 40)
+    const a = routeProfile(shortRoute, cond, 40, ov)
+    const b = routeProfile(smartRoute, cond, 40, ov)
     return a.map((x, i) => ({ k: Math.round((i / 40) * 100), short: x.v, smart: b[i]?.v ?? 0 }))
-  }, [shortRoute, smartRoute, cond])
+  }, [shortRoute, smartRoute, cond, ov])
 
   if (!short || !smart) return null
   const label = coverageLabel(cond)
@@ -452,7 +459,7 @@ export function InsightsStrip({
   const kcal = Math.round(smart.distance * 0.06)
 
   return (
-    <div className="grid shrink-0 gap-3 border-t border-line bg-paper p-3 md:grid-cols-[1.5fr_1fr_1fr] md:p-4">
+    <div className="grid shrink-0 gap-3 border-t border-line bg-paper p-3 md:grid-cols-2 md:p-4 lg:grid-cols-[1.3fr_1.15fr_1fr]">
       <Card className="p-4">
         <div className="flex items-center justify-between">
           <div>
@@ -493,68 +500,80 @@ export function InsightsStrip({
       </Card>
 
       <Card className="p-4">
-        <Eyebrow>Surface mix</Eyebrow>
-        <div className="mt-3 space-y-3">
-          {[
-            { name: 'Shortest', s: short },
-            { name: 'ShadeSmart', s: smart },
-          ].map(({ name, s }) => (
-            <div key={name}>
-              <div className="mb-1.5 flex justify-between text-[12px] font-semibold">
-                <span>{name}</span>
-                <span className="tabular text-ink-3">{fmtDist(s.distance)}</span>
-              </div>
-              <div className="flex h-3 overflow-hidden rounded-full bg-paper-2">
-                {(['canopy', 'covered', 'building', 'open'] as Surface[]).map((k) => (
-                  <span
-                    key={k}
-                    title={`${SURFACE_META[k].label}: ${fmtDist(s.surface[k])}`}
-                    style={{ width: `${(s.surface[k] / s.distance) * 100}%`, background: SURFACE_META[k].color }}
-                    className="h-full transition-all duration-500"
-                  />
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-        <div className="mt-3.5 grid grid-cols-2 gap-x-3 gap-y-1.5">
-          {(['canopy', 'covered', 'building', 'open'] as Surface[]).map((k) => (
-            <span key={k} className="flex items-center gap-1.5 text-[11px] font-medium text-ink-2">
-              <span className="size-2 rounded-sm" style={{ background: SURFACE_META[k].color }} />
-              {SURFACE_META[k].label}
-            </span>
-          ))}
-        </div>
+        <SunShadow cond={cond} onHour={onHour} />
       </Card>
 
       <Card className="p-4">
-        <Eyebrow>Why it matters</Eyebrow>
-        <div className="mt-3 grid grid-cols-2 gap-3">
-          {cond.night ? (
+        <div className="flex items-center justify-between gap-2">
+          <Eyebrow>{tab === 'impact' ? 'Why it matters' : 'Surface mix'}</Eyebrow>
+          <div className="w-[150px]">
+            <Segmented size="sm" value={tab} onChange={setTab} options={[{ value: 'impact', label: 'Impact' }, { value: 'surface', label: 'Surfaces' }]} />
+          </div>
+        </div>
+        {tab === 'surface' ? (
+          <>
+            <div className="mt-3 space-y-3">
+              {[
+                { name: 'Shortest', s: short },
+                { name: 'ShadeSmart', s: smart },
+              ].map(({ name, s }) => (
+                <div key={name}>
+                  <div className="mb-1.5 flex justify-between text-[12px] font-semibold">
+                    <span>{name}</span>
+                    <span className="tabular text-ink-3">{fmtDist(s.distance)}</span>
+                  </div>
+                  <div className="flex h-3 overflow-hidden rounded-full bg-paper-2">
+                    {(['canopy', 'covered', 'building', 'open'] as Surface[]).map((k) => (
+                      <span
+                        key={k}
+                        title={`${SURFACE_META[k].label}: ${fmtDist(s.surface[k])}`}
+                        style={{ width: `${(s.surface[k] / s.distance) * 100}%`, background: SURFACE_META[k].color }}
+                        className="h-full transition-all duration-500"
+                      />
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div className="mt-3.5 grid grid-cols-2 gap-x-3 gap-y-1.5">
+              {(['canopy', 'covered', 'building', 'open'] as Surface[]).map((k) => (
+                <span key={k} className="flex items-center gap-1.5 text-[11px] font-medium text-ink-2">
+                  <span className="size-2 rounded-sm" style={{ background: SURFACE_META[k].color }} />
+                  {SURFACE_META[k].label}
+                </span>
+              ))}
+            </div>
+          </>
+        ) : (
+          <>
+            <div className="mt-3 grid grid-cols-2 gap-3">
+              {cond.night ? (
             <>
-              <Stat icon={Lightbulb} value={pct(smart.lit)} label="route lit" accent />
-              <Stat icon={ShieldCheck} value={pct(smart.cctvCoverage)} label="CCTV watched" />
-              <Stat icon={Footprints} value={`${smart.crossings}`} label="road crossings" />
-              <Stat icon={Clock} value={`${Math.round(smart.minutes)}m`} label="walk time" />
+                  <Stat icon={Lightbulb} value={pct(smart.lit)} label="route lit" accent />
+                  <Stat icon={ShieldCheck} value={pct(smart.cctvCoverage)} label="CCTV watched" />
+                  <Stat icon={Footprints} value={`${smart.crossings}`} label="road crossings" />
+                  <Stat icon={Clock} value={`${Math.round(smart.minutes)}m`} label="walk time" />
             </>
           ) : (
             <>
-              <Stat
-                icon={Thermometer}
-                value={`${smart.feelsLike.toFixed(0)}°`}
-                label={`feels like · vs ${short.feelsLike.toFixed(0)}°`}
-                accent
-              />
-              <Stat
-                icon={cond.weather === 'rainy' ? Umbrella : Flame}
-                value={`${sunMinSaved.toFixed(1)}m`}
-                label={cond.weather === 'rainy' ? 'less in the rain' : 'less in direct sun'}
-              />
-              <Stat icon={Car} value={`${carKgCO2.toFixed(2)}kg`} label="CO₂ saved vs driving" />
-              <Stat icon={Footprints} value={`${kcal}`} label="kcal burned" />
+                  <Stat
+                    icon={Thermometer}
+                    value={`${smart.feelsLike.toFixed(0)}°`}
+                    label={`feels like · vs ${short.feelsLike.toFixed(0)}°`}
+                    accent
+                  />
+                  <Stat
+                    icon={cond.weather === 'rainy' ? Umbrella : Flame}
+                    value={`${sunMinSaved.toFixed(1)}m`}
+                    label={cond.weather === 'rainy' ? 'less in the rain' : 'less in direct sun'}
+                  />
+                  <Stat icon={Car} value={`${carKgCO2.toFixed(2)}kg`} label="CO₂ saved vs driving" />
+                  <Stat icon={Footprints} value={`${kcal}`} label="kcal burned" />
             </>
-          )}
-        </div>
+              )}
+            </div>
+          </>
+        )}
       </Card>
     </div>
   )
