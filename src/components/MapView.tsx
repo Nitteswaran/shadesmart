@@ -234,7 +234,7 @@ function markerEl(html: string, className: string, bg?: string, title?: string) 
   const el = document.createElement('div')
   el.className = 'ss-marker'
   if (title) el.title = title
-  el.innerHTML = `${bg ? `<span class="ss-ring" style="color:${bg}"></span>` : ''}<span class="${className}" ${bg ? `style="background:${bg}"` : ''}>${html}</span>`
+  el.innerHTML = `<span class="${className}" ${bg ? `style="background:${bg}"` : ''}>${html}</span>`
   return el
 }
 const icon = (node: React.ReactElement) => renderToStaticMarkup(node)
@@ -413,7 +413,6 @@ export default function MapView(p: Props) {
     if (showSafety) {
       for (const g of town.guardPosts) {
         const el = markerEl(icon(<ShieldCheck size={15} strokeWidth={2.4} />), 'ss-dot', '#2f6fdb', g.name)
-        el.querySelector('.ss-ring')?.remove()
         hazardMarkers.current.push(
           new maplibregl.Marker({ element: el })
             .setLngLat(g.at)
@@ -465,7 +464,6 @@ export default function MapView(p: Props) {
     markers.current = []
     if (p.view !== 'navigate') return
     const o = markerEl(icon(<Home size={16} strokeWidth={2.4} />), 'ss-pin', '#13140f', p.origin.name)
-    o.querySelector('.ss-ring')?.remove()
     const d = markerEl(icon(<Flag size={16} strokeWidth={2.4} />), 'ss-pin', '#17663f', p.dest.name)
     markers.current.push(new maplibregl.Marker({ element: o }).setLngLat(town.nodes[p.origin.node]).addTo(map))
     markers.current.push(new maplibregl.Marker({ element: d }).setLngLat(town.nodes[p.dest.node]).addTo(map))
