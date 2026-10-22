@@ -99,7 +99,10 @@ export function RaceHUD({
   ov,
   mapApi,
   onClose,
+  inline,
 }: {
+  /** render in page flow (phones) instead of floating over the map */
+  inline?: boolean
   shortRoute: Route
   smartRoute: Route
   cond: Conditions
@@ -168,7 +171,10 @@ export function RaceHUD({
       initial={{ y: 30, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       exit={{ y: 30, opacity: 0 }}
-      className="absolute bottom-3 left-1/2 z-20 w-[min(600px,calc(100%-24px))] -translate-x-1/2 overflow-hidden rounded-[22px] bg-ink/95 p-4 text-white shadow-float backdrop-blur md:bottom-4"
+      className={clsx(
+        'overflow-hidden rounded-[22px] bg-ink/95 p-4 text-white shadow-float backdrop-blur',
+        inline ? 'w-full' : 'absolute bottom-3 left-1/2 z-20 w-[min(600px,calc(100%-24px))] -translate-x-1/2 md:bottom-4',
+      )}
     >
       <div className="flex items-center gap-2">
         <span className="grid size-7 place-items-center rounded-lg bg-white/10">
@@ -179,7 +185,8 @@ export function RaceHUD({
             {mode === 'night' ? 'Night walk race' : mode === 'rain' ? 'Downpour race' : 'Heat race'}
           </div>
           <div className="mt-1 font-mono text-[10.5px] text-white/50">
-            {fmtTime(cond.hour)} · {airTemp(cond.hour, cond.weather, cond.night).toFixed(0)}°C{mode === 'sun' ? ` · UV ${uv}` : ''} · same start, same pace
+            {fmtTime(cond.hour)} · {airTemp(cond.hour, cond.weather, cond.night).toFixed(0)}°C{mode === 'sun' ? ` · UV ${uv}` : ''}
+            <span className="hidden sm:inline"> · same start, same pace</span>
           </div>
         </div>
         <span className="rounded-full bg-white/10 px-2.5 py-1 font-mono text-[12px] font-semibold tabular">
@@ -212,11 +219,11 @@ export function RaceHUD({
             <div key={key}>
               <div className="flex items-center gap-2 text-[12px]">
                 <span className="size-2.5 rounded-full" style={{ background: color }} />
-                <span className="font-bold">{name}</span>
+                <span className="whitespace-nowrap font-bold">{name}</span>
                 <StatusChip surface={r.surface} cov={r.cov} done={r.done} mode={mode} />
-                <span className="ml-auto flex items-center gap-1 font-mono tabular text-white/80">
+                <span className="ml-auto flex items-center gap-1 whitespace-nowrap font-mono tabular text-white/80">
                   <MetricIcon size={12} />
-                  {r.exposure.toFixed(1)} min {label}
+                  {r.exposure.toFixed(1)} min<span className="hidden sm:inline"> {label}</span>
                 </span>
               </div>
               <div className="mt-1.5 grid grid-cols-[1fr_118px] items-center gap-3">
@@ -297,7 +304,7 @@ function StatusChip({ surface, cov, done, mode }: { surface: Surface; cov: numbe
     tone = mode === 'rain' ? 'bg-rain/30 text-sky-200' : 'bg-heat/25 text-[#ffb59b]'
   }
   return (
-    <span className={clsx('flex items-center gap-1 rounded-full px-2 py-0.5 text-[10.5px] font-semibold', tone)}>
+    <span className={clsx('flex items-center gap-1 whitespace-nowrap rounded-full px-2 py-0.5 text-[10.5px] font-semibold', tone)}>
       <Icon size={11} /> {text}
     </span>
   )

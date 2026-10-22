@@ -363,7 +363,7 @@ function CityApp({
           />
           )}
           <AnimatePresence>
-            {walking && !draft && shortRoute.found && smartRoute.found && (
+            {desktop && walking && !draft && shortRoute.found && smartRoute.found && (
               <RaceHUD
                 key={`${origin}-${dest}`}
                 shortRoute={shortRoute}
@@ -425,7 +425,10 @@ function CityApp({
         short={shortStats}
         smart={smartStats}
         walking={walking}
-        onPreview={() => setWalking(true)}
+        onPreview={() => {
+      setWalking(true)
+      mobileMain.current?.scrollTo({ top: 0, behavior: 'smooth' })
+    }}
         rerouted={cond.weather === 'rainy' && (shortStats?.floodSegments.length ?? 0) > 0}
       />
   )
@@ -478,6 +481,22 @@ function CityApp({
                 {mapInner}
               </div>
             </div>
+            <AnimatePresence>
+              {view === 'navigate' && walking && !draft && shortRoute.found && smartRoute.found && (
+                <div className="px-3 pt-3">
+                  <RaceHUD
+                    inline
+                    key={`${origin}-${dest}`}
+                    shortRoute={shortRoute}
+                    smartRoute={smartRoute}
+                    cond={cond}
+                    ov={overrides}
+                    mapApi={mapApi}
+                    onClose={() => setWalking(false)}
+                  />
+                </div>
+              )}
+            </AnimatePresence>
             {view === 'navigate' && <div className="px-3 pt-3">{compareInline}</div>}
             <AnimatePresence mode="wait" initial={false}>
               <motion.div
