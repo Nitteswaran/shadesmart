@@ -16,6 +16,8 @@ import {
   type Route,
 } from '../lib/engine'
 import { SHADE_STOPS } from '../lib/meta'
+import type { Badge } from '../lib/features'
+import { BADGE_META, BadgeIcon } from './icons'
 
 maplibregl.setWorkerUrl(workerUrl)
 
@@ -36,6 +38,7 @@ interface Props {
   walking: boolean
   onWalkEnd: () => void
   floodHazards: Edge[]
+  badges: Badge[]
   fitKey: string
 }
 
@@ -222,6 +225,7 @@ export default function MapView(p: Props) {
   const darkRef = useRef(darkMap)
   const markers = useRef<maplibregl.Marker[]>([])
   const hazardMarkers = useRef<maplibregl.Marker[]>([])
+  const badgeMarkers = useRef<maplibregl.Marker[]>([])
   const popup = useRef<maplibregl.Popup | null>(null)
   const onSelectRef = useRef(p.onSelectCorridor)
   const viewRef = useRef(p.view)
@@ -377,6 +381,29 @@ export default function MapView(p: Props) {
       })
     }
   }, [p.view, p.cond.night, p.cond.weather, p.plannerLayer, p.floodHazards, styleTick])
+
+  // ---------- route feature badges ----------
+  useEffect(() => {
+    const map = mapRef.current
+    if (!map) return
+    for (const m of badgeMarkers.current) m.remove()
+    badgeMarkers.current = []
+    if (p.view !== 'navigate') return
+    for (const b of p.badges) {
+      const el = document.createElement('div')
+      el.className = 'ss-badge-marker'
+      el.setAttribute('aria-label', b.title)
+      el.innerHTML = icon(<BadgeIcon kind={b.kind} size={28} />)
+      const color = BADGE_META[b.kind].avoided ? '#d92d20' : BADGE_META[b.kind].color
+      const pop = new maplibregl.Popup({ offset: 16, closeButton: false, maxWidth: '240px' }).setHTML(
+        `<div style="font-weight:700;font-size:13px;color:${color}">${b.title}</div><div style="font-size:11.5px;color:#4a4b44;margin-top:3px">${b.sub}</div>`,
+      )
+      const marker = new maplibregl.Marker({ element: el }).setLngLat(b.at).setPopup(pop).addTo(map)
+      el.addEventListener('mouseenter', () => !pop.isOpen() && marker.togglePopup())
+      el.addEventListener('mouseleave', () => pop.isOpen() && marker.togglePopup())
+      badgeMarkers.current.push(marker)
+    }
+  }, [p.badges, p.view])
 
   // ---------- origin / destination ----------
   useEffect(() => {

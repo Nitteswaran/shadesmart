@@ -20,6 +20,7 @@ export interface Edge {
   flood: number
   cctv: boolean
   wheelchair: boolean
+  steps: boolean
   crossing: boolean
   footfall: number
 }
@@ -123,6 +124,16 @@ export function edgeCost(e: Edge, c: Conditions): number {
 }
 
 // ---------- graph ----------
+const MAJOR_HW = new Set(['secondary', 'secondary_link', 'tertiary', 'tertiary_link'])
+/** Nodes that sit on an arterial road — where a footpath meets one, the walker has to cross. */
+export const majorNodes = new Set<number>()
+for (const e of town.edges) {
+  if (MAJOR_HW.has(e.hw)) {
+    majorNodes.add(e.a)
+    majorNodes.add(e.b)
+  }
+}
+
 const adjacency: { to: number; edge: Edge }[][] = town.nodes.map(() => [])
 for (const e of town.edges) {
   adjacency[e.a].push({ to: e.b, edge: e })

@@ -7,6 +7,9 @@ import { InsightsStrip, NavigatePanel, RouteCompare, SCENARIOS, type Scenario } 
 import { PlannerMapOverlay, PlannerPanel, type PlanItem } from './components/Planner'
 import { SOSButton, SOSSheet, type Phase } from './components/SOS'
 import { dijkstra, edgeCost, placeById, routeStats, town, type Conditions } from './lib/engine'
+import { routeBadges } from './lib/features'
+import { BadgeIcon, BADGE_META } from './components/icons'
+import type { BadgeKind } from './lib/features'
 
 const DEFAULT = SCENARIOS[0]
 
@@ -51,6 +54,10 @@ export default function App() {
   }, [o, d, cond, shortRoute])
   const shortStats = useMemo(() => (shortRoute.found ? routeStats(shortRoute, cond) : null), [shortRoute, cond])
   const smartStats = useMemo(() => (smartRoute.found ? routeStats(smartRoute, cond) : null), [smartRoute, cond])
+  const badges = useMemo(
+    () => routeBadges(shortRoute.found ? shortRoute : null, smartRoute.found ? smartRoute : null, cond),
+    [shortRoute, smartRoute, cond],
+  )
   const floodHazards = useMemo(
     () => (cond.weather === 'rainy' ? (shortStats?.floodSegments ?? []) : []),
     [cond.weather, shortStats],
@@ -186,6 +193,7 @@ export default function App() {
               walking={walking}
               onWalkEnd={() => setWalking(false)}
               floodHazards={floodHazards}
+              badges={badges}
               fitKey={fitKey}
             />
             {view === 'navigate' ? (
@@ -198,7 +206,7 @@ export default function App() {
                   onPreview={() => setWalking(true)}
                   rerouted={cond.weather === 'rainy' && (shortStats?.floodSegments.length ?? 0) > 0}
                 />
-                <MapLegend night={cond.night} rainy={cond.weather === 'rainy'} />
+                <MapLegend night={cond.night} rainy={cond.weather === 'rainy'} kinds={[...new Set(badges.map((b) => b.kind))]} />
               </>
             ) : (
               <PlannerMapOverlay layer={plannerLayer} setLayer={setPlannerLayer} hour={plannerHour} setHour={setPlannerHour} />
@@ -244,7 +252,7 @@ export default function App() {
   )
 }
 
-function MapLegend({ night, rainy }: { night: boolean; rainy: boolean }) {
+function MapLegend({ night, rainy, kinds }: { night: boolean; rainy: boolean; kinds: BadgeKind[] }) {
   return (
     <div className="absolute bottom-3 left-3 z-10 hidden flex-col gap-1.5 rounded-2xl border border-line bg-card/95 px-3.5 py-3 text-[11.5px] font-semibold shadow-float backdrop-blur sm:flex md:bottom-4 md:left-4">
       <span className="flex items-center gap-2">
@@ -262,6 +270,14 @@ function MapLegend({ night, rainy }: { night: boolean; rainy: boolean }) {
           <span className="flex items-center gap-2"><span className="mx-[5px] size-3 rounded-full bg-rain ring-2 ring-white" />Guard post</span>
         </>
       )}
+      {kinds.map((k) => (
+        <span key={k} className="flex items-center gap-2">
+          <span className="flex w-[22px] justify-center">
+            <BadgeIcon kind={k} size={20} />
+          </span>
+          {BADGE_META[k].label}
+        </span>
+      ))}
       {rainy && (
         <span className="flex items-center gap-2">
           <span className="mx-[5px] grid size-3 place-items-center rounded-[3px] bg-sos" />

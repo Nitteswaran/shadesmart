@@ -235,7 +235,9 @@ const out = edges.map((e, idx) => {
   footfall *= rnd(key + 'ft', 0.8, 1.2)
 
   const cctv = (covered > 0.5 || isMajor) && hash(key + 'cam') > 0.45
-  const wheelchair = hw !== 'steps' && hw !== 'track' && !(hw === 'path' && hash(key + 'wc') > 0.4)
+  // stairs / kerb drops on some footpaths (mock) — what wheelchair mode routes around
+  const steps = hw === 'steps' || (isFoot && hw !== 'track' && e.len < 90 && hash(key + 'st') > 0.86)
+  const wheelchair = !steps && hw !== 'track' && !(hw === 'path' && hash(key + 'wc') > 0.4)
   const crossing = majorNode.has(e.a) && !isMajor ? e.a : majorNode.has(e.b) && !isMajor ? e.b : null
 
   return {
@@ -255,6 +257,7 @@ const out = edges.map((e, idx) => {
     flood: round(flood, 2),
     cctv,
     wheelchair,
+    steps,
     crossing: crossing !== null,
     footfall: Math.round(footfall),
   }
@@ -314,6 +317,16 @@ for (const [a, b] of HERO) {
     if (!MAJOR.has(e.hw)) e.lit = round(Math.min(e.lit, rnd(e.id + 'Al', 0.15, 0.4)), 2)
     if (e.flood >= 0.72 && !MAJOR.has(e.hw)) e.flood = round(rnd(e.id + 'Af', 0.3, 0.6), 2)
   }
+}
+
+// make sure the hero shaded routes include a flight of stairs, so wheelchair mode visibly reroutes
+for (const [a, b] of [HERO[0], HERO[4]]) {
+  const S = shortestPath(placeNode(a), placeNode(b), (e) => e.len)
+  const sIds = new Set(S.map((e) => e.id))
+  const A = shortestPath(placeNode(a), placeNode(b), (e) => e.len * (sIds.has(e.id) ? 1.9 : 1))
+  const cand = A.filter((e) => !sIds.has(e.id) && !MAJOR.has(e.hw) && e.len > 12 && e.len < 120)
+  const pick = cand[Math.floor(cand.length / 2)]
+  if (pick) { pick.steps = true; pick.wheelchair = false }
 }
 
 // ---------- safety infrastructure ----------

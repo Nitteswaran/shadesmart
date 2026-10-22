@@ -145,3 +145,29 @@ input[type='range'].ss-range:active::-webkit-slider-thumb { transform: scale(1.1
   background: currentColor; opacity: 0.4;
   animation: pulse-ring 1.8s cubic-bezier(0.2, 0.7, 0.3, 1) infinite;
 }
+
+/* route feature badges */
+.ss-badge {
+  position: relative;
+  display: grid; place-items: center;
+  border-radius: 9px;
+  background: var(--c); color: #fff;
+  border: 2px solid #fff;
+  box-shadow: 0 4px 12px -3px rgb(0 0 0 / 0.35);
+  flex-shrink: 0;
+}
+.ss-badge-avoided {
+  background: #fff; color: var(--c);
+  border-color: var(--color-sos);
+  border-style: dashed;
+}
+.ss-badge-avoided::after {
+  content: '';
+  position: absolute; left: 50%; top: -2px; bottom: -2px;
+  width: 2px; border-radius: 2px; opacity: 0.85;
+  background: var(--color-sos);
+  transform: translateX(-50%) rotate(45deg);
+}
+.ss-badge-marker { cursor: pointer; }
+.ss-badge-marker .ss-badge { transition: transform 0.15s; }
+.ss-badge-marker:hover .ss-badge { transform: scale(1.15); }
