@@ -1,5 +1,7 @@
 import {
   Building2,
+  Sun,
+  Umbrella,
   Bus,
   Coffee,
   Home,
@@ -20,11 +22,11 @@ export const KIND_META: Record<PlaceKind, { icon: LucideIcon; color: string; gro
 }
 export const KIND_ORDER: PlaceKind[] = ['home', 'shop', 'food', 'park', 'transit', 'civic']
 
-export const SURFACE_META: Record<Surface, { label: string; color: string; icon: LucideIcon }> = {
-  canopy: { label: 'Tree canopy', color: '#1d7a4b', icon: Trees },
-  covered: { label: 'Covered walkway', color: '#5b8def', icon: Building2 },
-  building: { label: 'Building shade', color: '#b7a77a', icon: Building2 },
-  open: { label: 'Open asphalt', color: '#e4572e', icon: Building2 },
+export const SURFACE_META: Record<Surface, { label: string; path: string; color: string; icon: LucideIcon }> = {
+  canopy: { label: 'Tree canopy', path: 'Tree-lined path', color: '#1d7a4b', icon: Trees },
+  covered: { label: 'Covered walkway', path: 'Covered walkway', color: '#3b6fd8', icon: Umbrella },
+  building: { label: 'Building shade', path: 'Shaded lane', color: '#a08a52', icon: Building2 },
+  open: { label: 'Open asphalt', path: 'Open footpath', color: '#e4572e', icon: Sun },
 }
 
 /** Shade ramp: exposed (hot) → fully shaded (cool). */

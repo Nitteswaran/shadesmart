@@ -60,8 +60,9 @@ import {
   type Intervention,
 } from '../lib/planner'
 import type { PlannerLayer } from './MapView'
-import { TOOL_INFO, type Tool } from '../lib/placements'
+import { headline, placementImpact, TOOL_INFO, type Tool } from '../lib/placements'
 import { WalkOrDrive } from './WalkOrDrive'
+import { ToolPicker } from './icons'
 import { ProposalsInbox } from './Propose'
 import type { Proposal, Status } from '../lib/proposals'
 import { Card, Eyebrow, Range, Segmented } from './ui'
@@ -91,8 +92,6 @@ export interface PlantImpact {
   counts: Record<Tool, number>
 }
 
-export const TOOL_ICON: Record<Tool, LucideIcon> = { tree: Trees, canopy: Umbrella, light: Lightbulb }
-export const TOOL_COLOR: Record<Tool, string> = { tree: '#1d7a4b', canopy: '#3b6fd8', light: '#c98a0b' }
 
 function PlantToolbar({
   tool,
@@ -110,8 +109,9 @@ function PlantToolbar({
   onClear: () => void
 }) {
   const delta = (impact.after - impact.before) * 100
+  const hl = headline((Object.keys(impact.counts) as Tool[]).filter((t) => impact.counts[t] > 0), impact as ReturnType<typeof placementImpact>)
   return (
-    <div className="absolute right-3 top-[64px] z-10 w-[236px] md:right-4 md:top-4">
+    <div className="thin-scroll absolute right-3 top-[64px] z-10 max-h-[calc(100%-140px)] w-[252px] overflow-y-auto rounded-[20px] md:right-4 md:top-4">
       <div className="rounded-[20px] border border-line bg-card/95 p-3 shadow-float backdrop-blur">
         <div className="flex items-center justify-between px-1">
           <Eyebrow>Plant it yourself</Eyebrow>
@@ -124,41 +124,12 @@ function PlantToolbar({
             </button>
           </div>
         </div>
-        <div className="mt-2 space-y-1.5">
-          {(['tree', 'canopy', 'light'] as Tool[]).map((t) => {
-            const Icon = TOOL_ICON[t]
-            const active = tool === t
-            return (
-              <button
-                key={t}
-                onClick={() => setTool(active ? null : t)}
-                aria-pressed={active}
-                className={clsx(
-                  'flex w-full items-center gap-2.5 rounded-xl border px-2 py-1.5 text-left transition-all',
-                  active ? 'border-ink bg-ink text-white shadow-soft' : 'border-transparent hover:bg-paper-2',
-                )}
-              >
-                <span className="grid size-7 shrink-0 place-items-center rounded-lg text-white" style={{ background: TOOL_COLOR[t] }}>
-                  <Icon size={14} strokeWidth={2.4} />
-                </span>
-                <span className="min-w-0 flex-1">
-                  <span className="block text-[12.5px] font-semibold leading-tight">{TOOL_INFO[t].label}</span>
-                  <span className={clsx('block text-[10.5px]', active ? 'text-white/60' : 'text-ink-3')}>
-                    {fmtRM(TOOL_INFO[t].cost)}
-                  </span>
-                </span>
-                {impact.counts[t] > 0 && (
-                  <span className={clsx('rounded-full px-1.5 font-mono text-[11px] font-bold tabular', active ? 'bg-white/15' : 'bg-paper-2')}>
-                    {impact.counts[t]}
-                  </span>
-                )}
-              </button>
-            )
-          })}
+        <div className="mt-1.5">
+          <ToolPicker tool={tool} setTool={setTool} counts={impact.counts} />
         </div>
         {tool ? (
           <div className="mt-2 flex items-center gap-1.5 rounded-xl bg-sun/20 px-2.5 py-2 text-[11px] font-semibold text-[#7a5200]">
-            <MousePointerClick size={13} /> Click along any path to place
+            <MousePointerClick size={13} /> {TOOL_INFO[tool].label} · {fmtRM(TOOL_INFO[tool].cost)} — click a path
           </div>
         ) : (
           !count && <div className="mt-2 px-1 text-[11px] leading-snug text-ink-3">Pick a tool, then click a red street.</div>
@@ -166,11 +137,12 @@ function PlantToolbar({
         {count > 0 && (
           <div className="mt-2.5 border-t border-line px-1 pt-2.5">
             <div className="flex items-baseline justify-between">
-              <span className="text-[11px] font-semibold text-ink-2">Shade at 1pm · {Math.round(impact.localLen)} m improved</span>
+              <span className="text-[11px] font-semibold capitalize text-ink-2">
+                {hl.label} · {Math.round(impact.localLen)} m improved
+              </span>
             </div>
             <div className="mt-1 font-display text-[24px] font-extrabold leading-none tabular">
-              {Math.round(impact.localBefore * 100)}% <span className="text-ink-3">→</span>{' '}
-              <span className="text-leaf">{Math.round(impact.localAfter * 100)}%</span>
+              {hl.before} <span className="text-ink-3">→</span> <span className="text-leaf">{hl.after}</span>
             </div>
             <div className="mt-1 font-mono text-[10.5px] text-ink-3 tabular">
               whole township {(impact.before * 100).toFixed(1)}% → {(impact.after * 100).toFixed(1)}% (+{delta.toFixed(2)})

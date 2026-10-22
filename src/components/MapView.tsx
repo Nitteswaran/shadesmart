@@ -1,7 +1,7 @@
 import * as maplibregl from 'maplibre-gl'
 import type { GeoJSONSource, LngLatBoundsLike } from 'maplibre-gl'
 import workerUrl from 'maplibre-gl/dist/maplibre-gl-worker.mjs?url'
-import { Flag, Home, Lightbulb, ShieldCheck, Trees, TriangleAlert, Umbrella } from 'lucide-react'
+import { Flag, Home, ShieldCheck, TriangleAlert } from 'lucide-react'
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { renderToStaticMarkup } from 'react-dom/server'
 import {
@@ -20,7 +20,7 @@ import { dayTint } from '../lib/daylight'
 import type { Overrides, Placement, Tool } from '../lib/placements'
 import type { MapApi } from './Race'
 import type { Badge, RouteTag } from '../lib/features'
-import { BADGE_META, BadgeIcon } from './icons'
+import { BADGE_META, BadgeIcon, TOOL_COLOR, TOOL_ICON } from './icons'
 
 maplibregl.setWorkerUrl(workerUrl)
 
@@ -545,15 +545,11 @@ export default function MapView(p: Props) {
     if (!map) return
     for (const m of placeMarkers.current) m.remove()
     placeMarkers.current = []
-    const look = {
-      tree: { icon: <Trees size={14} strokeWidth={2.4} />, bg: '#1d7a4b' },
-      canopy: { icon: <Umbrella size={14} strokeWidth={2.4} />, bg: '#3b6fd8' },
-      light: { icon: <Lightbulb size={14} strokeWidth={2.4} />, bg: '#c98a0b' },
-    }
     for (const pl of p.placements) {
       const el = document.createElement('div')
       el.className = pl.proposed ? 'ss-place ss-proposed' : 'ss-place'
-      el.innerHTML = `<span class="ss-badge" style="--c:${look[pl.tool].bg};width:26px;height:26px">${icon(look[pl.tool].icon)}</span>`
+      const ToolIcon = TOOL_ICON[pl.tool]
+      el.innerHTML = `<span class="ss-badge" style="--c:${TOOL_COLOR[pl.tool]};width:26px;height:26px">${icon(<ToolIcon size={14} strokeWidth={2.4} />)}</span>`
       placeMarkers.current.push(new maplibregl.Marker({ element: el }).setLngLat(pl.at).addTo(map))
     }
   }, [p.placements])

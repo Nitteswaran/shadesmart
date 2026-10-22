@@ -1,6 +1,13 @@
 import clsx from 'clsx'
 import {
   Accessibility,
+  ArrowUp,
+  ArrowUpLeft,
+  ArrowUpRight,
+  CornerUpLeft,
+  CornerUpRight,
+  Flag,
+  Navigation,
   ArrowDownUp,
   Car,
   Clock,
@@ -23,7 +30,7 @@ import {
 import { useMemo, useState } from 'react'
 import { Area, AreaChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts'
 import {
-  protectionAt,
+  placeById,
   routeProfile,
   town,
   type Conditions,
@@ -37,6 +44,7 @@ import { fmtDist, fmtTime, KIND_META, KIND_ORDER, pct, SURFACE_META } from '../l
 import { Card, Eyebrow, PlaceSelect, Range, Segmented, Toggle, type SelectOption } from './ui'
 import { SOSButton } from './SOS'
 import { SunShadow } from './SunShadow'
+import { buildDirections, type Turn } from '../lib/directions'
 import { ProposeCard } from './Propose'
 import type { Proposal } from '../lib/proposals'
 
@@ -87,6 +95,29 @@ const placeOptions: SelectOption[] = KIND_ORDER.flatMap((k) =>
 )
 
 export const coverageLabel = (c: Conditions) => (c.night ? 'Lit' : c.weather === 'rainy' ? 'Rain cover' : 'Shade')
+
+const TURN_ICON: Record<Turn, typeof Sun> = {
+  start: Navigation,
+  straight: ArrowUp,
+  'slight-left': ArrowUpLeft,
+  'slight-right': ArrowUpRight,
+  left: CornerUpLeft,
+  right: CornerUpRight,
+  'sharp-left': CornerUpLeft,
+  'sharp-right': CornerUpRight,
+  arrive: Flag,
+}
+const TURN_TEXT: Record<Turn, string> = {
+  start: 'Head out on',
+  straight: 'Continue on',
+  'slight-left': 'Bear left onto',
+  'slight-right': 'Bear right onto',
+  left: 'Turn left onto',
+  right: 'Turn right onto',
+  'sharp-left': 'Sharp left onto',
+  'sharp-right': 'Sharp right onto',
+  arrive: 'Arrive at',
+}
 
 const weightLabel = (w: number) => (w < 1.6 ? 'Fastest' : w < 2.8 ? 'Balanced' : w < 4 ? 'Prefer shade' : 'Max shade')
 
@@ -144,21 +175,8 @@ export function NavigatePanel({
   onPropose: () => void
 }) {
   const [allSteps, setAllSteps] = useState(false)
-  const segments = useMemo(() => {
-    if (!smart?.found) return []
-    const out: { name: string; len: number; surface: Surface; cov: number }[] = []
-    for (const s of smart.steps) {
-      const name = s.edge.name ?? SURFACE_META[s.edge.surface].label
-      const last = out[out.length - 1]
-      const cov = protectionAt(s.edge, cond)
-      if (last && last.name === name && last.surface === s.edge.surface) {
-        last.cov = (last.cov * last.len + cov * s.edge.len) / (last.len + s.edge.len)
-        last.len += s.edge.len
-      } else out.push({ name, len: s.edge.len, surface: s.edge.surface, cov })
-    }
-    // fold tiny connectors into their neighbour so the list reads like directions
-    return out.filter((s) => s.len >= 25)
-  }, [smart, cond])
+  const segments = useMemo(() => buildDirections(smart, cond), [smart, cond])
+  const destName = placeById(dest).name
 
   return (
     <div className="flex flex-col gap-5 p-5 md:p-6">
@@ -311,30 +329,54 @@ export function NavigatePanel({
         <section>
           <div className="mb-2 flex items-center justify-between">
             <Eyebrow>Your route</Eyebrow>
-            {segments.length > 4 && (
+            {segments.length > 5 && (
               <button onClick={() => setAllSteps(!allSteps)} className="text-[11.5px] font-semibold text-leaf hover:underline">
                 {allSteps ? 'Show less' : `All ${segments.length} steps`}
               </button>
             )}
           </div>
-          <ol className="relative space-y-0.5">
-            {(allSteps ? segments : segments.slice(0, 4)).map((s, i) => {
+          <ol className="relative">
+            {(allSteps ? segments : [...segments.slice(0, 4), ...(segments.length > 4 ? [segments[segments.length - 1]] : [])]).map((s, i, arr) => {
               const meta = SURFACE_META[s.surface]
-              const Icon = meta.icon
+              const SurfIcon = meta.icon
+              const TurnIcon = TURN_ICON[s.turn]
+              const where = s.name ?? meta.path.toLowerCase()
+              const text =
+                s.turn === 'arrive'
+                  ? `Arrive at ${destName}`
+                  : s.turn === 'start'
+                    ? `Head out on ${where}`
+                    : `${TURN_TEXT[s.turn]} ${where}`
+              const last = i === arr.length - 1
+              const covWord = cond.night ? 'lit' : cond.weather === 'rainy' ? 'covered' : 'shade'
               return (
-                <li key={i} className="flex items-center gap-3 rounded-xl px-1 py-1.5">
+                <li key={i} className="relative flex gap-3 pb-3">
+                  {!last && <span className="absolute bottom-0 left-[17px] top-9 w-[2px] rounded bg-line" aria-hidden />}
                   <span
-                    className="grid size-8 shrink-0 place-items-center rounded-lg text-white"
-                    style={{ background: cond.night ? '#171c36' : meta.color }}
+                    className={clsx(
+                      'relative grid size-9 shrink-0 place-items-center rounded-full',
+                      s.turn === 'arrive' ? 'bg-leaf text-white' : s.turn === 'start' ? 'bg-ink text-white' : 'border border-line bg-card text-ink',
+                    )}
+                    title={s.turn}
                   >
-                    {cond.night ? <Lightbulb size={14} /> : <Icon size={14} strokeWidth={2.3} />}
+                    <TurnIcon size={17} strokeWidth={2.4} />
                   </span>
-                  <span className="min-w-0 flex-1">
-                    <span className="block truncate text-[13px] font-semibold">{s.name}</span>
-                    <span className="block text-[11.5px] text-ink-3">{fmtDist(s.len)}</span>
-                  </span>
-                  <span className="h-1.5 w-12 shrink-0 overflow-hidden rounded-full bg-paper-2">
-                    <span className="block h-full rounded-full bg-leaf" style={{ width: pct(s.cov) }} />
+                  <span className="min-w-0 flex-1 pt-0.5">
+                    <span className="block text-[13.5px] font-semibold leading-snug">
+                      {text.charAt(0).toUpperCase() + text.slice(1)}
+                    </span>
+                    {s.turn !== 'arrive' && (
+                      <span className="mt-1 flex items-center gap-2 text-[11.5px] text-ink-3">
+                        <span className="inline-flex items-center gap-1 rounded-md px-1.5 py-0.5 font-semibold" style={{ background: `${meta.color}1a`, color: meta.color }}>
+                          <SurfIcon size={12} strokeWidth={2.4} />
+                          {meta.label}
+                        </span>
+                        <span className="tabular">{fmtDist(s.len)}</span>
+                        <span className="ml-auto font-semibold tabular" style={{ color: s.cov >= 0.6 ? '#1d7a4b' : s.cov >= 0.35 ? '#a8760b' : '#e4572e' }}>
+                          {pct(s.cov)} {covWord}
+                        </span>
+                      </span>
+                    )}
                   </span>
                 </li>
               )

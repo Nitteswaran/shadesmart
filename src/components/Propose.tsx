@@ -18,23 +18,13 @@ import {
 } from 'lucide-react'
 import { useMemo, useState } from 'react'
 import { fmtRM } from '../lib/meta'
-import { computeOverrides, placementImpact, TOOL_INFO, type Placement, type Tool } from '../lib/placements'
+import { computeOverrides, headline, itemsSummary, placementImpact, TOOL_INFO, type Placement, type Tool } from '../lib/placements'
 import { REASONS, type Proposal, type Reason, type Status } from '../lib/proposals'
-import { TOOL_COLOR, TOOL_ICON } from './Planner'
+import { ToolPicker } from './icons'
 import { Card, Eyebrow } from './ui'
 
 const impactOf = (pl: Placement[]) => placementImpact(pl, computeOverrides(pl))
 
-function itemsSummary(pl: Placement[]) {
-  const n = (t: Tool) => pl.filter((p) => p.tool === t).length
-  return [
-    n('tree') && `${n('tree')} tree${n('tree') > 1 ? 's' : ''}`,
-    n('canopy') && `${n('canopy')} covered walkway${n('canopy') > 1 ? 's' : ''}`,
-    n('light') && `${n('light')} light${n('light') > 1 ? 's' : ''}`,
-  ]
-    .filter(Boolean)
-    .join(' · ')
-}
 
 export function StatusPill({ status }: { status: Status }) {
   const look = {
@@ -110,6 +100,12 @@ export function ProposeOverlay({
   const [note, setNote] = useState('')
   const [step, setStep] = useState<'place' | 'details'>('place')
   const impact = useMemo(() => impactOf(draft), [draft])
+  const counts = useMemo(() => {
+    const c: Partial<Record<Tool, number>> = {}
+    for (const p of draft) c[p.tool] = (c[p.tool] ?? 0) + 1
+    return c
+  }, [draft])
+  const hl = headline(Object.keys(counts) as Tool[], impact)
   const toggle = (r: Reason) => setReasons((rs) => (rs.includes(r) ? rs.filter((x) => x !== r) : [...rs, r]))
 
   return (
@@ -118,7 +114,7 @@ export function ProposeOverlay({
       <motion.div
         initial={{ opacity: 0, y: -8 }}
         animate={{ opacity: 1, y: 0 }}
-        className="absolute right-3 top-[150px] z-20 w-[220px] rounded-[20px] border border-line bg-card/95 p-2.5 shadow-float backdrop-blur md:right-4 md:top-4"
+        className="thin-scroll absolute right-3 top-[150px] z-20 max-h-[calc(100%-230px)] w-[252px] overflow-y-auto rounded-[20px] border border-line bg-card/95 p-2.5 shadow-float backdrop-blur md:right-4 md:top-4"
       >
         <div className="flex items-center justify-between px-1.5 pb-1.5">
           <Eyebrow>Place on map</Eyebrow>
@@ -131,34 +127,10 @@ export function ProposeOverlay({
             </button>
           </div>
         </div>
-        {(['tree', 'canopy', 'light'] as Tool[]).map((t) => {
-          const Icon = TOOL_ICON[t]
-          const on = tool === t
-          return (
-            <button
-              key={t}
-              onClick={() => setTool(on ? null : t)}
-              aria-pressed={on}
-              className={clsx(
-                'mb-1 flex w-full items-center gap-2.5 rounded-xl px-2 py-1.5 text-left text-[13px] font-semibold transition',
-                on ? 'bg-ink text-white' : 'hover:bg-paper-2',
-              )}
-            >
-              <span className="grid size-7 place-items-center rounded-lg text-white" style={{ background: TOOL_COLOR[t] }}>
-                <Icon size={14} strokeWidth={2.4} />
-              </span>
-              <span className="flex-1">{TOOL_INFO[t].label}</span>
-              {draft.filter((p) => p.tool === t).length > 0 && (
-                <span className={clsx('rounded-full px-1.5 font-mono text-[11px] tabular', on ? 'bg-white/15' : 'bg-paper-2')}>
-                  {draft.filter((p) => p.tool === t).length}
-                </span>
-              )}
-            </button>
-          )
-        })}
+        <ToolPicker tool={tool} setTool={setTool} counts={counts} />
         {tool && (
           <div className="mt-1 flex items-center gap-1.5 rounded-xl bg-sun/20 px-2.5 py-2 text-[11.5px] font-semibold text-[#7a5200]">
-            <MousePointerClick size={13} /> Tap along a path
+            <MousePointerClick size={13} /> Tap a path to add {TOOL_INFO[tool].label.toLowerCase()}
           </div>
         )}
       </motion.div>
@@ -179,8 +151,8 @@ export function ProposeOverlay({
               <div className="mt-0.5 text-[12px] text-ink-3">
                 {draft.length ? (
                   <>
-                    Shade <b className="text-ink">{Math.round(impact.localBefore * 100)}%</b> →{' '}
-                    <b className="text-leaf">{Math.round(impact.localAfter * 100)}%</b> · {impact.walkers.toLocaleString()} walkers/day
+                    <span className="capitalize">{hl.label}</span> <b className="text-ink">{hl.before}</b> → <b className="text-leaf">{hl.after}</b> ·{' '}
+                    {impact.walkers.toLocaleString()} walkers/day
                   </>
                 ) : (
                   'Your proposal'
@@ -207,7 +179,7 @@ export function ProposeOverlay({
               <div className="flex-1">
                 <div className="text-[14px] font-bold leading-tight">{itemsSummary(draft)}</div>
                 <div className="text-[12px] text-ink-3">
-                  Shade {Math.round(impact.localBefore * 100)}% → {Math.round(impact.localAfter * 100)}% · est. {fmtRM(impact.cost)}
+                  <span className="capitalize">{hl.label}</span> {hl.before} → {hl.after} · est. {fmtRM(impact.cost)}
                 </div>
               </div>
             </div>
@@ -315,6 +287,7 @@ export function ProposalsInbox({
   const p = proposals.find((x) => x.id === selected)
   if (p) {
     const impact = impactOf(p.placements)
+    const phl = headline(p.placements.map((x) => x.tool), impact)
     return (
       <div className="space-y-4 p-5 md:p-6">
         <button onClick={() => setSelected(null)} className="flex items-center gap-1.5 text-[12.5px] font-semibold text-ink-2 hover:text-ink">
@@ -346,9 +319,9 @@ export function ProposalsInbox({
         <div className="grid grid-cols-3 gap-2 rounded-[20px] bg-forest p-4 text-white">
           <div>
             <div className="font-display text-[20px] font-extrabold leading-none tabular">
-              {Math.round(impact.localBefore * 100)}→<span className="text-mint">{Math.round(impact.localAfter * 100)}%</span>
+              {phl.before}→<span className="text-mint">{phl.after}</span>
             </div>
-            <div className="mt-1 text-[10.5px] text-white/60">shade at 1pm</div>
+            <div className="mt-1 text-[10.5px] text-white/60">{phl.label}</div>
           </div>
           <div>
             <div className="font-display text-[20px] font-extrabold leading-none tabular">{impact.walkers.toLocaleString()}</div>
@@ -385,6 +358,7 @@ export function ProposalsInbox({
       <div className="mt-3 space-y-2">
         {proposals.map((x) => {
           const ic = impactOf(x.placements)
+          const ihl = headline(x.placements.map((y) => y.tool), ic)
           return (
             <Card key={x.id} className="overflow-hidden">
               <button onClick={() => setSelected(x.id)} className="w-full p-4 text-left transition hover:bg-paper-2/50">
@@ -399,7 +373,7 @@ export function ProposalsInbox({
                 <div className="mt-0.5 truncate text-[12px] text-ink-3">{x.author}</div>
                 <div className="mt-2.5 flex items-center gap-3 text-[11.5px] font-semibold">
                   <span className="text-leaf tabular">
-                    {Math.round(ic.localBefore * 100)}→{Math.round(ic.localAfter * 100)}% shade
+                    {ihl.before}→{ihl.after} {ihl.label.replace(' at 1pm', '')}
                   </span>
                   <span className="text-ink-2 tabular">{fmtRM(ic.cost)}</span>
                   <span className="ml-auto flex items-center gap-1 text-heat tabular">
