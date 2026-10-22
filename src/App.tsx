@@ -8,6 +8,7 @@ import { PlannerMapOverlay, PlannerPanel, type PlanItem } from './components/Pla
 import { SOSButton, SOSSheet, type Phase } from './components/SOS'
 import { dijkstra, edgeCost, placeById, routeStats, town, type Conditions } from './lib/engine'
 import { routeBadges } from './lib/features'
+import { isNightHour } from './lib/daylight'
 import { BadgeIcon, BADGE_META } from './components/icons'
 import type { BadgeKind } from './lib/features'
 
@@ -101,6 +102,9 @@ export default function App() {
 
   const setCond = (patch: Partial<Conditions>) => {
     const next = { ...cond, ...patch }
+    // the clock and night mode drive each other: dusk switches night routing on, the toggle jumps the clock
+    if (patch.hour !== undefined) next.night = isNightHour(patch.hour)
+    else if (patch.night !== undefined && patch.night !== cond.night) next.hour = patch.night ? 21.5 : 13
     announce(cond, next)
     setCondState(next)
     setScenario(null)

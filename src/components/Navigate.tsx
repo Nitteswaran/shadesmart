@@ -31,6 +31,7 @@ import {
   type RouteStats,
   type Surface,
 } from '../lib/engine'
+import { DAY_END, DAY_START } from '../lib/daylight'
 import { fmtDist, fmtTime, KIND_META, KIND_ORDER, pct, SURFACE_META } from '../lib/meta'
 import { Card, Eyebrow, PlaceSelect, Range, Segmented, Toggle, type SelectOption } from './ui'
 import { SOSButton } from './SOS'
@@ -71,7 +72,7 @@ export const SCENARIOS: Scenario[] = [
     icon: Moon,
     origin: 'cendana',
     dest: 'centralpark',
-    cond: { weather: 'sunny', night: true, shadeWeight: 4 },
+    cond: { weather: 'sunny', night: true, hour: 21.5, shadeWeight: 4 },
   },
 ]
 
@@ -212,18 +213,29 @@ export function NavigatePanel({
             { value: 'rainy', label: 'Heavy rain', icon: CloudRain },
           ]}
         />
-        <div className={clsx('rounded-2xl border border-line px-4 pb-2 pt-3 transition-opacity', cond.night && 'pointer-events-none opacity-40')}>
+        <div className="rounded-2xl border border-line px-4 pb-2 pt-3">
           <div className="flex items-center justify-between">
             <span className="flex items-center gap-1.5 text-[13px] font-semibold">
               <Clock size={14} /> Time of day
             </span>
-            <span className="font-mono text-[13px] font-semibold tabular">{fmtTime(cond.hour)}</span>
+            <span className="flex items-center gap-1.5 font-mono text-[13px] font-semibold tabular">
+              {cond.night ? <Moon size={13} /> : <Sun size={13} />}
+              {fmtTime(cond.hour)}
+            </span>
           </div>
-          <Range label="Time of day" value={cond.hour} min={7} max={19} step={0.25} onChange={(v) => setCond({ hour: v })} fill="#f2b33d" />
+          <Range
+            label="Time of day"
+            value={cond.hour}
+            min={DAY_START}
+            max={DAY_END}
+            step={0.25}
+            onChange={(v) => setCond({ hour: v })}
+            fill={cond.night ? '#4b55a8' : '#f2b33d'}
+          />
           <div className="flex justify-between font-mono text-[10px] text-ink-3">
-            <span>07:00</span>
+            <span>06:00</span>
             <span>13:00 peak sun</span>
-            <span>19:00</span>
+            <span>23:00</span>
           </div>
         </div>
         <Toggle

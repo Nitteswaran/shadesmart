@@ -75,7 +75,7 @@ export function Header({
           <span className="tabular">UV {uv}</span>
         </Chip>
         <div className="rounded-full border border-line bg-card px-3 py-1.5 font-mono text-[12px] font-medium tabular text-ink-2">
-          {cond.night ? '21:30' : fmtTime(cond.hour)}
+          {fmtTime(cond.hour)}
         </div>
       </div>
       <div className="shrink-0">{sos}</div>

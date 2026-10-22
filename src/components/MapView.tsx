@@ -16,6 +16,7 @@ import {
   type Route,
 } from '../lib/engine'
 import { SHADE_STOPS } from '../lib/meta'
+import { dayTint } from '../lib/daylight'
 import type { Badge } from '../lib/features'
 import { BADGE_META, BadgeIcon } from './icons'
 
@@ -96,6 +97,22 @@ function installLayers(map: maplibregl.Map) {
   const src = (id: string) => !map.getSource(id) && map.addSource(id, { type: 'geojson', data: emptyFC })
   ;['network', 'short', 'smart', 'selected', 'lights', 'cctv', 'walker', 'flood'].forEach(src)
 
+  if (!map.getSource('dim'))
+    map.addSource('dim', {
+      type: 'geojson',
+      data: {
+        type: 'Feature',
+        properties: {},
+        geometry: { type: 'Polygon', coordinates: [[[-180, -85], [180, -85], [180, 85], [-180, 85], [-180, -85]]] },
+      },
+    })
+  // time-of-day wash: sits over the basemap but under routes and markers, so those stay crisp
+  map.addLayer({
+    id: 'dim',
+    type: 'fill',
+    source: 'dim',
+    paint: { 'fill-color': '#1c2050', 'fill-opacity': 0, 'fill-opacity-transition': { duration: 350, delay: 0 } },
+  })
   map.addLayer({
     id: 'network',
     type: 'line',
@@ -290,6 +307,17 @@ export default function MapView(p: Props) {
     darkRef.current = darkMap
     map.setStyle(darkMap ? STYLE_DARK : STYLE_LIGHT, { diff: false })
   }, [darkMap])
+
+  // ---------- time-of-day lighting ----------
+  const tintHour = p.view === 'navigate' ? p.cond.hour : p.plannerHour
+  useEffect(() => {
+    const map = mapRef.current
+    if (!map?.getLayer('dim')) return
+    const t = dayTint(tintHour)
+    // the dark basemap already reads as night; just deepen it slightly
+    map.setPaintProperty('dim', 'fill-color', darkMap ? '#05081a' : t.color)
+    map.setPaintProperty('dim', 'fill-opacity', darkMap ? 0.25 : t.opacity)
+  }, [tintHour, darkMap, styleTick])
 
   // ---------- network colouring ----------
   const networkData = useMemo<GeoJSON.FeatureCollection>(() => {
