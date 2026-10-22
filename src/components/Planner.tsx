@@ -142,7 +142,7 @@ function PlantToolbar({
                 <span className="min-w-0 flex-1">
                   <span className="block text-[12.5px] font-semibold leading-tight">{TOOL_INFO[t].label}</span>
                   <span className={clsx('block text-[10.5px]', active ? 'text-white/60' : 'text-ink-3')}>
-                    {fmtRM(TOOL_INFO[t].cost)} · {TOOL_INFO[t].note}
+                    {fmtRM(TOOL_INFO[t].cost)}
                   </span>
                 </span>
                 {impact.counts[t] > 0 && (
@@ -159,7 +159,7 @@ function PlantToolbar({
             <MousePointerClick size={13} /> Click along any path to place
           </div>
         ) : (
-          !count && <div className="mt-2 px-1 text-[11px] leading-snug text-ink-3">Pick a tool, then click red streets to watch them turn green.</div>
+          !count && <div className="mt-2 px-1 text-[11px] leading-snug text-ink-3">Pick a tool, then click a red street.</div>
         )}
         {count > 0 && (
           <div className="mt-2.5 border-t border-line px-1 pt-2.5">
@@ -180,7 +180,7 @@ function PlantToolbar({
               </div>
               <div>
                 <div className="font-display text-[16px] font-extrabold tabular">{impact.walkers.toLocaleString()}</div>
-                <div className="text-[10px] text-ink-3">walkers/day feel it</div>
+                <div className="text-[10px] text-ink-3">walkers/day</div>
               </div>
             </div>
           </div>
@@ -246,7 +246,6 @@ export function PlannerMapOverlay({
           <span>{legend[0]}</span>
           <span>{legend[1]}</span>
         </div>
-        {layer === 'heat' && <div className="mt-1.5 text-[10.5px] text-ink-3">Line width = daily pedestrians</div>}
         {layer === 'night' && (
           <div className="mt-2 flex gap-3 text-[10.5px] font-medium text-ink-2">
             <span className="flex items-center gap-1"><span className="size-2 rounded-full bg-[#ffc95c]" />Streetlight</span>
@@ -386,10 +385,10 @@ function Overview({ stats, hour, onPick }: { stats: CorridorStats[]; hour: numbe
   return (
     <div className="space-y-4 p-5 md:p-6">
       <div className="grid grid-cols-2 gap-3">
-        <Kpi icon={Sun} label="Network shaded at 1pm" value={`${noon}%`} sub={`of ${(totalLen / 1000).toFixed(1)} km walkable paths`} tone="heat" />
-        <Kpi icon={TrendingUp} label="Walkability score" value={`${avgWalk}`} sub="0–100 · shade, light & flood" />
-        <Kpi icon={Users} label="Daily pedestrians" value={dailyWalkers.toLocaleString()} sub="est. from township counters" />
-        <Kpi icon={Flame} label="Heat hotspots" value={`${hotspots.length}`} sub="corridors < 20% shade at noon" tone="heat" />
+        <Kpi icon={Sun} label="Network shaded at 1pm" value={`${noon}%`} sub={`of ${(totalLen / 1000).toFixed(0)} km of paths`} tone="heat" />
+        <Kpi icon={TrendingUp} label="Walkability score" value={`${avgWalk}`} sub="out of 100" />
+        <Kpi icon={Users} label="Daily pedestrians" value={dailyWalkers.toLocaleString()} sub="walking trips" />
+        <Kpi icon={Flame} label="Heat hotspots" value={`${hotspots.length}`} sub="streets under 20% shade" tone="heat" />
       </div>
 
       <Card className="p-4">
@@ -480,7 +479,6 @@ function Overview({ stats, hour, onPick }: { stats: CorridorStats[]; hour: numbe
       <Card className="p-4">
         <div className="flex items-center justify-between">
           <Eyebrow>Top heat gaps</Eyebrow>
-          <span className="text-[11px] text-ink-3">ranked by people × exposure</span>
         </div>
         <div className="mt-2">
           {[...stats].sort((a, b) => b.priority - a.priority).slice(0, 3).map((s, i) => (
@@ -528,7 +526,6 @@ function Hotspots({ stats, onPick }: { stats: CorridorStats[]; onPick: (id: stri
       <div className="flex items-center justify-between gap-3">
         <div>
           <div className="text-[15px] font-bold">Heat Gap corridors</div>
-          <div className="text-[12px] text-ink-3">Select one to model an intervention</div>
         </div>
         <div className="w-[150px]">
           <Segmented
@@ -834,7 +831,6 @@ function CapitalPlan({ plan, setPlan, goHotspots }: { plan: PlanItem[]; setPlan:
 }
 
 function Safety() {
-  const totalLen = town.edges.reduce((s, e) => s + e.len, 0)
   const floodLen = town.edges.filter((e) => e.flood >= FLOOD_BLOCK).reduce((s, e) => s + e.len, 0)
   const darkLen = town.edges.filter((e) => e.lit < 0.4).reduce((s, e) => s + e.len, 0)
   const darkCorridors = useMemo(
@@ -856,10 +852,10 @@ function Safety() {
   return (
     <div className="space-y-4 p-5 md:p-6">
       <div className="grid grid-cols-2 gap-3">
-        <Kpi icon={CloudRain} label="Flood-prone paths" value={fmtDist(floodLen)} sub={`${pct(floodLen / totalLen)} of network · auto-rerouted`} tone="rain" />
-        <Kpi icon={Moon} label="Poorly-lit paths" value={fmtDist(darkLen)} sub={`${pct(darkLen / totalLen)} below 40% lighting`} tone="heat" />
-        <Kpi icon={ShieldAlert} label="Guard posts" value={`${town.guardPosts.length}`} sub={`${town.cctvs.length} CCTV · ${town.streetlights.length} lamps`} />
-        <Kpi icon={Siren} label="SOS avg response" value="4.9 min" sub="last 30 days · target < 5" />
+        <Kpi icon={CloudRain} label="Flood-prone paths" value={fmtDist(floodLen)} sub="auto-rerouted in rain" tone="rain" />
+        <Kpi icon={Moon} label="Poorly-lit paths" value={fmtDist(darkLen)} sub="need lighting" tone="heat" />
+        <Kpi icon={ShieldAlert} label="Guard posts" value={`${town.guardPosts.length}`} sub={`${town.cctvs.length} CCTV cameras`} />
+        <Kpi icon={Siren} label="SOS avg response" value="4.9 min" sub="last 30 days" />
       </div>
 
       <Card className="p-4">
@@ -883,7 +879,6 @@ function Safety() {
       <Card className="p-4">
         <div className="flex items-center justify-between">
           <Eyebrow>Recent SOS alerts</Eyebrow>
-          <span className="text-[11px] text-ink-3">Township Guardian</span>
         </div>
         <ul className="mt-2 divide-y divide-line">
           {SOS_LOG.map((s) => (

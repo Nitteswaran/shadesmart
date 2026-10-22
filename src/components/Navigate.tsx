@@ -7,7 +7,7 @@ import {
   CloudRain,
   Flame,
   Footprints,
-  Info,
+  Layers,
   Lightbulb,
   Moon,
   Play,
@@ -86,6 +86,24 @@ const placeOptions: SelectOption[] = KIND_ORDER.flatMap((k) =>
 
 export const coverageLabel = (c: Conditions) => (c.night ? 'Lit' : c.weather === 'rainy' ? 'Rain cover' : 'Shade')
 
+const weightLabel = (w: number) => (w < 1.6 ? 'Fastest' : w < 2.8 ? 'Balanced' : w < 4 ? 'Prefer shade' : 'Max shade')
+
+function Chip({ on, onClick, icon: Icon, label }: { on: boolean; onClick: () => void; icon: typeof Sun; label: string }) {
+  return (
+    <button
+      onClick={onClick}
+      aria-pressed={on}
+      className={clsx(
+        'flex items-center gap-1.5 rounded-full border px-3 py-2 text-[12.5px] font-semibold transition-all',
+        on ? 'border-leaf bg-leaf text-white shadow-soft' : 'border-line bg-card text-ink-2 hover:border-ink/25 hover:text-ink',
+      )}
+    >
+      <Icon size={14} strokeWidth={2.3} />
+      {label}
+    </button>
+  )
+}
+
 // ---------- left panel ----------
 
 export function NavigatePanel({
@@ -117,6 +135,7 @@ export function NavigatePanel({
   onSOSTap: () => void
   onSOSHold: () => void
 }) {
+  const [allSteps, setAllSteps] = useState(false)
   const segments = useMemo(() => {
     if (!smart?.found) return []
     const out: { name: string; len: number; surface: Surface; cov: number }[] = []
@@ -141,15 +160,26 @@ export function NavigatePanel({
           <br />
           <span className="text-leaf">cool</span> way.
         </h1>
-        <p className="mt-3 max-w-[330px] text-[14px] leading-relaxed text-ink-2">
-          Routes that follow tree canopy, covered walkways and lit corridors — not just the shortest line.
-        </p>
+        <div className="mt-4 grid grid-cols-2 gap-2">
+          <div className="rounded-2xl border border-line bg-card px-3 py-2.5">
+            <svg width="30" height="6" aria-hidden>
+              <line x1="1" y1="3" x2="29" y2="3" stroke="#e4572e" strokeWidth="4" strokeDasharray="5 3.5" />
+            </svg>
+            <div className="mt-1.5 text-[12.5px] font-bold leading-tight">Shortest path</div>
+            <div className="text-[11px] text-ink-3">Fast, but hot</div>
+          </div>
+          <div className="rounded-2xl bg-forest px-3 py-2.5 text-white">
+            <span className="block h-1.5 w-[30px] rounded-full bg-mint" />
+            <div className="mt-1.5 text-[12.5px] font-bold leading-tight">ShadeSmart</div>
+            <div className="text-[11px] text-white/60">A little longer, much cooler</div>
+          </div>
+        </div>
       </div>
 
       {/* scenarios */}
       <div>
         <Eyebrow className="mb-2 flex items-center gap-1.5">
-          <Sparkles size={11} /> Demo scenarios
+          <Sparkles size={11} /> Try a scenario
         </Eyebrow>
         <div className="grid grid-cols-3 gap-2">
           {SCENARIOS.map((s) => {
@@ -234,74 +264,53 @@ export function NavigatePanel({
             onChange={(v) => setCond({ hour: v })}
             fill={cond.night ? '#4b55a8' : '#f2b33d'}
           />
-          <div className="flex justify-between font-mono text-[10px] text-ink-3">
-            <span>06:00</span>
-            <span>13:00 peak sun</span>
-            <span>23:00</span>
-          </div>
         </div>
         <Toggle
           checked={cond.night}
           onChange={(v) => setCond({ night: v })}
           icon={Moon}
           tone="night"
-          label="Night-time safety mode"
-          hint="Prioritise streetlights, CCTV & guard posts"
+          label="Night safety mode"
         />
       </section>
 
       {/* preferences */}
       <section className="space-y-3">
         <Eyebrow>Preferences</Eyebrow>
-        <div className="rounded-2xl border border-line px-4 pb-2 pt-3">
+        <div className="rounded-2xl border border-line px-4 pb-2.5 pt-3">
           <div className="flex items-center justify-between">
             <span className="flex items-center gap-1.5 text-[13px] font-semibold">
               {cond.night ? <Lightbulb size={14} /> : cond.weather === 'rainy' ? <Umbrella size={14} /> : <Sun size={14} />}
-              {cond.night ? 'Safety weight' : cond.weather === 'rainy' ? 'Cover weight' : 'Shade preference'}
+              {cond.night ? 'Light vs. distance' : cond.weather === 'rainy' ? 'Cover vs. distance' : 'Shade vs. distance'}
             </span>
-            <span className="rounded-full bg-ink px-2 py-0.5 font-mono text-[12px] font-semibold tabular text-white">
-              {cond.shadeWeight.toFixed(1)}×
-            </span>
+            <span className="rounded-full bg-ink px-2.5 py-0.5 text-[11.5px] font-semibold text-white">{weightLabel(cond.shadeWeight)}</span>
           </div>
           <Range label="Shade preference" value={cond.shadeWeight} min={1} max={5} step={0.1} onChange={(v) => setCond({ shadeWeight: v })} />
-          <div className="flex justify-between font-mono text-[10px] text-ink-3">
-            <span>1.0 shortest</span>
-            <span>5.0 max {cond.night ? 'safety' : cond.weather === 'rainy' ? 'cover' : 'shade'}</span>
-          </div>
-          <div className="mt-2 flex items-start gap-1.5 rounded-xl bg-paper-2/70 px-2.5 py-2 font-mono text-[10.5px] leading-snug text-ink-2">
-            <Info size={12} className="mt-px shrink-0" />
-            <span>cost = distance × (1 + (1 − coverage) × (weight − 1) × 1.5)</span>
+          <div className="flex justify-between text-[11px] font-medium text-ink-3">
+            <span>Shortest</span>
+            <span>{cond.night ? 'Brightest' : cond.weather === 'rainy' ? 'Driest' : 'Shadiest'}</span>
           </div>
         </div>
-        <Toggle
-          checked={cond.wheelchair}
-          onChange={(v) => setCond({ wheelchair: v })}
-          icon={Accessibility}
-          label="Wheelchair & stroller friendly"
-          hint="Avoid stairs and unpaved trails"
-        />
-        <Toggle
-          checked={cond.fewerCrossings}
-          onChange={(v) => setCond({ fewerCrossings: v })}
-          icon={TrafficCone}
-          label="Fewer road crossings"
-          hint="Better for kids and elderly walkers"
-        />
-        <Toggle
-          checked={showNetwork}
-          onChange={setShowNetwork}
-          icon={Sparkles}
-          label="Show coverage layer"
-          hint="Colour every path by live coverage"
-        />
+        <div className="flex flex-wrap gap-2">
+          <Chip on={cond.wheelchair} onClick={() => setCond({ wheelchair: !cond.wheelchair })} icon={Accessibility} label="Step-free" />
+          <Chip on={cond.fewerCrossings} onClick={() => setCond({ fewerCrossings: !cond.fewerCrossings })} icon={TrafficCone} label="Fewer crossings" />
+          <Chip on={showNetwork} onClick={() => setShowNetwork(!showNetwork)} icon={Layers} label="Shade layer" />
+        </div>
       </section>
 
       {/* directions */}
       {segments.length > 0 && (
         <section>
-          <Eyebrow className="mb-2">ShadeSmart directions</Eyebrow>
+          <div className="mb-2 flex items-center justify-between">
+            <Eyebrow>Your route</Eyebrow>
+            {segments.length > 4 && (
+              <button onClick={() => setAllSteps(!allSteps)} className="text-[11.5px] font-semibold text-leaf hover:underline">
+                {allSteps ? 'Show less' : `All ${segments.length} steps`}
+              </button>
+            )}
+          </div>
           <ol className="relative space-y-0.5">
-            {segments.map((s, i) => {
+            {(allSteps ? segments : segments.slice(0, 4)).map((s, i) => {
               const meta = SURFACE_META[s.surface]
               const Icon = meta.icon
               return (
@@ -314,9 +323,7 @@ export function NavigatePanel({
                   </span>
                   <span className="min-w-0 flex-1">
                     <span className="block truncate text-[13px] font-semibold">{s.name}</span>
-                    <span className="block text-[11.5px] text-ink-3">
-                      {fmtDist(s.len)} · {pct(s.cov)} {coverageLabel(cond).toLowerCase()}
-                    </span>
+                    <span className="block text-[11.5px] text-ink-3">{fmtDist(s.len)}</span>
                   </span>
                   <span className="h-1.5 w-12 shrink-0 overflow-hidden rounded-full bg-paper-2">
                     <span className="block h-full rounded-full bg-leaf" style={{ width: pct(s.cov) }} />
@@ -404,7 +411,7 @@ export function RouteCompare({
           <span className="text-[12px] font-semibold text-white/60">{label.toLowerCase()}</span>
           {dCov > 0 && (
             <span className="ml-auto hidden rounded-full bg-mint px-2 py-0.5 font-mono text-[11px] font-bold text-forest tabular sm:inline">
-              +{dCov} pts
+              +{dCov}%
             </span>
           )}
         </div>
@@ -464,7 +471,6 @@ export function InsightsStrip({
         <div className="flex items-center justify-between">
           <div>
             <Eyebrow>{label} along your walk</Eyebrow>
-            <div className="mt-1 text-[13px] font-semibold text-ink-2">Start → destination, % of route</div>
           </div>
           <div className="flex gap-3 text-[11px] font-semibold">
             <span className="flex items-center gap-1.5"><span className="size-2 rounded-full bg-heat" />Shortest</span>

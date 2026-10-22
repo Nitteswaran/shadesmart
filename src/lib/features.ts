@@ -133,3 +133,35 @@ export function routeBadges(short: Route | null, smart: Route | null, c: Conditi
   }
   return out
 }
+
+export interface RouteTag {
+  id: 'short' | 'smart'
+  at: LngLat
+  text: string
+  sub: string
+}
+
+/** Where each route strays furthest from the other — the clearest spot to label it on the map. */
+function farthestFrom(a: LngLat[], b: LngLat[]) {
+  let best = a[Math.floor(a.length / 2)]
+  let bestD = -1
+  // skip the ends so labels don't sit on the start/finish pins
+  for (let i = Math.floor(a.length * 0.15); i < Math.ceil(a.length * 0.85); i++) {
+    let m = Infinity
+    for (const q of b) m = Math.min(m, Math.hypot(a[i][0] - q[0], a[i][1] - q[1]))
+    if (m > bestD) {
+      bestD = m
+      best = a[i]
+    }
+  }
+  return best
+}
+
+export function routeTags(short: Route | null, smart: Route | null, shortCov: number, smartCov: number, c: Conditions): RouteTag[] {
+  if (!short?.found || !smart?.found) return []
+  const word = c.night ? 'lit' : c.weather === 'rainy' ? 'covered' : 'shade'
+  return [
+    { id: 'short', at: farthestFrom(short.coords, smart.coords), text: 'Shortest', sub: `${Math.round(shortCov * 100)}% ${word}` },
+    { id: 'smart', at: farthestFrom(smart.coords, short.coords), text: 'ShadeSmart', sub: `${Math.round(smartCov * 100)}% ${word}` },
+  ]
+}

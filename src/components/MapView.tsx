@@ -19,7 +19,7 @@ import { SHADE_STOPS } from '../lib/meta'
 import { dayTint } from '../lib/daylight'
 import type { Overrides, Placement, Tool } from '../lib/placements'
 import type { MapApi } from './Race'
-import type { Badge } from '../lib/features'
+import type { Badge, RouteTag } from '../lib/features'
 import { BADGE_META, BadgeIcon } from './icons'
 
 maplibregl.setWorkerUrl(workerUrl)
@@ -45,6 +45,7 @@ interface Props {
   onPlace: (at: LngLat, toleranceMetres: number) => void
   floodHazards: Edge[]
   badges: Badge[]
+  tags: RouteTag[]
   fitKey: string
 }
 
@@ -248,6 +249,7 @@ export default function MapView(p: Props) {
   const markers = useRef<maplibregl.Marker[]>([])
   const hazardMarkers = useRef<maplibregl.Marker[]>([])
   const badgeMarkers = useRef<maplibregl.Marker[]>([])
+  const tagMarkers = useRef<maplibregl.Marker[]>([])
   const popup = useRef<maplibregl.Popup | null>(null)
   const onSelectRef = useRef(p.onSelectCorridor)
   const viewRef = useRef(p.view)
@@ -455,6 +457,21 @@ export default function MapView(p: Props) {
       badgeMarkers.current.push(marker)
     }
   }, [p.badges, p.view])
+
+  // ---------- route name tags ----------
+  useEffect(() => {
+    const map = mapRef.current
+    if (!map) return
+    for (const m of tagMarkers.current) m.remove()
+    tagMarkers.current = []
+    if (p.view !== 'navigate') return
+    for (const t of p.tags) {
+      const el = document.createElement('div')
+      el.className = `ss-tag ss-tag-${t.id}`
+      el.innerHTML = `<b>${t.text}</b><span>${t.sub}</span>`
+      tagMarkers.current.push(new maplibregl.Marker({ element: el, anchor: 'bottom', offset: [0, -10] }).setLngLat(t.at).addTo(map))
+    }
+  }, [p.tags, p.view])
 
   // ---------- origin / destination ----------
   useEffect(() => {

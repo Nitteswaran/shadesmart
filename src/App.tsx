@@ -8,7 +8,7 @@ import { InsightsStrip, NavigatePanel, RouteCompare, SCENARIOS, type Scenario } 
 import { PlannerMapOverlay, PlannerPanel, type PlanItem } from './components/Planner'
 import { SOSButton, SOSSheet, type Phase } from './components/SOS'
 import { dijkstra, edgeCost, placeById, routeStats, town, type Conditions } from './lib/engine'
-import { routeBadges } from './lib/features'
+import { routeBadges, routeTags } from './lib/features'
 import { isNightHour } from './lib/daylight'
 import { computeOverrides, placementImpact, snapToNetwork, type Placement, type Tool } from './lib/placements'
 import { RaceHUD, type MapApi } from './components/Race'
@@ -67,6 +67,11 @@ export default function App() {
   const badges = useMemo(
     () => routeBadges(shortRoute.found ? shortRoute : null, smartRoute.found ? smartRoute : null, cond),
     [shortRoute, smartRoute, cond],
+  )
+  const tags = useMemo(
+    () =>
+      routeTags(shortRoute.found ? shortRoute : null, smartRoute.found ? smartRoute : null, shortStats?.coverage ?? 0, smartStats?.coverage ?? 0, cond),
+    [shortRoute, smartRoute, shortStats, smartStats, cond],
   )
   const floodHazards = useMemo(
     () => (cond.weather === 'rainy' ? (shortStats?.floodSegments ?? []) : []),
@@ -214,6 +219,7 @@ export default function App() {
               }}
               floodHazards={floodHazards}
               badges={badges}
+              tags={tags}
               fitKey={fitKey}
             />
             {view === 'navigate' ? (
@@ -296,16 +302,9 @@ export default function App() {
 }
 
 function MapLegend({ night, rainy, kinds }: { night: boolean; rainy: boolean; kinds: BadgeKind[] }) {
+  if (!night && !rainy && !kinds.length) return null
   return (
     <div className="absolute bottom-3 left-3 z-10 hidden flex-col gap-1.5 rounded-2xl border border-line bg-card/95 px-3.5 py-3 text-[11.5px] font-semibold shadow-float backdrop-blur sm:flex md:bottom-4 md:left-4">
-      <span className="flex items-center gap-2">
-        <svg width="22" height="6" aria-hidden><line x1="1" y1="3" x2="21" y2="3" stroke="#e4572e" strokeWidth="3.5" strokeDasharray="4 3" /></svg>
-        Shortest path
-      </span>
-      <span className="flex items-center gap-2">
-        <span className="h-1 w-[22px] rounded-full bg-forest" />
-        ShadeSmart route
-      </span>
       {night && (
         <>
           <span className="flex items-center gap-2"><span className="mx-[7px] size-2 rounded-full bg-[#ffc95c] shadow-[0_0_8px_#ffc95c]" />Streetlights</span>
