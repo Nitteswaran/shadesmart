@@ -185,3 +185,8 @@ input[type='range'].ss-range:active::-webkit-slider-thumb { transform: scale(1.1
 .ss-tag-smart span { color: #7bd389; opacity: 1; }
 
 .ss-proposed .ss-badge { outline: 2px dashed #13140f; outline-offset: 2px; }
+
+/* micro-interaction: every button gives a little under the finger */
+@layer base {
+  button:not(:disabled):active { scale: 0.97; }
+}

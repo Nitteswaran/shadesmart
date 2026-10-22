@@ -78,11 +78,41 @@ export function ToolPicker({
   tool,
   setTool,
   counts,
+  strip,
 }: {
   tool: Tool | null
   setTool: (t: Tool | null) => void
   counts: Partial<Record<Tool, number>>
+  /** single scrolling row, for small screens */
+  strip?: boolean
 }) {
+  if (strip)
+    return (
+      <div className="no-scrollbar flex gap-1.5 overflow-x-auto">
+        {TOOL_GROUPS.flatMap((g) => g.tools).map((t) => {
+          const Icon = TOOL_ICON[t]
+          const on = tool === t
+          const n = counts[t] ?? 0
+          return (
+            <button
+              key={t}
+              onClick={() => setTool(on ? null : t)}
+              aria-pressed={on}
+              className={clsx(
+                'flex shrink-0 items-center gap-1.5 rounded-full py-1 pl-1 pr-3 text-[12px] font-semibold transition',
+                on ? 'bg-ink text-white' : 'bg-paper-2 text-ink',
+              )}
+            >
+              <span className="grid size-6 place-items-center rounded-full text-white" style={{ background: TOOL_COLOR[t] }}>
+                <Icon size={12} strokeWidth={2.4} />
+              </span>
+              {TOOL_INFO[t].label}
+              {n > 0 && <span className="font-mono text-[11px] tabular opacity-70">×{n}</span>}
+            </button>
+          )
+        })}
+      </div>
+    )
   return (
     <div className="space-y-2">
       {TOOL_GROUPS.map((g) => (

@@ -15,6 +15,7 @@ import {
   Sun,
   Trash2,
   Undo2,
+  X,
   MousePointerClick,
   Trees,
   TrendingUp,
@@ -62,7 +63,8 @@ import {
 import type { PlannerLayer } from './MapView'
 import { headline, placementImpact, TOOL_INFO, type Tool } from '../lib/placements'
 import { WalkOrDrive } from './WalkOrDrive'
-import { ToolPicker } from './icons'
+import { AnimatePresence, motion } from 'motion/react'
+import { TOOL_COLOR, TOOL_ICON, ToolPicker } from './icons'
 import { ProposalsInbox } from './Propose'
 import type { Proposal, Status } from '../lib/proposals'
 import { Card, Eyebrow, Range, Segmented } from './ui'
@@ -164,6 +166,92 @@ function PlantToolbar({
   )
 }
 
+/** Small screens: a floating button opens the tools in a slide-up sheet that can be closed. */
+function PlantSheet(props: {
+  tool: Tool | null
+  setTool: (t: Tool | null) => void
+  impact: PlantImpact
+  count: number
+  onUndo: () => void
+  onClear: () => void
+}) {
+  const { tool, setTool, impact, count, onUndo, onClear } = props
+  const [open, setOpen] = useState(false)
+  const pick = (t: Tool | null) => {
+    setTool(t)
+    if (t) setOpen(false) // get out of the way so the map can be tapped
+  }
+  return (
+    <>
+      {tool ? (
+        <div className="absolute inset-x-2 bottom-2 z-20 flex items-center gap-2 rounded-2xl bg-ink p-1.5 pl-3 text-white shadow-float">
+          <span className="grid size-7 shrink-0 place-items-center rounded-lg" style={{ background: TOOL_COLOR[tool] }}>
+            {(() => {
+              const I = TOOL_ICON[tool]
+              return <I size={14} strokeWidth={2.4} />
+            })()}
+          </span>
+          <span className="min-w-0 flex-1 truncate text-[12.5px] font-semibold">Tap a street to add {TOOL_INFO[tool].label.toLowerCase()}</span>
+          <button aria-label="Undo" disabled={!count} onClick={onUndo} className="grid size-8 place-items-center rounded-full bg-white/10 disabled:opacity-30">
+            <Undo2 size={14} />
+          </button>
+          <button onClick={() => setTool(null)} className="rounded-full bg-white px-3 py-1.5 text-[12.5px] font-bold text-ink">
+            Done
+          </button>
+        </div>
+      ) : (
+        <button
+          onClick={() => setOpen(true)}
+          className="absolute bottom-3 right-3 z-20 flex items-center gap-2 rounded-full bg-leaf px-4 py-2.5 text-[13px] font-bold text-white shadow-float active:scale-95"
+        >
+          <Trees size={15} /> Plant{count ? ` · ${count}` : ''}
+        </button>
+      )}
+      <AnimatePresence>
+        {open && (
+          <motion.div className="fixed inset-0 z-[65]" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+            <div className="absolute inset-0 bg-ink/40 backdrop-blur-[2px]" onClick={() => setOpen(false)} />
+            <motion.div
+              role="dialog"
+              aria-label="Plant it yourself"
+              initial={{ y: '100%' }}
+              animate={{ y: 0 }}
+              exit={{ y: '100%' }}
+              transition={{ type: 'spring', stiffness: 380, damping: 36 }}
+              className="absolute inset-x-0 bottom-0 max-h-[82dvh] overflow-y-auto rounded-t-[28px] bg-card px-4 pb-[max(20px,env(safe-area-inset-bottom))] pt-2 shadow-float"
+            >
+              <div className="mx-auto mb-3 h-1.5 w-10 rounded-full bg-line" />
+              <div className="flex items-center justify-between">
+                <div className="font-display text-[20px] font-extrabold tracking-[-0.02em]">Plant it yourself</div>
+                <div className="flex gap-1">
+                  <button aria-label="Clear all" disabled={!count} onClick={onClear} className="grid size-9 place-items-center rounded-full bg-paper-2 disabled:opacity-30">
+                    <Trash2 size={15} />
+                  </button>
+                  <button aria-label="Close" onClick={() => setOpen(false)} className="grid size-9 place-items-center rounded-full bg-paper-2">
+                    <X size={16} />
+                  </button>
+                </div>
+              </div>
+              {count > 0 && (
+                <div className="mt-3 rounded-2xl bg-forest px-4 py-3 text-white">
+                  <div className="text-[11px] text-white/60">Shade on streets you changed</div>
+                  <div className="font-display text-[22px] font-extrabold tabular">
+                    {Math.round(impact.localBefore * 100)}% → <span className="text-mint">{Math.round(impact.localAfter * 100)}%</span>
+                  </div>
+                  <div className="text-[11.5px] text-white/70">{fmtRM(impact.cost)} · {impact.walkers.toLocaleString()} walkers/day</div>
+                </div>
+              )}
+              <div className="mt-3">
+                <ToolPicker tool={tool} setTool={pick} counts={impact.counts} />
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
+  )
+}
+
 export function PlannerMapOverlay({
   layer,
   setLayer,
@@ -174,7 +262,9 @@ export function PlannerMapOverlay({
   placementCount,
   onUndo,
   onClear,
+  compact,
 }: {
+  compact?: boolean
   layer: PlannerLayer
   setLayer: (l: PlannerLayer) => void
   hour: number
@@ -193,7 +283,11 @@ export function PlannerMapOverlay({
   const dark = layer === 'night'
   return (
     <>
-      <PlantToolbar tool={tool} setTool={setTool} impact={impact} count={placementCount} onUndo={onUndo} onClear={onClear} />
+      {compact ? (
+        <PlantSheet tool={tool} setTool={setTool} impact={impact} count={placementCount} onUndo={onUndo} onClear={onClear} />
+      ) : (
+        <PlantToolbar tool={tool} setTool={setTool} impact={impact} count={placementCount} onUndo={onUndo} onClear={onClear} />
+      )}
       <div className="absolute left-3 right-3 top-3 z-10 md:left-4 md:right-auto md:top-4 md:w-[min(400px,calc(100%-284px))]">
         <div className={clsx('rounded-full p-0 shadow-float', dark ? 'bg-night' : 'bg-card')}>
           <Segmented
@@ -210,7 +304,7 @@ export function PlannerMapOverlay({
         </div>
       </div>
 
-      <div className="absolute bottom-3 left-3 z-10 rounded-2xl border border-line bg-card/95 px-3.5 py-3 shadow-float backdrop-blur md:bottom-4 md:left-4">
+      <div className={clsx('absolute bottom-3 left-3 z-10 rounded-2xl border border-line bg-card/95 px-3.5 py-3 shadow-float backdrop-blur md:bottom-4 md:left-4', compact && 'hidden')}>
         <Eyebrow>{layer === 'heat' ? `Shade at ${fmtTime(hour)}` : layer === 'flood' ? 'Flood risk' : 'Lighting'}</Eyebrow>
         <div
           className="mt-2 h-2 w-44 rounded-full"

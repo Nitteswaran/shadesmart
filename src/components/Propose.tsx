@@ -88,7 +88,9 @@ export function ProposeOverlay({
   onClear,
   onCancel,
   onSubmit,
+  compact,
 }: {
+  compact?: boolean
   tool: Tool | null
   setTool: (t: Tool | null) => void
   draft: Placement[]
@@ -112,6 +114,20 @@ export function ProposeOverlay({
   return (
     <>
       {/* tool picker */}
+      {compact ? (
+        <motion.div
+          initial={{ opacity: 0, y: -8 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="absolute inset-x-2 top-2 z-20 flex items-center gap-1.5 rounded-2xl border border-line bg-card/95 p-1.5 shadow-float backdrop-blur"
+        >
+          <div className="min-w-0 flex-1">
+            <ToolPicker tool={tool} setTool={setTool} counts={counts} strip />
+          </div>
+          <button aria-label="Undo" disabled={!draft.length} onClick={onUndo} className="grid size-8 shrink-0 place-items-center rounded-full bg-paper-2 disabled:opacity-30">
+            <Undo2 size={14} />
+          </button>
+        </motion.div>
+      ) : (
       <motion.div
         initial={{ opacity: 0, y: -8 }}
         animate={{ opacity: 1, y: 0 }}
@@ -136,6 +152,7 @@ export function ProposeOverlay({
         )}
       </motion.div>
 
+      )}
       {/* proposal sheet: compact while placing, expands for details */}
       <motion.div
         layout

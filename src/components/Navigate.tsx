@@ -28,7 +28,7 @@ import {
   Umbrella,
   Zap,
 } from 'lucide-react'
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { Area, AreaChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts'
 import {
   placeById,
@@ -163,6 +163,7 @@ export function NavigatePanel({
   city,
   scenarios,
   onCity,
+  section,
 }: {
   origin: string
   dest: string
@@ -183,7 +184,10 @@ export function NavigatePanel({
   city: CityInfo
   scenarios: Scenario[]
   onCity: (city: string, origin?: string, dest?: string) => void
+  /** on phones/tablets the panel is split into tabs; undefined renders everything (desktop) */
+  section?: 'plan' | 'steps' | 'improve'
 }) {
+  const show = (part: 'hero' | 'plan' | 'steps' | 'improve') => (section ? section === part : true)
   const placeOptions = useMemo(() => buildOptions(city), [city])
   const pick = (which: 'origin' | 'dest') => (v: string) => {
     if (v.includes(OTHER)) {
@@ -197,7 +201,8 @@ export function NavigatePanel({
   const destName = placeById(dest).name
 
   return (
-    <div className="flex flex-col gap-5 p-5 md:p-6">
+    <div className={clsx('flex flex-col gap-5', section ? 'px-4 pb-4 pt-1' : 'p-5 md:p-6')}>
+      {show('hero') && (
       <div>
         <h1 className="font-display text-[40px] font-extrabold leading-[0.92] tracking-[-0.045em] md:text-[46px]">
           Walk the
@@ -219,6 +224,10 @@ export function NavigatePanel({
           </div>
         </div>
       </div>
+      )}
+
+      {show('plan') && (
+      <>
 
       {/* city */}
       <div>
@@ -364,19 +373,22 @@ export function NavigatePanel({
         </div>
       </section>
 
+      </>
+      )}
+
       {/* directions */}
-      {segments.length > 0 && (
+      {show('steps') && segments.length > 0 && (
         <section>
           <div className="mb-2 flex items-center justify-between">
             <Eyebrow>Your route</Eyebrow>
-            {segments.length > 5 && (
+            {segments.length > 5 && section !== 'steps' && (
               <button onClick={() => setAllSteps(!allSteps)} className="text-[11.5px] font-semibold text-leaf hover:underline">
                 {allSteps ? 'Show less' : `All ${segments.length} steps`}
               </button>
             )}
           </div>
           <ol className="relative">
-            {(allSteps ? segments : [...segments.slice(0, 4), ...(segments.length > 4 ? [segments[segments.length - 1]] : [])]).map((s, i, arr) => {
+            {(allSteps || section === 'steps' ? segments : [...segments.slice(0, 4), ...(segments.length > 4 ? [segments[segments.length - 1]] : [])]).map((s, i, arr) => {
               const meta = SURFACE_META[s.surface]
               const SurfIcon = meta.icon
               const TurnIcon = TURN_ICON[s.turn]
@@ -425,12 +437,15 @@ export function NavigatePanel({
         </section>
       )}
 
-      <ProposeCard onStart={onPropose} mine={myProposals} active={proposing} />
-
-      <section>
-        <Eyebrow className="mb-2">Township Guardian</Eyebrow>
-        <SOSButton variant="block" onTap={onSOSTap} onHoldComplete={onSOSHold} />
-      </section>
+      {show('improve') && (
+        <>
+          <ProposeCard onStart={onPropose} mine={myProposals} active={proposing} />
+          <section>
+            <Eyebrow className="mb-2">Township Guardian</Eyebrow>
+            <SOSButton variant="block" onTap={onSOSTap} onHoldComplete={onSOSHold} />
+          </section>
+        </>
+      )}
     </div>
   )
 }
@@ -444,7 +459,9 @@ export function RouteCompare({
   onPreview,
   walking,
   rerouted,
+  inline,
 }: {
+  inline?: boolean
   cond: Conditions
   short: RouteStats | null
   smart: RouteStats | null
@@ -458,7 +475,12 @@ export function RouteCompare({
   const dMin = smart.minutes - short.minutes
   const dCov = Math.round((smart.coverage - short.coverage) * 100)
   return (
-    <div className="pointer-events-none absolute inset-x-3 top-3 z-10 grid grid-cols-2 gap-2.5 md:inset-x-4 md:top-4 md:max-w-[600px] md:gap-3">
+    <div
+      className={clsx(
+        'grid grid-cols-2 gap-2.5',
+        !inline && 'pointer-events-none absolute inset-x-3 top-3 z-10 md:inset-x-4 md:top-4 md:max-w-[600px] md:gap-3',
+      )}
+    >
       <div className="pointer-events-auto rounded-[20px] border border-line bg-card/95 p-3.5 shadow-float backdrop-blur md:p-4">
         <div className="flex items-center gap-2">
           <svg width="26" height="6" aria-hidden>
@@ -468,7 +490,7 @@ export function RouteCompare({
         </div>
         <div className="mt-2.5 flex items-baseline gap-1">
           <span className="font-display text-[30px] font-extrabold leading-none tracking-[-0.03em] tabular text-heat md:text-[36px]">
-            {Math.round(short.coverage * 100)}%
+            <CountUp value={Math.round(short.coverage * 100)} />%
           </span>
           <span className="text-[12px] font-semibold text-ink-3">{label.toLowerCase()}</span>
         </div>
@@ -498,7 +520,7 @@ export function RouteCompare({
         </div>
         <div className="relative mt-2.5 flex items-baseline gap-1">
           <span className="font-display text-[30px] font-extrabold leading-none tracking-[-0.03em] tabular text-mint md:text-[36px]">
-            {Math.round(smart.coverage * 100)}%
+            <CountUp value={Math.round(smart.coverage * 100)} />%
           </span>
           <span className="text-[12px] font-semibold text-white/60">{label.toLowerCase()}</span>
           {dCov > 0 && (
@@ -689,4 +711,29 @@ function Stat({ icon: Icon, value, label, accent }: { icon: typeof Sun; value: s
       <div className="mt-1 text-[11px] leading-tight text-ink-3">{label}</div>
     </div>
   )
+}
+
+/** Numbers that roll to their new value — a small cue that the route was recalculated. */
+function CountUp({ value }: { value: number }) {
+  const [shown, setShown] = useState(value)
+  const from = useRef(value)
+  useEffect(() => {
+    const start = from.current
+    if (start === value) return
+    const t0 = performance.now()
+    let raf = 0
+    const tick = (t: number) => {
+      const k = Math.min(1, (t - t0) / 450)
+      const v = Math.round(start + (value - start) * (1 - (1 - k) ** 3))
+      setShown(v)
+      if (k < 1) raf = requestAnimationFrame(tick)
+      else from.current = value
+    }
+    raf = requestAnimationFrame(tick)
+    return () => {
+      cancelAnimationFrame(raf)
+      from.current = value
+    }
+  }, [value])
+  return <span className="tabular">{shown}</span>
 }

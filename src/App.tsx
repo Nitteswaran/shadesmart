@@ -1,8 +1,8 @@
 import clsx from 'clsx'
 import { CircleCheck, CloudRain, Moon, Siren, Sun, TriangleAlert } from 'lucide-react'
-import { AnimatePresence } from 'motion/react'
+import { AnimatePresence, motion } from 'motion/react'
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
-import { Header, Logo, Toasts, type Toast, type View } from './components/Chrome'
+import { BottomNav, Header, Logo, Toasts, useIsDesktop, type MobileTab, type Toast, type View } from './components/Chrome'
 import MapView, { type PlannerLayer } from './components/MapView'
 import { InsightsStrip, NavigatePanel, RouteCompare, scenariosFor, type Scenario } from './components/Navigate'
 import { PlannerMapOverlay, PlannerPanel, type PlanItem } from './components/Planner'
@@ -128,7 +128,7 @@ function CityApp({
   const pushToast = useCallback((t: Omit<Toast, 'id'>) => {
     const id = ++toastId.current
     setToasts((ts) => [...ts.filter((x) => x.title !== t.title).slice(-2), { ...t, id }])
-    setTimeout(() => setToasts((ts) => ts.filter((x) => x.id !== id)), 6000)
+    setTimeout(() => setToasts((ts) => ts.filter((x) => x.id !== id)), 3200)
   }, [])
 
   const o = placeById(origin)
@@ -161,32 +161,19 @@ function CityApp({
       pushToast({
         tone: 'rain',
         icon: CloudRain,
-        title: 'Heavy rain & lightning detected',
-        body: s.floodSegments.length
-          ? `Water rising near Eco Lake — ${s.floodSegments.length} low-lying segment${s.floodSegments.length > 1 ? 's' : ''} blocked. Rerouting through covered shophouse corridors.`
-          : 'Rerouting your walk through covered shophouse corridors and away from low-lying paths.',
+        title: 'Heavy rain — rerouting',
+        body: s.floodSegments.length ? `${s.floodSegments.length} flooded path${s.floodSegments.length > 1 ? 's' : ''} avoided.` : 'Taking covered walkways.',
       })
-      if (s.floodSegments.length)
-        setTimeout(
-          () =>
-            pushToast({
-              tone: 'sos',
-              icon: TriangleAlert,
-              title: 'Blocked due to flood risk — Rerouted',
-              body: 'Your shortest path crosses a flood-prone underpass. ShadeSmart sent you around it.',
-            }),
-          700,
-        )
     }
     if (next.weather === 'sunny' && prev.weather === 'rainy' && !next.night) {
-      pushToast({ tone: 'heat', icon: Sun, title: 'Rain has cleared', body: 'Back to heat-aware routing via tree canopy and shade.' })
+      pushToast({ tone: 'heat', icon: Sun, title: 'Rain cleared', body: 'Back to shade routing.' })
     }
     if (next.night && !prev.night) {
       pushToast({
         tone: 'night',
         icon: Moon,
-        title: 'Night-time safety mode on',
-        body: 'Routing along well-lit corridors with CCTV coverage and active guard posts.',
+        title: 'Night mode on',
+        body: 'Following lit, watched streets.',
       })
     }
   }
@@ -226,7 +213,7 @@ function CityApp({
         tone: 'sos',
         icon: Siren,
         title: isSilent ? 'Silent SOS sent' : 'SOS sent',
-        body: `Live GPS sent to ${authority().police} & the nearest guard post.`,
+        body: `GPS shared with ${authority().police}.`,
       })
     },
     [pushToast],
@@ -259,8 +246,8 @@ function CityApp({
     if (status === 'approved') setPlacements((ps) => [...ps, ...p.placements.map((x) => ({ ...x, id: ++placeId.current, proposed: false }))])
     pushToast(
       status === 'approved'
-        ? { tone: 'leaf', icon: CircleCheck, title: `${p.ref} approved`, body: 'Added to the works plan — the heat map now shows the new shade.' }
-        : { tone: 'heat', icon: TriangleAlert, title: `${p.ref} declined`, body: 'The resident has been notified.' },
+        ? { tone: 'leaf', icon: CircleCheck, title: 'Proposal approved', body: `${p.ref} added to the works plan.` }
+        : { tone: 'heat', icon: TriangleAlert, title: 'Proposal declined', body: `${p.ref} · resident notified.` },
     )
   }
 
@@ -269,6 +256,179 @@ function CityApp({
   )
 
   const fitKey = `${origin}-${dest}-${cond.weather}-${cond.night}-${cond.wheelchair}`
+
+  const desktop = useIsDesktop()
+  const [mtab, setMtab] = useState<MobileTab>('route')
+  const mobileMain = useRef<HTMLElement>(null)
+  const goTab = (t: MobileTab) => {
+    setMtab(t)
+    setViewState(t === 'planner' ? 'planner' : 'navigate')
+    if (t === 'planner') {
+      setDraft(null)
+      setProposeTool(null)
+    }
+    setWalking(false)
+    mobileMain.current?.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
+  const navPanel = (section?: 'plan' | 'steps' | 'improve') => (
+  <NavigatePanel
+    origin={origin}
+    dest={dest}
+    setOrigin={(v) => { setOrigin(v); setScenario(null); setWalking(false) }}
+    setDest={(v) => { setDest(v); setScenario(null); setWalking(false) }}
+    cond={cond}
+    setCond={setCond}
+    scenario={scenario}
+    applyScenario={applyScenario}
+    city={city}
+    scenarios={scenarios}
+    onCity={onCity}
+    section={section}
+    smart={smartRoute}
+    showNetwork={showNetwork}
+    setShowNetwork={setShowNetwork}
+    onSOSTap={() => setSos('arming')}
+    onSOSHold={() => sendSOS(true)}
+    proposing={draft !== null}
+    myProposals={proposals.filter((p) => p.mine)}
+    onPropose={() => {
+      setDraft([])
+      setProposeTool('tree')
+      setWalking(false)
+      mobileMain.current?.scrollTo({ top: 0, behavior: 'smooth' })
+    }}
+  />
+  )
+  const mapInner = (
+    <>
+      <MapView
+        view={view}
+        cond={cond}
+        shortest={shortRoute.found ? shortRoute : null}
+        smart={smartRoute.found ? smartRoute : null}
+        origin={o}
+        dest={d}
+        showNetwork={showNetwork || draft !== null}
+        plannerLayer={plannerLayer}
+        plannerHour={plannerHour}
+        selectedCorridor={selectedCorridor}
+        onSelectCorridor={setSelectedCorridor}
+        apiRef={mapApi}
+        overrides={overrides}
+        placements={mapPlacements}
+        plantTool={view === 'planner' ? plantTool : draft ? proposeTool : null}
+        onPlace={(click, tolerance) => {
+          const at = snapToNetwork(click, tolerance)
+          if (!at) return
+          if (view === 'planner' && plantTool) setPlacements((ps) => [...ps, { id: ++placeId.current, tool: plantTool, at }])
+          else if (draft && proposeTool) setDraft([...draft, { id: ++placeId.current, tool: proposeTool, at }])
+        }}
+        focus={reviewed ? reviewed.placements.map((p) => p.at) : null}
+        floodHazards={floodHazards}
+        badges={badges}
+        tags={tags}
+        fitKey={fitKey}
+      />
+      {loadingCity && (
+        <div className="pointer-events-none absolute left-1/2 top-1/2 z-30 flex -translate-x-1/2 -translate-y-1/2 items-center gap-2.5 rounded-full bg-ink px-5 py-3 text-[14px] font-bold text-white shadow-float">
+          <span className="size-2.5 animate-ping rounded-full bg-mint" /> Flying to {loadingCity}…
+        </div>
+      )}
+      {view === 'navigate' ? (
+        <>
+          {draft && (
+            <ProposeOverlay
+              tool={proposeTool}
+              setTool={setProposeTool}
+              draft={draft}
+              onUndo={() => setDraft(draft.slice(0, -1))}
+              onClear={() => setDraft([])}
+              onCancel={() => {
+                setDraft(null)
+                setProposeTool(null)
+              }}
+              onSubmit={submitProposal}
+              compact={!desktop}
+            />
+          )}
+          {desktop && (
+          <RouteCompare
+            cond={cond}
+            short={shortStats}
+            smart={smartStats}
+            walking={walking}
+            onPreview={() => setWalking(true)}
+            rerouted={cond.weather === 'rainy' && (shortStats?.floodSegments.length ?? 0) > 0}
+          />
+          )}
+          <AnimatePresence>
+            {walking && !draft && shortRoute.found && smartRoute.found && (
+              <RaceHUD
+                key={`${origin}-${dest}`}
+                shortRoute={shortRoute}
+                smartRoute={smartRoute}
+                cond={cond}
+                ov={overrides}
+                mapApi={mapApi}
+                onClose={() => setWalking(false)}
+              />
+            )}
+          </AnimatePresence>
+          {!draft && <MapLegend night={cond.night} rainy={cond.weather === 'rainy'} kinds={[...new Set(badges.map((b) => b.kind))]} />}
+        </>
+      ) : (
+        <PlannerMapOverlay
+          layer={plannerLayer}
+          setLayer={setPlannerLayer}
+          hour={plannerHour}
+          tool={plantTool}
+          setTool={setPlantTool}
+          impact={impact}
+          placementCount={placements.length}
+          onUndo={() => setPlacements((ps) => ps.slice(0, -1))}
+          onClear={() => setPlacements([])}
+          compact={!desktop}
+        />
+      )}
+    </>
+  )
+  const plannerPanel = (
+  <PlannerPanel
+    hour={plannerHour}
+    layer={plannerLayer}
+    selected={selectedCorridor}
+    setSelected={setSelectedCorridor}
+    plan={plan}
+    setPlan={setPlan}
+    proposals={proposals}
+    reviewing={reviewing}
+    setReviewing={setReviewing}
+    onDecide={decideProposal}
+    onPlanAdded={(item) =>
+      pushToast({
+        tone: 'leaf',
+        icon: CircleCheck,
+        title: 'Added to capital plan',
+        body: `${item.name} · +${Math.round(item.uplift * 100)}% walkability for ${item.residents.toLocaleString()} residents a day.`,
+      })
+    }
+  />
+  )
+  const insights = (
+  <InsightsStrip cond={cond} shortRoute={shortRoute} smartRoute={smartRoute} short={shortStats} smart={smartStats} ov={overrides} onHour={(h) => setCond({ hour: h })} />
+  )
+  const compareInline = (
+    <RouteCompare
+        inline
+        cond={cond}
+        short={shortStats}
+        smart={smartStats}
+        walking={walking}
+        onPreview={() => setWalking(true)}
+        rerouted={cond.weather === 'rainy' && (shortStats?.floodSegments.length ?? 0) > 0}
+      />
+  )
 
   return (
     <div className="flex h-dvh flex-col overflow-hidden bg-paper">
@@ -284,155 +444,61 @@ function CityApp({
         sos={sosButton}
       />
 
+      {desktop ? (
       <main className="flex min-h-0 flex-1 flex-col overflow-y-auto lg:flex-row lg:overflow-hidden">
         {view === 'navigate' && (
           <aside className="thin-scroll shrink-0 border-line lg:w-[400px] lg:overflow-y-auto lg:border-r">
-            <NavigatePanel
-              origin={origin}
-              dest={dest}
-              setOrigin={(v) => { setOrigin(v); setScenario(null); setWalking(false) }}
-              setDest={(v) => { setDest(v); setScenario(null); setWalking(false) }}
-              cond={cond}
-              setCond={setCond}
-              scenario={scenario}
-              applyScenario={applyScenario}
-              city={city}
-              scenarios={scenarios}
-              onCity={onCity}
-              smart={smartRoute}
-              showNetwork={showNetwork}
-              setShowNetwork={setShowNetwork}
-              onSOSTap={() => setSos('arming')}
-              onSOSHold={() => sendSOS(true)}
-              proposing={draft !== null}
-              myProposals={proposals.filter((p) => p.mine)}
-              onPropose={() => {
-                setDraft([])
-                setProposeTool('tree')
-                setWalking(false)
-              }}
-            />
+            {navPanel()}
           </aside>
         )}
 
         <section className="flex min-h-0 min-w-0 flex-1 flex-col">
           <div className={clsx('relative min-h-[560px] flex-1 lg:min-h-0', cond.night && view === 'navigate' && 'bg-night')}>
-            <MapView
-              view={view}
-              cond={cond}
-              shortest={shortRoute.found ? shortRoute : null}
-              smart={smartRoute.found ? smartRoute : null}
-              origin={o}
-              dest={d}
-              showNetwork={showNetwork || draft !== null}
-              plannerLayer={plannerLayer}
-              plannerHour={plannerHour}
-              selectedCorridor={selectedCorridor}
-              onSelectCorridor={setSelectedCorridor}
-              apiRef={mapApi}
-              overrides={overrides}
-              placements={mapPlacements}
-              plantTool={view === 'planner' ? plantTool : draft ? proposeTool : null}
-              onPlace={(click, tolerance) => {
-                const at = snapToNetwork(click, tolerance)
-                if (!at) return
-                if (view === 'planner' && plantTool) setPlacements((ps) => [...ps, { id: ++placeId.current, tool: plantTool, at }])
-                else if (draft && proposeTool) setDraft([...draft, { id: ++placeId.current, tool: proposeTool, at }])
-              }}
-              focus={reviewed ? reviewed.placements.map((p) => p.at) : null}
-              floodHazards={floodHazards}
-              badges={badges}
-              tags={tags}
-              fitKey={fitKey}
-            />
-            {loadingCity && (
-              <div className="pointer-events-none absolute left-1/2 top-1/2 z-30 flex -translate-x-1/2 -translate-y-1/2 items-center gap-2.5 rounded-full bg-ink px-5 py-3 text-[14px] font-bold text-white shadow-float">
-                <span className="size-2.5 animate-ping rounded-full bg-mint" /> Flying to {loadingCity}…
-              </div>
-            )}
-            {view === 'navigate' ? (
-              <>
-                {draft && (
-                  <ProposeOverlay
-                    tool={proposeTool}
-                    setTool={setProposeTool}
-                    draft={draft}
-                    onUndo={() => setDraft(draft.slice(0, -1))}
-                    onClear={() => setDraft([])}
-                    onCancel={() => {
-                      setDraft(null)
-                      setProposeTool(null)
-                    }}
-                    onSubmit={submitProposal}
-                  />
-                )}
-                <RouteCompare
-                  cond={cond}
-                  short={shortStats}
-                  smart={smartStats}
-                  walking={walking}
-                  onPreview={() => setWalking(true)}
-                  rerouted={cond.weather === 'rainy' && (shortStats?.floodSegments.length ?? 0) > 0}
-                />
-                <AnimatePresence>
-                  {walking && !draft && shortRoute.found && smartRoute.found && (
-                    <RaceHUD
-                      key={`${origin}-${dest}`}
-                      shortRoute={shortRoute}
-                      smartRoute={smartRoute}
-                      cond={cond}
-                      ov={overrides}
-                      mapApi={mapApi}
-                      onClose={() => setWalking(false)}
-                    />
-                  )}
-                </AnimatePresence>
-                {!draft && <MapLegend night={cond.night} rainy={cond.weather === 'rainy'} kinds={[...new Set(badges.map((b) => b.kind))]} />}
-              </>
-            ) : (
-              <PlannerMapOverlay
-                layer={plannerLayer}
-                setLayer={setPlannerLayer}
-                hour={plannerHour}
-                tool={plantTool}
-                setTool={setPlantTool}
-                impact={impact}
-                placementCount={placements.length}
-                onUndo={() => setPlacements((ps) => ps.slice(0, -1))}
-                onClear={() => setPlacements([])}
-              />
-            )}
+            {mapInner}
           </div>
-          {view === 'navigate' && (
-            <InsightsStrip cond={cond} shortRoute={shortRoute} smartRoute={smartRoute} short={shortStats} smart={smartStats} ov={overrides} onHour={(h) => setCond({ hour: h })} />
-          )}
+          {view === 'navigate' && insights}
         </section>
 
         {view === 'planner' && (
           <aside className="flex shrink-0 flex-col border-line bg-paper lg:w-[460px] lg:border-l">
-            <PlannerPanel
-              hour={plannerHour}
-              layer={plannerLayer}
-              selected={selectedCorridor}
-              setSelected={setSelectedCorridor}
-              plan={plan}
-              setPlan={setPlan}
-              proposals={proposals}
-              reviewing={reviewing}
-              setReviewing={setReviewing}
-              onDecide={decideProposal}
-              onPlanAdded={(item) =>
-                pushToast({
-                  tone: 'leaf',
-                  icon: CircleCheck,
-                  title: 'Added to capital plan',
-                  body: `${item.name} · +${Math.round(item.uplift * 100)}% walkability for ${item.residents.toLocaleString()} residents a day.`,
-                })
-              }
-            />
+            {plannerPanel}
           </aside>
         )}
       </main>
+      ) : (
+        <>
+          <main ref={mobileMain} className="min-h-0 flex-1 overflow-y-auto pb-28">
+            <div className="px-3 pt-3">
+              <div
+                className={clsx(
+                  'relative h-[54dvh] min-h-[340px] max-h-[620px] overflow-hidden rounded-[26px] border border-line shadow-soft md:h-[58dvh]',
+                  cond.night && view === 'navigate' && 'bg-night',
+                )}
+              >
+                {mapInner}
+              </div>
+            </div>
+            {view === 'navigate' && <div className="px-3 pt-3">{compareInline}</div>}
+            <AnimatePresence mode="wait" initial={false}>
+              <motion.div
+                key={mtab}
+                initial={{ opacity: 0, y: 14 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -6 }}
+                transition={{ duration: 0.22, ease: [0.2, 0.7, 0.3, 1] }}
+                className="pt-4"
+              >
+                {mtab === 'route' && navPanel('plan')}
+                {mtab === 'steps' && navPanel('steps')}
+                {mtab === 'insights' && insights}
+                {mtab === 'improve' && navPanel('improve')}
+                {mtab === 'planner' && plannerPanel}
+              </motion.div>
+            </AnimatePresence>
+          </main>
+          <BottomNav tab={mtab} onTab={goTab} pending={proposals.filter((p) => p.status === 'review').length} />
+        </>
+      )}
 
       <Toasts toasts={toasts} onDismiss={(id) => setToasts((ts) => ts.filter((t) => t.id !== id))} />
       <ProposalSent proposal={sentProposal} onClose={() => setSentProposal(null)} />
