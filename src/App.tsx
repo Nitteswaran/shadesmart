@@ -13,6 +13,8 @@ import { routeBadges, routeTags } from './lib/features'
 import { isNightHour } from './lib/daylight'
 import { computeOverrides, placementImpact, snapToNetwork, type Placement, type Tool } from './lib/placements'
 import { RaceHUD, type MapApi } from './components/Race'
+import { MobileInsights } from './components/MobileInsights'
+import { ImproveStreet, ResidentForum } from './components/Community'
 import { ProposalSent, ProposeOverlay } from './components/Propose'
 import { newRef, seedProposals, type Proposal, type Reason, type Status } from './lib/proposals'
 import { BadgeIcon, BADGE_META } from './components/icons'
@@ -507,7 +509,7 @@ function CityApp({
                 </div>
               )}
             </AnimatePresence>
-            {view === 'navigate' && !draft && (
+            {view === 'navigate' && !draft && mtab !== 'improve' && (
               <div className="px-3 pt-3">
                 {mtab === 'steps' ? (
                   <PreferencesStrip cond={cond} setCond={setCond} showNetwork={showNetwork} setShowNetwork={setShowNetwork} />
@@ -534,7 +536,7 @@ function CityApp({
                 />
               </div>
             )}
-            {view === 'navigate' && <div className="px-3 pt-3">{compareInline}</div>}
+            {view === 'navigate' && mtab !== 'insights' && mtab !== 'improve' && <div className="px-3 pt-3">{compareInline}</div>}
             <AnimatePresence mode="wait" initial={false}>
               <motion.div
                 key={mtab}
@@ -546,8 +548,37 @@ function CityApp({
               >
                 {mtab === 'route' && navPanel('plan')}
                 {mtab === 'steps' && navPanel('steps')}
-                {mtab === 'insights' && insights}
-                {mtab === 'improve' && navPanel('improve')}
+                {mtab === 'insights' && (
+                  <MobileInsights
+                    cond={cond}
+                    shortRoute={shortRoute}
+                    smartRoute={smartRoute}
+                    short={shortStats}
+                    smart={smartStats}
+                    ov={overrides}
+                    onHour={(h) => setCond({ hour: h })}
+                  />
+                )}
+                {mtab === 'improve' && (
+                  <div className="space-y-6 px-3">
+                    <ImproveStreet
+                      active={draft !== null}
+                      mine={proposals.filter((p) => p.mine)}
+                      all={proposals}
+                      onStart={(t) => {
+                        setDraft([])
+                        setProposeTool(t)
+                        setWalking(false)
+                        mobileMain.current?.scrollTo({ top: 0, behavior: 'smooth' })
+                      }}
+                    />
+                    <ResidentForum />
+                    <section>
+                      <div className="mb-2 px-1 text-[12px] font-semibold uppercase tracking-[0.04em] text-ink-3">Township Guardian</div>
+                      <SOSButton variant="block" onTap={() => setSos('arming')} onHoldComplete={() => sendSOS(true)} />
+                    </section>
+                  </div>
+                )}
                 {mtab === 'planner' && plannerPanel}
               </motion.div>
             </AnimatePresence>
