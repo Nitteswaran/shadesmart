@@ -1,0 +1,4454 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "timestamp_osm_base": "2026-10-22T18:32:49Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+
+{
+  "type": "node",
+  "id": 703657606,
+  "lat": 4.6045255,
+  "lon": 101.0780409,
+  "tags": {
+    "name": "Muzium Darul Ridzuan",
+    "name:ja": "ペラダルルリズアン博物館",
+    "name:ms": "Muzium Darul Ridzuan",
+    "tourism": "museum"
+  }
+},
+{
+  "type": "node",
+  "id": 1434006079,
+  "lat": 4.5949410,
+  "lon": 101.0835935,
+  "tags": {
+    "bench": "yes",
+    "bus": "yes",
+    "highway": "bus_stop",
+    "name": "Kamdar Jalan Raja Musa Aziz",
+    "public_transport": "platform",
+    "shelter": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 1545773805,
+  "lat": 4.6008468,
+  "lon": 101.0751302,
+  "tags": {
+    "amenity": "library",
+    "name": "Perpustakaan Tun Razak",
+    "name:en": "Tun Razak City Library",
+    "name:ms": "Perpustakaan Tun Razak"
+  }
+},
+{
+  "type": "node",
+  "id": 1906516950,
+  "lat": 4.5961819,
+  "lon": 101.0825302,
+  "tags": {
+    "amenity": "marketplace",
+    "name": "Super Kinta"
+  }
+},
+{
+  "type": "node",
+  "id": 1906525117,
+  "lat": 4.5910971,
+  "lon": 101.0826585,
+  "tags": {
+    "name": "Hotel Libis",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 2278369096,
+  "lat": 4.5978150,
+  "lon": 101.0833892,
+  "tags": {
+    "name": "French Hotel",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 2278369097,
+  "lat": 4.5988694,
+  "lon": 101.0828204,
+  "tags": {
+    "name": "Hotel Regal Vista",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 2627001618,
+  "lat": 4.5985225,
+  "lon": 101.0812618,
+  "tags": {
+    "addr:city": "Ipoh",
+    "addr:housenumber": "23-25",
+    "addr:street": "Jalan Toh Pua Chah",
+    "name": "Dragon & Phoenix Hotel",
+    "phone": "05-2534661",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 2627023287,
+  "lat": 4.5934006,
+  "lon": 101.0806673,
+  "tags": {
+    "amenity": "place_of_worship",
+    "building": "mosque",
+    "name": "Masjid Panglima Kinta",
+    "religion": "muslim"
+  }
+},
+{
+  "type": "node",
+  "id": 2638098473,
+  "lat": 4.5994289,
+  "lon": 101.0838643,
+  "tags": {
+    "brand": "The Store",
+    "brand:wikidata": "Q96679754",
+    "brand:wikipedia": "ms:The Store",
+    "name": "The Store",
+    "shop": "supermarket"
+  }
+},
+{
+  "type": "node",
+  "id": 2787449912,
+  "lat": 4.5943499,
+  "lon": 101.0808718,
+  "tags": {
+    "addr:city": "Ipoh",
+    "addr:housenumber": "55 & 57",
+    "addr:postcode": "30000",
+    "addr:street": "Jalan Sultan Iskandar",
+    "name": "Abby By The River",
+    "tourism": "hotel",
+    "website": "http://www.abbyhotel.my/our-hotels/abby-by-the-river"
+  }
+},
+{
+  "type": "node",
+  "id": 2870324100,
+  "lat": 4.5905227,
+  "lon": 101.0719437,
+  "tags": {
+    "amenity": "place_of_worship",
+    "denomination": "methodist",
+    "name": "Tamil Methodist Church Ipoh",
+    "name:en": "Tamil Methodist Church Ipoh",
+    "religion": "christian"
+  }
+},
+{
+  "type": "node",
+  "id": 2870333303,
+  "lat": 4.5912927,
+  "lon": 101.0717023,
+  "tags": {
+    "amenity": "place_of_worship",
+    "denomination": "methodist",
+    "name": "Wesley Methodist Church Ipoh",
+    "religion": "christian"
+  }
+},
+{
+  "type": "node",
+  "id": 2870474225,
+  "lat": 4.5987068,
+  "lon": 101.0840386,
+  "tags": {
+    "amenity": "restaurant",
+    "brand": "Pizza Hut",
+    "brand:wikidata": "Q191615",
+    "brand:wikipedia": "en:Pizza Hut",
+    "cuisine": "pizza",
+    "name": "Pizza Hut"
+  }
+},
+{
+  "type": "node",
+  "id": 2990753029,
+  "lat": 4.5938737,
+  "lon": 101.0846211,
+  "tags": {
+    "addr:city": "Ipoh",
+    "addr:housenumber": "61",
+    "addr:postcode": "30300",
+    "addr:street": "Jalan Yau Tet Shin",
+    "amenity": "restaurant",
+    "cuisine": "regional",
+    "name": "Sun Tuck Kee",
+    "name:zh": "新德记",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 2991647314,
+  "lat": 4.5920912,
+  "lon": 101.0847271,
+  "tags": {
+    "addr:city": "Ipoh",
+    "addr:postcode": "30300",
+    "addr:street": "Jalan Che Tak",
+    "internet_access": "wlan",
+    "name": "Hotel Ipoh Sakura",
+    "phone": "05-2439254",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 3049836251,
+  "lat": 4.5977019,
+  "lon": 101.0732222,
+  "tags": {
+    "addr:city": "Ipoh",
+    "name": "The Majestic Station Hotel",
+    "name:en": "The Majestic Station Hotel",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 3049841537,
+  "lat": 4.5964054,
+  "lon": 101.0770084,
+  "tags": {
+    "addr:city": "Ipoh",
+    "addr:street": "Jalan Market",
+    "name": "One Stop Budget Hotel",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 3462880983,
+  "lat": 4.5926845,
+  "lon": 101.0847270,
+  "tags": {
+    "addr:city": "Ipoh",
+    "addr:country": "MY",
+    "addr:housenumber": "2",
+    "addr:postcode": "30250",
+    "addr:state": "Perak",
+    "addr:street": "Jalan Yong Kalsom",
+    "amenity": "cafe",
+    "loc_name": "Nasi Ganja Ipoh",
+    "name": "Yong Suan (Perniagaan Nasi Kandar Ayam Merah)",
+    "name:zh": "永泉茶室",
+    "outdoor_seating": "yes",
+    "phone": "05-2544314"
+  }
+},
+{
+  "type": "node",
+  "id": 3533222559,
+  "lat": 4.5972679,
+  "lon": 101.0832107,
+  "tags": {
+    "name": "Eastern Hotel",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 3533223674,
+  "lat": 4.5998880,
+  "lon": 101.0830927,
+  "tags": {
+    "name": "Grand View Hotel",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 3533227489,
+  "lat": 4.5984229,
+  "lon": 101.0815478,
+  "tags": {
+    "name": "Hong Hin Hotel",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 3533231910,
+  "lat": 4.5994389,
+  "lon": 101.0825563,
+  "tags": {
+    "name": "Hotel Ipoh City",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 3533314284,
+  "lat": 4.5911507,
+  "lon": 101.0853780,
+  "tags": {
+    "name": "Hotel New Caspian",
+    "name:ms": "Hotel New Caspian",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 3533316694,
+  "lat": 4.5914823,
+  "lon": 101.0853672,
+  "tags": {
+    "name": "Hotel Paradise",
+    "name:ms": "Hotel Paradise",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 3533317244,
+  "lat": 4.5910866,
+  "lon": 101.0849172,
+  "tags": {
+    "name": "Hotel Gold Wanwa",
+    "name:ms": "Hotel Gold Wanwa",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 3533319751,
+  "lat": 4.5901950,
+  "lon": 101.0833100,
+  "tags": {
+    "name": "The Osborne Apartments",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 3533327714,
+  "lat": 4.5945246,
+  "lon": 101.0835569,
+  "tags": {
+    "mapillary": "742078718997799",
+    "name": "Le Metrotel",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 3533336581,
+  "lat": 4.5950756,
+  "lon": 101.0858393,
+  "tags": {
+    "check_date": "2025-02-01",
+    "name": "New Caspian Hotel",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 4105398982,
+  "lat": 4.5969379,
+  "lon": 101.0774488,
+  "tags": {
+    "amenity": "cafe",
+    "name": "MilkCow",
+    "name:en": "MilkCow"
+  }
+},
+{
+  "type": "node",
+  "id": 4127568895,
+  "lat": 4.5955446,
+  "lon": 101.0845278,
+  "tags": {
+    "name": "Night market",
+    "tourism": "attraction"
+  }
+},
+{
+  "type": "node",
+  "id": 4127576092,
+  "lat": 4.5962132,
+  "lon": 101.0843605,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Hawker Center"
+  }
+},
+{
+  "type": "node",
+  "id": 4127614190,
+  "lat": 4.5940107,
+  "lon": 101.0842254,
+  "tags": {
+    "addr:housenumber": "49",
+    "addr:postcode": "30000",
+    "addr:street": "Jalan Yau Tet Shin",
+    "amenity": "restaurant",
+    "name": "Restoran Tauge Ayam Lou Wong",
+    "name:zh": "老黄芽菜鸡沙河粉",
+    "opening_hours": "Mo-Su 10:00-00:00"
+  }
+},
+{
+  "type": "node",
+  "id": 4127625390,
+  "lat": 4.5940686,
+  "lon": 101.0840276,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "local",
+    "name": "Happy Delicious Salted Chicken"
+  }
+},
+{
+  "type": "node",
+  "id": 4133868454,
+  "lat": 4.5916179,
+  "lon": 101.0756886,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Maharaj's Kitchen"
+  }
+},
+{
+  "type": "node",
+  "id": 4133868994,
+  "lat": 4.5963295,
+  "lon": 101.0778599,
+  "tags": {
+    "addr:housenumber": "73",
+    "addr:postcode": "31650",
+    "addr:street": "Jalan Bandar Timah",
+    "amenity": "restaurant",
+    "name": "Thean Chun",
+    "name:zh": "天津茶室",
+    "opening_hours": "Th-Tu 09:30-14:00"
+  }
+},
+{
+  "type": "node",
+  "id": 4133879225,
+  "lat": 4.5989891,
+  "lon": 101.0821439,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Fong Wei Ge"
+  }
+},
+{
+  "type": "node",
+  "id": 4133879228,
+  "lat": 4.5911868,
+  "lon": 101.0825816,
+  "tags": {
+    "bus": "yes",
+    "highway": "bus_stop",
+    "name": "Taiwa",
+    "public_transport": "platform"
+  }
+},
+{
+  "type": "node",
+  "id": 4133879832,
+  "lat": 4.5931858,
+  "lon": 101.0771239,
+  "tags": {
+    "addr:city": "Ipoh",
+    "addr:postcode": "30000",
+    "addr:street": "Jalan Bandar Timah",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "name": "Nam Heong Old Town White Coffee",
+    "name:zh": "南香茶餐室",
+    "opening_hours": "Mo-Su 07:00-18:00"
+  }
+},
+{
+  "type": "node",
+  "id": 4171544065,
+  "lat": 4.5973195,
+  "lon": 101.0857663,
+  "tags": {
+    "addr:city": "Ipoh",
+    "addr:postcode": "30300",
+    "addr:street": "Jalan Raja Ekram",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "description": "Street food special Dim Sum",
+    "name": "Restoran Chang Keong Dim sum"
+  }
+},
+{
+  "type": "node",
+  "id": 4282470791,
+  "lat": 4.5991616,
+  "lon": 101.0841306,
+  "tags": {
+    "addr:housenumber": "71",
+    "addr:postcode": "30000",
+    "addr:street": "Jalan Dato Onn Jaafar",
+    "amenity": "restaurant",
+    "cuisine": "fish;regional;tea;local;asian;indonesian;chinese;noodles;indian;curry;thai",
+    "name": "Restoran Mee Kari Ipoh",
+    "name:ms": "Restoran Mee Kari Ipoh",
+    "phone": "012 552 8687"
+  }
+},
+{
+  "type": "node",
+  "id": 4308527373,
+  "lat": 4.5968072,
+  "lon": 101.0774163,
+  "tags": {
+    "addr:housenumber": "103",
+    "addr:street": "Jalan Sultan Yusuf",
+    "amenity": "cafe",
+    "internet_access": "wlan",
+    "name": "Patisserie Boutique"
+  }
+},
+{
+  "type": "node",
+  "id": 4348357795,
+  "lat": 4.5970418,
+  "lon": 101.0735662,
+  "tags": {
+    "name": "Ipoh Railway Station",
+    "name:en": "Ipoh Railway Station",
+    "name:zh": "怡保火车站",
+    "name:zh-Hans": "怡保火车站",
+    "name:zh-Hant": "怡保火車站",
+    "tourism": "attraction"
+  }
+},
+{
+  "type": "node",
+  "id": 4348380491,
+  "lat": 4.5969540,
+  "lon": 101.0775625,
+  "tags": {
+    "addr:housenumber": "3",
+    "addr:street": "Jalan Panglima",
+    "amenity": "restaurant",
+    "name": "Mad Ramen Bar"
+  }
+},
+{
+  "type": "node",
+  "id": 4361671193,
+  "lat": 4.5947956,
+  "lon": 101.0836325,
+  "tags": {
+    "addr:housenumber": "35",
+    "addr:street": "Jalan Theatre",
+    "amenity": "restaurant",
+    "name": "Pak Kong Chicken Rice",
+    "name:en": "Pak Kong Chicken Rice"
+  }
+},
+{
+  "type": "node",
+  "id": 4361705289,
+  "lat": 4.5932295,
+  "lon": 101.0769238,
+  "tags": {
+    "addr:housenumber": "15A",
+    "addr:street": "Jalan Bandar Timah",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "name": "Sin Yoon Loong",
+    "name:en": "Sin Yoon Loong",
+    "name:zh": "新源隆",
+    "opening_hours": "Mo-Su 06:00-17:30"
+  }
+},
+{
+  "type": "node",
+  "id": 4361734689,
+  "lat": 4.5911339,
+  "lon": 101.0852241,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Woong Kee TauFuFa",
+    "name:en": "Woong Kee TauFuFa"
+  }
+},
+{
+  "type": "node",
+  "id": 4428361889,
+  "lat": 4.5944087,
+  "lon": 101.0841047,
+  "tags": {
+    "addr:street": "Jalan Theatre",
+    "amenity": "restaurant",
+    "name": "lou leong taoge chicken rice",
+    "name:en": "Lou Leong Ipoh Chicken Rice"
+  }
+},
+{
+  "type": "node",
+  "id": 4464472692,
+  "lat": 4.5965183,
+  "lon": 101.0775298,
+  "tags": {
+    "name": "Kong Heng Square Market",
+    "tourism": "attraction"
+  }
+},
+{
+  "type": "node",
+  "id": 4464953194,
+  "lat": 4.5943948,
+  "lon": 101.0817177,
+  "tags": {
+    "amenity": "marketplace",
+    "name": "Night Market"
+  }
+},
+{
+  "type": "node",
+  "id": 4487812590,
+  "lat": 4.5912205,
+  "lon": 101.0826395,
+  "tags": {
+    "addr:street": "Jalan Dato Tahwil Azar (Osborne Street)",
+    "name": "Majestic Condo-Airbnb",
+    "name:en": "Majestic Condo-Airbnb",
+    "tourism": "hotel",
+    "website": "https://www.airbnb.com/rooms/15413963?guests=2&s=ujoZUE4f"
+  }
+},
+{
+  "type": "node",
+  "id": 4507472189,
+  "lat": 4.5919735,
+  "lon": 101.0851386,
+  "tags": {
+    "internet_access": "wlan",
+    "name": "sun golden inn",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 4515217213,
+  "lat": 4.6024606,
+  "lon": 101.0792044,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "japanese",
+    "delivery": "no",
+    "name": "Shabuya"
+  }
+},
+{
+  "type": "node",
+  "id": 4540711689,
+  "lat": 4.5968284,
+  "lon": 101.0761924,
+  "tags": {
+    "man_made": "tower",
+    "name": "Birch Memorial Clock Tower",
+    "name:en": "Birch Memorial Clock Tower",
+    "name:ms": "Menara Jam Peringatan Birch",
+    "tourism": "attraction",
+    "tower:type": "clock",
+    "wikidata": "Q21523055",
+    "wikipedia": "en:Birch Memorial Clock Tower"
+  }
+},
+{
+  "type": "node",
+  "id": 4555294190,
+  "lat": 4.5967032,
+  "lon": 101.0847861,
+  "tags": {
+    "addr:housenumber": "166",
+    "addr:postcode": "30000",
+    "addr:street": "Jalan Sultan Idris Shah (Brewster Road)",
+    "amenity": "cafe",
+    "cuisine": "asian",
+    "email": "shah.dreamline@yahoo.com",
+    "name": "Kafe Musika",
+    "name:en": "Kafe Musika",
+    "operator": "Muhammad Shahrul Azam",
+    "phone": "012 537 4786",
+    "website": "http://www.facebook.com/kafemusika"
+  }
+},
+{
+  "type": "node",
+  "id": 4555723189,
+  "lat": 4.5945772,
+  "lon": 101.0853445,
+  "tags": {
+    "name": "Octagon",
+    "name:en": "Octagon",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 4579124990,
+  "lat": 4.5962096,
+  "lon": 101.0771318,
+  "tags": {
+    "addr:housenumber": "29",
+    "addr:postcode": "30000",
+    "addr:street": "Jalan Market",
+    "amenity": "cafe",
+    "internet_access": "wlan",
+    "name": "Everyday",
+    "name:en": "Everyday"
+  }
+},
+{
+  "type": "node",
+  "id": 4586744022,
+  "lat": 4.5941592,
+  "lon": 101.0837174,
+  "tags": {
+    "amenity": "cafe",
+    "brand": "ZUS Coffee",
+    "brand:wikidata": "Q110811473",
+    "cuisine": "coffee_shop",
+    "mapillary": "3193275984199974",
+    "name": "ZUS Coffee",
+    "takeaway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 4586770510,
+  "lat": 4.5975038,
+  "lon": 101.0843817,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "chinese;local",
+    "name": "Restoran Yee Lock",
+    "name:en": "Restoran Yee Lock"
+  }
+},
+{
+  "type": "node",
+  "id": 4586772803,
+  "lat": 4.5974484,
+  "lon": 101.0789925,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Gerai Makan Jalan Bandaraya"
+  }
+},
+{
+  "type": "node",
+  "id": 4586774392,
+  "lat": 4.5942326,
+  "lon": 101.0834805,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "mapillary": "1076332548055552",
+    "name": "Restoran Tauge Ayam Lou Wong"
+  }
+},
+{
+  "type": "node",
+  "id": 4607765295,
+  "lat": 4.5955622,
+  "lon": 101.0701091,
+  "tags": {
+    "bus": "yes",
+    "highway": "bus_stop",
+    "name": "Kg Lumpur",
+    "name:ms": "Kg Lumpur",
+    "public_transport": "platform"
+  }
+},
+{
+  "type": "node",
+  "id": 4631661789,
+  "lat": 4.5964402,
+  "lon": 101.0847150,
+  "tags": {
+    "name": "Gerbang Malam",
+    "name:en": "Gerbang Malam",
+    "tourism": "attraction"
+  }
+},
+{
+  "type": "node",
+  "id": 4667590790,
+  "lat": 4.5937618,
+  "lon": 101.0770883,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Hoong Tho Restaurant",
+    "name:en": "Hoong Tho Restaurant"
+  }
+},
+{
+  "type": "node",
+  "id": 4712420089,
+  "lat": 4.5974042,
+  "lon": 101.0859790,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "name": "Restoran Chef Fatt",
+    "name:ms": "Restoran Chef Fatt",
+    "name:zh": "发师傅港式点心楼",
+    "name:zh-Hans": "发师傅港式点心楼",
+    "name:zh-Hant": "發師傅港式點心大樓"
+  }
+},
+{
+  "type": "node",
+  "id": 4794596122,
+  "lat": 4.5976202,
+  "lon": 101.0858348,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Cowan Street Ayam Taugeh",
+    "name:zh": "高温街芽菜雞沙河粉",
+    "opening_hours": "We-Sa 06:30-23:00",
+    "phone": "012-5203322"
+  }
+},
+{
+  "type": "node",
+  "id": 4819335121,
+  "lat": 4.5941368,
+  "lon": 101.0823925,
+  "tags": {
+    "addr:street": "Jalan Dato Onn Jaafar (Cockman Street)",
+    "amenity": "restaurant",
+    "name": "Mee Daud Mat Jasak",
+    "opening_hours": "Mo-Su 07:00-22:00"
+  }
+},
+{
+  "type": "node",
+  "id": 4819346021,
+  "lat": 4.5949228,
+  "lon": 101.0843799,
+  "tags": {
+    "addr:street": "Jalan Dato Tahwil Azar (Osborne Street)",
+    "amenity": "restaurant",
+    "name": "Funny Mountain Soya Bean",
+    "opening_hours": "We-Mo 10:30-18:00"
+  }
+},
+{
+  "type": "node",
+  "id": 4819632924,
+  "lat": 4.5979016,
+  "lon": 101.0763280,
+  "tags": {
+    "addr:housenumber": "3&5",
+    "amenity": "cafe",
+    "brand": "OldTown White Coffee",
+    "brand:wikidata": "Q7085308",
+    "brand:wikipedia": "en:OldTown White Coffee",
+    "cuisine": "coffee_shop;malaysian",
+    "name": "OldTown White Coffee",
+    "name:en": "Old Town white coffee",
+    "opening_hours": "Mo-Su 09:00-22:00",
+    "takeaway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 4820225421,
+  "lat": 4.6000173,
+  "lon": 101.0846288,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "indian",
+    "name": "Naina Mohamed"
+  }
+},
+{
+  "type": "node",
+  "id": 4826040021,
+  "lat": 4.5961091,
+  "lon": 101.0771365,
+  "tags": {
+    "addr:street": "Jalan Dato Sagor (Post Office Road)",
+    "amenity": "restaurant",
+    "name": "Gerai Makanan & Minuman Rahamath",
+    "opening_hours": "Mo-Su 06:00-13:00"
+  }
+},
+{
+  "type": "node",
+  "id": 4851100321,
+  "lat": 4.5988700,
+  "lon": 101.0704903,
+  "tags": {
+    "bus": "yes",
+    "highway": "bus_stop",
+    "name": "Kg Teli",
+    "public_transport": "platform"
+  }
+},
+{
+  "type": "node",
+  "id": 4851100322,
+  "lat": 4.5975613,
+  "lon": 101.0704382,
+  "tags": {
+    "bus": "yes",
+    "highway": "bus_stop",
+    "name": "SRJKT Perak Sangeetha",
+    "name:ms": "SRJKT Perak Sangeetha",
+    "public_transport": "platform"
+  }
+},
+{
+  "type": "node",
+  "id": 4863024821,
+  "lat": 4.5931309,
+  "lon": 101.0766694,
+  "tags": {
+    "addr:housenumber": "7",
+    "addr:street": "Persiaran Bijeh Timah",
+    "amenity": "restaurant",
+    "cuisine": "indian;curry;malaysian",
+    "name": "Sri Ananda Bahwan",
+    "name:en": "Sri Ananda Bahwan",
+    "website": "http://srianandabahwan.com.my/ipoh.html"
+  }
+},
+{
+  "type": "node",
+  "id": 4932118122,
+  "lat": 4.5973490,
+  "lon": 101.0781491,
+  "tags": {
+    "addr:housenumber": "83",
+    "addr:street": "Jalan Bandar Timah",
+    "amenity": "restaurant",
+    "name": "Yew Meng Restaurant",
+    "name:en": "Yew Meng Restaurant"
+  }
+},
+{
+  "type": "node",
+  "id": 4933569621,
+  "lat": 4.5931253,
+  "lon": 101.0842114,
+  "tags": {
+    "addr:street": "Jalan Sultan Iskandar (Hugh Low Street)",
+    "amenity": "restaurant",
+    "cuisine": "malaysian",
+    "name": "XIN QUAN FANG",
+    "name:en": "XIN QUAN FANG- Curry Mee",
+    "opening_hours": "Mo-Su 07:30-13:00"
+  }
+},
+{
+  "type": "node",
+  "id": 4936374442,
+  "lat": 4.5948857,
+  "lon": 101.0847908,
+  "tags": {
+    "amenity": "cafe",
+    "name": "sin eng heong",
+    "name:zh": "新荣香"
+  }
+},
+{
+  "type": "node",
+  "id": 4936376629,
+  "lat": 4.5964495,
+  "lon": 101.0773515,
+  "tags": {
+    "addr:housenumber": "16",
+    "addr:postcode": "300000",
+    "addr:street": "Jalan Market",
+    "name": "Fantasy House Trick Art",
+    "name:en": "Fantasy House Trick Art",
+    "opening_hours": "Mo-Fr 09:00-18:00; Sa-Su 09:00-20:00",
+    "phone": "052550007",
+    "tourism": "attraction"
+  }
+},
+{
+  "type": "node",
+  "id": 4952247322,
+  "lat": 4.5965812,
+  "lon": 101.0773616,
+  "tags": {
+    "addr:housenumber": "93;95",
+    "addr:postcode": "3000",
+    "addr:street": "Jalan Sultan Yusuf",
+    "amenity": "cafe",
+    "cuisine": "pasta;coffee_shop;burger;breakfast",
+    "email": "bng.ipoh@gmail.com",
+    "internet_access": "wlan",
+    "internet_access:fee": "no",
+    "name": "Pekan Lama Cafe",
+    "name:en": "Burps & Giggles",
+    "opening_hours": "We-Fr 09:00-17:00; Sa-Su 09:00-21:00",
+    "outdoor_seating": "no",
+    "phone": "+6052461308",
+    "smoking": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 4952249422,
+  "lat": 4.5971968,
+  "lon": 101.0849260,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Sin Hup Kee",
+    "name:en": "Sin Hup Kee"
+  }
+},
+{
+  "type": "node",
+  "id": 4959961284,
+  "lat": 4.5963787,
+  "lon": 101.0778670,
+  "tags": {
+    "addr:housenumber": "75",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "name": "Restoran Ipoh Kong Heng",
+    "opening_hours": "Mo-We, Fr, Sa 07:00-17:00"
+  }
+},
+{
+  "type": "node",
+  "id": 4981337524,
+  "lat": 4.5974386,
+  "lon": 101.0857921,
+  "tags": {
+    "addr:street": "Jalan Raja Ekram (Cowan Street)",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "name": "Restoran Sin Hong Kee",
+    "name:en": "Sin Hong Kee Restaurant"
+  }
+},
+{
+  "type": "node",
+  "id": 4981337525,
+  "lat": 4.5979809,
+  "lon": 101.0845359,
+  "tags": {
+    "addr:street": "Jalan Raja Muda Aziz",
+    "amenity": "cafe",
+    "name": "Bridal Café",
+    "name:en": "Bridal Café"
+  }
+},
+{
+  "type": "node",
+  "id": 4981383627,
+  "lat": 4.5981340,
+  "lon": 101.0849370,
+  "tags": {
+    "addr:street": "Jalan Sultan Abdul Jalil",
+    "name": "Z Hotel",
+    "name:en": "Z Hotel",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 5004398021,
+  "lat": 4.5974889,
+  "lon": 101.0783990,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "indian",
+    "diet:vegetarian": "yes",
+    "name": "Restoran Daun Pisang Kala Villas",
+    "name:ms": "Restoran Daun Pisang Kala Villas",
+    "opening_hours": "Mo-Su 09:00-16:00"
+  }
+},
+{
+  "type": "node",
+  "id": 5085088321,
+  "lat": 4.5963509,
+  "lon": 101.0791200,
+  "tags": {
+    "name": "Tea Museum",
+    "name:en": "Tea Museum",
+    "tourism": "museum"
+  }
+},
+{
+  "type": "node",
+  "id": 5085089121,
+  "lat": 4.5918559,
+  "lon": 101.0755933,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Tirupathi Vilas",
+    "name:en": "Tirupathi Vilas"
+  }
+},
+{
+  "type": "node",
+  "id": 5085552221,
+  "lat": 4.5962219,
+  "lon": 101.0791164,
+  "tags": {
+    "name": "Ipoh World",
+    "name:en": "Ipoh World",
+    "tourism": "museum",
+    "website": "https://www.ipohworld.org/reservation/"
+  }
+},
+{
+  "type": "node",
+  "id": 5100597222,
+  "lat": 4.5946572,
+  "lon": 101.0833053,
+  "tags": {
+    "addr:housenumber": "24",
+    "addr:street": "Jalan Theater",
+    "amenity": "restaurant",
+    "mapillary": "742078718997799",
+    "name": "Aun Kheng Lin Salted Chicken",
+    "opening_hours": "Mo-Su 09:00-19:00"
+  }
+},
+{
+  "type": "node",
+  "id": 5245251022,
+  "lat": 4.5965673,
+  "lon": 101.0774778,
+  "tags": {
+    "amenity": "cafe",
+    "name": "Nellis Deli"
+  }
+},
+{
+  "type": "node",
+  "id": 5245286621,
+  "lat": 4.5959673,
+  "lon": 101.0778550,
+  "tags": {
+    "amenity": "cafe",
+    "name": "Brewtiful"
+  }
+},
+{
+  "type": "node",
+  "id": 5246751830,
+  "lat": 4.5960605,
+  "lon": 101.0776881,
+  "tags": {
+    "addr:housenumber": "29",
+    "amenity": "cafe",
+    "name": "Rodori Fruit Tart"
+  }
+},
+{
+  "type": "node",
+  "id": 5306235123,
+  "lat": 4.5958326,
+  "lon": 101.0783482,
+  "tags": {
+    "name": "Miniature wonders",
+    "tourism": "museum"
+  }
+},
+{
+  "type": "node",
+  "id": 5307945221,
+  "lat": 4.5980223,
+  "lon": 101.0784653,
+  "tags": {
+    "name": "二奶巷寓所博物館",
+    "name:zh": "二奶巷寓所博物館",
+    "name:zh-Hans": "二奶巷寓所博物館",
+    "name:zh-Hant": "二奶巷寓所博物館",
+    "tourism": "museum"
+  }
+},
+{
+  "type": "node",
+  "id": 5320242023,
+  "lat": 4.5962210,
+  "lon": 101.0781436,
+  "tags": {
+    "addr:housenumber": "2",
+    "addr:street": "Lorong Panglima",
+    "amenity": "restaurant",
+    "cuisine": "malaysian;thai",
+    "diet:vegetarian": "yes",
+    "internet_access": "wlan",
+    "name": "Baan Thai",
+    "phone": "+60 5 241 1250"
+  }
+},
+{
+  "type": "node",
+  "id": 5322399049,
+  "lat": 4.5974463,
+  "lon": 101.0847111,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Yin Fai Kee",
+    "name:zh": "源暉記"
+  }
+},
+{
+  "type": "node",
+  "id": 5323597921,
+  "lat": 4.5963209,
+  "lon": 101.0855176,
+  "tags": {
+    "amenity": "cafe",
+    "name": "Konda Kondi"
+  }
+},
+{
+  "type": "node",
+  "id": 5323597922,
+  "lat": 4.5945029,
+  "lon": 101.0838299,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "name": "Kedai Makan Tuck Kee",
+    "name:zh": "德记炒粉"
+  }
+},
+{
+  "type": "node",
+  "id": 5328183722,
+  "lat": 4.5962175,
+  "lon": 101.0781888,
+  "tags": {
+    "addr:housenumber": "8",
+    "addr:street": "Jalan Panglima",
+    "amenity": "restaurant",
+    "cuisine": "malaysian;chinese",
+    "name": "Ding Feng Teow Chew Tau Fu Fa"
+  }
+},
+{
+  "type": "node",
+  "id": 5365388431,
+  "lat": 4.5936384,
+  "lon": 101.0826763,
+  "tags": {
+    "amenity": "cafe",
+    "internet_access": "wlan",
+    "name": "Hello Elvis"
+  }
+},
+{
+  "type": "node",
+  "id": 5377042522,
+  "lat": 4.5950556,
+  "lon": 101.0771753,
+  "tags": {
+    "addr:housenumber": "10",
+    "addr:postcode": "30000",
+    "addr:street": "Jalan Sultan Iskandar Shah",
+    "amenity": "cafe",
+    "check_date": "2022-10-02",
+    "cuisine": "chinese;coffee_shop;regional;asian",
+    "email": "info@ipohlimkopi.com",
+    "name": "Lim Ko Pi",
+    "name:zh": "啉咖啡",
+    "opening_hours": "Tu-Su 08:30-17:00",
+    "outdoor_seating": "no",
+    "phone": "+605-253 2898",
+    "website": "https://ipohlimkopi.com"
+  }
+},
+{
+  "type": "node",
+  "id": 5383877122,
+  "lat": 4.5983062,
+  "lon": 101.0785532,
+  "tags": {
+    "name": "Cara Rolando Cafe",
+    "name:pt": "Cara Rolando Cafe, trisaw e Bandeira china com pessoas",
+    "tourism": "attraction"
+  }
+},
+{
+  "type": "node",
+  "id": 5417622721,
+  "lat": 4.5965690,
+  "lon": 101.0847424,
+  "tags": {
+    "addr:street": "Jalan Dato Tahwil Azar (Osborne Street)",
+    "amenity": "restaurant",
+    "cuisine": "indian",
+    "name": "Nasi Kandar Pekan",
+    "opening_hours": "Mo-Su 09:00-18:00"
+  }
+},
+{
+  "type": "node",
+  "id": 5430948121,
+  "lat": 4.5960043,
+  "lon": 101.0773004,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Big bowl Ramen"
+  }
+},
+{
+  "type": "node",
+  "id": 5431505423,
+  "lat": 4.5968993,
+  "lon": 101.0777834,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Daun Pisang Kala Villas",
+    "name:ms": "Daun Pisang Kala Villas",
+    "opening_hours": "Mo-Su 12:00-16:00"
+  }
+},
+{
+  "type": "node",
+  "id": 5437352021,
+  "lat": 4.5973072,
+  "lon": 101.0846194,
+  "tags": {
+    "addr:street": "Jalan Leong Sin Nam",
+    "amenity": "restaurant",
+    "diet:vegan": "yes",
+    "diet:vegetarian": "yes",
+    "name": "Fung Lai"
+  }
+},
+{
+  "type": "node",
+  "id": 5485921021,
+  "lat": 4.5970802,
+  "lon": 101.0840354,
+  "tags": {
+    "name": "Street Art - \"Hide and Seek\"",
+    "name:en": "Street Art - \"Hide and Seek\"",
+    "tourism": "attraction"
+  }
+},
+{
+  "type": "node",
+  "id": 5487757722,
+  "lat": 4.5971727,
+  "lon": 101.0768117,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Nasi Kandar \"Ipoh most famous...\"",
+    "name:ms": "Nasi Kandar \"Ipoh most famous...\""
+  }
+},
+{
+  "type": "node",
+  "id": 5489892221,
+  "lat": 4.5934175,
+  "lon": 101.0778600,
+  "tags": {
+    "addr:street": "Jalan Koo Chong Kong (old Hill Street)",
+    "amenity": "cafe",
+    "cuisine": "burger;pasta;cake;coffee_shop",
+    "diet:vegetarian": "yes",
+    "internet_access": "wlan",
+    "name": "Cafe d'Eight"
+  }
+},
+{
+  "type": "node",
+  "id": 5553619922,
+  "lat": 4.6009669,
+  "lon": 101.0826907,
+  "tags": {
+    "name": "Vintage market",
+    "shop": "supermarket"
+  }
+},
+{
+  "type": "node",
+  "id": 5583835123,
+  "lat": 4.5996877,
+  "lon": 101.0855089,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Restoran Majeedia",
+    "name:ms": "Restoran Majeedia"
+  }
+},
+{
+  "type": "node",
+  "id": 5598943321,
+  "lat": 4.5926221,
+  "lon": 101.0760118,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "indian",
+    "name": "Nasi Kandar Sammer 24hr"
+  }
+},
+{
+  "type": "node",
+  "id": 5599540527,
+  "lat": 4.5978490,
+  "lon": 101.0765607,
+  "tags": {
+    "amenity": "restaurant",
+    "check_date": "2022-09-30",
+    "cuisine": "fish_and_chips;burger",
+    "name": "Nin's Cabin",
+    "name:en": "Nin's Cabin"
+  }
+},
+{
+  "type": "node",
+  "id": 5600524821,
+  "lat": 4.5994716,
+  "lon": 101.0851923,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "malaysian;chinese",
+    "name": "Ipoh Hainan Chicken and Rice",
+    "name:en": "Ipoh Hainan Chicken and Rice"
+  }
+},
+{
+  "type": "node",
+  "id": 5642902023,
+  "lat": 4.5943978,
+  "lon": 101.0842517,
+  "tags": {
+    "name": "Taste",
+    "shop": "supermarket"
+  }
+},
+{
+  "type": "node",
+  "id": 5643612022,
+  "lat": 4.5968131,
+  "lon": 101.0774896,
+  "tags": {
+    "name": "Postcard 2rm",
+    "shop": "supermarket"
+  }
+},
+{
+  "type": "node",
+  "id": 5678640521,
+  "lat": 4.5931897,
+  "lon": 101.0839918,
+  "tags": {
+    "addr:housenumber": "164",
+    "addr:postcode": "30000",
+    "addr:street": "Jalan Sultan Iskandar Shah (old Hugh Low Street)",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "internet_access": "wlan",
+    "name": "Restaurant Paris Hakka Mee",
+    "opening_hours": "Mo-Su 07:30-11:30"
+  }
+},
+{
+  "type": "node",
+  "id": 5679084421,
+  "lat": 4.5952631,
+  "lon": 101.0843044,
+  "tags": {
+    "addr:housenumber": "2",
+    "addr:postcode": "30300",
+    "addr:street": "Jalan Dato Tahwil Azar (Osborne Street)",
+    "amenity": "restaurant",
+    "cuisine": "fish;tea;asian;malaysian;chinese;chicken;curry",
+    "name": "Purple Cane Tea Restaurant",
+    "phone": "6052533090"
+  }
+},
+{
+  "type": "node",
+  "id": 5753679522,
+  "lat": 4.5966369,
+  "lon": 101.0773822,
+  "tags": {
+    "addr:housenumber": "97",
+    "addr:street": "Jalan Sultan Yusuf",
+    "amenity": "cafe",
+    "name": "auf",
+    "name:en": "aud’s – Coffee Smoothies Eatery"
+  }
+},
+{
+  "type": "node",
+  "id": 5753962802,
+  "lat": 4.6000507,
+  "lon": 101.0774495,
+  "tags": {
+    "amenity": "place_of_worship",
+    "name": "Masjid India Muslim Ipoh",
+    "name:en": "Indian Muslim Mosque Ipoh",
+    "name:ta": "இந்திய முஸ்லிம் பள்ளிவாசல் ஈப்போ",
+    "religion": "muslim"
+  }
+},
+{
+  "type": "node",
+  "id": 5798380555,
+  "lat": 4.5939338,
+  "lon": 101.0792111,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "beef_bowl;oriental;cake;barbecue;malaysian",
+    "internet_access": "wlan",
+    "name": "People's Park Chang Jiang White Coffee",
+    "operator": "Pak Adie"
+  }
+},
+{
+  "type": "node",
+  "id": 5798705654,
+  "lat": 4.5994498,
+  "lon": 101.0787258,
+  "tags": {
+    "name": "Dam",
+    "tourism": "attraction"
+  }
+},
+{
+  "type": "node",
+  "id": 5803001553,
+  "lat": 4.5943289,
+  "lon": 101.0824414,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "local",
+    "name": "Restoran Haji Yahya"
+  }
+},
+{
+  "type": "node",
+  "id": 5850089489,
+  "lat": 4.5982670,
+  "lon": 101.0783880,
+  "tags": {
+    "amenity": "cafe",
+    "cuisine": "malaysian",
+    "name": "Sedap Ipoh Old Town",
+    "name:en": "Sedap Ipoh Old Town"
+  }
+},
+{
+  "type": "node",
+  "id": 6038937885,
+  "lat": 4.5938608,
+  "lon": 101.0839604,
+  "tags": {
+    "addr:city": "Ipoh",
+    "addr:street": "Jalan Yau Tet Shin",
+    "amenity": "restaurant",
+    "name": "Restoran Tauge Ayam Ong Kee",
+    "name:en": "Ong Kee Bean Sprouts Chicken",
+    "name:zh": "安记芽菜鸡沙河粉",
+    "opening_hours": "Mo-Su 10:00-02:00"
+  }
+},
+{
+  "type": "node",
+  "id": 6038937886,
+  "lat": 4.5954892,
+  "lon": 101.0859649,
+  "tags": {
+    "amenity": "cafe",
+    "name": "Papo Bob (Muslim Food)"
+  }
+},
+{
+  "type": "node",
+  "id": 6120600486,
+  "lat": 4.5993527,
+  "lon": 101.0811971,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "chinese;malaysian",
+    "name": "Restaurant Memory Square"
+  }
+},
+{
+  "type": "node",
+  "id": 6120600885,
+  "lat": 4.5960676,
+  "lon": 101.0789658,
+  "tags": {
+    "addr:housenumber": "7",
+    "addr:postcode": "30000",
+    "addr:street": "Jalsn Bijih Timah",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "name": "Yoon Wah"
+  }
+},
+{
+  "type": "node",
+  "id": 6138380185,
+  "lat": 4.5922634,
+  "lon": 101.0846144,
+  "tags": {
+    "addr:street": "Jalan Yang Kalsom",
+    "amenity": "restaurant",
+    "name": "M Salim",
+    "opening_hours": "Sa-Th 06:30-21:30; Fr 06:30-13:00, 14:00-23:00"
+  }
+},
+{
+  "type": "node",
+  "id": 6139798786,
+  "lat": 4.5976912,
+  "lon": 101.0782314,
+  "tags": {
+    "addr:housenumber": "18&20",
+    "addr:street": "Jalan Tun Sambanthan",
+    "amenity": "restaurant",
+    "name": "STG Ipoh Old Town",
+    "name:en": "STG Ipoh Old Town"
+  }
+},
+{
+  "type": "node",
+  "id": 6207517785,
+  "lat": 4.5965042,
+  "lon": 101.0741302,
+  "tags": {
+    "bench": "no",
+    "bus": "yes",
+    "highway": "bus_stop",
+    "name": "Stesen KTM Ipoh",
+    "name:ms": "Stesen KTM Ipoh",
+    "operator": "myBAS",
+    "passenger_information_display": "no",
+    "public_transport": "platform",
+    "shelter": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 6267306086,
+  "lat": 4.5954321,
+  "lon": 101.0808176,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "malaysian",
+    "name": "Cosiswa Restoran",
+    "name:ms": "Cosiswa Restoran",
+    "opening_hours": "Mo-Su 08:01-15:01",
+    "operator": "Beautiful Rose 🌹"
+  }
+},
+{
+  "type": "node",
+  "id": 6380634760,
+  "lat": 4.5970697,
+  "lon": 101.0789449,
+  "tags": {
+    "amenity": "food_court",
+    "name": "Frens Corner",
+    "outdoor_seating": "yes",
+    "smoking": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 6380647397,
+  "lat": 4.5962152,
+  "lon": 101.0772545,
+  "tags": {
+    "amenity": "cafe",
+    "name": "Waffle Bar & Cafe"
+  }
+},
+{
+  "type": "node",
+  "id": 6380647398,
+  "lat": 4.5971167,
+  "lon": 101.0775545,
+  "tags": {
+    "name": "I vith u",
+    "name:en": "I vith u",
+    "opening_hours": "24/7",
+    "shop": "supermarket"
+  }
+},
+{
+  "type": "node",
+  "id": 6380647400,
+  "lat": 4.5967438,
+  "lon": 101.0774099,
+  "tags": {
+    "addr:housenumber": "101",
+    "addr:street": "Jalan Sultan Yusuf",
+    "amenity": "cafe",
+    "name": "Croqutte Cafe"
+  }
+},
+{
+  "type": "node",
+  "id": 6380684712,
+  "lat": 4.5967884,
+  "lon": 101.0781711,
+  "tags": {
+    "addr:housenumber": "21",
+    "amenity": "restaurant",
+    "name": "Restoran Sin Kin Kok",
+    "name:zh": "新建国茶餐室"
+  }
+},
+{
+  "type": "node",
+  "id": 6380703899,
+  "lat": 4.5953644,
+  "lon": 101.0783972,
+  "tags": {
+    "amenity": "cafe",
+    "name": "The Happy Eight Cafe"
+  }
+},
+{
+  "type": "node",
+  "id": 6380703900,
+  "lat": 4.5954111,
+  "lon": 101.0777740,
+  "tags": {
+    "amenity": "cafe",
+    "name": "googs"
+  }
+},
+{
+  "type": "node",
+  "id": 6380718314,
+  "lat": 4.5949672,
+  "lon": 101.0784640,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "japanese;western",
+    "name": "Shokudo Enterprise"
+  }
+},
+{
+  "type": "node",
+  "id": 6380718315,
+  "lat": 4.5950428,
+  "lon": 101.0780478,
+  "tags": {
+    "addr:housenumber": "35",
+    "addr:street": "Jalan Sultan Iskandar",
+    "amenity": "cafe",
+    "contact:instagram": "decafeandresthouse",
+    "internet_access": "wlan",
+    "name": "dé Cafe & Rest House",
+    "opening_hours": "Tu-Sa 09:00-18:00; Su 09:00-17:00"
+  }
+},
+{
+  "type": "node",
+  "id": 6380735394,
+  "lat": 4.5961601,
+  "lon": 101.0779790,
+  "tags": {
+    "name": "Panglima",
+    "shop": "supermarket"
+  }
+},
+{
+  "type": "node",
+  "id": 6383078913,
+  "lat": 4.5980804,
+  "lon": 101.0834658,
+  "tags": {
+    "addr:city": "Ipoh",
+    "addr:housenumber": "60-62",
+    "addr:street": "Jalan Dato Onn Jaafar",
+    "name": "Ipoh French Hotel",
+    "name:en": "Ipoh French Hotel",
+    "name:zh": "怡保法国酒店",
+    "name:zh-Hans": "怡保法国酒店",
+    "name:zh-Hant": "怡保法國酒店",
+    "phone": "+60-52413030",
+    "tourism": "hotel",
+    "website": "https://www.frenchhotel.com.my"
+  }
+},
+{
+  "type": "node",
+  "id": 6387228587,
+  "lat": 4.5940165,
+  "lon": 101.0812012,
+  "tags": {
+    "bench": "yes",
+    "bin": "no",
+    "bus": "yes",
+    "highway": "bus_stop",
+    "name": "Hugh Low Street",
+    "public_transport": "platform",
+    "shelter": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 6424706067,
+  "lat": 4.5983414,
+  "lon": 101.0742110,
+  "tags": {
+    "leisure": "park",
+    "name": "Landscape",
+    "name:en": "Landscape"
+  }
+},
+{
+  "type": "node",
+  "id": 6432022264,
+  "lat": 4.6021338,
+  "lon": 101.0730362,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "gerai Nasi Goreng Udang"
+  }
+},
+{
+  "type": "node",
+  "id": 6432032986,
+  "lat": 4.5984170,
+  "lon": 101.0835713,
+  "tags": {
+    "addr:city": "Ipoh",
+    "addr:postcode": "30300",
+    "addr:street": "Jalan Dato Onn Jaafar (Cockman Street)",
+    "amenity": "restaurant",
+    "name": "First Coffee House"
+  }
+},
+{
+  "type": "node",
+  "id": 6432102488,
+  "lat": 4.5941721,
+  "lon": 101.0826372,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "name": "Restauran Ayam Taugeh Lou Wong"
+  }
+},
+{
+  "type": "node",
+  "id": 6432103787,
+  "lat": 4.5990592,
+  "lon": 101.0822996,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "diet:halal": "yes",
+    "name": "New Hollywood"
+  }
+},
+{
+  "type": "node",
+  "id": 6432109957,
+  "lat": 4.5961948,
+  "lon": 101.0772437,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "western;dessert;hipster",
+    "name": "burps & giggles"
+  }
+},
+{
+  "type": "node",
+  "id": 6432112385,
+  "lat": 4.5966376,
+  "lon": 101.0777775,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "western",
+    "name": "Plan B"
+  }
+},
+{
+  "type": "node",
+  "id": 6466246185,
+  "lat": 4.5961903,
+  "lon": 101.0772724,
+  "tags": {
+    "amenity": "cafe",
+    "name": "Market Place"
+  }
+},
+{
+  "type": "node",
+  "id": 6496937085,
+  "lat": 4.5949426,
+  "lon": 101.0776598,
+  "tags": {
+    "amenity": "place_of_worship",
+    "name": "Shirdi Sai Baba Society",
+    "religion": "hindu"
+  }
+},
+{
+  "type": "node",
+  "id": 6497142585,
+  "lat": 4.5968813,
+  "lon": 101.0778833,
+  "tags": {
+    "addr:housenumber": "15",
+    "amenity": "restaurant",
+    "name": "Sin Lean Lee",
+    "name:en": "Sin Lean Lee"
+  }
+},
+{
+  "type": "node",
+  "id": 6565807911,
+  "lat": 4.5939591,
+  "lon": 101.0841203,
+  "tags": {
+    "amenity": "marketplace",
+    "name": "Gerbang Malam (Lou Wong Entrance)"
+  }
+},
+{
+  "type": "node",
+  "id": 6588872020,
+  "lat": 4.5960695,
+  "lon": 101.0778791,
+  "tags": {
+    "addr:street": "Jalan Bandar Timah (Leech Street)",
+    "amenity": "cafe",
+    "cuisine": "tea;coffee_shop",
+    "name": "Lim's Delights White Coffee"
+  }
+},
+{
+  "type": "node",
+  "id": 6616696971,
+  "lat": 4.5962767,
+  "lon": 101.0791217,
+  "tags": {
+    "addr:city": "Ipoh",
+    "addr:housenumber": "3",
+    "addr:postcode": "30100",
+    "addr:street": "Jalan Bijeh Timah (Treacher Street)",
+    "name": "Han Chin Pet Soo",
+    "name:zh": "闲真别墅",
+    "tourism": "museum",
+    "wikidata": "Q22079917",
+    "wikipedia": "en:Han Chin Pet Soo"
+  }
+},
+{
+  "type": "node",
+  "id": 6646137286,
+  "lat": 4.5938620,
+  "lon": 101.0766020,
+  "tags": {
+    "amenity": "cafe",
+    "name": "江记客家面 Hakka Noddle (morning only)"
+  }
+},
+{
+  "type": "node",
+  "id": 6709948785,
+  "lat": 4.5930689,
+  "lon": 101.0768595,
+  "tags": {
+    "amenity": "cafe",
+    "internet_access": "wlan",
+    "name": "Yinzo Kopi",
+    "opening_hours": "Tu-Su 08:30-17:30"
+  }
+},
+{
+  "type": "node",
+  "id": 6726394785,
+  "lat": 4.5998838,
+  "lon": 101.0815506,
+  "tags": {
+    "addr:housenumber": "36",
+    "addr:postcode": "30300",
+    "addr:street": "Jalan Dass",
+    "amenity": "restaurant",
+    "diet:vegetarian": "only",
+    "name": "Yun Ji Vegetarian"
+  }
+},
+{
+  "type": "node",
+  "id": 6728928585,
+  "lat": 4.5964987,
+  "lon": 101.0829523,
+  "tags": {
+    "amenity": "restaurant",
+    "diet:vegetarian": "only",
+    "name": "Meng Kee Vegetarian",
+    "opening_hours": "Mo-Su 09:00-18:00"
+  }
+},
+{
+  "type": "node",
+  "id": 6755490385,
+  "lat": 4.5973679,
+  "lon": 101.0759704,
+  "tags": {
+    "name": "Perak Hydro Building (#17)",
+    "name:en": "Perak Hydro Building (#17)",
+    "tourism": "viewpoint"
+  }
+},
+{
+  "type": "node",
+  "id": 6755490386,
+  "lat": 4.5976891,
+  "lon": 101.0775475,
+  "tags": {
+    "name": "Hong Kong and Shanghai Bank (#10)",
+    "name:en": "Hong Kong and Shanghai Bank (#10)",
+    "tourism": "viewpoint"
+  }
+},
+{
+  "type": "node",
+  "id": 6755490485,
+  "lat": 4.5986205,
+  "lon": 101.0778749,
+  "tags": {
+    "name": "F.M.S Bar and Restaurant (#9)",
+    "name:en": "F.M.S Bar and Restaurant (#9)",
+    "tourism": "viewpoint"
+  }
+},
+{
+  "type": "node",
+  "id": 6755490486,
+  "lat": 4.5967382,
+  "lon": 101.0772584,
+  "tags": {
+    "name": "Chung Thye Pin Building (#12)",
+    "name:en": "Chung Thye Pin Building (#12)",
+    "tourism": "viewpoint"
+  }
+},
+{
+  "type": "node",
+  "id": 6755490585,
+  "lat": 4.5969664,
+  "lon": 101.0773382,
+  "tags": {
+    "name": "S.P.H De Silva Building (#11)",
+    "name:en": "S.P.H De Silva Building (#11)",
+    "tourism": "viewpoint"
+  }
+},
+{
+  "type": "node",
+  "id": 6755503485,
+  "lat": 4.5965450,
+  "lon": 101.0773037,
+  "tags": {
+    "name": "Mikasa Photo Shop (#20)",
+    "tourism": "viewpoint"
+  }
+},
+{
+  "type": "node",
+  "id": 6755503486,
+  "lat": 4.5970469,
+  "lon": 101.0766344,
+  "tags": {
+    "name": "Straights Trading Building (#13)",
+    "name:en": "Straights Trading Building (#13)",
+    "tourism": "viewpoint"
+  }
+},
+{
+  "type": "node",
+  "id": 6755503487,
+  "lat": 4.5971739,
+  "lon": 101.0765816,
+  "tags": {
+    "name": "Mercantile Bank (#15)",
+    "name:en": "Mercantile Bank (#15)",
+    "tourism": "viewpoint"
+  }
+},
+{
+  "type": "node",
+  "id": 6755503488,
+  "lat": 4.5963654,
+  "lon": 101.0779108,
+  "tags": {
+    "name": "Dramatists Hostel (#21)",
+    "tourism": "viewpoint"
+  }
+},
+{
+  "type": "node",
+  "id": 6755503489,
+  "lat": 4.5962611,
+  "lon": 101.0790011,
+  "tags": {
+    "name": "Han Chin Pet Soo (#23)",
+    "tourism": "viewpoint"
+  }
+},
+{
+  "type": "node",
+  "id": 6755503490,
+  "lat": 4.5965736,
+  "lon": 101.0786756,
+  "tags": {
+    "name": "Perak Ku Kong Chow Association (#22)",
+    "tourism": "viewpoint"
+  }
+},
+{
+  "type": "node",
+  "id": 6755503585,
+  "lat": 4.5962287,
+  "lon": 101.0771346,
+  "tags": {
+    "name": "Jan Sahib’s Office (#19)",
+    "tourism": "viewpoint"
+  }
+},
+{
+  "type": "node",
+  "id": 6755503586,
+  "lat": 4.5971539,
+  "lon": 101.0766436,
+  "tags": {
+    "name": "Chartered Bank (#14)",
+    "name:en": "Chartered Bank (#14)",
+    "tourism": "viewpoint"
+  }
+},
+{
+  "type": "node",
+  "id": 6755503985,
+  "lat": 4.5979979,
+  "lon": 101.0764592,
+  "tags": {
+    "name": "Residence and Law Office of the Seenivasagam Brothers (#16)",
+    "name:en": "Residence and Law Office of the Seenivasagam Brothers (#16)",
+    "tourism": "viewpoint"
+  }
+},
+{
+  "type": "node",
+  "id": 6855554785,
+  "lat": 4.6000517,
+  "lon": 101.0767498,
+  "tags": {
+    "bus": "yes",
+    "highway": "bus_stop",
+    "name": "SM St Michael",
+    "public_transport": "platform"
+  }
+},
+{
+  "type": "node",
+  "id": 6855554792,
+  "lat": 4.5974404,
+  "lon": 101.0733673,
+  "tags": {
+    "amenity": "cafe",
+    "internet_access": "no",
+    "name": "Monorail Cafe",
+    "name:en": "Monorail Cafe"
+  }
+},
+{
+  "type": "node",
+  "id": 6887576285,
+  "lat": 4.5997014,
+  "lon": 101.0776126,
+  "tags": {
+    "amenity": "place_of_worship",
+    "name": "Indian Muslim mosque ipoh"
+  }
+},
+{
+  "type": "node",
+  "id": 6956382585,
+  "lat": 4.5985627,
+  "lon": 101.0826981,
+  "tags": {
+    "addr:city": "Ipoh",
+    "addr:housenumber": "G 57-65",
+    "addr:postcode": "30300",
+    "addr:street": "Jalan Horley",
+    "amenity": "restaurant",
+    "cuisine": "chinese;seafood",
+    "name": "Restoran Pusing Public Seafood"
+  }
+},
+{
+  "type": "node",
+  "id": 6963023985,
+  "lat": 4.5941403,
+  "lon": 101.0858904,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Makhota coffee shop YTF n Beef Noodles"
+  }
+},
+{
+  "type": "node",
+  "id": 7083917586,
+  "lat": 4.5972593,
+  "lon": 101.0839129,
+  "tags": {
+    "name": "Chor Lodging Inn",
+    "name:en": "Chor Lodging Inn",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 7090276291,
+  "lat": 4.5932404,
+  "lon": 101.0835178,
+  "tags": {
+    "amenity": "cafe",
+    "name": "guan Heinz Biscuit Shop"
+  }
+},
+{
+  "type": "node",
+  "id": 7090276293,
+  "lat": 4.5968572,
+  "lon": 101.0842373,
+  "tags": {
+    "amenity": "cafe",
+    "name": "PBUY Store & DRINKÄ Coffee"
+  }
+},
+{
+  "type": "node",
+  "id": 7138864486,
+  "lat": 4.5965580,
+  "lon": 101.0784424,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "name": "Restoran Li Heng Fatt"
+  }
+},
+{
+  "type": "node",
+  "id": 7138871885,
+  "lat": 4.6000209,
+  "lon": 101.0787699,
+  "tags": {
+    "name": "Bridge",
+    "tourism": "attraction"
+  }
+},
+{
+  "type": "node",
+  "id": 7178655556,
+  "lat": 4.5931795,
+  "lon": 101.0846197,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Chokodok Reggae House Cafe"
+  }
+},
+{
+  "type": "node",
+  "id": 7188025792,
+  "lat": 4.6027560,
+  "lon": 101.0767273,
+  "tags": {
+    "bench": "yes",
+    "bus": "yes",
+    "highway": "bus_stop",
+    "name": "Bank Islam Ipoh",
+    "name:ms": "Bank Islam Ipoh",
+    "public_transport": "platform",
+    "shelter": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 7188025793,
+  "lat": 4.6047973,
+  "lon": 101.0771523,
+  "tags": {
+    "bus": "yes",
+    "highway": "bus_stop",
+    "name": "JKR Ipoh",
+    "name:en": "JKR Ipoh",
+    "name:ms": "JKR Ipoh",
+    "public_transport": "platform"
+  }
+},
+{
+  "type": "node",
+  "id": 7188025794,
+  "lat": 4.5954462,
+  "lon": 101.0813437,
+  "tags": {
+    "bench": "yes",
+    "bus": "yes",
+    "highway": "bus_stop",
+    "name": "Pasar Ayam Amanjaya Ipoh",
+    "name:ms": "Pasar Ayam Amanjaya Ipoh",
+    "public_transport": "platform",
+    "shelter": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 7188025799,
+  "lat": 4.5967449,
+  "lon": 101.0847965,
+  "tags": {
+    "bench": "yes",
+    "bus": "yes",
+    "check_date:shelter": "2026-06-20",
+    "highway": "bus_stop",
+    "name": "Gerbang Malam / Pekan Baru 2",
+    "public_transport": "platform",
+    "shelter": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 7188025803,
+  "lat": 4.5960672,
+  "lon": 101.0839119,
+  "tags": {
+    "bench": "yes",
+    "bus": "yes",
+    "highway": "bus_stop",
+    "name": "Medan Selera Taman Kanak-Kanak",
+    "public_transport": "platform",
+    "shelter": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 7189628725,
+  "lat": 4.5938901,
+  "lon": 101.0727046,
+  "tags": {
+    "bus": "yes",
+    "highway": "bus_stop",
+    "name": "Stesen Bas Medan Kidd",
+    "name:en": "Medan Kidd Bus Station",
+    "name:ms": "Stesen Bas Medan Kidd",
+    "public_transport": "platform"
+  }
+},
+{
+  "type": "node",
+  "id": 7227747371,
+  "lat": 4.5922076,
+  "lon": 101.0746474,
+  "tags": {
+    "name": "Little India gate",
+    "tourism": "attraction"
+  }
+},
+{
+  "type": "node",
+  "id": 7236718285,
+  "lat": 4.6014990,
+  "lon": 101.0760874,
+  "tags": {
+    "amenity": "place_of_worship",
+    "check_date": "2026-06-20",
+    "name": "Church of St. John",
+    "name:en": "Church of St. John",
+    "religion": "christian"
+  }
+},
+{
+  "type": "node",
+  "id": 7279204672,
+  "lat": 4.5983204,
+  "lon": 101.0748902,
+  "tags": {
+    "bus": "yes",
+    "highway": "bus_stop",
+    "name": "03 Ipoh High Court",
+    "name:en": "03 Ipoh High Court",
+    "network": "Perak Hop-On Hop-Off Bus",
+    "public_transport": "platform",
+    "ref": "03"
+  }
+},
+{
+  "type": "node",
+  "id": 7279204673,
+  "lat": 4.5934595,
+  "lon": 101.0760836,
+  "tags": {
+    "bus": "yes",
+    "highway": "bus_stop",
+    "name": "04 Little India",
+    "network": "Perak Hop-On Hop-Off Bus",
+    "public_transport": "platform",
+    "ref": "04"
+  }
+},
+{
+  "type": "node",
+  "id": 7279204674,
+  "lat": 4.5972224,
+  "lon": 101.0773887,
+  "tags": {
+    "bench": "no",
+    "bus": "yes",
+    "highway": "bus_stop",
+    "name": "05 Ipoh Old Town",
+    "network": "Perak Hop-On Hop-Off Bus",
+    "public_transport": "platform",
+    "ref": "05",
+    "shelter": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 7279204675,
+  "lat": 4.5980333,
+  "lon": 101.0800504,
+  "tags": {
+    "bus": "yes",
+    "highway": "bus_stop",
+    "name": "06 Telekom Malaysia",
+    "network": "Perak Hop-On Hop-Off Bus",
+    "public_transport": "platform",
+    "ref": "06",
+    "shelter": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 7279204676,
+  "lat": 4.5967449,
+  "lon": 101.0847617,
+  "tags": {
+    "bench": "yes",
+    "bus": "yes",
+    "highway": "bus_stop",
+    "name": "07 Brewster Road",
+    "network": "Perak Hop-On Hop-Off Bus",
+    "public_transport": "platform",
+    "ref": "07",
+    "shelter": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 7279204679,
+  "lat": 4.5954983,
+  "lon": 101.0843998,
+  "tags": {
+    "bus": "yes",
+    "highway": "bus_stop",
+    "name": "09 Gerbang Malam",
+    "network": "Perak Hop-On Hop-Off Bus",
+    "public_transport": "platform",
+    "ref": "09"
+  }
+},
+{
+  "type": "node",
+  "id": 7279204680,
+  "lat": 4.5948453,
+  "lon": 101.0855489,
+  "tags": {
+    "bench": "no",
+    "bus": "yes",
+    "highway": "bus_stop",
+    "name": "10 Octagon (Yau Tet Shin Market)",
+    "network": "Perak Hop-On Hop-Off Bus",
+    "public_transport": "platform",
+    "ref": "10",
+    "shelter": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 7279204681,
+  "lat": 4.5916324,
+  "lon": 101.0826166,
+  "tags": {
+    "bus": "yes",
+    "highway": "bus_stop",
+    "name": "11 The Majestic",
+    "network": "Perak Hop-On Hop-Off Bus",
+    "public_transport": "platform",
+    "ref": "11"
+  }
+},
+{
+  "type": "node",
+  "id": 7279204682,
+  "lat": 4.5944566,
+  "lon": 101.0796358,
+  "tags": {
+    "bench": "no",
+    "bus": "yes",
+    "highway": "bus_stop",
+    "name": "12 Panglima Kinta Mosque",
+    "network": "Perak Hop-On Hop-Off Bus",
+    "public_transport": "platform",
+    "ref": "12",
+    "shelter": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 7290817982,
+  "lat": 4.5906855,
+  "lon": 101.0732410,
+  "tags": {
+    "bench": "yes",
+    "bus": "yes",
+    "highway": "bus_stop",
+    "name": "ACS",
+    "public_transport": "platform",
+    "shelter": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 7294659931,
+  "lat": 4.6024069,
+  "lon": 101.0769160,
+  "tags": {
+    "bench": "yes",
+    "bus": "yes",
+    "highway": "bus_stop",
+    "name": "Bank Islam Ipoh",
+    "name:ms": "Bank Islam Ipoh",
+    "public_transport": "platform",
+    "shelter": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 7739205507,
+  "lat": 4.5959582,
+  "lon": 101.0773903,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Zaitun Multi Cuisine Family Restaurant"
+  }
+},
+{
+  "type": "node",
+  "id": 7801552960,
+  "lat": 4.6014069,
+  "lon": 101.0790119,
+  "tags": {
+    "addr:city": "Ipoh",
+    "addr:postcode": "30000",
+    "addr:street": "Jalan Lim Bo Seng",
+    "air_conditioning": "yes",
+    "amenity": "restaurant",
+    "cuisine": "Yemen;Yemeni;middle_eastern;arab;malay;malaysian",
+    "delivery": "yes",
+    "diet:halal": "yes",
+    "name": "Hadramout Paradise",
+    "outdoor_seating": "yes",
+    "phone": "013-383 3637",
+    "takeaway": "yes",
+    "wheelchair": "limited"
+  }
+},
+{
+  "type": "node",
+  "id": 7869075806,
+  "lat": 4.6019820,
+  "lon": 101.0777163,
+  "tags": {
+    "addr:city": "Ipoh",
+    "addr:country": "MY",
+    "addr:postcode": "30000",
+    "addr:street": "Jalan Kompleks Islam",
+    "amenity": "school",
+    "email": "ABB2080@moe.edu.my",
+    "fax": "+605-254 2550",
+    "full_name": "Sekolah Kebangsaan St. Michael",
+    "name": "SK St. Michael",
+    "phone": "+605-254 5508",
+    "ref": "ABB2080",
+    "wikidata": "Q12706629",
+    "wikipedia": "ms:Sekolah Kebangsaan St. Michael 1"
+  }
+},
+{
+  "type": "node",
+  "id": 8581485366,
+  "lat": 4.5990565,
+  "lon": 101.0851013,
+  "tags": {
+    "addr:country": "MY",
+    "brand": "99 Speedmart",
+    "brand:wikidata": "Q62075061",
+    "currency:MYR": "yes",
+    "internet_access": "wlan",
+    "name": "99 Speedmart",
+    "operator": "99 Speed Mart Sdn Berhad",
+    "payment:coins": "yes",
+    "payment:mastercard": "yes",
+    "payment:notes": "yes",
+    "payment:touchngo_ewallet": "yes",
+    "payment:visa": "yes",
+    "phone": "+603-3362 6863",
+    "shop": "supermarket",
+    "smoking": "no",
+    "website": "https://www.99speedmart.com.my/Store"
+  }
+},
+{
+  "type": "node",
+  "id": 9503863652,
+  "lat": 4.5909996,
+  "lon": 101.0842159,
+  "tags": {
+    "name": "Wisma Kinta",
+    "name:zh": "近打购物中心",
+    "shop": "mall"
+  }
+},
+{
+  "type": "node",
+  "id": 9507109042,
+  "lat": 4.6043101,
+  "lon": 101.0837646,
+  "tags": {
+    "description": "Ipoh-Fukuoka Sister City Japanese Garden",
+    "leisure": "park",
+    "name": "Taman Jepun (Entrance)"
+  }
+},
+{
+  "type": "node",
+  "id": 10063847911,
+  "lat": 4.5975221,
+  "lon": 101.0780163,
+  "tags": {
+    "addr:housenumber": "51",
+    "addr:street": "Jalan Tun Sambanthan",
+    "amenity": "cafe",
+    "check_date": "2022-09-30",
+    "cuisine": "coffee_shop",
+    "name": "25 Kafe Panglima",
+    "name:ms": "25 Kafe Panglima",
+    "opening_hours": "Mo-Sa 08:30-20:45; Su off",
+    "outdoor_seating": "no",
+    "payment:mastercard": "yes",
+    "payment:visa": "yes",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 10063896496,
+  "lat": 4.5977778,
+  "lon": 101.0769745,
+  "tags": {
+    "addr:housenumber": "23",
+    "addr:street": "Jalan Tun Sambanthan",
+    "amenity": "cafe",
+    "check_date": "2022-09-30",
+    "email": "coldbluecoffee@gmail.com",
+    "name": "Cold Blue",
+    "name:en": "Jeyaratnam & Co.",
+    "office": "lawyer",
+    "phone": "+601159716583"
+  }
+},
+{
+  "type": "node",
+  "id": 10063912018,
+  "lat": 4.5979160,
+  "lon": 101.0762428,
+  "tags": {
+    "addr:housenumber": "1",
+    "addr:street": "Jalan Tun Sambanthan",
+    "amenity": "restaurant",
+    "check_date": "2022-09-30",
+    "cuisine": "pizza",
+    "name": "Miker Pizza",
+    "name:en": "Miker Pizza"
+  }
+},
+{
+  "type": "node",
+  "id": 10063912019,
+  "lat": 4.5978773,
+  "lon": 101.0763950,
+  "tags": {
+    "amenity": "cafe",
+    "check_date": "2022-09-30",
+    "cuisine": "coffee_shop",
+    "name": "Kedai Kopi Fatt Kee",
+    "name:ms": "Kedai Kopi Fatt Kee"
+  }
+},
+{
+  "type": "node",
+  "id": 10063912020,
+  "lat": 4.5978155,
+  "lon": 101.0766631,
+  "tags": {
+    "addr:housenumber": "17",
+    "addr:street": "Jalan Tun Sambanthan",
+    "amenity": "restaurant",
+    "check_date": "2022-09-30",
+    "name": "Rojak N Cendoi",
+    "name:ms": "Rojak N Cendoi"
+  }
+},
+{
+  "type": "node",
+  "id": 10063912022,
+  "lat": 4.5978762,
+  "lon": 101.0764594,
+  "tags": {
+    "amenity": "restaurant",
+    "check_date": "2022-09-30",
+    "cuisine": "japanese",
+    "name": "Genki",
+    "name:ms": "Genki"
+  }
+},
+{
+  "type": "node",
+  "id": 10066724691,
+  "lat": 4.5936701,
+  "lon": 101.0846702,
+  "tags": {
+    "addr:housenumber": "66",
+    "addr:street": "Jalan Yau Tet Shin",
+    "amenity": "cafe",
+    "check_date": "2022-10-01",
+    "cuisine": "regional;asian;dessert",
+    "name": "Ipoh Bean Bar",
+    "outdoor_seating": "no",
+    "phone": "011-58868836"
+  }
+},
+{
+  "type": "node",
+  "id": 10250883909,
+  "lat": 4.5946953,
+  "lon": 101.0841568,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Ipoh traditional style chee cheong fun"
+  }
+},
+{
+  "type": "node",
+  "id": 10299654610,
+  "lat": 4.5965403,
+  "lon": 101.0857577,
+  "tags": {
+    "name": "SAVE",
+    "shop": "supermarket"
+  }
+},
+{
+  "type": "node",
+  "id": 10562165089,
+  "lat": 4.5939603,
+  "lon": 101.0820979,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "indonesian",
+    "name": "Ganteng",
+    "phone": "+60166138495"
+  }
+},
+{
+  "type": "node",
+  "id": 10562243609,
+  "lat": 4.5965200,
+  "lon": 101.0776072,
+  "tags": {
+    "addr:housenumber": "89 & 91",
+    "addr:postcode": "3000",
+    "addr:street": "Jalan Sultan Yusuf",
+    "internet_access": "wlan",
+    "name": "Belakang Kong Heng",
+    "phone": "0164252275",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 10564421398,
+  "lat": 4.5958636,
+  "lon": 101.0777002,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "The Belly Lab",
+    "opening_hours": "Mo-Su 11:00-22:00",
+    "phone": "+60 18 772 7296"
+  }
+},
+{
+  "type": "node",
+  "id": 10564480209,
+  "lat": 4.5933479,
+  "lon": 101.0771591,
+  "tags": {
+    "addr:housenumber": "8",
+    "addr:street": "Jalan Bandar Timah",
+    "amenity": "restaurant",
+    "cuisine": "indian",
+    "name": "old town capati"
+  }
+},
+{
+  "type": "node",
+  "id": 10732441902,
+  "lat": 4.5939131,
+  "lon": 101.0822538,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Mat Jasak"
+  }
+},
+{
+  "type": "node",
+  "id": 10732441903,
+  "lat": 4.5932541,
+  "lon": 101.0771348,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "indian",
+    "name": "Sri Aryaa Bhavan"
+  }
+},
+{
+  "type": "node",
+  "id": 10783684705,
+  "lat": 4.5934245,
+  "lon": 101.0757044,
+  "tags": {
+    "addr:housenumber": "15",
+    "addr:postcode": "30200",
+    "addr:street": "Jalan Lahat",
+    "amenity": "restaurant",
+    "cuisine": "breakfast;chicken;coffee_shop;curry;indian;malaysian",
+    "name": "Nasi Kandar NM Ibrahim",
+    "opening_hours": "Th-Tu 08:00-21:00"
+  }
+},
+{
+  "type": "node",
+  "id": 10996593605,
+  "lat": 4.5941060,
+  "lon": 101.0773992,
+  "tags": {
+    "amenity": "cafe",
+    "name": "Kantine"
+  }
+},
+{
+  "type": "node",
+  "id": 11048011090,
+  "lat": 4.6037564,
+  "lon": 101.0805616,
+  "tags": {
+    "amenity": "cafe",
+    "name": "Ngopdul Cafe"
+  }
+},
+{
+  "type": "node",
+  "id": 11210115943,
+  "lat": 4.5961938,
+  "lon": 101.0734028,
+  "tags": {
+    "amenity": "cafe",
+    "brand": "ZUS Coffee",
+    "brand:wikidata": "Q110811473",
+    "cuisine": "coffee_shop",
+    "name": "ZUS Coffee",
+    "takeaway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 11210483020,
+  "lat": 4.5959004,
+  "lon": 101.0775539,
+  "tags": {
+    "addr:city": "Ipoh",
+    "addr:housenumber": "26",
+    "addr:postcode": "30000",
+    "addr:street": "Jalan Market",
+    "amenity": "cafe",
+    "internet_access": "wlan",
+    "internet_access:fee": "no",
+    "name": "Girlie Cafe"
+  }
+},
+{
+  "type": "node",
+  "id": 11210486762,
+  "lat": 4.5908258,
+  "lon": 101.0844965,
+  "tags": {
+    "addr:country": "MY",
+    "brand": "99 Speedmart",
+    "brand:wikidata": "Q62075061",
+    "currency:MYR": "yes",
+    "internet_access": "wlan",
+    "name": "99 Speedmart",
+    "payment:coins": "yes",
+    "payment:mastercard": "yes",
+    "payment:notes": "yes",
+    "payment:touchngo_ewallet": "yes",
+    "payment:visa": "yes",
+    "phone": "+603-3362 6863",
+    "shop": "supermarket",
+    "smoking": "no",
+    "website": "https://www.99speedmart.com.my/Store"
+  }
+},
+{
+  "type": "node",
+  "id": 11211948637,
+  "lat": 4.5966810,
+  "lon": 101.0850733,
+  "tags": {
+    "addr:housenumber": "172;174;176",
+    "addr:postcode": "30000",
+    "addr:street": "Jalan Sultan Idris Shah",
+    "amenity": "restaurant",
+    "name": "Shawarma Ipoh & Nasi Arab",
+    "phone": "01111644454"
+  }
+},
+{
+  "type": "node",
+  "id": 11573508602,
+  "lat": 4.5971588,
+  "lon": 101.0769020,
+  "tags": {
+    "addr:city": "Ipoh",
+    "addr:housenumber": "31",
+    "addr:postcode": "30000",
+    "addr:street": "Jalan Dato Maharajalela",
+    "name": "Brick Box Hotel",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 11807053769,
+  "lat": 4.5917604,
+  "lon": 101.0738120,
+  "tags": {
+    "internet_access": "wlan",
+    "name": "City Hostel",
+    "opening_hours": "Mo-Su 07:00-21:00",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 11878358570,
+  "lat": 4.5951927,
+  "lon": 101.0845416,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Magical Beans"
+  }
+},
+{
+  "type": "node",
+  "id": 11878678469,
+  "lat": 4.5951739,
+  "lon": 101.0845295,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Magical Beans"
+  }
+},
+{
+  "type": "node",
+  "id": 11880602969,
+  "lat": 4.5966071,
+  "lon": 101.0781140,
+  "tags": {
+    "addr:housenumber": "2",
+    "addr:postcode": "30000",
+    "addr:street": "Jalan Panglima",
+    "amenity": "cafe",
+    "brand": "OldTown White Coffee",
+    "brand:wikidata": "Q7085308",
+    "cuisine": "coffee_shop;malaysian",
+    "name": "OldTown White Coffee",
+    "shop": "coffee",
+    "takeaway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 11880684169,
+  "lat": 4.5922369,
+  "lon": 101.0766890,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "curry;indian",
+    "name": "Bigtown Spices"
+  }
+},
+{
+  "type": "node",
+  "id": 11880691770,
+  "lat": 4.5924302,
+  "lon": 101.0767101,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "curry;indian",
+    "name": "Bigtown Spices"
+  }
+},
+{
+  "type": "node",
+  "id": 11949665569,
+  "lat": 4.5961109,
+  "lon": 101.0790060,
+  "tags": {
+    "amenity": "cafe",
+    "name": "Kedai Makanan & Minuman Ding Feng"
+  }
+},
+{
+  "type": "node",
+  "id": 12009371531,
+  "lat": 4.5986168,
+  "lon": 101.0779682,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Durbar At FMS"
+  }
+},
+{
+  "type": "node",
+  "id": 12009498067,
+  "lat": 4.5937575,
+  "lon": 101.0765680,
+  "tags": {
+    "addr:housenumber": "49",
+    "amenity": "restaurant",
+    "name": "Tamby Kadai"
+  }
+},
+{
+  "type": "node",
+  "id": 12009575429,
+  "lat": 4.5974645,
+  "lon": 101.0781584,
+  "tags": {
+    "addr:street": "Jalan Bandar Timah",
+    "amenity": "cafe",
+    "name": "STG Deli+Cafe"
+  }
+},
+{
+  "type": "node",
+  "id": 12009575441,
+  "lat": 4.5983942,
+  "lon": 101.0780320,
+  "tags": {
+    "addr:housenumber": "5",
+    "amenity": "restaurant",
+    "name": "St Mike’s"
+  }
+},
+{
+  "type": "node",
+  "id": 12012239622,
+  "lat": 4.5953672,
+  "lon": 101.0815098,
+  "tags": {
+    "amenity": "marketplace",
+    "name": "Pasar Ayam Amanjaya",
+    "name:ms": "Pasar Ayam Amanjaya"
+  }
+},
+{
+  "type": "node",
+  "id": 12012284605,
+  "lat": 4.5975417,
+  "lon": 101.0779551,
+  "tags": {
+    "addr:housenumber": "49",
+    "amenity": "restaurant",
+    "name": "Old Town Kitchen Cafe"
+  }
+},
+{
+  "type": "node",
+  "id": 12012284608,
+  "lat": 4.5976262,
+  "lon": 101.0784235,
+  "tags": {
+    "addr:housenumber": "22&24",
+    "addr:street": "Jalan Tun Sambanthan",
+    "name": "22 Hale Street Gallery",
+    "tourism": "museum"
+  }
+},
+{
+  "type": "node",
+  "id": 12012284615,
+  "lat": 4.5977310,
+  "lon": 101.0780113,
+  "tags": {
+    "addr:housenumber": "12",
+    "addr:street": "Jalan Tun Sambanthan",
+    "amenity": "restaurant",
+    "name": "Restoran Daun Pisang Kala Villas"
+  }
+},
+{
+  "type": "node",
+  "id": 12013436756,
+  "lat": 4.6038010,
+  "lon": 101.0814765,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Mikerfood"
+  }
+},
+{
+  "type": "node",
+  "id": 12014017294,
+  "lat": 4.5974211,
+  "lon": 101.0783303,
+  "tags": {
+    "addr:housenumber": "82",
+    "addr:street": "Jalan Bandar Timah",
+    "amenity": "restaurant",
+    "name": "Rebecca's"
+  }
+},
+{
+  "type": "node",
+  "id": 12048435769,
+  "lat": 4.5959738,
+  "lon": 101.0779852,
+  "tags": {
+    "addr:housenumber": "35",
+    "addr:postcode": "30000",
+    "addr:street": "Jalan Market",
+    "amenity": "restaurant",
+    "cuisine": "asian;coffee_shop;ice_cream",
+    "name": "Cha Kori"
+  }
+},
+{
+  "type": "node",
+  "id": 12055307859,
+  "lat": 4.5957049,
+  "lon": 101.0846854,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Hou Heng"
+  }
+},
+{
+  "type": "node",
+  "id": 12422350201,
+  "lat": 4.5911561,
+  "lon": 101.0845110,
+  "tags": {
+    "addr:housenumber": "40",
+    "addr:postcode": "30250",
+    "addr:street": "Jalan Yang Kalsom",
+    "amenity": "restaurant",
+    "cuisine": "indian",
+    "name": "HAJI GANY Nasi Kandar"
+  }
+},
+{
+  "type": "node",
+  "id": 12422446001,
+  "lat": 4.5913675,
+  "lon": 101.0857790,
+  "tags": {
+    "addr:housenumber": "21",
+    "addr:postcode": "31650",
+    "addr:street": "Jalan Ali Pichay",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "name": "San Xii Claypot",
+    "name:en": "San Xii Claypot"
+  }
+},
+{
+  "type": "node",
+  "id": 12616073300,
+  "lat": 4.5945696,
+  "lon": 101.0783271,
+  "tags": {
+    "brand": "99 Speedmart",
+    "brand:wikidata": "Q62075061",
+    "name": "99 Speedmart",
+    "shop": "supermarket"
+  }
+},
+{
+  "type": "node",
+  "id": 12616091302,
+  "lat": 4.5961425,
+  "lon": 101.0829437,
+  "tags": {
+    "bench": "yes",
+    "bus": "yes",
+    "highway": "bus_stop",
+    "name": "UTC Ipoh Perak",
+    "public_transport": "platform",
+    "shelter": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 12801856601,
+  "lat": 4.5922536,
+  "lon": 101.0738082,
+  "tags": {
+    "name": "Hotel Medan Kidd",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 12888451710,
+  "lat": 4.6024906,
+  "lon": 101.0781459,
+  "tags": {
+    "bus": "yes",
+    "highway": "bus_stop",
+    "name": "SM St Michael",
+    "public_transport": "platform"
+  }
+},
+{
+  "type": "node",
+  "id": 12888532109,
+  "lat": 4.5946216,
+  "lon": 101.0751884,
+  "tags": {
+    "amenity": "place_of_worship",
+    "name": "Surau Al-Falah",
+    "place_of_worship": "musalla",
+    "religion": "muslim"
+  }
+},
+{
+  "type": "node",
+  "id": 12888532110,
+  "lat": 4.5948890,
+  "lon": 101.0745648,
+  "tags": {
+    "amenity": "place_of_worship",
+    "name": "Gudwara Sahib Police Ipoh",
+    "religion": "sikh"
+  }
+},
+{
+  "type": "node",
+  "id": 12979725886,
+  "lat": 4.5940631,
+  "lon": 101.0854039,
+  "tags": {
+    "brand": "99 Speedmart",
+    "brand:wikidata": "Q62075061",
+    "name": "99 Speedmart",
+    "shop": "supermarket"
+  }
+},
+{
+  "type": "node",
+  "id": 13103849622,
+  "lat": 4.6019025,
+  "lon": 101.0789176,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Surf & Turf"
+  }
+},
+{
+  "type": "node",
+  "id": 13105591819,
+  "lat": 4.5983316,
+  "lon": 101.0782845,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Rendang Tok Mak Nik"
+  }
+},
+{
+  "type": "node",
+  "id": 13108043923,
+  "lat": 4.5964733,
+  "lon": 101.0786881,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Restoran Two Six"
+  }
+},
+{
+  "type": "node",
+  "id": 13108043928,
+  "lat": 4.5966490,
+  "lon": 101.0786587,
+  "tags": {
+    "addr:housenumber": "39",
+    "amenity": "restaurant",
+    "name": "Kong Fu Kopitiam"
+  }
+},
+{
+  "type": "node",
+  "id": 13108083476,
+  "lat": 4.6026988,
+  "lon": 101.0793577,
+  "tags": {
+    "amenity": "cafe",
+    "name": "Fanc Balloon & Cafe"
+  }
+},
+{
+  "type": "node",
+  "id": 13141822358,
+  "lat": 4.5955579,
+  "lon": 101.0778183,
+  "tags": {
+    "amenity": "cafe",
+    "name": "Nam Chau Kopitiam"
+  }
+},
+{
+  "type": "node",
+  "id": 13141822368,
+  "lat": 4.5943298,
+  "lon": 101.0772809,
+  "tags": {
+    "addr:housenumber": "51",
+    "name": "Hotel Ban Loong 1915",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 13141823387,
+  "lat": 4.5976695,
+  "lon": 101.0773006,
+  "tags": {
+    "brand": "99 Speedmart",
+    "brand:wikidata": "Q62075061",
+    "name": "99 Speedmart",
+    "shop": "supermarket"
+  }
+},
+{
+  "type": "node",
+  "id": 13141823388,
+  "lat": 4.5964706,
+  "lon": 101.0775857,
+  "tags": {
+    "name": "Sekeping Kong Heng",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 13142203659,
+  "lat": 4.5963461,
+  "lon": 101.0853965,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Zara Thai Tomyam"
+  }
+},
+{
+  "type": "node",
+  "id": 13142203662,
+  "lat": 4.5966600,
+  "lon": 101.0851780,
+  "tags": {
+    "addr:housenumber": "178",
+    "name": "Parlo Home Global",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 13142203666,
+  "lat": 4.5966114,
+  "lon": 101.0853216,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Zara Thai Tomyam"
+  }
+},
+{
+  "type": "node",
+  "id": 13323732763,
+  "lat": 4.5963771,
+  "lon": 101.0775723,
+  "tags": {
+    "amenity": "cafe",
+    "cuisine": "coffee_shop",
+    "name": "Hourglass Coffee"
+  }
+},
+{
+  "type": "node",
+  "id": 13323839637,
+  "lat": 4.5960674,
+  "lon": 101.0787597,
+  "tags": {
+    "addr:housenumber": "24",
+    "amenity": "restaurant",
+    "name": "Cowboy Food & Drinks"
+  }
+},
+{
+  "type": "node",
+  "id": 13403987801,
+  "lat": 4.5943501,
+  "lon": 101.0830582,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "name": "Ekor (E-kor)",
+    "opening_hours": "Tu-Su 09:30-17:30",
+    "outdoor_seating": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 13408481301,
+  "lat": 4.5957952,
+  "lon": 101.0785945,
+  "tags": {
+    "amenity": "cafe",
+    "name": "Chloe.Co"
+  }
+},
+{
+  "type": "node",
+  "id": 13411778966,
+  "lat": 4.5910579,
+  "lon": 101.0852222,
+  "tags": {
+    "amenity": "language_school",
+    "description": "书法导师: 张南生",
+    "education": "language_school",
+    "language:zh": "yes",
+    "name": "马来西亚华人文化协会（霹雳分会）书画班",
+    "name:zh": "马来西亚华人文化协会（霹雳分会）书画班",
+    "name:zh-Hans": "马来西亚华人文化协会（霹雳分会）书画班",
+    "name:zh-Hant": "馬來西亞華人文化協會（霹靂分會）書畫班",
+    "phone": "+60-124545739",
+    "website": "https://shuyimalaysia.org/useful-links/"
+  }
+},
+{
+  "type": "node",
+  "id": 13415566801,
+  "lat": 4.5937040,
+  "lon": 101.0845535,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "DOUBA 豆霸"
+  }
+},
+{
+  "type": "node",
+  "id": 13469643301,
+  "lat": 4.5924443,
+  "lon": 101.0843711,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Mika"
+  }
+},
+{
+  "type": "node",
+  "id": 13574988501,
+  "lat": 4.5974173,
+  "lon": 101.0848136,
+  "tags": {
+    "amenity": "cafe",
+    "name": "Back to begin",
+    "outdoor_seating": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 13752748502,
+  "lat": 4.5930711,
+  "lon": 101.0822613,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Restoran Ipoh"
+  }
+},
+{
+  "type": "node",
+  "id": 14132847101,
+  "lat": 4.5947391,
+  "lon": 101.0837557,
+  "tags": {
+    "name": "De Quinton Hotel",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 14165369812,
+  "lat": 4.5945312,
+  "lon": 101.0824682,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "mapillary": "1002063179503557",
+    "name": "Restoran Weng Seng"
+  }
+},
+{
+  "type": "node",
+  "id": 14165466934,
+  "lat": 4.5951491,
+  "lon": 101.0837208,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "mapillary": "27249329821384033",
+    "name": "Kedai Makanan Loke Wooi Kee"
+  }
+},
+{
+  "type": "node",
+  "id": 14165466935,
+  "lat": 4.5951257,
+  "lon": 101.0834825,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "dessert",
+    "mapillary": "1544762520324563",
+    "name": "San Sui Tau Fu Far"
+  }
+},
+{
+  "type": "node",
+  "id": 14165466936,
+  "lat": 4.5939230,
+  "lon": 101.0836408,
+  "tags": {
+    "amenity": "cafe",
+    "brand": "Mixue Ice Cream & Tea",
+    "brand:wikidata": "Q107406476",
+    "cuisine": "ice_cream;bubble_tea",
+    "mapillary": "1655626625734858",
+    "name": "Mixue",
+    "takeaway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 14165466937,
+  "lat": 4.5939550,
+  "lon": 101.0835001,
+  "tags": {
+    "amenity": "cafe",
+    "mapillary": "36654216927558083",
+    "name": "Khing Cafe"
+  }
+},
+{
+  "type": "node",
+  "id": 14165466940,
+  "lat": 4.5941266,
+  "lon": 101.0838265,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "mapillary": "1044148435223878",
+    "name": "Loong Kee"
+  }
+},
+{
+  "type": "node",
+  "id": 14213365572,
+  "lat": 4.5910147,
+  "lon": 101.0836825,
+  "tags": {
+    "addr:city": "Ipoh",
+    "addr:housenumber": "A15",
+    "addr:postcode": "30300",
+    "addr:street": "Jalan Dato Tahwil Azar Taman Jubilee",
+    "amenity": "restaurant",
+    "cuisine": "seafood;chinese",
+    "name": "義风味海鲜馆Restoran Makanan Laut Yee",
+    "name:zh": "義风味海鲜馆",
+    "opening_hours": "11:30am-10:00pm",
+    "phone": "+601155858981",
+    "website": "https://www.facebook.com/share/19hYecbk7C/"
+  }
+},
+{
+  "type": "way",
+  "id": 180208957,
+  "center": {
+    "lat": 4.6041474,
+    "lon": 101.0834559
+  },
+  "tags": {
+    "addr:postcode": "30300",
+    "addr:street": "Jalan Keliling Dalam",
+    "alt_name:en": "Coronation Park",
+    "leisure": "park",
+    "name": "Taman D.R Seenivasagam",
+    "name:en": "D.R Seenivasagam Park",
+    "name:zh": "加冕公园",
+    "opening_hours": "24/7",
+    "wikidata": "Q49568973",
+    "wikimedia_commons": "Category:D.R. Seenivasagam Park"
+  }
+},
+{
+  "type": "way",
+  "id": 283118326,
+  "center": {
+    "lat": 4.5989502,
+    "lon": 101.0767304
+  },
+  "tags": {
+    "leisure": "park",
+    "name": "Ipoh Padang",
+    "name:ms": "Ipoh Padang",
+    "name:zh": "怡保大草场",
+    "name:zh-Hans": "怡保大草场",
+    "name:zh-Hant": "怡保大草場"
+  }
+},
+{
+  "type": "way",
+  "id": 299647033,
+  "center": {
+    "lat": 4.6012295,
+    "lon": 101.0773971
+  },
+  "tags": {
+    "addr:city": "Ipoh",
+    "addr:country": "MY",
+    "addr:postcode": "30000",
+    "addr:street": "Jalan S. P. Seenivasagam",
+    "amenity": "school",
+    "email": "AEB2044@moe.edu.my",
+    "fax": "+605-254 0487",
+    "full_name": "Sekolah Menengah Kebangsaan St. Michael",
+    "name": "SMK St. Michael",
+    "name:en": "St. Michael's Institution",
+    "phone": "+605-254 0418",
+    "ref": "AEB2044",
+    "wikidata": "Q7590705",
+    "wikipedia": "en:St. Michael's Institution"
+  }
+},
+{
+  "type": "way",
+  "id": 299647034,
+  "center": {
+    "lat": 4.5981487,
+    "lon": 101.0733900
+  },
+  "tags": {
+    "alt_name": "KTM Ipoh",
+    "full_name": "Ipoh Railway Station",
+    "name": "Ipoh",
+    "name:en": "Ipoh",
+    "name:ja": "イポー",
+    "name:ko": "이포",
+    "name:ms": "Ipoh",
+    "name:zh": "怡保",
+    "name:zh-Hans": "怡保",
+    "name:zh-Hant": "怡保",
+    "not:brand:wikidata": "Q215657",
+    "operator": "KTM",
+    "public_transport": "station",
+    "railway": "station",
+    "station": "train",
+    "tourism": "attraction",
+    "train": "yes",
+    "website": "https://mrt.com.my/ktm_intercity/Ipoh.htm",
+    "wheelchair": "yes",
+    "wikidata": "Q1101067",
+    "wikipedia": "en:Ipoh railway station"
+  }
+},
+{
+  "type": "way",
+  "id": 300885634,
+  "center": {
+    "lat": 4.5974851,
+    "lon": 101.0710909
+  },
+  "tags": {
+    "addr:city": "Ipoh",
+    "addr:postcode": "30100",
+    "addr:street": "Jalan Tun Abdul Razak",
+    "amenity": "school",
+    "email": "ABD2161@moe.edu.my",
+    "fax": "+605-255 0546",
+    "full_name": "Sekolah Jenis Kebangsaan (Tamil) Perak Sangeetha Sabah",
+    "name": "SJK (T) Perak Sangeetha Sabah",
+    "name:ms": "SJK (T) Perak Sangeetha Sabah",
+    "name:ta": "சங்கீத சபா தமிழ்ப்பள்ளி",
+    "phone": "+605-255 0546",
+    "ref": "ABD2161",
+    "wikidata": "Q20452796",
+    "wikipedia": "ms:Sekolah Jenis Kebangsaan (T) Perak Sangeetha"
+  }
+},
+{
+  "type": "way",
+  "id": 300885740,
+  "center": {
+    "lat": 4.5918002,
+    "lon": 101.0695781
+  },
+  "tags": {
+    "addr:street": "Jalan Tun Perak",
+    "amenity": "school",
+    "email": "ABA2010@moe.edu.my",
+    "fax": "+605-254 4884",
+    "isced:level": "1",
+    "name": "Sekolah Kebangsaan Dato' Panglima Kinta",
+    "name:ms": "Sekolah Kebangsaan Dato' Panglima Kinta",
+    "phone": "+605-254 5680",
+    "ref": "ABA2010",
+    "short_name": "SK Dato' Panglima Kinta",
+    "wikidata": "Q12704707",
+    "wikipedia": "ms:Sekolah Kebangsaan Dato' Panglima Kinta"
+  }
+},
+{
+  "type": "way",
+  "id": 300886162,
+  "center": {
+    "lat": 4.6008509,
+    "lon": 101.0751179
+  },
+  "tags": {
+    "amenity": "library",
+    "building": "yes",
+    "name": "Perpustakaan Tun Razak",
+    "name:en": "Tun Razak Library",
+    "operator": "Majlis Bandaraya Ipoh",
+    "operator:type": "public"
+  }
+},
+{
+  "type": "way",
+  "id": 300886387,
+  "center": {
+    "lat": 4.5940543,
+    "lon": 101.0792445
+  },
+  "tags": {
+    "leisure": "park",
+    "name": "People's Park",
+    "name:en": "People's Park"
+  }
+},
+{
+  "type": "way",
+  "id": 300886429,
+  "center": {
+    "lat": 4.5920197,
+    "lon": 101.0724957
+  },
+  "tags": {
+    "addr:city": "Ipoh",
+    "addr:country": "MY",
+    "addr:housenumber": "111",
+    "addr:postcode": "30200",
+    "addr:street": "Jalan Lahat",
+    "amenity": "school",
+    "email": "AEB2045@moe.edu.my",
+    "fax": "+605-241 4604",
+    "name": "SMK Methodist (ACS)",
+    "name:en": "Anglo-Chinese School (ACS)",
+    "name:ms": "SMK Methodist (ACS)",
+    "official_name": "Sekolah Menengah Kebangsaan Methodist (ACS)",
+    "phone": "+605-254 9336",
+    "ref": "AEB2045",
+    "wikidata": "Q20450465",
+    "wikipedia": "ms:Sekolah Menengah Kebangsaan Methodist, Ipoh"
+  }
+},
+{
+  "type": "way",
+  "id": 339101036,
+  "center": {
+    "lat": 4.5927615,
+    "lon": 101.0843874
+  },
+  "tags": {
+    "building": "yes",
+    "internet_access": "wlan",
+    "internet_access:fee": "no",
+    "name": "Hotel Bajet Memori Ipoh",
+    "source": "Mapbox",
+    "source:name": "survey",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "way",
+  "id": 506232652,
+  "center": {
+    "lat": 4.5908696,
+    "lon": 101.0751004
+  },
+  "tags": {
+    "amenity": "food_court",
+    "building": "yes",
+    "name": "Bazar Medan Jaya"
+  }
+},
+{
+  "type": "way",
+  "id": 506233635,
+  "center": {
+    "lat": 4.5898804,
+    "lon": 101.0771588
+  },
+  "tags": {
+    "amenity": "place_of_worship",
+    "building": "yes",
+    "name": "Masjid Paloh",
+    "religion": "muslim"
+  }
+},
+{
+  "type": "way",
+  "id": 512265355,
+  "center": {
+    "lat": 4.5940849,
+    "lon": 101.0726617
+  },
+  "tags": {
+    "addr:street": "Jalan Jelapang",
+    "amenity": "bus_station",
+    "bus": "yes",
+    "name": "Stesen Bas Medan Kidd",
+    "name:en": "Medan Kidd Bus Station",
+    "name:ms": "Stesen Bas Medan Kidd",
+    "name:zh": "美丹杰车站",
+    "name:zh-Hans": "美丹杰车站",
+    "name:zh-Hant": "美丹傑車站",
+    "public_transport": "station",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 547652044,
+  "center": {
+    "lat": 4.6016227,
+    "lon": 101.0805625
+  },
+  "tags": {
+    "building": "apartments",
+    "building:levels": "4",
+    "name": "Block S"
+  }
+},
+{
+  "type": "way",
+  "id": 547652046,
+  "center": {
+    "lat": 4.6012432,
+    "lon": 101.0827007
+  },
+  "tags": {
+    "description": "The first and last historic flats in Ipoh and Malaysia. (KL one has been demolished)",
+    "landuse": "residential",
+    "name": "Waller Court",
+    "name:zh": "华大伟组屋",
+    "place": "neighbourhood",
+    "start_date": "1960"
+  }
+},
+{
+  "type": "way",
+  "id": 569131716,
+  "center": {
+    "lat": 4.5961065,
+    "lon": 101.0758170
+  },
+  "tags": {
+    "alt_name": "Masjid Negeri Perak Darul Ridzuan",
+    "alt_name:en": "Perak State Mosque",
+    "amenity": "place_of_worship",
+    "building": "mosque",
+    "denomination": "sunni",
+    "name": "Masjid Sultan Idris Shah Ke II",
+    "name:en": "Sultan Idris Shah II Mosque",
+    "name:ms": "Masjid Sultan Idris Shah Ke II",
+    "religion": "muslim",
+    "wikidata": "Q7636672",
+    "wikipedia": "en:Sultan Idris Shah II Mosque"
+  }
+},
+{
+  "type": "way",
+  "id": 569131743,
+  "center": {
+    "lat": 4.5969938,
+    "lon": 101.0761126
+  },
+  "tags": {
+    "amenity": "food_court",
+    "building": "yes",
+    "name": "Medan Selera Dataran Dato Sagor"
+  }
+},
+{
+  "type": "way",
+  "id": 681628085,
+  "center": {
+    "lat": 4.5965869,
+    "lon": 101.0841716
+  },
+  "tags": {
+    "amenity": "food_court",
+    "name": "Hangout Makam & Lepak Port",
+    "outdoor_seating": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 690729567,
+  "center": {
+    "lat": 4.5931915,
+    "lon": 101.0787000
+  },
+  "tags": {
+    "addr:city": "Ipoh",
+    "addr:country": "MY",
+    "addr:housenumber": "87",
+    "addr:place": "People's Park",
+    "addr:postcode": "30000",
+    "amenity": "school",
+    "email": "ABC2101@moe.edu.my",
+    "fax": "+605-254 9592",
+    "min_age": "7",
+    "name": "SJK (C) Perak",
+    "name:ms": "SJK (C) Perak",
+    "name:zh": "霹雳华小",
+    "name:zh-Hans": "霹雳华小",
+    "name:zh-Hant": "霹靂華小",
+    "official_name": "Sekolah Jenis Kebangsaan (Cina) Perak",
+    "official_name:ms": "Sekolah Jenis Kebangsaan (Cina) Perak",
+    "official_name:zh": "霹雳国民型华文小学",
+    "official_name:zh-Hans": "霹雳国民型华文小学",
+    "official_name:zh-Hant": "霹靂國民型華文小學",
+    "phone": "+605-254 9592",
+    "ref": "ABC2101",
+    "website": "http://perak.sjkc.com.my/",
+    "wikidata": "Q20452773",
+    "wikipedia": "ms:Sekolah Jenis Kebangsaan (C) Perak"
+  }
+},
+{
+  "type": "way",
+  "id": 695556044,
+  "center": {
+    "lat": 4.5895625,
+    "lon": 101.0821409
+  },
+  "tags": {
+    "amenity": "bus_station",
+    "bus": "yes",
+    "name": "Stesen Bas Sri Maju",
+    "name:en": "Sri Maju Bus Station",
+    "name:ms": "Stesen Bas Sri Maju",
+    "name:zh": "利南巴士站",
+    "name:zh-Hans": "利南巴士站",
+    "name:zh-Hant": "利南巴士站",
+    "official_name": "利南长途快车总部车站",
+    "official_name:zh": "利南长途快车总部车站",
+    "official_name:zh-Hans": "利南长途快车总部车站",
+    "official_name:zh-Hant": "利南長途快車總部車站",
+    "public_transport": "station"
+  }
+},
+{
+  "type": "way",
+  "id": 704563221,
+  "center": {
+    "lat": 4.6045177,
+    "lon": 101.0781066
+  },
+  "tags": {
+    "building": "yes",
+    "name": "Darul Ridzuan Museum",
+    "name:ms": "Muzium Darul Ridzuan",
+    "tourism": "museum",
+    "wikidata": "Q7393337",
+    "wikipedia": "en:Darul Ridzuan Museum"
+  }
+},
+{
+  "type": "way",
+  "id": 724541121,
+  "center": {
+    "lat": 4.5905612,
+    "lon": 101.0776484
+  },
+  "tags": {
+    "addr:city": "Ipoh",
+    "addr:country": "MY",
+    "addr:housenumber": "129",
+    "addr:postcode": "30000",
+    "addr:street": "Jalan Treacher Selatan",
+    "amenity": "school",
+    "email": "ABC2107@moe.edu.my",
+    "fax": "+605-241 5608",
+    "name": "SJK (C) Chung Shan 中山华文小学",
+    "name:en": "SJK (C) Chung Shan",
+    "name:zh": "中山华小",
+    "phone": "+605-241 5608",
+    "ref": "ABC2107",
+    "wikidata": "Q12703212",
+    "wikipedia": "ms:Sekolah Jenis Kebangsaan (C) Chung Shan, Perak"
+  }
+},
+{
+  "type": "way",
+  "id": 724541166,
+  "center": {
+    "lat": 4.6022698,
+    "lon": 101.0835740
+  },
+  "tags": {
+    "addr:city": "Ipoh",
+    "addr:country": "MY",
+    "addr:postcode": "30300",
+    "addr:street": "Taman D.R Seenivasagam",
+    "amenity": "school",
+    "email": "ABB2089@moe.edu.my",
+    "fax": "+605-241 8530",
+    "full_name": "Sekolah Kebangsaan Coronation Park",
+    "name": "SK Coronation Park",
+    "phone": "+605-241 8530",
+    "ref": "ABB2089",
+    "wikidata": "Q20450526",
+    "wikipedia": "ms:Sekolah Kebangsaan Coronation Park"
+  }
+},
+{
+  "type": "way",
+  "id": 759344179,
+  "center": {
+    "lat": 4.5974675,
+    "lon": 101.0719105
+  },
+  "tags": {
+    "amenity": "place_of_worship",
+    "building": "yes",
+    "name": "Arulmigu Maha Ganapathy Aalayam",
+    "name:ms": "Arulmigu Maha Ganapathy Aalayam",
+    "religion": "hindu"
+  }
+},
+{
+  "type": "way",
+  "id": 759344180,
+  "center": {
+    "lat": 4.5977587,
+    "lon": 101.0719965
+  },
+  "tags": {
+    "amenity": "place_of_worship",
+    "building": "yes",
+    "name": "Dewa Maha Kaliamman Ipoh",
+    "name:ms": "Dewa Maha Kaliamman Ipoh",
+    "religion": "hindu"
+  }
+},
+{
+  "type": "way",
+  "id": 759344181,
+  "center": {
+    "lat": 4.5983873,
+    "lon": 101.0724544
+  },
+  "tags": {
+    "amenity": "place_of_worship",
+    "building": "yes",
+    "name": "Gurdwara Sahib Railway Ipoh",
+    "name:en": "Gurdwara Sahib Railway Ipoh",
+    "religion": "sikh"
+  }
+},
+{
+  "type": "way",
+  "id": 788092912,
+  "center": {
+    "lat": 4.5932143,
+    "lon": 101.0788190
+  },
+  "tags": {
+    "addr:city": "Ipoh",
+    "addr:housenumber": "89-91",
+    "addr:postcode": "30000",
+    "addr:street": "Jalan Bijeh Timah",
+    "air_conditioning": "no",
+    "alt_name": "Tai Pak Koong Temple",
+    "alt_name:en": "Tai Pak Koong Temple",
+    "alt_name:zh": "太伯公庙",
+    "alt_name:zh-Hans": "太伯公庙",
+    "alt_name:zh-Hant": "太伯公廟",
+    "amenity": "place_of_worship",
+    "building": "yes",
+    "name": "Paloh Khoo Miu",
+    "name:en": "Paloh Khoo Miu",
+    "name:ms": "Paloh Khoo Miu",
+    "name:zh": "坝罗古庙",
+    "name:zh-Hans": "坝罗古庙",
+    "name:zh-Hant": "壩羅古廟",
+    "phone": "+60-52550407",
+    "religion": "taoist",
+    "website": "https://www.facebook.com/pkmIpoh/"
+  }
+},
+{
+  "type": "way",
+  "id": 788931480,
+  "center": {
+    "lat": 4.5941305,
+    "lon": 101.0760042
+  },
+  "tags": {
+    "amenity": "place_of_worship",
+    "building": "mosque",
+    "name": "Masjid Pakistani Ipoh",
+    "religion": "muslim"
+  }
+},
+{
+  "type": "way",
+  "id": 788931551,
+  "center": {
+    "lat": 4.5990377,
+    "lon": 101.0784191
+  },
+  "tags": {
+    "addr:city": "Ipoh",
+    "addr:country": "MY",
+    "addr:housenumber": "2",
+    "addr:postcode": "30000",
+    "addr:street": "Jalan SP Seenivasagam",
+    "building": "yes",
+    "name": "Cititel Express",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "way",
+  "id": 788931612,
+  "center": {
+    "lat": 4.5921726,
+    "lon": 101.0765791
+  },
+  "tags": {
+    "landuse": "residential",
+    "name": "Rumah Pangsa Jalan Silang",
+    "residential": "apartments"
+  }
+},
+{
+  "type": "way",
+  "id": 788931615,
+  "center": {
+    "lat": 4.5926298,
+    "lon": 101.0773676
+  },
+  "tags": {
+    "landuse": "residential",
+    "name": "Kinta Heights",
+    "name:en": "Kinta Heights",
+    "name:zh": "近打组屋",
+    "name:zh-Hans": "近打组屋",
+    "name:zh-Hant": "近打組屋",
+    "residential": "apartments"
+  }
+},
+{
+  "type": "way",
+  "id": 788931616,
+  "center": {
+    "lat": 4.5924506,
+    "lon": 101.0773382
+  },
+  "tags": {
+    "building": "apartments",
+    "building:levels": "20",
+    "name": "Kinta Heights"
+  }
+},
+{
+  "type": "way",
+  "id": 788931617,
+  "center": {
+    "lat": 4.5926626,
+    "lon": 101.0785566
+  },
+  "tags": {
+    "amenity": "marketplace",
+    "name": "Pasar Jalan Bijeh Timah",
+    "name:ms": "Pasar Jalan Bijeh Timah"
+  }
+},
+{
+  "type": "way",
+  "id": 788931622,
+  "center": {
+    "lat": 4.5928585,
+    "lon": 101.0781334
+  },
+  "tags": {
+    "building": "apartments",
+    "building:levels": "4",
+    "name": "Rumah Pangsa Jalan Bijih Timah"
+  }
+},
+{
+  "type": "way",
+  "id": 800437933,
+  "center": {
+    "lat": 4.5900711,
+    "lon": 101.0813494
+  },
+  "tags": {
+    "building": "hotel",
+    "name": "Hotel Grand Park",
+    "name:en": "Hotel Grand Park",
+    "name:zh": "乐园酒店",
+    "name:zh-Hans": "乐园酒店",
+    "name:zh-Hant": "樂園飯店",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "way",
+  "id": 800438001,
+  "center": {
+    "lat": 4.5903164,
+    "lon": 101.0847351
+  },
+  "tags": {
+    "amenity": "place_of_worship",
+    "building": "yes",
+    "denomination": "methodist",
+    "name": "Chinese Methodist Church",
+    "name:zh": "中华基督教卫理公会",
+    "religion": "christian"
+  }
+},
+{
+  "type": "way",
+  "id": 822273340,
+  "center": {
+    "lat": 4.5911707,
+    "lon": 101.0777908
+  },
+  "tags": {
+    "addr:city": "Ipoh",
+    "addr:country": "MY",
+    "addr:housenumber": "127",
+    "addr:place": "Kampung Kuchai",
+    "addr:postcode": "30000",
+    "addr:street": "Jalan Treacher Selatan",
+    "amenity": "place_of_worship",
+    "building": "yes",
+    "name": "Emmanuel Assembly of God",
+    "name:zh": "神召会以马内利堂",
+    "religion": "christian"
+  }
+},
+{
+  "type": "way",
+  "id": 829101674,
+  "center": {
+    "lat": 4.5960508,
+    "lon": 101.0766722
+  },
+  "tags": {
+    "amenity": "restaurant",
+    "building": "yes",
+    "name": "Gerai Makanan dan Minuman Rahamath"
+  }
+},
+{
+  "type": "way",
+  "id": 885833730,
+  "center": {
+    "lat": 4.5976189,
+    "lon": 101.0700556
+  },
+  "tags": {
+    "landuse": "residential",
+    "name": "Apartment City View",
+    "name:en": "Apartment City View",
+    "residential": "apartments"
+  }
+},
+{
+  "type": "way",
+  "id": 991338950,
+  "center": {
+    "lat": 4.5929275,
+    "lon": 101.0754218
+  },
+  "tags": {
+    "area": "yes",
+    "name": "Little India",
+    "name:ta": "லிட்டில் இந்தியா வளாகம்",
+    "name:zh": "怡保小印度",
+    "tourism": "attraction",
+    "wikidata": "Q19646219",
+    "wikipedia": "en:Little India, Ipoh"
+  }
+},
+{
+  "type": "way",
+  "id": 1052405496,
+  "center": {
+    "lat": 4.6037565,
+    "lon": 101.0806735
+  },
+  "tags": {
+    "leisure": "park",
+    "name": "Kinta Riverfront Walk"
+  }
+},
+{
+  "type": "way",
+  "id": 1193708557,
+  "center": {
+    "lat": 4.5957018,
+    "lon": 101.0845708
+  },
+  "tags": {
+    "amenity": "marketplace",
+    "building": "roof",
+    "layer": "1",
+    "name": "Gerbang Malam"
+  }
+},
+{
+  "type": "way",
+  "id": 1300905706,
+  "center": {
+    "lat": 4.5962007,
+    "lon": 101.0784132
+  },
+  "tags": {
+    "area": "yes",
+    "name": "Concubine Lane",
+    "name:en": "Concubine Lane",
+    "name:zh": "二奶巷",
+    "tourism": "attraction"
+  }
+},
+{
+  "type": "way",
+  "id": 1425599576,
+  "center": {
+    "lat": 4.6027207,
+    "lon": 101.0790666
+  },
+  "tags": {
+    "addr:street": "Jalan Lim Bo Seng",
+    "landuse": "commercial",
+    "name": "Kinta Riverfront Hotel & Suite",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "relation",
+  "id": 8106587,
+  "center": {
+    "lat": 4.5971542,
+    "lon": 101.0750832
+  },
+  "tags": {
+    "amenity": "townhall",
+    "building": "public",
+    "historic": "building",
+    "name": "Dewan Bandaran Ipoh",
+    "name:en": "Ipoh Town Hall",
+    "type": "multipolygon",
+    "wikidata": "Q133264768",
+    "wikimedia_commons": "Category:Ipoh Town Hall",
+    "wikipedia": "en:Ipoh Town Hall"
+  }
+},
+{
+  "type": "relation",
+  "id": 11802761,
+  "center": {
+    "lat": 4.5929718,
+    "lon": 101.0731793
+  },
+  "tags": {
+    "amenity": "food_court",
+    "building": "yes",
+    "name": "Bazaar Medan Kidd",
+    "name:ms": "Bazaar Medan Kidd",
+    "type": "multipolygon"
+  }
+}
+
+  ]
+}

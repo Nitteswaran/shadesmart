@@ -1,0 +1,429 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "timestamp_osm_base": "2026-10-22T18:37:51Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+
+{
+  "type": "node",
+  "id": 1913493599,
+  "lat": 2.9346142,
+  "lon": 101.6897691,
+  "tags": {
+    "addr:city": "Putrajaya",
+    "amenity": "food_court",
+    "name": "Selera Putra Souq",
+    "name:ms": "Selera Putra Souq",
+    "name:zh": "布城饮食广场",
+    "name:zh-Hans": "布城饮食广场",
+    "name:zh-Hant": "布城飲食廣場"
+  }
+},
+{
+  "type": "node",
+  "id": 5645453821,
+  "lat": 2.9345960,
+  "lon": 101.6904566,
+  "tags": {
+    "bench": "no",
+    "bus": "yes",
+    "highway": "bus_stop",
+    "name": "Putra Square",
+    "name:zh": "布特拉广场",
+    "network": "Rapid KL Bus;Nadi Putra",
+    "operator": "Rapid Bus",
+    "public_transport": "platform",
+    "ref": "PPJ48",
+    "route_ref": "451;P101",
+    "shelter": "no",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 8141224943,
+  "lat": 2.9388912,
+  "lon": 101.6954604,
+  "tags": {
+    "bench": "yes",
+    "bus": "yes",
+    "departures_board": "no",
+    "highway": "bus_stop",
+    "name": "Kompleks B / Laman Perdana (Timur)",
+    "public_transport": "platform",
+    "ref": "PPJ190",
+    "shelter": "yes",
+    "wikimedia_commons": "File:Kompleks B-Laman Perdana (Timur) Bus Stop sign (221115).jpg"
+  }
+},
+{
+  "type": "node",
+  "id": 11409097966,
+  "lat": 2.9337713,
+  "lon": 101.6907461,
+  "tags": {
+    "bus": "yes",
+    "highway": "bus_stop",
+    "name": "Putra Square",
+    "operator": "KR Travel & Tours",
+    "public_transport": "platform",
+    "route_ref": "T523",
+    "shelter": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 12458749646,
+  "lat": 2.9347507,
+  "lon": 101.6896142,
+  "tags": {
+    "amenity": "restaurant",
+    "contact:email": "kafekasbin@gmail.com",
+    "name": "Kasbin",
+    "phone": "+60 10840 0078",
+    "website": "https://kafekasbin.com/"
+  }
+},
+{
+  "type": "node",
+  "id": 12459103364,
+  "lat": 2.9335942,
+  "lon": 101.6902761,
+  "tags": {
+    "amenity": "ferry_terminal",
+    "ferry": "yes",
+    "name": "Watertaxi - Cruise Tasik (03)",
+    "public_transport": "station"
+  }
+},
+{
+  "type": "node",
+  "id": 12514238378,
+  "lat": 2.9405214,
+  "lon": 101.6885719,
+  "tags": {
+    "amenity": "ferry_terminal",
+    "ferry": "yes",
+    "name": "Watertaxi - Kelab Tasik (02)",
+    "public_transport": "station"
+  }
+},
+{
+  "type": "node",
+  "id": 13153132853,
+  "lat": 2.9356640,
+  "lon": 101.6913054,
+  "tags": {
+    "name": "MALAYSIA MADANI sign",
+    "tourism": "attraction"
+  }
+},
+{
+  "type": "node",
+  "id": 13378194605,
+  "lat": 2.9430056,
+  "lon": 101.6931104,
+  "tags": {
+    "addr:postcode": "62000",
+    "addr:street": "Presint 1",
+    "name": "Astaka Morocco",
+    "name:en": "Moroccan Pavilion Putrajaya",
+    "opening_hours": "Tu-Th 09:00-17:00; Fr 09:00-11:00, 15:00-17:00; Sa 08:00-12:00, 15:00-17:00; Su 09:00-12:00, 14:00-17:00",
+    "tourism": "attraction",
+    "website": "https://www.ppj.gov.my/"
+  }
+},
+{
+  "type": "node",
+  "id": 14111494033,
+  "lat": 2.9364238,
+  "lon": 101.6925283,
+  "tags": {
+    "amenity": "marketplace",
+    "name": "People's Market",
+    "note": "Every Saturday",
+    "opening_hours": "Su 08:00-13:00"
+  }
+},
+{
+  "type": "node",
+  "id": 14111494037,
+  "lat": 2.9348970,
+  "lon": 101.6895729,
+  "tags": {
+    "amenity": "cafe",
+    "brand": "OldTown White Coffee",
+    "brand:wikidata": "Q7085308",
+    "cuisine": "coffee_shop;malaysian",
+    "name": "OldTown White Coffee",
+    "takeaway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 14111494043,
+  "lat": 2.9348315,
+  "lon": 101.6895867,
+  "tags": {
+    "amenity": "cafe",
+    "name": "Kenangan Coffee"
+  }
+},
+{
+  "type": "node",
+  "id": 14111494044,
+  "lat": 2.9344960,
+  "lon": 101.6897178,
+  "tags": {
+    "amenity": "cafe",
+    "brand": "ZUS Coffee",
+    "brand:wikidata": "Q110811473",
+    "cuisine": "coffee_shop",
+    "name": "ZUS Coffee",
+    "takeaway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 14111494046,
+  "lat": 2.9346844,
+  "lon": 101.6896361,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Restoran Kari Kepala Ikan Kampung Pandan"
+  }
+},
+{
+  "type": "node",
+  "id": 14111614005,
+  "lat": 2.9332517,
+  "lon": 101.6906949,
+  "tags": {
+    "amenity": "cafe",
+    "name": "Changkat"
+  }
+},
+{
+  "type": "way",
+  "id": 467062755,
+  "center": {
+    "lat": 2.9419607,
+    "lon": 101.6987104
+  },
+  "tags": {
+    "addr:city": "Putrajaya",
+    "leisure": "park",
+    "name": "Taman Putra Perdana",
+    "name:ms": "Taman Putra Perdana"
+  }
+},
+{
+  "type": "way",
+  "id": 467062756,
+  "center": {
+    "lat": 2.9464292,
+    "lon": 101.6967754
+  },
+  "tags": {
+    "addr:city": "Putrajaya",
+    "leisure": "park",
+    "name": "Taman Botani Putrajaya",
+    "name:en": "Putrajaya Botanical Garden",
+    "name:ms": "Taman Botani Putrajaya",
+    "operator": "Perbadanan Putrajaya",
+    "wikidata": "Q20453578",
+    "wikimedia_commons": "Category:Putrajaya Botanical Garden",
+    "wikipedia": "en:Putrajaya Botanical Garden"
+  }
+},
+{
+  "type": "way",
+  "id": 499539639,
+  "center": {
+    "lat": 2.9274322,
+    "lon": 101.6931599
+  },
+  "tags": {
+    "addr:city": "Putrajaya",
+    "leisure": "park",
+    "name": "Taman Wawasan",
+    "name:ms": "Taman Wawasan",
+    "name:zh": "宏愿公园",
+    "name:zh-Hans": "宏愿公园",
+    "name:zh-Hant": "宏願公園"
+  }
+},
+{
+  "type": "way",
+  "id": 888168052,
+  "center": {
+    "lat": 2.9303206,
+    "lon": 101.6829851
+  },
+  "tags": {
+    "landuse": "residential",
+    "name": "Presint 8",
+    "name:en": "Precinct 8",
+    "name:ms": "Presint 8",
+    "name:zh": "8区",
+    "name:zh-Hans": "8区",
+    "name:zh-Hant": "8區",
+    "note": "roughly",
+    "place": "quarter",
+    "residential": "urban"
+  }
+},
+{
+  "type": "way",
+  "id": 888168055,
+  "center": {
+    "lat": 2.9483158,
+    "lon": 101.6888340
+  },
+  "tags": {
+    "landuse": "residential",
+    "name": "Presint 10",
+    "name:en": "Precinct 10",
+    "name:ms": "Presint 10",
+    "name:zh": "10区",
+    "name:zh-Hans": "10区",
+    "name:zh-Hant": "10區",
+    "note": "roughly",
+    "place": "quarter",
+    "residential": "urban"
+  }
+},
+{
+  "type": "way",
+  "id": 888188180,
+  "center": {
+    "lat": 2.9318095,
+    "lon": 101.7038011
+  },
+  "tags": {
+    "addr:postcode": "62150",
+    "landuse": "residential",
+    "name": "Presint 16",
+    "name:en": "Precinct 16",
+    "name:ms": "Presint 16",
+    "name:zh": "16区",
+    "name:zh-Hans": "16区",
+    "name:zh-Hant": "16區",
+    "note": "roughly",
+    "place": "quarter",
+    "residential": "urban",
+    "source": "https://openstreetcam.org/details/2044314/1722/track-info"
+  }
+},
+{
+  "type": "way",
+  "id": 888188182,
+  "center": {
+    "lat": 2.9427174,
+    "lon": 101.7011143
+  },
+  "tags": {
+    "landuse": "residential",
+    "name": "Presint 1",
+    "name:en": "Precinct 1",
+    "name:ms": "Presint 1",
+    "name:zh": "1区",
+    "name:zh-Hans": "1区",
+    "name:zh-Hant": "1區",
+    "note": "roughly",
+    "place": "quarter",
+    "residential": "urban"
+  }
+},
+{
+  "type": "way",
+  "id": 888188190,
+  "center": {
+    "lat": 2.9258102,
+    "lon": 101.6900988
+  },
+  "tags": {
+    "landuse": "residential",
+    "name": "Presint 2",
+    "name:en": "Precinct 2",
+    "name:ms": "Presint 2",
+    "name:zh": "2区",
+    "name:zh-Hans": "2区",
+    "name:zh-Hant": "2區",
+    "note": "roughly",
+    "place": "quarter",
+    "residential": "urban"
+  }
+},
+{
+  "type": "way",
+  "id": 1000671430,
+  "center": {
+    "lat": 2.9422260,
+    "lon": 101.6976905
+  },
+  "tags": {
+    "leisure": "park",
+    "name": "Taman Megalit",
+    "name:ms": "Taman Megalit"
+  }
+},
+{
+  "type": "way",
+  "id": 1426376287,
+  "center": {
+    "lat": 2.9348197,
+    "lon": 101.6910051
+  },
+  "tags": {
+    "name": "PUTRAJAYA sign",
+    "tourism": "attraction"
+  }
+},
+{
+  "type": "way",
+  "id": 1551433485,
+  "center": {
+    "lat": 2.9376437,
+    "lon": 101.6940478
+  },
+  "tags": {
+    "landuse": "recreation_ground",
+    "leisure": "park",
+    "name": "Laman Perdana"
+  }
+},
+{
+  "type": "relation",
+  "id": 8518759,
+  "center": {
+    "lat": 2.9360719,
+    "lon": 101.6890666
+  },
+  "tags": {
+    "addr:city": "Putrajaya",
+    "amenity": "place_of_worship",
+    "building": "yes",
+    "denomination": "sunni",
+    "int_name": "Putra Mosque",
+    "layer": "-2",
+    "name": "Masjid Putra",
+    "name:de": "Putra Moschee",
+    "name:en": "Putra Mosque",
+    "name:ms": "Masjid Putra",
+    "name:zh": "布特拉清真寺",
+    "name:zh-Hans": "布特拉清真寺",
+    "name:zh-Hant": "布特拉清真寺",
+    "religion": "muslim",
+    "start_date": "1999",
+    "type": "multipolygon",
+    "wikidata": "Q2344561",
+    "wikipedia": "en:Putra Mosque"
+  }
+}
+
+  ]
+}

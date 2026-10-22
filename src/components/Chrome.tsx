@@ -11,7 +11,7 @@ import {
   X,
   type LucideIcon,
 } from 'lucide-react'
-import { airTemp, uvIndex, type Conditions } from '../lib/engine'
+import { airTemp, town, uvIndex, type Conditions } from '../lib/engine'
 import { fmtTime } from '../lib/meta'
 import { Segmented } from './ui'
 
@@ -49,7 +49,7 @@ export function Header({
         <div className="hidden leading-none sm:block">
           <div className="font-display text-[22px] font-extrabold tracking-[-0.03em]">ShadeSmart</div>
           <div className="mt-1 hidden items-center gap-1 text-[12px] font-semibold uppercase tracking-[0.04em] text-ink-3 sm:flex">
-            <MapPin size={10} strokeWidth={2.5} /> Elmina · Shah Alam
+            <MapPin size={10} strokeWidth={2.5} /> {town.meta.township} · {town.meta.city}
           </div>
         </div>
       </div>

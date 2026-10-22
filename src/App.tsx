@@ -1,13 +1,14 @@
 import clsx from 'clsx'
 import { CircleCheck, CloudRain, Moon, Siren, Sun, TriangleAlert } from 'lucide-react'
 import { AnimatePresence } from 'motion/react'
-import { useCallback, useMemo, useRef, useState } from 'react'
-import { Header, Toasts, type Toast, type View } from './components/Chrome'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { Header, Logo, Toasts, type Toast, type View } from './components/Chrome'
 import MapView, { type PlannerLayer } from './components/MapView'
-import { InsightsStrip, NavigatePanel, RouteCompare, SCENARIOS, type Scenario } from './components/Navigate'
+import { InsightsStrip, NavigatePanel, RouteCompare, scenariosFor, type Scenario } from './components/Navigate'
 import { PlannerMapOverlay, PlannerPanel, type PlanItem } from './components/Planner'
 import { SOSButton, SOSSheet, type Phase } from './components/SOS'
-import { dijkstra, edgeCost, placeById, routeStats, town, type Conditions } from './lib/engine'
+import { authority, dijkstra, edgeCost, placeById, routeStats, setTown, town, type Conditions } from './lib/engine'
+import { cityById, loadCity, type CityInfo } from './lib/cities'
 import { routeBadges, routeTags } from './lib/features'
 import { isNightHour } from './lib/daylight'
 import { computeOverrides, placementImpact, snapToNetwork, type Placement, type Tool } from './lib/placements'
@@ -17,11 +18,71 @@ import { newRef, seedProposals, type Proposal, type Reason, type Status } from '
 import { BadgeIcon, BADGE_META } from './components/icons'
 import type { BadgeKind } from './lib/features'
 
-const DEFAULT = SCENARIOS[0]
+interface Target {
+  city: string
+  origin?: string
+  dest?: string
+  n: number
+}
 
+/** Loads a city's graph, then mounts a fresh CityApp for it (all per-city state resets on switch). */
 export default function App() {
-  const [origin, setOrigin] = useState(DEFAULT.origin)
-  const [dest, setDest] = useState(DEFAULT.dest)
+  const [target, setTarget] = useState<Target>({ city: 'elmina', n: 0 })
+  const [ready, setReady] = useState<Target | null>(null)
+  const [failed, setFailed] = useState<string | null>(null)
+  useEffect(() => {
+    let live = true
+    setFailed(null)
+    loadCity(target.city)
+      .then((t) => {
+        if (!live) return
+        setTown(t)
+        setReady(target)
+      })
+      .catch(() => live && setFailed(cityById(target.city).name))
+    return () => {
+      live = false
+    }
+  }, [target])
+
+  if (!ready)
+    return (
+      <div className="grid h-dvh place-items-center bg-paper">
+        <div className="flex flex-col items-center gap-4">
+          <Logo size={56} />
+          <div className="font-display text-[22px] font-extrabold tracking-[-0.02em]">{failed ? `Couldn't load ${failed}` : 'Loading ShadeSmart…'}</div>
+        </div>
+      </div>
+    )
+  return (
+    <CityApp
+      key={`${ready.city}-${ready.n}`}
+      city={cityById(ready.city)}
+      start={ready}
+      loadingCity={target !== ready ? cityById(target.city).name : null}
+      onCity={(city, origin, dest) => setTarget({ city, origin, dest, n: target.n + 1 })}
+    />
+  )
+}
+
+function CityApp({
+  city,
+  start,
+  loadingCity,
+  onCity,
+}: {
+  city: CityInfo
+  start: Target
+  loadingCity: string | null
+  onCity: (city: string, origin?: string, dest?: string) => void
+}) {
+  const scenarios = useMemo(() => scenariosFor(city), [city])
+  const DEFAULT = scenarios[0]
+  const [origin, setOrigin] = useState(() => start.origin ?? DEFAULT.origin)
+  const [dest, setDest] = useState(() => {
+    const d = start.dest ?? DEFAULT.dest
+    return d === (start.origin ?? DEFAULT.origin) ? (city.places.find((p) => p.id !== d)?.id ?? d) : d
+  })
   const [cond, setCondState] = useState<Conditions>({
     weather: 'sunny',
     night: false,
@@ -30,7 +91,7 @@ export default function App() {
     wheelchair: false,
     fewerCrossings: false,
   })
-  const [scenario, setScenario] = useState<string | null>(DEFAULT.id)
+  const [scenario, setScenario] = useState<string | null>(start.origin || start.dest ? null : DEFAULT.id)
   const [showNetwork, setShowNetwork] = useState(false)
   const [walking, setWalking] = useState(false) // heat race running
   const mapApi = useRef<MapApi | null>(null)
@@ -165,7 +226,7 @@ export default function App() {
         tone: 'sos',
         icon: Siren,
         title: isSilent ? 'Silent SOS sent' : 'SOS sent',
-        body: 'Emergency distress signal & live GPS sent to Sime Darby Auxiliary Police & Local Guard Post.',
+        body: `Live GPS sent to ${authority().police} & the nearest guard post.`,
       })
     },
     [pushToast],
@@ -235,6 +296,9 @@ export default function App() {
               setCond={setCond}
               scenario={scenario}
               applyScenario={applyScenario}
+              city={city}
+              scenarios={scenarios}
+              onCity={onCity}
               smart={smartRoute}
               showNetwork={showNetwork}
               setShowNetwork={setShowNetwork}
@@ -281,6 +345,11 @@ export default function App() {
               tags={tags}
               fitKey={fitKey}
             />
+            {loadingCity && (
+              <div className="pointer-events-none absolute left-1/2 top-1/2 z-30 flex -translate-x-1/2 -translate-y-1/2 items-center gap-2.5 rounded-full bg-ink px-5 py-3 text-[14px] font-bold text-white shadow-float">
+                <span className="size-2.5 animate-ping rounded-full bg-mint" /> Flying to {loadingCity}…
+              </div>
+            )}
             {view === 'navigate' ? (
               <>
                 {draft && (

@@ -1,13 +1,13 @@
-// Builds the ShadeSmart demo township graph from a raw OpenStreetMap extract of Elmina, Shah Alam.
+// Builds a ShadeSmart walking graph for each city from raw OpenStreetMap extracts (data/osm/<city>).
 // Street geometry is real (OSM, ODbL). Shade, cover, lighting, flood and footfall values are
 // synthetic mock data generated from deterministic rules so the hackathon demo is reproducible.
 //
-//   node scripts/build-graph.mjs   ->   src/data/township.json
+//   node scripts/build-graph.mjs [cityId ...]
+//     -> public/cities/<city>.json   (full graph, loaded on demand)
+//     -> src/data/cities.json        (small manifest: names, bounds, places, demo scenarios)
 
-import { readFileSync, writeFileSync } from 'node:fs'
-
-const raw = JSON.parse(readFileSync('data/osm/raw.json', 'utf8')).elements
-const pois = JSON.parse(readFileSync('data/osm/pois.json', 'utf8')).elements
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs'
+import { CITIES } from './cities.mjs'
 
 // ---------- helpers ----------
 const R = 6371000
@@ -51,6 +51,87 @@ const centroid = (coords) => [
   coords.reduce((s, c) => s + c[1], 0) / coords.length,
 ]
 
+
+// ---------- automatic places & demo trips for non-curated cities ----------
+const slug = (s) => s.toLowerCase().normalize('NFKD').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 40)
+
+function kindOf(t) {
+  if (t.railway === 'station' || t.public_transport === 'station' || t.highway === 'bus_stop' || t.amenity === 'bus_station') return 'transit'
+  if (t.shop || t.amenity === 'marketplace' || t.amenity === 'food_court') return t.amenity === 'food_court' ? 'food' : 'shop'
+  if (t.amenity === 'restaurant' || t.amenity === 'cafe') return 'food'
+  if (t.leisure === 'park' || t.tourism === 'viewpoint') return 'park'
+  if (t.building === 'apartments' || t.building === 'residential' || t.landuse === 'residential' || t.tourism === 'hotel') return 'home'
+  return 'civic' // museums, attractions, worship, schools, hospitals, libraries
+}
+const KIND_QUOTA = { transit: 4, shop: 4, park: 3, home: 4, food: 3, civic: 4 }
+const KIND_RANK = { attraction: 0, museum: 1, mall: 0, station: 0, park: 0 }
+
+function autoPlaces(pois, edges, coordOf) {
+  const nodes = [...new Set(edges.flatMap((e) => [e.a, e.b]))].map((id) => coordOf.get(id))
+  const nearNetwork = (pt) => nodes.some((n) => dist(pt, n) < 80)
+  const cands = []
+  for (const p of pois) {
+    const t = p.tags || {}
+    const at = p.center ? [round(p.center.lon, 6), round(p.center.lat, 6)] : p.lon ? [round(p.lon, 6), round(p.lat, 6)] : null
+    if (!at || !t.name || t.name.length > 40 || /[\u0E00-\u9FFF]/.test(t.name)) continue
+    if (!/^[A-Z]/.test(t.name) || /^(opposite|bus to|opp\b)/i.test(t.name) || /^[A-Z]{2}\d+$/.test(t.name)) continue
+    const kind = kindOf(t)
+    let name = t.name.replace(/^([A-Z]{2}\d+[A-Z]?\s+)+/, '').replace(/^PY\d+\s+/, '')
+    if ((t.railway === 'station' || t.public_transport === 'station') && !/station|stesen|sentral|terminal/i.test(name)) name += ' Station'
+    if (name.length < 4) continue
+    const sub = t.tourism || t.shop || t.railway || t.leisure || t.amenity || ''
+    // prefer well-known, well-tagged places
+    const score = (KIND_RANK[sub] ?? 3) - (t.wikidata ? 2 : 0) - (t['name:en'] ? 0.5 : 0) + (p.type === 'node' && t.highway === 'bus_stop' ? 1 : 0)
+    cands.push({ name, kind, at, score })
+  }
+  cands.sort((a, b) => a.score - b.score || a.name.localeCompare(b.name))
+  const chosen = []
+  const used = {}
+  for (const c of cands) {
+    if ((used[c.kind] ?? 0) >= KIND_QUOTA[c.kind]) continue
+    if (chosen.some((x) => x.name === c.name || dist(x.at, c.at) < 110)) continue
+    if (!nearNetwork(c.at)) continue
+    chosen.push(c)
+    used[c.kind] = (used[c.kind] ?? 0) + 1
+    if (chosen.length >= 20) break
+  }
+  const ids = new Set()
+  return chosen.map((c) => {
+    let id = slug(c.name) || 'place'
+    while (ids.has(id)) id += '-x'
+    ids.add(id)
+    return { id, name: c.name, kind: c.kind, at: c.at }
+  })
+}
+
+function autoHeroes(places) {
+  const from = ['home', 'transit', 'food', 'civic', 'shop', 'park']
+  const pairs = []
+  for (const a of places)
+    for (const b of places) {
+      if (a.id >= b.id && a.kind === b.kind) continue
+      if (a.id === b.id) continue
+      const d = dist(a.at, b.at)
+      if (d < 550 || d > 1300) continue
+      const pri = from.indexOf(a.kind) + (b.kind === 'shop' || b.kind === 'park' || b.kind === 'civic' ? 0 : 3) + Math.abs(d - 900) / 400
+      pairs.push({ a: a.id, b: b.id, pri })
+    }
+  pairs.sort((x, y) => x.pri - y.pri)
+  const out = []
+  const usedPl = new Set()
+  for (const p of pairs) {
+    if (usedPl.has(p.a) && usedPl.has(p.b)) continue
+    out.push([p.a, p.b])
+    usedPl.add(p.a)
+    usedPl.add(p.b)
+    if (out.length >= 5) break
+  }
+  return out
+}
+function buildCity(city) {
+const raw = JSON.parse(readFileSync(`data/osm/${city.id}/raw.json`, 'utf8')).elements
+const pois = JSON.parse(readFileSync(`data/osm/${city.id}/pois.json`, 'utf8')).elements
+
 // ---------- areas ----------
 const parks = []
 const water = []
@@ -63,16 +144,20 @@ for (const e of raw) {
   else if (t.natural === 'water') water.push({ name: t.name || null, poly })
   else if (t.landuse === 'retail' || t.landuse === 'commercial') commercial.push({ name: t.name || null, poly })
 }
-const mall = raw.find((e) => e.tags?.name === 'Elmina Lakeside Mall')
-commercial.push({ name: 'Elmina Lakeside Mall', poly: mall.geometry.map(ll) })
+if (city.id === 'elmina') {
+  const mall = raw.find((e) => e.tags?.name === 'Elmina Lakeside Mall')
+  commercial.push({ name: 'Elmina Lakeside Mall', poly: mall.geometry.map(ll) })
+}
 
 // ---------- walk graph ----------
 const WALK = new Set([
-  'footway', 'path', 'pedestrian', 'steps', 'residential', 'service', 'unclassified',
+  'footway', 'path', 'pedestrian', 'steps', 'residential', 'service', 'unclassified', 'primary', 'primary_link',
   'tertiary', 'secondary', 'secondary_link', 'tertiary_link', 'living_street', 'track',
 ])
-const MAJOR = new Set(['secondary', 'secondary_link', 'tertiary', 'tertiary_link'])
-const ways = raw.filter((e) => WALK.has(e.tags?.highway) && e.geometry && e.tags?.access !== 'private')
+const MAJOR = new Set(['primary', 'primary_link', 'secondary', 'secondary_link', 'tertiary', 'tertiary_link'])
+const ways = raw.filter(
+  (e) => WALK.has(e.tags?.highway) && e.geometry && e.tags?.access !== 'private' && !['parking_aisle', 'driveway', 'drive-through'].includes(e.tags?.service),
+)
 
 const coordOf = new Map()
 const useCount = new Map()
@@ -134,7 +219,7 @@ const poiAt = (name) => {
   const p = pois.find((x) => x.tags?.name === name)
   return p ? [round(p.lon, 6), round(p.lat, 6)] : null
 }
-const PLACES = [
+const ELMINA_PLACES = [
   { id: 'cendana', name: 'Pangsapuri Cendana', kind: 'home', at: poiAt('Pangsapuri Cendana') },
   { id: 'melati', name: 'Pangsapuri Melati', kind: 'home', at: named('Pangsapuri Melati') },
   { id: 'melor', name: 'Pangsapuri Melor', kind: 'home', at: named('Pangsapuri Melor') },
@@ -158,6 +243,7 @@ const PLACES = [
   { id: 'gym', name: 'Anytime Fitness', kind: 'civic', at: named('Anytime Fitness') },
   { id: 'gallery', name: 'Elmina Sales Gallery', kind: 'civic', at: named('Elmina Sales Gallery') },
 ].filter((p) => p.at)
+const PLACES = city.id === 'elmina' ? ELMINA_PLACES : autoPlaces(pois, edges, coordOf)
 
 const POI_WEIGHT = { home: 900, shop: 1400, food: 500, park: 700, transit: 1100, civic: 400 }
 
@@ -296,7 +382,10 @@ function shortestPath(from, to, costFn) {
   return path
 }
 const placeNode = (id) => nearestNode(PLACES.find((p) => p.id === id).at)
-const HERO = [['cendana', 'mall'], ['melor', 'ecolake'], ['teratai', 'kompleks'], ['melati', 'jaya'], ['kanopi', 'centralpark']]
+const HERO =
+  city.id === 'elmina'
+    ? [['cendana', 'mall'], ['melor', 'ecolake'], ['teratai', 'kompleks'], ['melati', 'jaya'], ['kanopi', 'centralpark']]
+    : autoHeroes(PLACES)
 const greened = new Set()
 for (const [a, b] of HERO) {
   const S = shortestPath(placeNode(a), placeNode(b), (e) => e.len)
@@ -320,7 +409,7 @@ for (const [a, b] of HERO) {
 }
 
 // make sure the hero shaded routes include a flight of stairs, so wheelchair mode visibly reroutes
-for (const [a, b] of [HERO[0], HERO[4]]) {
+for (const [a, b] of [HERO[0], HERO[HERO.length - 1]]) {
   const S = shortestPath(placeNode(a), placeNode(b), (e) => e.len)
   const sIds = new Set(S.map((e) => e.id))
   const A = shortestPath(placeNode(a), placeNode(b), (e) => e.len * (sIds.has(e.id) ? 1.9 : 1))
@@ -329,14 +418,35 @@ for (const [a, b] of [HERO[0], HERO[4]]) {
   if (pick) { pick.steps = true; pick.wheelchair = false }
 }
 
+if (city.id !== 'elmina' && HERO.length >= 3) {
+  const [ra, rb] = HERO[1]
+  const S = shortestPath(placeNode(ra), placeNode(rb), (e) => e.len)
+  const sIds = new Set(S.map((e) => e.id))
+  const A = shortestPath(placeNode(ra), placeNode(rb), (e) => e.len * (sIds.has(e.id) ? 1.9 : 1))
+  const aIds = new Set(A.map((e) => e.id))
+  const only = S.filter((e) => !aIds.has(e.id))
+  only.slice(Math.floor(only.length / 3), Math.floor(only.length / 3) + 2).forEach((e) => (e.flood = 0.88))
+  const [na, nb] = HERO[2]
+  const S2 = shortestPath(placeNode(na), placeNode(nb), (e) => e.len)
+  for (const e of S2) if (!MAJOR.has(e.hw)) e.lit = round(rnd(e.id + 'dk', 0.08, 0.3), 2)
+}
+
 // ---------- safety infrastructure ----------
-const guardPosts = [
-  { name: 'Guard Post · Lakeside Mall', at: named('Elmina Lakeside Mall') },
-  { name: 'Guard Post · Central Park', at: named('Elmina Valley Central Park') },
-  { name: 'Guard House · Cendana', at: poiAt('Pangsapuri Cendana') },
-  { name: 'Auxiliary Police · Persiaran Elmina', at: named('Elmina Sales Gallery') },
-  { name: 'Guard House · Kanopi', at: named('Kanopi Residences') },
-].filter((g) => g.at).map((g, i) => ({ id: `gp${i}`, ...g, node: nearestNode(g.at) }))
+const guardPosts = (
+  city.id === 'elmina'
+    ? [
+        { name: 'Guard Post · Lakeside Mall', at: named('Elmina Lakeside Mall') },
+        { name: 'Guard Post · Central Park', at: named('Elmina Valley Central Park') },
+        { name: 'Guard House · Cendana', at: poiAt('Pangsapuri Cendana') },
+        { name: 'Auxiliary Police · Persiaran Elmina', at: named('Elmina Sales Gallery') },
+        { name: 'Guard House · Kanopi', at: named('Kanopi Residences') },
+      ]
+    : PLACES.filter((p) => ['shop', 'transit', 'park'].includes(p.kind))
+        .slice(0, 5)
+        .map((p, i) => ({ name: `${i % 2 ? 'Police Beat Base' : 'Guard Post'} · ${p.name}`, at: p.at }))
+)
+  .filter((g) => g.at)
+.map((g, i) => ({ id: `gp${i}`, ...g, node: nearestNode(g.at) }))
 
 const streetlights = []
 const cctvs = []
@@ -417,8 +527,9 @@ const bounds = nodes.reduce(
 
 const data = {
   meta: {
-    township: 'Elmina',
-    city: 'Shah Alam, Selangor',
+    id: city.id,
+    township: city.name,
+    city: city.area,
     source: 'Street geometry © OpenStreetMap contributors (ODbL). Shade, lighting, flood and footfall values are synthetic demo data.',
     bounds,
   },
@@ -434,11 +545,37 @@ const data = {
     water: water.map((p) => ({ name: p.name, poly: p.poly })),
   },
 }
-writeFileSync('src/data/township.json', JSON.stringify(data))
+mkdirSync('public/cities', { recursive: true })
+writeFileSync(`public/cities/${city.id}.json`, JSON.stringify(data))
 const total = out.reduce((s, e) => s + e.len, 0)
-const surf = {}
-for (const e of out) surf[e.surface] = (surf[e.surface] || 0) + e.len
-console.log(`nodes ${nodes.length}  edges ${out.length}  network ${(total / 1000).toFixed(1)} km  corridors ${corridors.length}`)
-console.log('surface km', Object.fromEntries(Object.entries(surf).map(([k, v]) => [k, (v / 1000).toFixed(2)])))
-console.log('places', places.length, 'guards', guardPosts.length, 'lights', streetlights.length, 'cctv', cctvs.length)
-console.log('flood-prone edges', out.filter((e) => e.flood > 0.6).length)
+console.log(`${city.id.padEnd(11)} nodes ${nodes.length}  edges ${out.length}  ${(total / 1000).toFixed(1)} km  places ${places.length}  heroes ${HERO.length}`)
+const pid = (id) => places.find((p) => p.id === id)
+const scen = (pair) => pair && pid(pair[0]) && pid(pair[1]) && { origin: pair[0], dest: pair[1] }
+const scenarios =
+  city.id === 'elmina'
+    ? { heat: { origin: 'cendana', dest: 'mall' }, rain: { origin: 'kanopi', dest: 'centralpark' }, night: { origin: 'cendana', dest: 'centralpark' } }
+    : { heat: scen(HERO[0]), rain: scen(HERO[1] ?? HERO[0]), night: scen(HERO[2] ?? HERO[0]) }
+return {
+  id: city.id,
+  name: city.name,
+  area: city.area,
+  bounds,
+  places: places.map((p) => ({ id: p.id, name: p.name, kind: p.kind })),
+  scenarios,
+}
+}
+
+const only = process.argv.slice(2)
+const manifestPath = 'src/data/cities.json'
+const prev = existsSync(manifestPath) ? JSON.parse(readFileSync(manifestPath, 'utf8')) : []
+const manifest = []
+for (const c of CITIES) {
+  if (!existsSync(`data/osm/${c.id}/pois.json`)) continue
+  if (only.length && !only.includes(c.id)) {
+    const old = prev.find((x) => x.id === c.id)
+    if (old) manifest.push(old)
+    continue
+  }
+  manifest.push(buildCity(c))
+}
+writeFileSync(manifestPath, JSON.stringify(manifest, null, 1))

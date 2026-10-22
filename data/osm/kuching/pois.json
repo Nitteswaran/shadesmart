@@ -1,0 +1,2450 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "timestamp_osm_base": "2026-10-22T18:39:51Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+
+{
+  "type": "node",
+  "id": 679417958,
+  "lat": 1.5581431,
+  "lon": 110.3487631,
+  "tags": {
+    "amenity": "ferry_terminal",
+    "ferry": "yes",
+    "name": "Pangkalan Haji Omar",
+    "name:en": "Haji Omar Jetty",
+    "public_transport": "station"
+  }
+},
+{
+  "type": "node",
+  "id": 2064169652,
+  "lat": 1.5579007,
+  "lon": 110.3460991,
+  "tags": {
+    "amenity": "place_of_worship",
+    "name": "Hin Ho Bio",
+    "name:zh": "天后廟",
+    "religion": "chinese_folk",
+    "wikimedia_commons": "File:古晋海南公会天后庙3.jpg",
+    "wikipedia": "zh:古晋天后庙"
+  }
+},
+{
+  "type": "node",
+  "id": 2404311297,
+  "lat": 1.5577045,
+  "lon": 110.3477888,
+  "tags": {
+    "addr:housenumber": "87",
+    "addr:postcode": "93000",
+    "addr:street": "Jalan Ewe Hai",
+    "air_conditioning": "no",
+    "amenity": "cafe",
+    "check_date": "2025-04-23",
+    "cuisine": "coffee_shop",
+    "name": "Black Bean Coffee",
+    "opening_hours": "Mo-Sa 09:00-18:00",
+    "outdoor_seating": "yes",
+    "smoking": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 2404311298,
+  "lat": 1.5576029,
+  "lon": 110.3493700,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "malaysian;breakfast;sandwich",
+    "name": "James Brooke Cafe",
+    "name:en": "James Brooke Bistro & Cafe",
+    "opening_hours": "Mo-Su 10:30-00:00",
+    "phone": "082412120"
+  }
+},
+{
+  "type": "node",
+  "id": 2404332056,
+  "lat": 1.5580921,
+  "lon": 110.3467287,
+  "tags": {
+    "addr:city": "Kuching",
+    "addr:housenumber": "57",
+    "addr:postcode": "93000",
+    "addr:street": "Jalan Carpenter",
+    "name": "Bumbu Cooking Class",
+    "tourism": "attraction"
+  }
+},
+{
+  "type": "node",
+  "id": 3386555161,
+  "lat": 1.5580802,
+  "lon": 110.3419488,
+  "tags": {
+    "bus": "yes",
+    "highway": "bus_stop",
+    "name": "Bus K6 to Orang-Utan Sanctuary",
+    "public_transport": "platform"
+  }
+},
+{
+  "type": "node",
+  "id": 4188931489,
+  "lat": 1.5581152,
+  "lon": 110.3458384,
+  "tags": {
+    "amenity": "restaurant",
+    "contact:facebook": "https://www.facebook.com/IndahHouseKuching",
+    "contact:instagram": "https://www.instagram.com/indahhousekuching",
+    "contact:phone": "+6012 500 6535",
+    "cuisine": "malaysian;coffee_shop;sandwich;burger;pasta",
+    "diet:halal": "yes",
+    "diet:vegan": "yes",
+    "diet:vegetarian": "yes",
+    "email": "indahhousekuching@gmail.com",
+    "internet_access": "no",
+    "name": "Indah House Kuching",
+    "name:de": "Indah",
+    "opening_hours": "Mo-Su 08:00-17:00",
+    "payment:cash": "yes",
+    "payment:credit_cards": "yes",
+    "payment:debit_cards": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 4191191194,
+  "lat": 1.5581807,
+  "lon": 110.3468737,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "vietnamese",
+    "name": "Saigon cuisine"
+  }
+},
+{
+  "type": "node",
+  "id": 4198286992,
+  "lat": 1.5590582,
+  "lon": 110.3422501,
+  "tags": {
+    "bus": "yes",
+    "highway": "bus_stop",
+    "name": "Bus 1a for Bako NP",
+    "public_transport": "platform"
+  }
+},
+{
+  "type": "node",
+  "id": 4198292492,
+  "lat": 1.5571699,
+  "lon": 110.3476723,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "asian;burger;pasta",
+    "name": "Kantin at the Granary",
+    "opening_hours": "Tu-Su 10:00-22:00"
+  }
+},
+{
+  "type": "node",
+  "id": 4227733031,
+  "lat": 1.5593671,
+  "lon": 110.3438277,
+  "tags": {
+    "bus": "yes",
+    "highway": "bus_stop",
+    "name": "Bus 1 to Bako National Park",
+    "name:de": "Bus nr. 1 zum Bako National Park (roter Bus)",
+    "name:en": "Bus 1A to Bako National Park",
+    "name:es": "Bus 1A al Parque Nacional Bako",
+    "name:fr": "Bus 1A à Bako Parc National",
+    "name:nl": "Bus 1A naar Bako National Park",
+    "public_transport": "platform"
+  }
+},
+{
+  "type": "node",
+  "id": 4227733033,
+  "lat": 1.5594285,
+  "lon": 110.3467358,
+  "tags": {
+    "name": "Cruise Boat Service",
+    "name:en": "Cruise Boat Service",
+    "tourism": "attraction"
+  }
+},
+{
+  "type": "node",
+  "id": 4227733035,
+  "lat": 1.5566209,
+  "lon": 110.3484075,
+  "tags": {
+    "name": "Kuching Hotel",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 4227733041,
+  "lat": 1.5636269,
+  "lon": 110.3438042,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Roti Cenai"
+  }
+},
+{
+  "type": "node",
+  "id": 4227736272,
+  "lat": 1.5608872,
+  "lon": 110.3424329,
+  "tags": {
+    "amenity": "ferry_terminal",
+    "ferry": "yes",
+    "name": "Pangkalan Panjang",
+    "public_transport": "station"
+  }
+},
+{
+  "type": "node",
+  "id": 4227736286,
+  "lat": 1.5607683,
+  "lon": 110.3388608,
+  "tags": {
+    "amenity": "ferry_terminal",
+    "ferry": "yes",
+    "name": "Jetty Kampong Tanjung",
+    "public_transport": "station"
+  }
+},
+{
+  "type": "node",
+  "id": 4227736308,
+  "lat": 1.5628588,
+  "lon": 110.3442967,
+  "tags": {
+    "amenity": "ferry_terminal",
+    "ferry": "yes",
+    "name": "Pangkalan Sg Bedil",
+    "public_transport": "station"
+  }
+},
+{
+  "type": "node",
+  "id": 4427842697,
+  "lat": 1.5582308,
+  "lon": 110.3416552,
+  "tags": {
+    "bus": "yes",
+    "highway": "bus_stop",
+    "name": "Bus 3A to Kuching Sentral Bus Terminal (1km away from the Airport)",
+    "public_transport": "platform"
+  }
+},
+{
+  "type": "node",
+  "id": 4428414689,
+  "lat": 1.5581130,
+  "lon": 110.3418663,
+  "tags": {
+    "amenity": "bus_station",
+    "bus": "yes",
+    "name": "Kuching City Center Bus Station (Saujana)",
+    "name:en": "Kuching City Center Bus Station",
+    "name:zh": "古晋巴士站",
+    "public_transport": "station"
+  }
+},
+{
+  "type": "node",
+  "id": 4499822791,
+  "lat": 1.5529173,
+  "lon": 110.3483200,
+  "tags": {
+    "amenity": "cafe",
+    "name": "Aroma Cafe",
+    "name:en": "Aroma Cafe"
+  }
+},
+{
+  "type": "node",
+  "id": 4501437106,
+  "lat": 1.5532994,
+  "lon": 110.3492728,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Lok Lok"
+  }
+},
+{
+  "type": "node",
+  "id": 4549756710,
+  "lat": 1.5579255,
+  "lon": 110.3482485,
+  "tags": {
+    "addr:housenumber": "1",
+    "addr:postcode": "93000",
+    "addr:street": "Lebuh Wayang",
+    "amenity": "restaurant",
+    "check_date": "2025-04-22",
+    "cuisine": "malaysian",
+    "diet:halal": "yes",
+    "name": "Peanuts Anchovies"
+  }
+},
+{
+  "type": "node",
+  "id": 4566435412,
+  "lat": 1.5571351,
+  "lon": 110.3490138,
+  "tags": {
+    "amenity": "place_of_worship",
+    "name": "寿山亭大伯公庙",
+    "name:en": "Tua Pek Kong Temple",
+    "name:ms": "Tokong Tua Pek Kong",
+    "religion": "taoist"
+  }
+},
+{
+  "type": "node",
+  "id": 4683021892,
+  "lat": 1.5563032,
+  "lon": 110.3492031,
+  "tags": {
+    "name": "John's Place",
+    "name:en": "John's Place",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 4739885223,
+  "lat": 1.5575630,
+  "lon": 110.3479670,
+  "tags": {
+    "amenity": "cafe",
+    "name": "Borneo Delight",
+    "name:en": "Borneo Delight"
+  }
+},
+{
+  "type": "node",
+  "id": 4739885224,
+  "lat": 1.5576665,
+  "lon": 110.3480338,
+  "tags": {
+    "amenity": "cafe",
+    "name": "Kuehpedia"
+  }
+},
+{
+  "type": "node",
+  "id": 4805392722,
+  "lat": 1.5577159,
+  "lon": 110.3484394,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "malaysian",
+    "name": "Syn Wah Hui"
+  }
+},
+{
+  "type": "node",
+  "id": 4956275421,
+  "lat": 1.5573432,
+  "lon": 110.3480070,
+  "tags": {
+    "amenity": "cafe",
+    "name": "Old Bazaar Cafe",
+    "name:en": "Old Bazaar Cafe"
+  }
+},
+{
+  "type": "node",
+  "id": 4961353821,
+  "lat": 1.5562929,
+  "lon": 110.3482132,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Green Hill Corner",
+    "name:en": "Green Hill Corner"
+  }
+},
+{
+  "type": "node",
+  "id": 4964920924,
+  "lat": 1.5543023,
+  "lon": 110.3482628,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "No.36- Dhaba tandoori and curry cafe",
+    "name:en": "No.36- Dhaba tandoori and curry cafe"
+  }
+},
+{
+  "type": "node",
+  "id": 4971806383,
+  "lat": 1.5595252,
+  "lon": 110.3422634,
+  "tags": {
+    "amenity": "food_court",
+    "name": "Open Air Market Food Court"
+  }
+},
+{
+  "type": "node",
+  "id": 4984367422,
+  "lat": 1.5578904,
+  "lon": 110.3473220,
+  "tags": {
+    "addr:housenumber": "73",
+    "addr:postcode": "93000",
+    "addr:street": "Jalan Ewe Hai",
+    "amenity": "restaurant",
+    "cuisine": "noodle",
+    "name": "Kim Joo",
+    "name:en": "Kim Joo - Kolo Mee",
+    "opening_hours": "Tu-Su 06:30-14:00"
+  }
+},
+{
+  "type": "node",
+  "id": 4984367621,
+  "lat": 1.5597518,
+  "lon": 110.3459012,
+  "tags": {
+    "name": "Kuching Waterfront Bazaar",
+    "name:en": "Kuching Waterfront Bazaar",
+    "tourism": "attraction"
+  }
+},
+{
+  "type": "node",
+  "id": 4989957225,
+  "lat": 1.5585771,
+  "lon": 110.3456998,
+  "tags": {
+    "addr:housenumber": "19",
+    "addr:postcode": "93000",
+    "addr:street": "Jalan Carpenter",
+    "air_conditioning": "no",
+    "amenity": "restaurant",
+    "capacity": "70",
+    "check_date": "2025-04-23",
+    "cuisine": "noodle;chinese",
+    "name": "Lau Ya Keng Foodcourt",
+    "name:en": "Lau Ya Keng Foodcourt - Mui Xin Sarawak Laksa",
+    "name:zh": "阳春台茶室",
+    "name:zh-Hant": "陽春臺茶室",
+    "opening_hours": "Sa-Th 10:00-15:00"
+  }
+},
+{
+  "type": "node",
+  "id": 4989957621,
+  "lat": 1.5583516,
+  "lon": 110.3456483,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "malaysian",
+    "name": "Aladdin Chicken Rice Shop",
+    "name:en": "Aladdin Chicken Rice Shop"
+  }
+},
+{
+  "type": "node",
+  "id": 5013045222,
+  "lat": 1.5580562,
+  "lon": 110.3420313,
+  "tags": {
+    "amenity": "bus_station",
+    "bus": "yes",
+    "name": "Bus K21 to Kubah National Park",
+    "public_transport": "station"
+  }
+},
+{
+  "type": "node",
+  "id": 5045517726,
+  "lat": 1.5580846,
+  "lon": 110.3420518,
+  "tags": {
+    "bus": "yes",
+    "highway": "bus_stop",
+    "name": "K21 bus to Kubah NP",
+    "public_transport": "platform"
+  }
+},
+{
+  "type": "node",
+  "id": 5082985922,
+  "lat": 1.5596672,
+  "lon": 110.3431292,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Jubilee Restaurant",
+    "name:en": "Jubilee Restaurant"
+  }
+},
+{
+  "type": "node",
+  "id": 5149398321,
+  "lat": 1.5604367,
+  "lon": 110.3416487,
+  "tags": {
+    "name": "Sunset Point",
+    "tourism": "viewpoint"
+  }
+},
+{
+  "type": "node",
+  "id": 5165634381,
+  "lat": 1.5567279,
+  "lon": 110.3477283,
+  "tags": {
+    "amenity": "restaurant",
+    "check_date": "2025-04-23",
+    "name": "Baruk B’dayuh"
+  }
+},
+{
+  "type": "node",
+  "id": 5165650349,
+  "lat": 1.5577422,
+  "lon": 110.3472822,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Pincho Loco (Tapas Bar)"
+  }
+},
+{
+  "type": "node",
+  "id": 5165650353,
+  "lat": 1.5578145,
+  "lon": 110.3471287,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Peridot"
+  }
+},
+{
+  "type": "node",
+  "id": 5171237726,
+  "lat": 1.5545781,
+  "lon": 110.3385927,
+  "tags": {
+    "amenity": "cafe",
+    "name": "Family Cafe"
+  }
+},
+{
+  "type": "node",
+  "id": 5171246426,
+  "lat": 1.5543279,
+  "lon": 110.3385035,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Warong Makan Makan"
+  }
+},
+{
+  "type": "node",
+  "id": 5192821222,
+  "lat": 1.5587431,
+  "lon": 110.3462523,
+  "tags": {
+    "addr:housenumber": "14",
+    "addr:street": "Jalan china",
+    "amenity": "restaurant",
+    "check_date": "2025-04-23",
+    "cuisine": "malaysian",
+    "name": "Rasa Ramai"
+  }
+},
+{
+  "type": "node",
+  "id": 5192867521,
+  "lat": 1.5581499,
+  "lon": 110.3445436,
+  "tags": {
+    "amenity": "restaurant",
+    "brand": "Pizza Hut",
+    "brand:wikidata": "Q191615",
+    "brand:wikipedia": "en:Pizza Hut",
+    "cuisine": "pizza",
+    "level": "0",
+    "name": "Pizza Hut"
+  }
+},
+{
+  "type": "node",
+  "id": 5245160223,
+  "lat": 1.5578520,
+  "lon": 110.3423656,
+  "tags": {
+    "bus": "yes",
+    "highway": "bus_stop",
+    "name": "Bus to Fairy & Wind Caves",
+    "public_transport": "platform"
+  }
+},
+{
+  "type": "node",
+  "id": 5259724933,
+  "lat": 1.5596828,
+  "lon": 110.3451217,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Mr. Jiu Jiu (Fine-dining)",
+    "name:en": "Mr. Jiu Jiu (Fine-dining)",
+    "opening_hours": "Mo-Su 18:00-23:00"
+  }
+},
+{
+  "type": "node",
+  "id": 5259731421,
+  "lat": 1.5597956,
+  "lon": 110.3449936,
+  "tags": {
+    "amenity": "cafe",
+    "name": "Commons",
+    "name:en": "Commons",
+    "opening_hours": "Mo-Su 09:00-23:00"
+  }
+},
+{
+  "type": "node",
+  "id": 5283794723,
+  "lat": 1.5587460,
+  "lon": 110.3432691,
+  "tags": {
+    "amenity": "cafe",
+    "name": "kai joo"
+  }
+},
+{
+  "type": "node",
+  "id": 5365796624,
+  "lat": 1.5534846,
+  "lon": 110.3486172,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Zinc"
+  }
+},
+{
+  "type": "node",
+  "id": 5774746855,
+  "lat": 1.5567581,
+  "lon": 110.3465878,
+  "tags": {
+    "name": "Bishop's house",
+    "tourism": "attraction"
+  }
+},
+{
+  "type": "node",
+  "id": 5774746856,
+  "lat": 1.5582364,
+  "lon": 110.3469957,
+  "tags": {
+    "amenity": "restaurant",
+    "check_date": "2025-04-23",
+    "cuisine": "laksa",
+    "name": "George Cafe"
+  }
+},
+{
+  "type": "node",
+  "id": 5803666354,
+  "lat": 1.5581508,
+  "lon": 110.3457276,
+  "tags": {
+    "addr:housenumber": "No. 37",
+    "addr:street": "Upper China Street",
+    "amenity": "cafe",
+    "cuisine": "breakfast;chicken;curry;local;tea;noodles;international;coffee_shop;barbecue;asian;malaysian",
+    "email": "pinggaicafe@gmail.com",
+    "name": "Pinggai Cafe",
+    "opening_hours": "Tu-Su 08:00-17:00",
+    "phone": "+60128770771"
+  }
+},
+{
+  "type": "node",
+  "id": 5915200686,
+  "lat": 1.5569705,
+  "lon": 110.3477659,
+  "tags": {
+    "amenity": "cafe",
+    "name": "Fig Tree (vegetarian cafe)"
+  }
+},
+{
+  "type": "node",
+  "id": 6068265385,
+  "lat": 1.5603027,
+  "lon": 110.3478203,
+  "tags": {
+    "name": "Bridge Viewpoint",
+    "name:en": "Bridge Viewpoint",
+    "tourism": "viewpoint"
+  }
+},
+{
+  "type": "node",
+  "id": 6150858986,
+  "lat": 1.5582479,
+  "lon": 110.3422146,
+  "tags": {
+    "bus": "yes",
+    "highway": "bus_stop",
+    "name": "Bus K7 to Saujana-Malihah",
+    "public_transport": "platform"
+  }
+},
+{
+  "type": "node",
+  "id": 6150859086,
+  "lat": 1.5581931,
+  "lon": 110.3421562,
+  "tags": {
+    "bus": "yes",
+    "highway": "bus_stop",
+    "name": "Bus K8 Jalan Masjid - Kampung - Stutong Baru",
+    "public_transport": "platform"
+  }
+},
+{
+  "type": "node",
+  "id": 6150859185,
+  "lat": 1.5580656,
+  "lon": 110.3420345,
+  "tags": {
+    "bus": "yes",
+    "highway": "bus_stop",
+    "name": "Bus 3A to Kuching Sentral near airport",
+    "public_transport": "platform"
+  }
+},
+{
+  "type": "node",
+  "id": 6151742887,
+  "lat": 1.5562891,
+  "lon": 110.3487651,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "malaysian;indian",
+    "name": "Ceylonese Restaurant"
+  }
+},
+{
+  "type": "node",
+  "id": 6155279791,
+  "lat": 1.5596380,
+  "lon": 110.3444073,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "malaysian",
+    "name": "Restoron Maha Shafi",
+    "opening_hours": "Mo-Su 07:00-23:30"
+  }
+},
+{
+  "type": "node",
+  "id": 6168638587,
+  "lat": 1.5585699,
+  "lon": 110.3457268,
+  "tags": {
+    "addr:housenumber": "21",
+    "addr:postcode": "93000",
+    "addr:street": "Jalan Carpenter",
+    "amenity": "cafe",
+    "check_date": "2025-04-23",
+    "cuisine": "chinese",
+    "name": "Mui Xin Laksa Panggung - Sarawak Laksa",
+    "opening_hours": "Th-Mo 07:00-13:00",
+    "payment:cards": "no",
+    "payment:cash": "yes",
+    "payment:credit_cards": "no",
+    "payment:debit_cards": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 6168638588,
+  "lat": 1.5581949,
+  "lon": 110.3458935,
+  "tags": {
+    "addr:street": "Jalan Carpenter",
+    "amenity": "cafe",
+    "cuisine": "noodle",
+    "name": "Nyan Shin Cafetaria - Hakka Noodle",
+    "opening_hours": "Mo-Su 06:30-13:00"
+  }
+},
+{
+  "type": "node",
+  "id": 6168660687,
+  "lat": 1.5595976,
+  "lon": 110.3422862,
+  "tags": {
+    "addr:postcode": "93000",
+    "addr:street": "Jalan Power",
+    "amenity": "cafe",
+    "cuisine": "chinese",
+    "name": "Song Hin Pork Porridge",
+    "opening_hours": "Mo-Su 18:00-02:00"
+  }
+},
+{
+  "type": "node",
+  "id": 6168660688,
+  "lat": 1.5585278,
+  "lon": 110.3457047,
+  "tags": {
+    "addr:housenumber": "21",
+    "addr:street": "Jalan Carpenter",
+    "amenity": "cafe",
+    "check_date": "2025-04-23",
+    "cuisine": "chinese",
+    "name": "Lau Ya Keng - Kuay Chap",
+    "opening_hours": "Mo-Sa 15:00-22:00"
+  }
+},
+{
+  "type": "node",
+  "id": 6168660985,
+  "lat": 1.5591914,
+  "lon": 110.3424183,
+  "tags": {
+    "addr:postcode": "93000",
+    "addr:street": "Jalan Power",
+    "amenity": "cafe",
+    "cuisine": "chinese",
+    "name": "Tower Market - Sio Bee, Soya Bean Stall 30",
+    "opening_hours": "Mo-Su 07:00-00:30"
+  }
+},
+{
+  "type": "node",
+  "id": 6169628587,
+  "lat": 1.5584893,
+  "lon": 110.3456911,
+  "tags": {
+    "addr:housenumber": "19",
+    "addr:postcode": "93000",
+    "addr:street": "Jalan Carpenter",
+    "amenity": "cafe",
+    "name": "Lau Ya Keng - Satay",
+    "opening_hours": "Mo-Su 14:00-18:00"
+  }
+},
+{
+  "type": "node",
+  "id": 6169668785,
+  "lat": 1.5590810,
+  "lon": 110.3424534,
+  "tags": {
+    "addr:street": "Jalan Power",
+    "amenity": "cafe",
+    "cuisine": "noodle",
+    "name": "Ah Mui Beef Noodle",
+    "opening_hours": "Mo-Su 18:00-22:00"
+  }
+},
+{
+  "type": "node",
+  "id": 6169920185,
+  "lat": 1.5594442,
+  "lon": 110.3458875,
+  "tags": {
+    "addr:housenumber": "11",
+    "addr:postcode": "93000",
+    "addr:street": "Jalan Main Bazaar",
+    "amenity": "cafe",
+    "name": "Winnie’s Cafe",
+    "opening_hours": "Mo-Sa 07:00-19:00; Su 09:00-17:00"
+  }
+},
+{
+  "type": "node",
+  "id": 6177432185,
+  "lat": 1.5589002,
+  "lon": 110.3419029,
+  "tags": {
+    "addr:street": "Lorong Market",
+    "amenity": "cafe",
+    "cuisine": "noodle",
+    "name": "Oriental Cafe - Kolo Mee"
+  }
+},
+{
+  "type": "node",
+  "id": 6215340285,
+  "lat": 1.5591245,
+  "lon": 110.3422133,
+  "tags": {
+    "bus": "yes",
+    "highway": "bus_stop",
+    "name": "bus 3A to Kuching Sentral $2",
+    "public_transport": "platform"
+  }
+},
+{
+  "type": "node",
+  "id": 6447156388,
+  "lat": 1.5584398,
+  "lon": 110.3438046,
+  "tags": {
+    "amenity": "cafe",
+    "brand": "Gloria Jean's",
+    "brand:wikidata": "Q2666365",
+    "brand:wikipedia": "en:Gloria Jean's Coffees",
+    "cuisine": "coffee_shop",
+    "name": "Gloria Jean's",
+    "official_name": "Gloria Jean's Coffees",
+    "takeaway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 6447158085,
+  "lat": 1.5582295,
+  "lon": 110.3441031,
+  "tags": {
+    "amenity": "cafe",
+    "brand": "Starbucks",
+    "brand:wikidata": "Q37158",
+    "brand:wikipedia": "en:Starbucks",
+    "cuisine": "coffee_shop",
+    "level": "0",
+    "name": "Starbucks",
+    "official_name": "Starbucks Coffee",
+    "takeaway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 6461026291,
+  "lat": 1.5586447,
+  "lon": 110.3439730,
+  "tags": {
+    "amenity": "food_court",
+    "name": "Food Plaza",
+    "strapline": "your downtown kitchen"
+  }
+},
+{
+  "type": "node",
+  "id": 6849569587,
+  "lat": 1.5559834,
+  "lon": 110.3486683,
+  "tags": {
+    "name": "Mandarin Hotel",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 6849569589,
+  "lat": 1.5554873,
+  "lon": 110.3486188,
+  "tags": {
+    "amenity": "cafe",
+    "name": "Le Nomade"
+  }
+},
+{
+  "type": "node",
+  "id": 6849569686,
+  "lat": 1.5561264,
+  "lon": 110.3487757,
+  "tags": {
+    "name": "Goodwood Inn Hotel",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 6849570086,
+  "lat": 1.5564347,
+  "lon": 110.3487345,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Ceylonese Restaurant"
+  }
+},
+{
+  "type": "node",
+  "id": 6874457285,
+  "lat": 1.5609710,
+  "lon": 110.3470282,
+  "tags": {
+    "name": "Water and Lightshow",
+    "name:en": "Water and Lightshow",
+    "opening_hours": "Su-Th 20:30-20:45,21:30-21:45; Fr-Sa 20:30-20:45,21:30-21:45,22:30-22:45",
+    "tourism": "attraction"
+  }
+},
+{
+  "type": "node",
+  "id": 7092610867,
+  "lat": 1.5560465,
+  "lon": 110.3439520,
+  "tags": {
+    "amenity": "cafe",
+    "level": "0",
+    "name": "Seattle Coffee & Tea"
+  }
+},
+{
+  "type": "node",
+  "id": 7092610868,
+  "lat": 1.5575211,
+  "lon": 110.3432135,
+  "tags": {
+    "amenity": "cafe",
+    "level": "0",
+    "name": "Heritage Central Cafe"
+  }
+},
+{
+  "type": "node",
+  "id": 8374126463,
+  "lat": 1.5601695,
+  "lon": 110.3461771,
+  "tags": {
+    "amenity": "ferry_terminal",
+    "ferry": "yes",
+    "name": "Batu Jetty",
+    "name:ms": "Jeti Batu",
+    "public_transport": "station"
+  }
+},
+{
+  "type": "node",
+  "id": 8374126473,
+  "lat": 1.5623051,
+  "lon": 110.3461228,
+  "tags": {
+    "amenity": "ferry_terminal",
+    "ferry": "yes",
+    "name": "Pangkalan Sapi",
+    "public_transport": "station"
+  }
+},
+{
+  "type": "node",
+  "id": 10017387217,
+  "lat": 1.5581300,
+  "lon": 110.3417690,
+  "tags": {
+    "highway": "bus_stop",
+    "name": "Free bus to Semenggoh (Orangutan) + bus central + airport (n°103) - information 12/09/2022"
+  }
+},
+{
+  "type": "node",
+  "id": 10634855290,
+  "lat": 1.5587202,
+  "lon": 110.3441905,
+  "tags": {
+    "name": "The Waterfront Hotel",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 10828939257,
+  "lat": 1.5588662,
+  "lon": 110.3452291,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Aladin Cafe"
+  }
+},
+{
+  "type": "node",
+  "id": 11030252505,
+  "lat": 1.5572554,
+  "lon": 110.3485297,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Borneo Delight"
+  }
+},
+{
+  "type": "node",
+  "id": 11301487710,
+  "lat": 1.5585994,
+  "lon": 110.3476701,
+  "tags": {
+    "amenity": "cafe",
+    "cuisine": "malaysian",
+    "internet_access": "yes",
+    "internet_access:fee": "no",
+    "name": "Nasi Lemak Ganja (NGL)",
+    "outdoor_seating": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 11752135199,
+  "lat": 1.5577996,
+  "lon": 110.3455153,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Sup Moo Moo"
+  }
+},
+{
+  "type": "node",
+  "id": 11752139826,
+  "lat": 1.5580794,
+  "lon": 110.3467417,
+  "tags": {
+    "amenity": "cafe",
+    "check_date": "2025-04-23",
+    "cuisine": "coffee_shop",
+    "name": "Zoey's Books & Coffee",
+    "opening_hours": "Mo-We,Fr 09:00-18:00; Th off; Sa-Su 09:00-20:00",
+    "outdoor_seating": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 11752152063,
+  "lat": 1.5578444,
+  "lon": 110.3474410,
+  "tags": {
+    "amenity": "cafe",
+    "name": "Yia Coffee Company"
+  }
+},
+{
+  "type": "node",
+  "id": 11752152064,
+  "lat": 1.5577960,
+  "lon": 110.3475501,
+  "tags": {
+    "amenity": "cafe",
+    "name": "Wind Mill Cafe"
+  }
+},
+{
+  "type": "node",
+  "id": 11801184969,
+  "lat": 1.5603600,
+  "lon": 110.3437426,
+  "tags": {
+    "amenity": "restaurant",
+    "check_date": "2025-04-23",
+    "cuisine": "malaysian",
+    "name": "nam joo"
+  }
+},
+{
+  "type": "node",
+  "id": 11977490854,
+  "lat": 1.5601699,
+  "lon": 110.3487927,
+  "tags": {
+    "leisure": "park",
+    "name": "Ibu Pertiwi (Southeast Asia Tallest Flag Pole)",
+    "name:en": "Ibu Pertiwi (Southeast Asia Tallest Flag Pole)"
+  }
+},
+{
+  "type": "node",
+  "id": 12014744485,
+  "lat": 1.5566066,
+  "lon": 110.3384860,
+  "tags": {
+    "amenity": "cafe",
+    "cuisine": "dessert",
+    "name": "Swee Kang Ais Kacang"
+  }
+},
+{
+  "type": "node",
+  "id": 12016292995,
+  "lat": 1.5548787,
+  "lon": 110.3380342,
+  "tags": {
+    "amenity": "cafe",
+    "name": "Royal Nasi Kukus"
+  }
+},
+{
+  "type": "node",
+  "id": 12016292996,
+  "lat": 1.5552252,
+  "lon": 110.3380926,
+  "tags": {
+    "amenity": "cafe",
+    "name": "Kafe Abah Wan"
+  }
+},
+{
+  "type": "node",
+  "id": 12016292997,
+  "lat": 1.5551112,
+  "lon": 110.3380727,
+  "tags": {
+    "amenity": "cafe",
+    "name": "Mom's Laksa"
+  }
+},
+{
+  "type": "node",
+  "id": 12054165569,
+  "lat": 1.5566883,
+  "lon": 110.3477184,
+  "tags": {
+    "addr:housenumber": "81",
+    "addr:street": "Lebuh Wayang",
+    "air_conditioning": "no",
+    "amenity": "restaurant",
+    "check_date": "2025-04-22",
+    "cuisine": "pasta;fusion",
+    "diet:vegan": "yes",
+    "diet:vegetarian": "only",
+    "name": "Fren’s Get Together",
+    "opening_hours": "11:00-20:30",
+    "payment:cards": "no",
+    "payment:cash": "yes",
+    "payment:credit_cards": "no",
+    "payment:debit_cards": "no",
+    "toilets": "yes",
+    "wheelchair": "limited"
+  }
+},
+{
+  "type": "node",
+  "id": 12060913269,
+  "lat": 1.5581861,
+  "lon": 110.3462813,
+  "tags": {
+    "amenity": "restaurant",
+    "check_date": "2025-04-23",
+    "cuisine": "noodle;chinese",
+    "diet:halal": "no",
+    "diet:vegetarian": "yes",
+    "name": "Yee Siang Dumpling House",
+    "opening_hours": "Tu,Th 14:00-18:00 off"
+  }
+},
+{
+  "type": "node",
+  "id": 12074799663,
+  "lat": 1.5594620,
+  "lon": 110.3458174,
+  "tags": {
+    "addr:housenumber": "6 & 7",
+    "addr:street": "Main Bazaar",
+    "contact:email": "reservations@theranee.com",
+    "internet_access": "wlan",
+    "name": "The Ranee Boutique Suites",
+    "phone": "+60 82 258 833",
+    "rooms": "24",
+    "tourism": "hotel",
+    "website": "https://www.theranee.com/"
+  }
+},
+{
+  "type": "node",
+  "id": 12222005989,
+  "lat": 1.5528922,
+  "lon": 110.3483266,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Dearoma Kitchen"
+  }
+},
+{
+  "type": "node",
+  "id": 12222005990,
+  "lat": 1.5530504,
+  "lon": 110.3482998,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "I Love Yoo!"
+  }
+},
+{
+  "type": "node",
+  "id": 12222005991,
+  "lat": 1.5532622,
+  "lon": 110.3482757,
+  "tags": {
+    "amenity": "prep_school",
+    "name": "Intelligent Learning Centre"
+  }
+},
+{
+  "type": "node",
+  "id": 12222005992,
+  "lat": 1.5534499,
+  "lon": 110.3488738,
+  "tags": {
+    "amenity": "cafe",
+    "name": "Ming Corner Cafe"
+  }
+},
+{
+  "type": "node",
+  "id": 12222181777,
+  "lat": 1.5560015,
+  "lon": 110.3479734,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Velvet Restaurant & Bar"
+  }
+},
+{
+  "type": "node",
+  "id": 12222181778,
+  "lat": 1.5559398,
+  "lon": 110.3479613,
+  "tags": {
+    "amenity": "cafe",
+    "name": "Ted Lin Kopi"
+  }
+},
+{
+  "type": "node",
+  "id": 12222181779,
+  "lat": 1.5558500,
+  "lon": 110.3479371,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "The Junk"
+  }
+},
+{
+  "type": "node",
+  "id": 12222198615,
+  "lat": 1.5539772,
+  "lon": 110.3486332,
+  "tags": {
+    "amenity": "prep_school",
+    "name": "Pusat Tuisyen Sinar Ilmu"
+  }
+},
+{
+  "type": "node",
+  "id": 12222198616,
+  "lat": 1.5536568,
+  "lon": 110.3485956,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Erawan Thai"
+  }
+},
+{
+  "type": "node",
+  "id": 12428733510,
+  "lat": 1.5589602,
+  "lon": 110.3432208,
+  "tags": {
+    "addr:street": "Lorong Kai Joo",
+    "amenity": "cafe",
+    "cuisine": "breakfast;coffee_shop;tea",
+    "name": "Hiap Yek Tea Shop",
+    "opening_hours": "Mo-Su 07:00-17:00"
+  }
+},
+{
+  "type": "node",
+  "id": 12528318759,
+  "lat": 1.5584906,
+  "lon": 110.3452981,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "malaysian;indian",
+    "name": "Curry House Carpenter Street",
+    "phone": "+60 10-703 8904"
+  }
+},
+{
+  "type": "node",
+  "id": 12671246987,
+  "lat": 1.5577841,
+  "lon": 110.3475745,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "JAK MA'AM Bidayuh Cuisine",
+    "opening_hours": "Mo-Su 11:30-21:30"
+  }
+},
+{
+  "type": "node",
+  "id": 12779002938,
+  "lat": 1.5602987,
+  "lon": 110.3444127,
+  "tags": {
+    "amenity": "cafe",
+    "check_date": "2025-04-23",
+    "name": "Sapiah Cafe"
+  }
+},
+{
+  "type": "node",
+  "id": 12779002939,
+  "lat": 1.5576251,
+  "lon": 110.3475628,
+  "tags": {
+    "amenity": "restaurant",
+    "check_date": "2025-04-23",
+    "name": "Route"
+  }
+},
+{
+  "type": "node",
+  "id": 12779002941,
+  "lat": 1.5603475,
+  "lon": 110.3442117,
+  "tags": {
+    "addr:street": "Jalan Gambier",
+    "amenity": "restaurant",
+    "check_date": "2025-04-24",
+    "cuisine": "indian",
+    "name": "Mahashagi"
+  }
+},
+{
+  "type": "node",
+  "id": 12779002942,
+  "lat": 1.5535723,
+  "lon": 110.3485868,
+  "tags": {
+    "addr:housenumber": "34",
+    "addr:postcode": "93100",
+    "addr:street": "Jalan Tabuan",
+    "air_conditioning": "yes",
+    "amenity": "cafe",
+    "check_date": "2025-04-21",
+    "delivery": "yes",
+    "name": "Tepi Jalan",
+    "phone": "+6001167708168"
+  }
+},
+{
+  "type": "node",
+  "id": 12779002949,
+  "lat": 1.5588335,
+  "lon": 110.3461642,
+  "tags": {
+    "amenity": "cafe",
+    "check_date": "2025-04-23",
+    "name": "Sit & Sip"
+  }
+},
+{
+  "type": "node",
+  "id": 12779002952,
+  "lat": 1.5580779,
+  "lon": 110.3468297,
+  "tags": {
+    "amenity": "cafe",
+    "check_date": "2025-04-23",
+    "name": "The Fern"
+  }
+},
+{
+  "type": "node",
+  "id": 12779002961,
+  "lat": 1.5583642,
+  "lon": 110.3460011,
+  "tags": {
+    "amenity": "cafe",
+    "check_date": "2025-04-23",
+    "name": "Halls"
+  }
+},
+{
+  "type": "node",
+  "id": 12779002969,
+  "lat": 1.5586641,
+  "lon": 110.3460582,
+  "tags": {
+    "amenity": "cafe",
+    "check_date": "2025-04-23",
+    "name": "Kafe Wayne"
+  }
+},
+{
+  "type": "node",
+  "id": 12779002970,
+  "lat": 1.5583210,
+  "lon": 110.3457135,
+  "tags": {
+    "amenity": "cafe",
+    "check_date": "2025-04-23",
+    "name": "Pawsitive Vibes"
+  }
+},
+{
+  "type": "node",
+  "id": 13007742299,
+  "lat": 1.5591569,
+  "lon": 110.3422470,
+  "tags": {
+    "bus": "yes",
+    "highway": "bus_stop",
+    "name": "Bus Q04M to Bako",
+    "operator": "BAS.MY",
+    "public_transport": "platform"
+  }
+},
+{
+  "type": "node",
+  "id": 13144045401,
+  "lat": 1.5596367,
+  "lon": 110.3425425,
+  "tags": {
+    "highway": "bus_stop",
+    "name": "Bus to Bako (Q04B)"
+  }
+},
+{
+  "type": "node",
+  "id": 13430279701,
+  "lat": 1.5562574,
+  "lon": 110.3482958,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Tandoori Palace"
+  }
+},
+{
+  "type": "node",
+  "id": 13539320133,
+  "lat": 1.5598700,
+  "lon": 110.3481525,
+  "tags": {
+    "amenity": "ferry_terminal",
+    "ferry": "yes",
+    "name": "Fort Margherita Jetty",
+    "name:ms": "Jeti Fort Margherita",
+    "public_transport": "station"
+  }
+},
+{
+  "type": "way",
+  "id": 69928034,
+  "center": {
+    "lat": 1.5596241,
+    "lon": 110.3434733
+  },
+  "tags": {
+    "alt_name": "India Street Pedestrian Mall",
+    "area": "yes",
+    "covered": "yes",
+    "highway": "pedestrian",
+    "name": "Jalan India",
+    "name:en": "India Street",
+    "opening_hours": "10:00-17:30",
+    "tourism": "attraction"
+  }
+},
+{
+  "type": "way",
+  "id": 124545051,
+  "center": {
+    "lat": 1.5571294,
+    "lon": 110.3450612
+  },
+  "tags": {
+    "amenity": "place_of_worship",
+    "building": "yes",
+    "denomination": "anglican",
+    "facebook": "https://www.facebook.com/officialstthomascathedralkuching/",
+    "name": "St. Thomas' Cathedral",
+    "name:en": "St. Thomas' Cathedral",
+    "name:zh": "古晋圣公会圣多玛座堂",
+    "name:zh-Hans": "古晋圣公会圣多玛座堂",
+    "name:zh-Hant": "古晉聖公會聖多瑪座堂",
+    "religion": "christian"
+  }
+},
+{
+  "type": "way",
+  "id": 129018570,
+  "center": {
+    "lat": 1.5548004,
+    "lon": 110.3434605
+  },
+  "tags": {
+    "building": "yes",
+    "int_name": "Sarawak Museum (Old Wing)",
+    "name": "Muzium Sarawak",
+    "name:en": "Sarawak State Museum",
+    "name:zh": "砂拉越博物馆",
+    "source": "Bing",
+    "start_date": "1891",
+    "tourism": "museum",
+    "wikidata": "Q3329752",
+    "wikimedia_commons": "Category:Sarawak State Museum",
+    "wikipedia": "en:Sarawak State Museum"
+  }
+},
+{
+  "type": "way",
+  "id": 218568370,
+  "center": {
+    "lat": 1.5555962,
+    "lon": 110.3437182
+  },
+  "tags": {
+    "building": "yes",
+    "fee": "no",
+    "name": "Sarawak Natural History Museum",
+    "old_name": "Second Ladies Club",
+    "start_date": "1908",
+    "tourism": "museum"
+  }
+},
+{
+  "type": "way",
+  "id": 218568371,
+  "center": {
+    "lat": 1.5551205,
+    "lon": 110.3438804
+  },
+  "tags": {
+    "building": "yes",
+    "name": "Sarawak Art Museum",
+    "start_date": "1949",
+    "tourism": "museum"
+  }
+},
+{
+  "type": "way",
+  "id": 232212851,
+  "center": {
+    "lat": 1.5585327,
+    "lon": 110.3441074
+  },
+  "tags": {
+    "building": "commercial",
+    "name": "Plaza Merdeka",
+    "name:zh": "独立广场",
+    "shop": "mall"
+  }
+},
+{
+  "type": "way",
+  "id": 232314013,
+  "center": {
+    "lat": 1.5559986,
+    "lon": 110.3473813
+  },
+  "tags": {
+    "amenity": "school",
+    "building": "yes",
+    "name": "SK St. Mary (M)"
+  }
+},
+{
+  "type": "way",
+  "id": 233169136,
+  "center": {
+    "lat": 1.5566604,
+    "lon": 110.3487573
+  },
+  "tags": {
+    "building": "hotel",
+    "name": "Harbour View Hotel",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "way",
+  "id": 233622270,
+  "center": {
+    "lat": 1.5587851,
+    "lon": 110.3405925
+  },
+  "tags": {
+    "amenity": "place_of_worship",
+    "building": "yes",
+    "denomination": "sunni",
+    "facebook": "https://www.facebook.com/mbk93400/",
+    "name": "Masjid Bandaraya Kuching",
+    "name:en": "Kuching City Mosque",
+    "name:fr": "Mosquée de la ville de Kuching",
+    "religion": "muslim"
+  }
+},
+{
+  "type": "way",
+  "id": 233688501,
+  "center": {
+    "lat": 1.5604667,
+    "lon": 110.3431324
+  },
+  "tags": {
+    "landuse": "recreation_ground",
+    "name": "Kuching Waterfront",
+    "name:en": "Kuching Waterfront",
+    "tourism": "attraction"
+  }
+},
+{
+  "type": "way",
+  "id": 233688826,
+  "center": {
+    "lat": 1.5591236,
+    "lon": 110.3480995
+  },
+  "tags": {
+    "name": "Kuching Waterfront",
+    "tourism": "attraction"
+  }
+},
+{
+  "type": "way",
+  "id": 233689192,
+  "center": {
+    "lat": 1.5591587,
+    "lon": 110.3427511
+  },
+  "tags": {
+    "building": "yes",
+    "name": "Electra House",
+    "shop": "mall"
+  }
+},
+{
+  "type": "way",
+  "id": 233689473,
+  "center": {
+    "lat": 1.5576861,
+    "lon": 110.3487511
+  },
+  "tags": {
+    "building": "yes",
+    "museum": "history",
+    "name": "Chinese History Museum",
+    "name:ms": "Muzium Sejarah Cina Kuching",
+    "name:zh-Hant": "古晉華人歷史博物館",
+    "tourism": "museum",
+    "wikidata": "Q7393554",
+    "wikimedia_commons": "Category:Chinese History Museum",
+    "wikipedia": "en:Chinese History Museum"
+  }
+},
+{
+  "type": "way",
+  "id": 233689533,
+  "center": {
+    "lat": 1.5550881,
+    "lon": 110.3473046
+  },
+  "tags": {
+    "building": "yes",
+    "name": "Fata Garden Hotel",
+    "source": "local knowledge",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "way",
+  "id": 234200480,
+  "center": {
+    "lat": 1.5569163,
+    "lon": 110.3384411
+  },
+  "tags": {
+    "building": "yes",
+    "name": "Laila Inn",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "way",
+  "id": 234200566,
+  "center": {
+    "lat": 1.5575468,
+    "lon": 110.3399030
+  },
+  "tags": {
+    "building": "yes",
+    "name": "Dormani Hotel",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "way",
+  "id": 234203489,
+  "center": {
+    "lat": 1.5520353,
+    "lon": 110.3374383
+  },
+  "tags": {
+    "building": "yes",
+    "name": "Regal Court Hotel",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "way",
+  "id": 235770959,
+  "center": {
+    "lat": 1.5549455,
+    "lon": 110.3398836
+  },
+  "tags": {
+    "addr:city": "Kuching",
+    "addr:postcode": "93400",
+    "addr:street": "Lorong P. Ramlee 5A",
+    "building": "retail",
+    "name": "Majma' Tuanku Abdul Halim Mu'adzam Shah",
+    "shop": "mall",
+    "source": "Mapbox"
+  }
+},
+{
+  "type": "way",
+  "id": 236939179,
+  "center": {
+    "lat": 1.5512697,
+    "lon": 110.3405560
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "SMK St. Joseph (M)",
+    "name:ms": "SMK St. Joseph (M)"
+  }
+},
+{
+  "type": "way",
+  "id": 236940027,
+  "center": {
+    "lat": 1.5515239,
+    "lon": 110.3425997
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "SMK St. Teresa (M)",
+    "name:ms": "SMK St. Teresa (M)"
+  }
+},
+{
+  "type": "way",
+  "id": 236942168,
+  "center": {
+    "lat": 1.5540879,
+    "lon": 110.3493270
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "SMK Kuching High",
+    "name:zh": "古晋中学(国民型)",
+    "start_date": "1916",
+    "wikidata": "Q12708339",
+    "wikipedia": "en:Kuching High School"
+  }
+},
+{
+  "type": "way",
+  "id": 237064138,
+  "center": {
+    "lat": 1.5561657,
+    "lon": 110.3439652
+  },
+  "tags": {
+    "building": "yes",
+    "name": "Merdeka Palace Hotel & Suites",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "way",
+  "id": 237566177,
+  "center": {
+    "lat": 1.5653199,
+    "lon": 110.3519010
+  },
+  "tags": {
+    "leisure": "park",
+    "name": "Sarawak Botanical Garden",
+    "name:id": "Kebun Raya Sarawak",
+    "name:ms": "Taman Botani Sarawak",
+    "name:nl": "Sarawak Botanische Tuin"
+  }
+},
+{
+  "type": "way",
+  "id": 243935144,
+  "center": {
+    "lat": 1.5513352,
+    "lon": 110.3462872
+  },
+  "tags": {
+    "int_name": "Reservoir Park",
+    "leisure": "park",
+    "name": "Taman Perpaduan",
+    "name:en": "Reservoir Park",
+    "name:ms": "Taman Perpaduan",
+    "operator": "Dewan Bandaraya Kuching Utara",
+    "operator:type": "government"
+  }
+},
+{
+  "type": "way",
+  "id": 269778595,
+  "center": {
+    "lat": 1.5519068,
+    "lon": 110.3478451
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "Chung Hua Primary School No. 1",
+    "name:zh": "古晋中华华小一校",
+    "wikidata": "Q20448569",
+    "wikipedia": "ms:Sekolah Jenis Kebangsaan Chung Hua 1"
+  }
+},
+{
+  "type": "way",
+  "id": 269780570,
+  "center": {
+    "lat": 1.5575077,
+    "lon": 110.3477500
+  },
+  "tags": {
+    "amenity": "place_of_worship",
+    "building": "yes",
+    "name": "Hong San Si Temple",
+    "name:ms": "Tokong Hong San Si",
+    "name:zh-Hant": "鳳山寺",
+    "religion": "buddhist",
+    "start_date": "1848",
+    "wikidata": "Q65078317",
+    "wikimedia_commons": "Category:Hong San Si Temple, Kuching",
+    "wikipedia": "en:Hong San Si Temple"
+  }
+},
+{
+  "type": "way",
+  "id": 269781302,
+  "center": {
+    "lat": 1.5571321,
+    "lon": 110.3490218
+  },
+  "tags": {
+    "amenity": "place_of_worship",
+    "name": "Tua Pek Kong Temple",
+    "name:ms": "Tokong Tua Pek Kong",
+    "name:zh-Hant": "古晉壽山亭福德正神大伯公廟",
+    "religion": "buddhist",
+    "short_name": "古晉大伯公廟;壽山亭",
+    "short_name:zh-Hant": "古晉大伯公廟;壽山亭",
+    "wikidata": "Q61784822",
+    "wikimedia_commons": "Category:Tua Pek Kong Temple, Kuching",
+    "wikipedia": "en:Tua Pek Kong Temple, Kuching"
+  }
+},
+{
+  "type": "way",
+  "id": 353343807,
+  "center": {
+    "lat": 1.5662939,
+    "lon": 110.3480289
+  },
+  "tags": {
+    "leisure": "park",
+    "name": "Orchid Park",
+    "source": "Mapbox"
+  }
+},
+{
+  "type": "way",
+  "id": 353439661,
+  "center": {
+    "lat": 1.5571543,
+    "lon": 110.3502607
+  },
+  "tags": {
+    "addr:city": "Kuching",
+    "addr:postcode": "93100",
+    "addr:street": "Jalan Tunku Abdul Rahman",
+    "brand": "Hilton",
+    "brand:wikidata": "Q598884",
+    "brand:wikipedia": "en:Hilton Hotels & Resorts",
+    "building": "yes",
+    "contact:facebook": "https://www.facebook.com/hiltonkch",
+    "contact:instagram": "https://www.instagram.com/hiltonkuching/",
+    "email": "kuching.info@hilton.com",
+    "fax": "+60-82-428-984",
+    "internet_access": "wlan",
+    "name": "Hilton Kuching",
+    "phone": "+60-82-223-888",
+    "rooms": "315",
+    "smoking": "no",
+    "stars": "4",
+    "tourism": "hotel",
+    "website": "https://www.hilton.com/en/hotels/kuchitw-hilton-kuching",
+    "wheelchair": "yes",
+    "wikidata": "Q76721707"
+  }
+},
+{
+  "type": "way",
+  "id": 355218537,
+  "center": {
+    "lat": 1.5549232,
+    "lon": 110.3465915
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "SK St. Thomas (M)",
+    "source": "Bing"
+  }
+},
+{
+  "type": "way",
+  "id": 355218821,
+  "center": {
+    "lat": 1.5550878,
+    "lon": 110.3452339
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "SMK St. Thomas (M)",
+    "name:en": "St. Thomas' National Secondary School",
+    "name:ms": "SMK St. Thomas (M)",
+    "source": "Bing",
+    "start_date": "1848",
+    "wikipedia": "en:St. Thomas' National Secondary School"
+  }
+},
+{
+  "type": "way",
+  "id": 355226399,
+  "center": {
+    "lat": 1.5544108,
+    "lon": 110.3436904
+  },
+  "tags": {
+    "int_name": "Museum Garden",
+    "leisure": "park",
+    "name": "Taman Muzium",
+    "name:ms": "Taman Muzium",
+    "source": "Bing"
+  }
+},
+{
+  "type": "way",
+  "id": 355226518,
+  "center": {
+    "lat": 1.5546605,
+    "lon": 110.3485317
+  },
+  "tags": {
+    "addr:city": "Kuching",
+    "addr:housenumber": "30",
+    "addr:postcode": "93100",
+    "addr:state": "Sarawak",
+    "addr:street": "Jalan Tabuan",
+    "check_date": "2025-04-23",
+    "contact:facebook": "https://www.facebook.com/theborneohotel/",
+    "contact:instagram": "https://www.instagram.com/theborneohotel",
+    "contact:whatsapp": "+60127544122",
+    "email": "hello@theborneohotel.com",
+    "internet_access": "wlan",
+    "internet_access:fee": "customers",
+    "name": "The Borneo Hotel",
+    "payment:cash": "yes",
+    "payment:credit_cards": "yes",
+    "payment:debit_cards": "yes",
+    "phone": "+60 82-244 122",
+    "rooms": "60",
+    "source": "Bing",
+    "tourism": "hotel",
+    "website": "https://www.theborneohotel.com/",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "way",
+  "id": 355227539,
+  "center": {
+    "lat": 1.5561925,
+    "lon": 110.3468184
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "SMK St. Mary (M)",
+    "source": "Bing"
+  }
+},
+{
+  "type": "way",
+  "id": 355229795,
+  "center": {
+    "lat": 1.5521197,
+    "lon": 110.3398313
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "Sekolah Rendah Swasta St. Joseph",
+    "name:en": "St. Joseph's Private Primary School",
+    "name:ms": "Sekolah Rendah Swasta St. Joseph",
+    "website": "https://stjosephkuching.edu.my/"
+  }
+},
+{
+  "type": "way",
+  "id": 437726825,
+  "center": {
+    "lat": 1.5559340,
+    "lon": 110.3382170
+  },
+  "tags": {
+    "building": "hotel",
+    "name": "Seri Liny Hotel",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "way",
+  "id": 568501299,
+  "center": {
+    "lat": 1.5614035,
+    "lon": 110.3459573
+  },
+  "tags": {
+    "bicycle": "dismount",
+    "bridge": "yes",
+    "bridge:structure": "suspension",
+    "check_date": "2024-11-04",
+    "highway": "pedestrian",
+    "horse": "no",
+    "layer": "2",
+    "motor_vehicle": "no",
+    "name": "Jambatan Darul Hana",
+    "name:en": "Darul Hana Bridge",
+    "name:fr": "Pont Darul Hana",
+    "name:ms": "Jambatan Darul Hana",
+    "name:zh": "达鲁哈纳桥",
+    "name:zh-Hans": "达鲁哈纳桥",
+    "name:zh-Hant": "達魯哈納橋",
+    "opening_hours": "06:00-00:00",
+    "start_date": "11/2017",
+    "surface": "concrete:plates",
+    "tourism": "attraction",
+    "width": "3.25"
+  }
+},
+{
+  "type": "way",
+  "id": 568501301,
+  "center": {
+    "lat": 1.5610427,
+    "lon": 110.3435389
+  },
+  "tags": {
+    "amenity": "place_of_worship",
+    "building": "mosque",
+    "denomination": "sunni",
+    "name": "Masjid India Bandar Kuching",
+    "name:en": "Indian Mosque of Kuching",
+    "name:fr": "Mosquée Indienne de Kuching",
+    "name:ms-Arab": "مسجد إنديا بندر کوچيڠ",
+    "religion": "muslim"
+  }
+},
+{
+  "type": "way",
+  "id": 634697570,
+  "center": {
+    "lat": 1.5606960,
+    "lon": 110.3454112
+  },
+  "tags": {
+    "bicycle": "dismount",
+    "bridge": "yes",
+    "bridge:structure": "suspension",
+    "highway": "pedestrian",
+    "horse": "no",
+    "layer": "1",
+    "motor_vehicle": "no",
+    "name": "Jambatan Darul Hana",
+    "name:en": "Darul Hana Bridge",
+    "name:fr": "Pont Darul Hana",
+    "name:zh": "达鲁哈纳桥",
+    "opening_hours": "06:00-00:00",
+    "start_date": "11/2017",
+    "surface": "concrete",
+    "tourism": "attraction",
+    "width": "3.25"
+  }
+},
+{
+  "type": "way",
+  "id": 779037132,
+  "center": {
+    "lat": 1.5608318,
+    "lon": 110.3452771
+  },
+  "tags": {
+    "bicycle": "dismount",
+    "bridge": "yes",
+    "bridge:structure": "suspension",
+    "highway": "pedestrian",
+    "horse": "no",
+    "layer": "1",
+    "motor_vehicle": "no",
+    "name": "Jambatan Darul Hana",
+    "name:en": "Darul Hana Bridge",
+    "name:fr": "Pont Darul Hana",
+    "name:zh": "达鲁哈纳桥",
+    "opening_hours": "06:00-00:00",
+    "start_date": "11/2017",
+    "surface": "concrete:plates",
+    "tourism": "attraction",
+    "width": "3.25"
+  }
+},
+{
+  "type": "way",
+  "id": 779315127,
+  "center": {
+    "lat": 1.5609407,
+    "lon": 110.3455750
+  },
+  "tags": {
+    "bicycle": "dismount",
+    "bridge": "yes",
+    "bridge:structure": "suspension",
+    "highway": "pedestrian",
+    "horse": "no",
+    "layer": "2",
+    "motor_vehicle": "no",
+    "name": "Jambatan Darul Hana",
+    "name:en": "Darul Hana Bridge",
+    "name:fr": "Pont Darul Hana",
+    "name:zh": "达鲁哈纳桥",
+    "opening_hours": "06:00-00:00",
+    "start_date": "11/2017",
+    "surface": "concrete",
+    "tourism": "attraction",
+    "width": "3.25"
+  }
+},
+{
+  "type": "way",
+  "id": 779315128,
+  "center": {
+    "lat": 1.5618299,
+    "lon": 110.3462294
+  },
+  "tags": {
+    "bicycle": "dismount",
+    "bridge": "yes",
+    "bridge:structure": "suspension",
+    "highway": "pedestrian",
+    "horse": "no",
+    "layer": "2",
+    "motor_vehicle": "no",
+    "name": "Jambatan Darul Hana",
+    "name:en": "Darul Hana Bridge",
+    "name:fr": "Pont Darul Hana",
+    "name:zh": "达鲁哈纳桥",
+    "opening_hours": "06:00-00:00",
+    "start_date": "11/2017",
+    "surface": "concrete",
+    "tourism": "attraction",
+    "width": "3.25"
+  }
+},
+{
+  "type": "way",
+  "id": 835977956,
+  "center": {
+    "lat": 1.5554755,
+    "lon": 110.3423288
+  },
+  "tags": {
+    "air_conditioning": "yes",
+    "building": "yes",
+    "building:levels": "5",
+    "changing_table": "yes",
+    "charge": "50 MYR",
+    "check_date": "2025-04-23",
+    "fee": "yes",
+    "museum": "ethnography",
+    "name": "Borneo Cultures Museum",
+    "name:ms": "Muzium Budaya Borneo",
+    "name:zh": "婆罗洲文化博物馆",
+    "opening_hours": "Mo-Fr 09:00-17:00; Sa-Su 10:00-16:30; PH off",
+    "operator": "Jabatan Muzium Sarawak",
+    "operator:type": "public",
+    "payment:cards": "no",
+    "payment:cash": "yes",
+    "payment:credit_cards": "no",
+    "payment:debit_cards": "no",
+    "toilets": "yes",
+    "toilets:wheelchair": "yes",
+    "tourism": "museum",
+    "website": "https://museum.sarawak.gov.my/page-0-209-169-Borneo-Cultures-Museum.html",
+    "wheelchair": "yes",
+    "wikidata": "Q111536310",
+    "wikipedia": "en:Borneo Cultures Museum"
+  }
+},
+{
+  "type": "way",
+  "id": 1057942841,
+  "center": {
+    "lat": 1.5535061,
+    "lon": 110.3432909
+  },
+  "tags": {
+    "amenity": "cafe",
+    "building": "yes",
+    "name": "Chinese Summer House",
+    "source": "local knowledge"
+  }
+},
+{
+  "type": "way",
+  "id": 1296553547,
+  "center": {
+    "lat": 1.5540629,
+    "lon": 110.3404708
+  },
+  "tags": {
+    "building": "retail",
+    "name": "Wisma Hopoh",
+    "shop": "mall"
+  }
+},
+{
+  "type": "way",
+  "id": 1296784092,
+  "center": {
+    "lat": 1.5545073,
+    "lon": 110.3375654
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "Chung Hua Middle School No. 4",
+    "name:zh": "古晋中华第四中学"
+  }
+},
+{
+  "type": "way",
+  "id": 1296797907,
+  "center": {
+    "lat": 1.5570549,
+    "lon": 110.3437072
+  },
+  "tags": {
+    "leisure": "park",
+    "name": "Padang Merdeka",
+    "name:ms": "Padang Merdeka",
+    "operator": "Dewan Bandaraya Kuching Utara",
+    "operator:type": "government"
+  }
+},
+{
+  "type": "way",
+  "id": 1297580591,
+  "center": {
+    "lat": 1.5575675,
+    "lon": 110.3420713
+  },
+  "tags": {
+    "addr:city": "Kuching",
+    "addr:postcode": "93000",
+    "addr:street": "Jalan Masjid",
+    "amenity": "place_of_worship",
+    "name": "Gurdwara Sahib Kuching",
+    "religion": "sikh"
+  }
+},
+{
+  "type": "way",
+  "id": 1388134054,
+  "center": {
+    "lat": 1.5582916,
+    "lon": 110.3455492
+  },
+  "tags": {
+    "amenity": "place_of_worship",
+    "name": "Hiang Thian Siang Ti Temple",
+    "name:ms": "Tokong Hiang Tiang Siang Ti",
+    "name:zh": "亚答街玄天上帝庙",
+    "religion": "buddhist",
+    "wikimedia_commons": "File:古晋亚达街玄天上帝庙.jpg",
+    "wikipedia": "zh:亚答街玄天上帝庙"
+  }
+},
+{
+  "type": "relation",
+  "id": 2893555,
+  "center": {
+    "lat": 1.5551228,
+    "lon": 110.3415828
+  },
+  "tags": {
+    "building": "yes",
+    "name": "Sarawak Islamic Heritage Museum",
+    "name:en": "Sarawak Islamic Heritage Museum",
+    "name:my": "Muzium Warisan Islam",
+    "start_date": "1930",
+    "tourism": "museum",
+    "type": "multipolygon",
+    "wikidata": "Q27639188",
+    "wikipedia": "en:Islamic Heritage Museum"
+  }
+},
+{
+  "type": "relation",
+  "id": 12489078,
+  "center": {
+    "lat": 1.5604737,
+    "lon": 110.3494876
+  },
+  "tags": {
+    "alt_name": "Fort Margherita",
+    "alt_name:en": "Fort Margherita",
+    "alt_name:zh": "玛格烈达堡",
+    "alt_name:zh-Hans": "玛格烈达堡",
+    "alt_name:zh-Hant": "瑪格烈達堡",
+    "building": "yes",
+    "castle_type": "fortification",
+    "historic": "fort",
+    "int_name": "Fort Margherita",
+    "name": "Fort Margherita",
+    "name:en": "Fort Margherita",
+    "name:zh": "玛格丽塔堡",
+    "name:zh-Hans": "玛格丽塔堡",
+    "name:zh-Hant": "瑪格麗塔堡",
+    "old_name": "Fort Margherita",
+    "tourism": "museum",
+    "type": "multipolygon",
+    "website": "https://www.brookegallery.org/",
+    "wikidata": "Q2007681",
+    "wikipedia": "en:Fort Margherita"
+  }
+}
+
+  ]
+}

@@ -159,6 +159,8 @@ export interface SelectOption {
   group: string
   icon: LucideIcon
   color: string
+  /** only listed once the user types a search (e.g. places in other cities) */
+  searchOnly?: boolean
 }
 
 export function PlaceSelect({
@@ -177,6 +179,7 @@ export function PlaceSelect({
   disabledValue?: string
 }) {
   const [open, setOpen] = useState(false)
+  const [q, setQ] = useState('')
   const ref = useRef<HTMLDivElement>(null)
   const current = options.find((o) => o.value === value)!
   useEffect(() => {
@@ -190,7 +193,11 @@ export function PlaceSelect({
       window.removeEventListener('keydown', esc)
     }
   }, [open])
-  const groups = [...new Set(options.map((o) => o.group))]
+  const needle = q.trim().toLowerCase()
+  const visible = options.filter((o) =>
+    needle.length >= 2 ? `${o.label} ${o.group}`.toLowerCase().includes(needle) : !o.searchOnly,
+  )
+  const groups = [...new Set(visible.map((o) => o.group))]
   return (
     <div ref={ref} className="relative">
       <button
@@ -209,12 +216,22 @@ export function PlaceSelect({
       {open && (
         <div
           role="listbox"
-          className="thin-scroll absolute left-0 right-0 top-full z-40 mt-1 max-h-[340px] animate-fade-up overflow-y-auto rounded-2xl border border-line bg-card p-1.5 shadow-float"
+          className="thin-scroll absolute left-0 right-0 top-full z-40 mt-1 max-h-[380px] animate-fade-up overflow-y-auto rounded-2xl border border-line bg-card p-1.5 shadow-float"
         >
+          <div className="sticky top-0 z-10 -mx-1.5 -mt-1.5 bg-card p-1.5">
+            <input
+              autoFocus
+              value={q}
+              onChange={(e) => setQ(e.target.value)}
+              placeholder="Search places in any city…"
+              className="w-full rounded-xl border border-line bg-paper px-3 py-2 text-[13.5px] outline-none placeholder:text-ink-3 focus:border-leaf"
+            />
+          </div>
+          {!visible.length && <div className="px-3 py-4 text-center text-[13px] text-ink-3">No places match “{q}”</div>}
           {groups.map((g) => (
             <div key={g} className="py-1">
               <Eyebrow className="px-2.5 pb-1 pt-1.5">{g}</Eyebrow>
-              {options
+              {visible
                 .filter((o) => o.group === g)
                 .map((o) => {
                   const Icon = o.icon

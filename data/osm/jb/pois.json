@@ -1,0 +1,2442 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "timestamp_osm_base": "2026-10-22T18:34:51Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+
+{
+  "type": "node",
+  "id": 1591703134,
+  "lat": 1.4596964,
+  "lon": 103.7651340,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "several restaurants and food stalls"
+  }
+},
+{
+  "type": "node",
+  "id": 1639480363,
+  "lat": 1.4629737,
+  "lon": 103.7646343,
+  "tags": {
+    "air_conditioning": "no",
+    "name": "Johor Bahru Sentral",
+    "name:en": "Johor Bahru Sentral",
+    "name:fr": "Gare de Johor Bahru Sentral",
+    "name:id": "Stasiun Johor Bahru Sentral",
+    "name:ja": "JBセントラル駅",
+    "name:ms": "Johor Bahru Sentral",
+    "name:ta": "ஜொகூர் பாரு சென்ட்ரல்",
+    "name:th": "ยะโฮร์บาห์รูเซ็นทรัล",
+    "name:zh": "新山中央车站",
+    "name:zh-Hans": "新山中央车站",
+    "name:zh-Hant": "新山中央車站",
+    "network": "KTM Intercity;Tebrau Shuttle",
+    "not:brand:wikidata": "Q215657",
+    "operator": "KTM",
+    "public_transport": "station",
+    "railway": "station",
+    "short_name": "JB Sentral",
+    "station": "train",
+    "train": "yes",
+    "website": "https://mrt.com.my/ktm_intercity/JB_Sentral.htm",
+    "wheelchair": "yes",
+    "wikidata": "Q6132274",
+    "wikipedia": "en:Johor Bahru Sentral station"
+  }
+},
+{
+  "type": "node",
+  "id": 1672783091,
+  "lat": 1.4604682,
+  "lon": 103.7645791,
+  "tags": {
+    "name": "Citrus Hotel",
+    "tourism": "hotel",
+    "wikidata": "Q95677865",
+    "wikimedia_commons": "Category:Citrus Hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 1704471510,
+  "lat": 1.4595486,
+  "lon": 103.7652413,
+  "tags": {
+    "name": "Hong Kong Hotel",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 1704471512,
+  "lat": 1.4594280,
+  "lon": 103.7648309,
+  "tags": {
+    "name": "JB Hotel",
+    "tourism": "hotel",
+    "wikidata": "Q95700957"
+  }
+},
+{
+  "type": "node",
+  "id": 1704471525,
+  "lat": 1.4589534,
+  "lon": 103.7654841,
+  "tags": {
+    "addr:housenumber": "1",
+    "name": "Meldrum Hotel",
+    "tourism": "hotel",
+    "wikidata": "Q99303979",
+    "wikimedia_commons": "Category:Meldrum Hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 1849689356,
+  "lat": 1.4655744,
+  "lon": 103.7681208,
+  "tags": {
+    "bus": "yes",
+    "highway": "bus_stop",
+    "location": "Johor Bahru",
+    "name": "Johor Bahru Checkpoint",
+    "name:en": "Johor Bahru Checkpoint (Departure Alighting)",
+    "name:ms": "JB Custom IN",
+    "public_transport": "platform",
+    "ref": "46219",
+    "route_ref": "160;170;170X;950",
+    "shelter": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 1868501169,
+  "lat": 1.4690829,
+  "lon": 103.7607466,
+  "tags": {
+    "bus": "yes",
+    "highway": "bus_stop",
+    "name": "Bukit Chagar",
+    "name:en": "Chagar Hill",
+    "name:ms": "Bukit Chagar",
+    "public_transport": "platform"
+  }
+},
+{
+  "type": "node",
+  "id": 1877151146,
+  "lat": 1.4591936,
+  "lon": 103.7655744,
+  "tags": {
+    "addr:street": "Jalan Meldrum",
+    "amenity": "restaurant",
+    "name": "Street food lane",
+    "opening_hours": "Mo-Su 17:00-23:00"
+  }
+},
+{
+  "type": "node",
+  "id": 1979678787,
+  "lat": 1.4613328,
+  "lon": 103.7638999,
+  "tags": {
+    "amenity": "food_court",
+    "name": "Food Junction",
+    "operator": "Food Junction"
+  }
+},
+{
+  "type": "node",
+  "id": 2590312790,
+  "lat": 1.4608373,
+  "lon": 103.7641027,
+  "tags": {
+    "addr:city": "Johor Bahru",
+    "addr:housenumber": "106;108",
+    "addr:postcode": "80000",
+    "addr:street": "Jalan Wong Ah Fook",
+    "amenity": "cafe",
+    "brand": "Starbucks",
+    "brand:wikidata": "Q37158",
+    "brand:wikipedia": "en:Starbucks",
+    "cuisine": "coffee_shop",
+    "name": "Starbucks",
+    "name:zh": "星巴克",
+    "official_name": "Starbucks Coffee",
+    "takeaway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 2746828581,
+  "lat": 1.4639514,
+  "lon": 103.7618882,
+  "tags": {
+    "addr:housenumber": "45",
+    "addr:postcode": "80000",
+    "addr:street": "Jalan Wong Ah Fook",
+    "addr:suburb": "Johor Bahru",
+    "email": "reservation@fiveshotel.com",
+    "name": "Fives Hotel",
+    "operator": "Hotel 77 Sdn. Bhd.",
+    "phone": "+607 219 7777",
+    "rooms": "243",
+    "tourism": "hotel",
+    "website": "https://www.fiveshotel.com/johor-bahru/",
+    "wikidata": "Q95697926"
+  }
+},
+{
+  "type": "node",
+  "id": 3687583633,
+  "lat": 1.4592924,
+  "lon": 103.7653543,
+  "tags": {
+    "name": "Belllo Hotel",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 3941631341,
+  "lat": 1.4632803,
+  "lon": 103.7648345,
+  "tags": {
+    "amenity": "bus_station",
+    "bus": "yes",
+    "highway": "bus_stop",
+    "location": "Jalan Jim Quee",
+    "name": "JB Sentral Bus Terminal",
+    "name:en": "Johor Bahru Sentral",
+    "name:ms": "Johor Bahru Sentral",
+    "name:zh": "新山中央车站巴士总站",
+    "name:zh-Hans": "新山中央车站巴士总站",
+    "name:zh-Hant": "新山中央車站巴士總站",
+    "network": "Land Transport Authority",
+    "network:short": "LTA",
+    "network:wikidata": "Q3299279",
+    "operator": "Land Transport Authority",
+    "public_transport": "station",
+    "ref": "47711",
+    "route_ref": "160;170X;950",
+    "short_name": "JB Sentral",
+    "wheelchair": "limited"
+  }
+},
+{
+  "type": "node",
+  "id": 4059209637,
+  "lat": 1.4607975,
+  "lon": 103.7612288,
+  "tags": {
+    "addr:city": "Johor Bahru",
+    "addr:street": "Jalan Abdullah Ibrahim",
+    "amenity": "restaurant",
+    "cuisine": "malaysian",
+    "name": "Restoran Pokok Ceri"
+  }
+},
+{
+  "type": "node",
+  "id": 4283726894,
+  "lat": 1.4692356,
+  "lon": 103.7667461,
+  "tags": {
+    "amenity": "marketplace",
+    "fixme": "Where is the exact location?",
+    "name": "Pasar Malam Bukit Chagar",
+    "name:en": "Bukit Chagar Night Market"
+  }
+},
+{
+  "type": "node",
+  "id": 4380581290,
+  "lat": 1.4649962,
+  "lon": 103.7604940,
+  "tags": {
+    "addr:housenumber": "164A",
+    "addr:street": "Jalan Ngee Heng",
+    "amenity": "restaurant",
+    "name": "Restaurant Amma",
+    "name:en": "Restaurant Amma"
+  }
+},
+{
+  "type": "node",
+  "id": 4380716789,
+  "lat": 1.4582325,
+  "lon": 103.7638770,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "indian",
+    "name": "Restaurant Muthu",
+    "name:en": "Restaurant Muthu"
+  }
+},
+{
+  "type": "node",
+  "id": 4411442725,
+  "lat": 1.4594822,
+  "lon": 103.7652649,
+  "tags": {
+    "name": "Hanyasatu Hotel",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 4411442727,
+  "lat": 1.4582461,
+  "lon": 103.7658604,
+  "tags": {
+    "name": "Hotel CIQ",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 4411442729,
+  "lat": 1.4588306,
+  "lon": 103.7658966,
+  "tags": {
+    "addr:city": "Johor Bahru",
+    "addr:housenumber": "6",
+    "addr:postcode": "80000",
+    "addr:street": "Jalan Meldrum",
+    "name": "New Hotel",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 4411442730,
+  "lat": 1.4593870,
+  "lon": 103.7655975,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Meldrum Lama Kopitiam"
+  }
+},
+{
+  "type": "node",
+  "id": 4411442731,
+  "lat": 1.4593052,
+  "lon": 103.7656378,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Tempat Lama"
+  }
+},
+{
+  "type": "node",
+  "id": 4411442732,
+  "lat": 1.4599796,
+  "lon": 103.7653239,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Kedai Makanan Dan Minuman Ji Yuan"
+  }
+},
+{
+  "type": "node",
+  "id": 4411442733,
+  "lat": 1.4587582,
+  "lon": 103.7656458,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Restoran Abk Madina"
+  }
+},
+{
+  "type": "node",
+  "id": 4411442734,
+  "lat": 1.4584552,
+  "lon": 103.7657745,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Restoran Fragrance City"
+  }
+},
+{
+  "type": "node",
+  "id": 4411442735,
+  "lat": 1.4595197,
+  "lon": 103.7652019,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Restoran Hao Bi"
+  }
+},
+{
+  "type": "node",
+  "id": 4411442737,
+  "lat": 1.4598767,
+  "lon": 103.7645984,
+  "tags": {
+    "name": "T Hotel",
+    "tourism": "hotel",
+    "wikidata": "Q95697268"
+  }
+},
+{
+  "type": "node",
+  "id": 4415958589,
+  "lat": 1.4580643,
+  "lon": 103.7642874,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Restoran Ya Wang",
+    "name:en": "Restoran Ya Wang"
+  }
+},
+{
+  "type": "node",
+  "id": 4438541992,
+  "lat": 1.4592494,
+  "lon": 103.7648681,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "name": "Kam Long Curry Fish Head"
+  }
+},
+{
+  "type": "node",
+  "id": 4450165121,
+  "lat": 1.4626052,
+  "lon": 103.7637852,
+  "tags": {
+    "amenity": "cafe",
+    "brand": "OldTown White Coffee",
+    "brand:wikidata": "Q7085308",
+    "brand:wikipedia": "en:OldTown White Coffee",
+    "cuisine": "coffee_shop;malaysian",
+    "level": "2",
+    "name": "OldTown White Coffee",
+    "takeaway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 4450165416,
+  "lat": 1.4591926,
+  "lon": 103.7632626,
+  "tags": {
+    "amenity": "restaurant",
+    "brand": "Pizza Hut",
+    "brand:wikidata": "Q191615",
+    "brand:wikipedia": "en:Pizza Hut",
+    "cuisine": "pizza",
+    "name": "Pizza Hut",
+    "name:en": "Pizza Hut"
+  }
+},
+{
+  "type": "node",
+  "id": 4668473954,
+  "lat": 1.4629145,
+  "lon": 103.7636063,
+  "tags": {
+    "amenity": "cafe",
+    "brand": "Starbucks",
+    "brand:wikidata": "Q37158",
+    "brand:wikipedia": "en:Starbucks",
+    "cuisine": "coffee_shop",
+    "name": "Starbucks",
+    "name:zh": "星巴克",
+    "official_name": "Starbucks Coffee",
+    "takeaway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 4668473981,
+  "lat": 1.4657407,
+  "lon": 103.7674850,
+  "tags": {
+    "bus": "yes",
+    "description": "Arrival, after Immigration and Customs",
+    "highway": "bus_stop",
+    "location": "Jalan Sultan Iskandar CIQ",
+    "name": "Johor Bahru Checkpoint",
+    "name:en": "Johor Bahru Checkpoint (Arrival Boarding)",
+    "name:ms": "JB Custom Out",
+    "public_transport": "platform"
+  }
+},
+{
+  "type": "node",
+  "id": 4831343081,
+  "lat": 1.4678253,
+  "lon": 103.7665543,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Roti Canai Bukit Chagar"
+  }
+},
+{
+  "type": "node",
+  "id": 4831343086,
+  "lat": 1.4686228,
+  "lon": 103.7610124,
+  "tags": {
+    "amenity": "cafe",
+    "name": "CHEOTNUN - Korean Dessert Cafe",
+    "name:en": "CHEOTNUN - Korean Dessert Cafe"
+  }
+},
+{
+  "type": "node",
+  "id": 4832134821,
+  "lat": 1.4671631,
+  "lon": 103.7586501,
+  "tags": {
+    "bus": "yes",
+    "highway": "bus_stop",
+    "name": "bus to larkin sentral",
+    "name:en": "bus to larkin sentral",
+    "public_transport": "platform"
+  }
+},
+{
+  "type": "node",
+  "id": 4882604223,
+  "lat": 1.4588019,
+  "lon": 103.7656867,
+  "tags": {
+    "name": "Hotel Dragon Inn",
+    "name:en": "New Hôtel",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 4991309247,
+  "lat": 1.4582876,
+  "lon": 103.7646187,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Ah hua 亚华 kway teow soup",
+    "name:en": "Ah hua 亚华 kway teow soup"
+  }
+},
+{
+  "type": "node",
+  "id": 4998916522,
+  "lat": 1.4607782,
+  "lon": 103.7578180,
+  "tags": {
+    "bus": "yes",
+    "highway": "bus_stop",
+    "name": "Wisma Persekutuan",
+    "public_transport": "platform"
+  }
+},
+{
+  "type": "node",
+  "id": 5028921124,
+  "lat": 1.4604800,
+  "lon": 103.7635361,
+  "tags": {
+    "addr:street": "Jalan Trus",
+    "amenity": "cafe",
+    "cuisine": "chinese;ice_cream;friture;coffee_shop",
+    "internet_access": "wlan",
+    "name": "F.o.C. Faculty of Caffeine",
+    "name:de": "F.o.C. Faculty of Caffeine"
+  }
+},
+{
+  "type": "node",
+  "id": 5327540321,
+  "lat": 1.4685316,
+  "lon": 103.7610064,
+  "tags": {
+    "addr:postcode": "80300",
+    "amenity": "cafe",
+    "name": "Mrs. Who",
+    "name:en": "Mrs. Who"
+  }
+},
+{
+  "type": "node",
+  "id": 5464537222,
+  "lat": 1.4624227,
+  "lon": 103.7622852,
+  "tags": {
+    "name": "hotel ciq",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 5573564221,
+  "lat": 1.4589737,
+  "lon": 103.7638968,
+  "tags": {
+    "name": "little india",
+    "tourism": "attraction"
+  }
+},
+{
+  "type": "node",
+  "id": 5575033260,
+  "lat": 1.4634358,
+  "lon": 103.7632895,
+  "tags": {
+    "amenity": "restaurant",
+    "brand": "Pizza Hut",
+    "brand:wikidata": "Q191615",
+    "brand:wikipedia": "en:Pizza Hut",
+    "cuisine": "pizza",
+    "level": "2",
+    "name": "Pizza Hut"
+  }
+},
+{
+  "type": "node",
+  "id": 5575033413,
+  "lat": 1.4641576,
+  "lon": 103.7609084,
+  "tags": {
+    "addr:housenumber": "171-173",
+    "addr:postcode": "80000",
+    "addr:street": "Jalan Ngee Heng",
+    "amenity": "cafe",
+    "cuisine": "ice_cream;chicken;seafood;thai;malaysian;coffee_shop",
+    "name": "Adam Hawa Cafe",
+    "opening_hours": "Mo-Su 17:00-03:00",
+    "phone": "60137133371"
+  }
+},
+{
+  "type": "node",
+  "id": 5575033415,
+  "lat": 1.4641583,
+  "lon": 103.7623193,
+  "tags": {
+    "amenity": "cafe",
+    "brand": "O'Briens",
+    "brand:wikidata": "Q7071686",
+    "cuisine": "sandwich",
+    "description": "Irish Sandwich Cafe",
+    "name": "O'Briens",
+    "takeaway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 5575035336,
+  "lat": 1.4649907,
+  "lon": 103.7573882,
+  "tags": {
+    "addr:city": "Johor Bahru",
+    "addr:housenumber": "11",
+    "addr:postcode": "80100",
+    "addr:street": "Jalan Gertak Merah",
+    "amenity": "place_of_worship",
+    "denomination": "presbyterian",
+    "name": "Gereja Holy Light (christian)",
+    "religion": "christian"
+  }
+},
+{
+  "type": "node",
+  "id": 5575035339,
+  "lat": 1.4632744,
+  "lon": 103.7622177,
+  "tags": {
+    "addr:street": "Jalan Wong Ah Fook",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "name": "Guoma Steamboat"
+  }
+},
+{
+  "type": "node",
+  "id": 5578170231,
+  "lat": 1.4620648,
+  "lon": 103.7638144,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "AK Noodles House",
+    "wheelchair": "limited"
+  }
+},
+{
+  "type": "node",
+  "id": 5930047247,
+  "lat": 1.4676179,
+  "lon": 103.7570198,
+  "tags": {
+    "amenity": "place_of_worship",
+    "denomination": "sunni",
+    "name": "Surau Ijtihad Mariam",
+    "religion": "muslim"
+  }
+},
+{
+  "type": "node",
+  "id": 6160652585,
+  "lat": 1.4607855,
+  "lon": 103.7675563,
+  "tags": {
+    "addr:housenumber": "146",
+    "addr:postcode": "80300",
+    "addr:street": "Jalan Lumba Kuda",
+    "alt_name": "Ah Bee",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "name": "Hwa Mei Bak Kut Teh 华美肉骨茶",
+    "opening_hours": "Tu-Su 08:30-14:00"
+  }
+},
+{
+  "type": "node",
+  "id": 6655123110,
+  "lat": 1.4603162,
+  "lon": 103.7648695,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "malaysian",
+    "name": "Restoran ABK Amin"
+  }
+},
+{
+  "type": "node",
+  "id": 6746284985,
+  "lat": 1.4590751,
+  "lon": 103.7662649,
+  "tags": {
+    "addr:street": "Jalan Siu Nam",
+    "name": "Kwong Siew Heritage Gallery",
+    "tourism": "museum",
+    "wikidata": "Q95709592"
+  }
+},
+{
+  "type": "node",
+  "id": 7106759086,
+  "lat": 1.4589342,
+  "lon": 103.7658592,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Snow City Deserts"
+  }
+},
+{
+  "type": "node",
+  "id": 7110756878,
+  "lat": 1.4644732,
+  "lon": 103.7659910,
+  "tags": {
+    "bus": "yes",
+    "covered": "yes",
+    "highway": "bus_stop",
+    "local_ref": "B",
+    "location": "Jalan Sultan Iskandar CIQ",
+    "name": "Johor Bahru Checkpoint",
+    "name:en": "Johor Bahru Checkpoint (Departure Boarding)",
+    "name:ms": "Pemeriksaan Johor Bahru (Asrama sahaja) - platform B",
+    "public_transport": "platform"
+  }
+},
+{
+  "type": "node",
+  "id": 7110777295,
+  "lat": 1.4644254,
+  "lon": 103.7660139,
+  "tags": {
+    "bus": "yes",
+    "covered": "yes",
+    "highway": "bus_stop",
+    "local_ref": "A",
+    "location": "Jalan Sultan Iskandar CIQ",
+    "name": "Johor Bahru Checkpoint",
+    "name:en": "Johor Bahru Checkpoint (Departure Boarding)",
+    "name:ms": "Pemeriksaan Johor Bahru (Asrama sahaja) - platform A",
+    "public_transport": "platform"
+  }
+},
+{
+  "type": "node",
+  "id": 7572320662,
+  "lat": 1.4695633,
+  "lon": 103.7687127,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Restoran Kedai Makanan & Minuman AB"
+  }
+},
+{
+  "type": "node",
+  "id": 8927005070,
+  "lat": 1.4647435,
+  "lon": 103.7655715,
+  "tags": {
+    "bus": "yes",
+    "description": "Arrival, before Immigration and Customs",
+    "highway": "bus_stop",
+    "location": "Johor Bahru",
+    "name": "Johor Bahru Checkpoint",
+    "name:en": "Johor Bahru Checkpoint (Arrival Alighting)",
+    "public_transport": "platform",
+    "ref": "46211",
+    "route_ref": "160;170;170X;950"
+  }
+},
+{
+  "type": "node",
+  "id": 9335092312,
+  "lat": 1.4627893,
+  "lon": 103.7625565,
+  "tags": {
+    "addr:city": "Johor Bahru",
+    "addr:housenumber": "35D-1",
+    "addr:postcode": "80000",
+    "addr:street": "Jalan Wong Ah Fook",
+    "amenity": "restaurant",
+    "cuisine": "nepalese",
+    "name": "Rato Bhale Restaurant Sdn Bhd",
+    "opening_hours": "Mo-Su 09:00-19:00",
+    "phone": "0143875401"
+  }
+},
+{
+  "type": "node",
+  "id": 9590275055,
+  "lat": 1.4602363,
+  "lon": 103.7699153,
+  "tags": {
+    "brand": "Jaya Grocer",
+    "brand:wikidata": "Q116275052",
+    "level": "1",
+    "name": "Jaya Grocer",
+    "name:en": "Jaya Grocer",
+    "shop": "supermarket"
+  }
+},
+{
+  "type": "node",
+  "id": 9637521818,
+  "lat": 1.4633243,
+  "lon": 103.7622862,
+  "tags": {
+    "amenity": "restaurant",
+    "branch": "Zenith Mall",
+    "brand": "Haidilao Hot Pot",
+    "brand:en": "Haidilao Hot Pot",
+    "brand:wikidata": "Q5638920",
+    "brand:wikipedia": "zh:海底捞",
+    "brand:zh": "海底捞火锅",
+    "cuisine": "chinese;hot_pot",
+    "name": "Haidilao Hot Pot",
+    "name:en": "Haidilao Hot Pot",
+    "name:zh": "海底捞火锅",
+    "name:zh-Hans": "海底捞火锅",
+    "name:zh-Hant": "海底撈火鍋"
+  }
+},
+{
+  "type": "node",
+  "id": 9764633071,
+  "lat": 1.4611654,
+  "lon": 103.7608950,
+  "tags": {
+    "bus": "yes",
+    "highway": "bus_stop",
+    "name": "Opposite Persada",
+    "public_transport": "platform"
+  }
+},
+{
+  "type": "node",
+  "id": 9764633072,
+  "lat": 1.4595003,
+  "lon": 103.7621194,
+  "tags": {
+    "bus": "yes",
+    "highway": "bus_stop",
+    "name": "Bukit Timbalan",
+    "public_transport": "platform"
+  }
+},
+{
+  "type": "node",
+  "id": 9764633073,
+  "lat": 1.4595405,
+  "lon": 103.7635249,
+  "tags": {
+    "bus": "yes",
+    "highway": "bus_stop",
+    "name": "UTC Johor",
+    "public_transport": "platform"
+  }
+},
+{
+  "type": "node",
+  "id": 9764633074,
+  "lat": 1.4648562,
+  "lon": 103.7598570,
+  "tags": {
+    "bus": "yes",
+    "highway": "bus_stop",
+    "name": "Menara Landmark",
+    "public_transport": "platform"
+  }
+},
+{
+  "type": "node",
+  "id": 9793906344,
+  "lat": 1.4603447,
+  "lon": 103.7693733,
+  "tags": {
+    "bench": "yes",
+    "bus": "yes",
+    "highway": "bus_stop",
+    "name": "R&F Mall",
+    "name:en": "R&F Mall",
+    "network": "Causeway Link",
+    "network:wikidata": "Q5054648",
+    "public_transport": "platform",
+    "shelter": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 9793906347,
+  "lat": 1.4597969,
+  "lon": 103.7678702,
+  "tags": {
+    "bus": "yes",
+    "highway": "bus_stop",
+    "name": "Opposite R&F Mall",
+    "name:en": "Opposite R&F Mall",
+    "public_transport": "platform"
+  }
+},
+{
+  "type": "node",
+  "id": 10277202109,
+  "lat": 1.4679658,
+  "lon": 103.7698706,
+  "tags": {
+    "name": "Hako Hotel",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 10284086044,
+  "lat": 1.4669088,
+  "lon": 103.7647681,
+  "tags": {
+    "addr:postcode": "80300",
+    "addr:street": "Jalan Tengku Azizah",
+    "addr:suburb": "Johor Bahru",
+    "email": "sales.johorbahru@capribyfraser.com",
+    "fax": "+607 277 0889",
+    "name": "Capri",
+    "operator": "Fraser Hotel Residences",
+    "phone": "+607 277 0888",
+    "rooms": "316",
+    "tourism": "hotel",
+    "website": "https://www.frasershospitality.com/en/malaysia/johor/capri-by-fraser-johor-bahru/"
+  }
+},
+{
+  "type": "node",
+  "id": 10284131927,
+  "lat": 1.4630175,
+  "lon": 103.7619645,
+  "tags": {
+    "addr:housenumber": "82C",
+    "addr:postcode": "80000",
+    "addr:street": "Jalan Trus",
+    "addr:subdistrict": "Johor Bahru City Centre",
+    "addr:suburb": "Johor Bahru",
+    "branch": "Johor Bahru",
+    "fax": "+60 7 266 8899",
+    "name": "Amari",
+    "operator": "ONYX Hospitality Group",
+    "phone": "+60 7 266 8888",
+    "tourism": "hotel",
+    "website": "https://www.amari.com/johor-bahru"
+  }
+},
+{
+  "type": "node",
+  "id": 10284183861,
+  "lat": 1.4637824,
+  "lon": 103.7630434,
+  "tags": {
+    "brand": "Marks & Spencer",
+    "brand:short": "M&S",
+    "brand:wikidata": "Q714491",
+    "name": "M&S Outlet",
+    "shop": "department_store"
+  }
+},
+{
+  "type": "node",
+  "id": 10284183897,
+  "lat": 1.4627058,
+  "lon": 103.7633197,
+  "tags": {
+    "addr:postcode": "80000",
+    "addr:street": "Jalan Tun Abdul Razak",
+    "addr:suburb": "Johor Bahru",
+    "branch": "Johor Bahru City Centre",
+    "brand": "Holiday Inn",
+    "brand:wikidata": "Q2717882",
+    "email": "info@hijbcc.com",
+    "name": "Holiday Inn",
+    "name:en": "Holiday Inn",
+    "operator": "SKS Hotel Residences and Resorts Sdn. Bhd.",
+    "phone": "607 207 8888",
+    "rooms": "335",
+    "tourism": "hotel",
+    "website": "https://www.ihg.com/holidayinn/hotels/us/en/johor-bahru-johor/jhbcc/hoteldetail"
+  }
+},
+{
+  "type": "node",
+  "id": 10284196137,
+  "lat": 1.4619738,
+  "lon": 103.7635034,
+  "tags": {
+    "amenity": "cafe",
+    "brand": "Starbucks",
+    "brand:wikidata": "Q37158",
+    "cuisine": "coffee_shop",
+    "name": "Starbucks",
+    "official_name": "Starbucks Coffee",
+    "takeaway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 10584001306,
+  "lat": 1.4600565,
+  "lon": 103.7677861,
+  "tags": {
+    "name": "The Second Jade Hotel",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 10792257406,
+  "lat": 1.4605194,
+  "lon": 103.7650140,
+  "tags": {
+    "name": "JB Central Hotel",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 10796247007,
+  "lat": 1.4680689,
+  "lon": 103.7699674,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "La Pasta"
+  }
+},
+{
+  "type": "node",
+  "id": 10858968181,
+  "lat": 1.4659796,
+  "lon": 103.7595047,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "Maria Hospital"
+  }
+},
+{
+  "type": "node",
+  "id": 10913626860,
+  "lat": 1.4606573,
+  "lon": 103.7576790,
+  "tags": {
+    "bus": "yes",
+    "highway": "bus_stop",
+    "name": "Opposite Wisma Persekutuan",
+    "public_transport": "platform"
+  }
+},
+{
+  "type": "node",
+  "id": 10913626861,
+  "lat": 1.4581757,
+  "lon": 103.7588873,
+  "tags": {
+    "bus": "yes",
+    "highway": "bus_stop",
+    "name": "Opposite Menara Tabung Haji",
+    "public_transport": "platform"
+  }
+},
+{
+  "type": "node",
+  "id": 10913626864,
+  "lat": 1.4581891,
+  "lon": 103.7590389,
+  "tags": {
+    "bus": "yes",
+    "highway": "bus_stop",
+    "name": "Menara Tabung Haji",
+    "public_transport": "platform"
+  }
+},
+{
+  "type": "node",
+  "id": 11356108967,
+  "lat": 1.4610325,
+  "lon": 103.7642934,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "diet:halal": "no",
+    "level": "2",
+    "name": "Meng Meng Roasted Duck 阿明帝皇鴨",
+    "opening_hours": "Mo-Su 11:00-20:30"
+  }
+},
+{
+  "type": "node",
+  "id": 11356108968,
+  "lat": 1.4617606,
+  "lon": 103.7639077,
+  "tags": {
+    "amenity": "cafe",
+    "brand": "Gong Cha",
+    "brand:wikidata": "Q5581670",
+    "brand:zh": "貢茶",
+    "cuisine": "bubble_tea",
+    "int_name": "Gong Cha",
+    "name": "Gong Cha",
+    "name:zh": "貢茶",
+    "opening_hours": "Mo-Su 10:00-22:00",
+    "takeaway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 11356114269,
+  "lat": 1.4621309,
+  "lon": 103.7634789,
+  "tags": {
+    "amenity": "restaurant",
+    "brand": "Din Tai Fung",
+    "brand:en": "Din Tai Fung",
+    "brand:wikidata": "Q699142",
+    "brand:zh": "鼎泰豐",
+    "cuisine": "taiwanese",
+    "diet:halal": "no",
+    "level": "1",
+    "name": "Din Tai Fung",
+    "name:en": "Din Tai Fung",
+    "name:zh": "鼎泰豐",
+    "opening_hours": "Mo-Su 10:30-21:00"
+  }
+},
+{
+  "type": "node",
+  "id": 11356114272,
+  "lat": 1.4612433,
+  "lon": 103.7643490,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "malaysian",
+    "level": "2",
+    "name": "Penang Road Famous Teochew Chendul",
+    "opening_hours": "Mo-Su 10:00-22:00"
+  }
+},
+{
+  "type": "node",
+  "id": 11356114273,
+  "lat": 1.4615493,
+  "lon": 103.7640154,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "name": "Dragon-i"
+  }
+},
+{
+  "type": "node",
+  "id": 11514398680,
+  "lat": 1.4691055,
+  "lon": 103.7694687,
+  "tags": {
+    "highway": "bus_stop",
+    "name": "Opposite Paragon Suites"
+  }
+},
+{
+  "type": "node",
+  "id": 11707546929,
+  "lat": 1.4592804,
+  "lon": 103.7692219,
+  "tags": {
+    "amenity": "cafe",
+    "name": "Tang Tea House"
+  }
+},
+{
+  "type": "node",
+  "id": 11707546931,
+  "lat": 1.4590927,
+  "lon": 103.7682878,
+  "tags": {
+    "amenity": "restaurant",
+    "brand": "MR.DIY",
+    "brand:wikidata": "Q105044323",
+    "level": "3",
+    "name": "MR.DIY",
+    "shop": "doityourself"
+  }
+},
+{
+  "type": "node",
+  "id": 11707582109,
+  "lat": 1.4595834,
+  "lon": 103.7684910,
+  "tags": {
+    "amenity": "cafe",
+    "level": "1",
+    "name": "Kafe San Francisco Coffee",
+    "name:en": "San Francisco Coffee",
+    "name:ms": "Kafe San Francisco Coffee",
+    "shop": "coffee"
+  }
+},
+{
+  "type": "node",
+  "id": 11707582389,
+  "lat": 1.4587482,
+  "lon": 103.7686566,
+  "tags": {
+    "amenity": "restaurant",
+    "level": "1",
+    "name": "Restoran Oriental Kopitiam",
+    "name:en": "Oriental Kopitiam",
+    "name:ms": "Restoran Oriental Kopitiam",
+    "name:zh": "南洋茶餐室"
+  }
+},
+{
+  "type": "node",
+  "id": 11707582390,
+  "lat": 1.4587113,
+  "lon": 103.7683931,
+  "tags": {
+    "amenity": "restaurant",
+    "level": "1",
+    "name": "Restoran CMJ Kitchen",
+    "name:en": "CMJ Kitchen",
+    "name:ms": "Restoran CMJ Kitchen",
+    "name:zh": "潮满記老潮汕飯店"
+  }
+},
+{
+  "type": "node",
+  "id": 11886468620,
+  "lat": 1.4669319,
+  "lon": 103.7593867,
+  "tags": {
+    "addr:city": "Johor Bahru",
+    "addr:housenumber": "226",
+    "addr:postcode": "80000",
+    "addr:street": "Jalan Tun Abdul Razak",
+    "air_conditioning": "yes",
+    "amenity": "cafe",
+    "contact:facebook": "https://www.facebook.com/thefufufoodcraft",
+    "cuisine": "dessert;ice_cream;cake",
+    "internet_access": "no",
+    "name": "Fufu Cafe & Dessert Bar (Muslim Friendly)",
+    "opening_hours": "We-Mo 14:26-23:11",
+    "outdoor_seating": "yes",
+    "phone": "+60166977721",
+    "website": "https://www.instagram.com/fufu.foodcraft.malaysia/"
+  }
+},
+{
+  "type": "node",
+  "id": 12260082216,
+  "lat": 1.4698752,
+  "lon": 103.7583850,
+  "tags": {
+    "brand": "OYO",
+    "brand:wikidata": "Q24906315",
+    "name": "OYO 1230 Zen Zeng Budget Hotel",
+    "phone": "+60350378296",
+    "stars": "1",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 12260082222,
+  "lat": 1.4699837,
+  "lon": 103.7576481,
+  "tags": {
+    "name": "Shobi",
+    "phone": "+6072070716",
+    "stars": "3",
+    "tourism": "hotel",
+    "website": "https://shobihotel.zoombookdirect.com/"
+  }
+},
+{
+  "type": "node",
+  "id": 12296193964,
+  "lat": 1.4659744,
+  "lon": 103.7598455,
+  "tags": {
+    "addr:housenumber": "156",
+    "addr:street": "Jalan Ngee Heng",
+    "amenity": "restaurant",
+    "name": "Restoran Teo Swee Hoe"
+  }
+},
+{
+  "type": "node",
+  "id": 12296193976,
+  "lat": 1.4658779,
+  "lon": 103.7599065,
+  "tags": {
+    "addr:housenumber": "158",
+    "addr:street": "Jalan Ngee Heng",
+    "amenity": "restaurant",
+    "name": "Restoran Aiksen"
+  }
+},
+{
+  "type": "node",
+  "id": 12298322329,
+  "lat": 1.4656909,
+  "lon": 103.7602900,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Rasa Sayang"
+  }
+},
+{
+  "type": "node",
+  "id": 12299193075,
+  "lat": 1.4657581,
+  "lon": 103.7604810,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "steak_house",
+    "name": "Eclipse Steakhouse"
+  }
+},
+{
+  "type": "node",
+  "id": 12299193078,
+  "lat": 1.4656329,
+  "lon": 103.7605122,
+  "tags": {
+    "name": "JO Hotel",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 12299228090,
+  "lat": 1.4596343,
+  "lon": 103.7653972,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "LFC Kopitiam"
+  }
+},
+{
+  "type": "node",
+  "id": 12299228093,
+  "lat": 1.4596026,
+  "lon": 103.7654186,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Kopitiam Ah Fook"
+  }
+},
+{
+  "type": "node",
+  "id": 12299282959,
+  "lat": 1.4652867,
+  "lon": 103.7608607,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Restoran AR Fast Food"
+  }
+},
+{
+  "type": "node",
+  "id": 12299282960,
+  "lat": 1.4651808,
+  "lon": 103.7607688,
+  "tags": {
+    "name": "Kingston Hotel",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 12300567066,
+  "lat": 1.4590248,
+  "lon": 103.7660691,
+  "tags": {
+    "addr:street": "Jalan Siu Nam",
+    "amenity": "restaurant",
+    "name": "Kedai Makan Hock Chang Hin"
+  }
+},
+{
+  "type": "node",
+  "id": 12300567069,
+  "lat": 1.4591289,
+  "lon": 103.7656804,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Old Street Kopitiam 1855"
+  }
+},
+{
+  "type": "node",
+  "id": 12300567070,
+  "lat": 1.4590817,
+  "lon": 103.7658844,
+  "tags": {
+    "addr:housenumber": "15",
+    "addr:street": "Jalan Siu Nam",
+    "amenity": "restaurant",
+    "name": "Selera Mak Yani"
+  }
+},
+{
+  "type": "node",
+  "id": 12300616706,
+  "lat": 1.4634657,
+  "lon": 103.7614578,
+  "tags": {
+    "addr:housenumber": "82",
+    "addr:street": "Jalan Trus",
+    "amenity": "restaurant",
+    "name": "Padi Kopitiam"
+  }
+},
+{
+  "type": "node",
+  "id": 12300616709,
+  "lat": 1.4652947,
+  "lon": 103.7613139,
+  "tags": {
+    "addr:housenumber": "69",
+    "addr:street": "Jalan Wong Ah Fook",
+    "amenity": "restaurant",
+    "name": "Putri Dagang"
+  }
+},
+{
+  "type": "node",
+  "id": 12390593032,
+  "lat": 1.4602647,
+  "lon": 103.7682602,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Restaurant Fayyad 24jam"
+  }
+},
+{
+  "type": "node",
+  "id": 12466420717,
+  "lat": 1.4584720,
+  "lon": 103.7646279,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Restoran Syed Ali",
+    "name:ms": "Restoran Syed Ali"
+  }
+},
+{
+  "type": "node",
+  "id": 12696259327,
+  "lat": 1.4634869,
+  "lon": 103.7614777,
+  "tags": {
+    "addr:housenumber": "82",
+    "addr:street": "Jalan Trus",
+    "name": "Attrus",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 12696259336,
+  "lat": 1.4637860,
+  "lon": 103.7611569,
+  "tags": {
+    "addr:housenumber": "78",
+    "amenity": "cafe",
+    "name": "Kopi Mofakat"
+  }
+},
+{
+  "type": "node",
+  "id": 12696689652,
+  "lat": 1.4636089,
+  "lon": 103.7621432,
+  "tags": {
+    "amenity": "cafe",
+    "name": "Otti Coffee"
+  }
+},
+{
+  "type": "node",
+  "id": 12697562286,
+  "lat": 1.4631437,
+  "lon": 103.7623877,
+  "tags": {
+    "addr:housenumber": "39F",
+    "addr:street": "Jalan Wong Ah Fook",
+    "amenity": "restaurant",
+    "name": "Rasa Thai"
+  }
+},
+{
+  "type": "node",
+  "id": 12697562287,
+  "lat": 1.4630996,
+  "lon": 103.7624114,
+  "tags": {
+    "addr:housenumber": "39E",
+    "addr:street": "Jalan Wong Ah Fook",
+    "amenity": "restaurant",
+    "name": "Restoran Sunset Meadow"
+  }
+},
+{
+  "type": "node",
+  "id": 12697721141,
+  "lat": 1.4622460,
+  "lon": 103.7623922,
+  "tags": {
+    "addr:housenumber": "87D",
+    "addr:street": "Jalan Trus",
+    "amenity": "restaurant",
+    "name": "Goldys Sweet"
+  }
+},
+{
+  "type": "node",
+  "id": 12697721147,
+  "lat": 1.4629129,
+  "lon": 103.7625218,
+  "tags": {
+    "addr:housenumber": "39",
+    "addr:street": "Jalan Wong Ah Fook",
+    "amenity": "restaurant",
+    "name": "Nur Sayma"
+  }
+},
+{
+  "type": "node",
+  "id": 12697721157,
+  "lat": 1.4626345,
+  "lon": 103.7627133,
+  "tags": {
+    "addr:housenumber": "33D",
+    "addr:street": "Jalan Wong Ah Fook",
+    "amenity": "restaurant",
+    "name": "Restoran Medina Baru"
+  }
+},
+{
+  "type": "node",
+  "id": 12698196486,
+  "lat": 1.4626998,
+  "lon": 103.7620598,
+  "tags": {
+    "addr:street": "Jalan Trus",
+    "amenity": "restaurant",
+    "name": "Kopitiam Ayahky"
+  }
+},
+{
+  "type": "node",
+  "id": 12698267857,
+  "lat": 1.4615233,
+  "lon": 103.7632860,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Restoran Al Nur"
+  }
+},
+{
+  "type": "node",
+  "id": 12698267869,
+  "lat": 1.4614616,
+  "lon": 103.7633276,
+  "tags": {
+    "name": "KNN Supermarket",
+    "shop": "supermarket"
+  }
+},
+{
+  "type": "node",
+  "id": 12699149921,
+  "lat": 1.4610072,
+  "lon": 103.7635734,
+  "tags": {
+    "addr:housenumber": "1L",
+    "addr:street": "Jalan Wong Ah Fook",
+    "amenity": "restaurant",
+    "name": "Restoran Selera Kurnia"
+  }
+},
+{
+  "type": "node",
+  "id": 12699149934,
+  "lat": 1.4608033,
+  "lon": 103.7636626,
+  "tags": {
+    "addr:housenumber": "1G",
+    "addr:street": "Jalan Wong Ah Fook",
+    "amenity": "restaurant",
+    "name": "Selera Selatan"
+  }
+},
+{
+  "type": "node",
+  "id": 12700966456,
+  "lat": 1.4607924,
+  "lon": 103.7632814,
+  "tags": {
+    "amenity": "food_court",
+    "name": "T&L Sweet Coffee"
+  }
+},
+{
+  "type": "node",
+  "id": 13377979326,
+  "lat": 1.4662412,
+  "lon": 103.7621858,
+  "tags": {
+    "light_rail": "yes",
+    "name": "Bukit Chagar",
+    "name:en": "Bukit Chagar",
+    "name:ms": "Bukit Chagar",
+    "name:th": "บูกิตชาการ์",
+    "name:zh": "武吉查卡",
+    "name:zh-Hans": "武吉查卡",
+    "name:zh-Hant": "武吉查卡",
+    "public_transport": "station",
+    "railway": "station",
+    "station": "light_rail"
+  }
+},
+{
+  "type": "node",
+  "id": 13589656255,
+  "lat": 1.4592845,
+  "lon": 103.7683622,
+  "tags": {
+    "amenity": "cafe",
+    "cuisine": "ice_cream;bubble_tea",
+    "name": "Bingxue",
+    "name:zh": "冰雪时光",
+    "takeaway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13653841001,
+  "lat": 1.4588064,
+  "lon": 103.7683999,
+  "tags": {
+    "amenity": "cafe",
+    "check_date": "2026-03-17",
+    "name": "Jubilee's Nanyang Coffee"
+  }
+},
+{
+  "type": "node",
+  "id": 14253801075,
+  "lat": 1.4636334,
+  "lon": 103.7645056,
+  "tags": {
+    "air_conditioning": "no",
+    "amenity": "cafe",
+    "drive_through": "no",
+    "level": "0",
+    "name": "Sambal and Sauce"
+  }
+},
+{
+  "type": "node",
+  "id": 14254247029,
+  "lat": 1.4638439,
+  "lon": 103.7642771,
+  "tags": {
+    "amenity": "cafe",
+    "name": "Banafe Express"
+  }
+},
+{
+  "type": "node",
+  "id": 14254247035,
+  "lat": 1.4636321,
+  "lon": 103.7642172,
+  "tags": {
+    "amenity": "cafe",
+    "name": "Hailam Kopitiam Express"
+  }
+},
+{
+  "type": "way",
+  "id": 106590697,
+  "center": {
+    "lat": 1.4617010,
+    "lon": 103.7639846
+  },
+  "tags": {
+    "addr:housename": "Johor Bahru City Square",
+    "addr:housenumber": "106-108",
+    "addr:postcode": "80000",
+    "addr:state": "Johor",
+    "addr:street": "Jalan Wong Ah Fook",
+    "addr:suburb": "Johor Bahru",
+    "building": "office",
+    "building:levels": "5",
+    "name": "Johor Bahru City Square",
+    "name:bn": "জোহর বাহরু সিটি স্কোয়ার",
+    "name:en": "Johor Bahru City Square",
+    "name:ja": "シティ・スクエア (ジョホール・バル)",
+    "name:zh": "新山城中坊",
+    "name:zh-Hans": "新山城中坊",
+    "name:zh-Hant": "新山城中坊",
+    "opening_hours": "10:00-22:00",
+    "operator": "Johdaya Karya Sdn Bhd.",
+    "phone": "+607-226 3668",
+    "shop": "mall",
+    "website": "https://www.citysqjb.com/",
+    "wikidata": "Q6268872",
+    "wikimedia_commons": "Category:Johor Bahru City Square (building)",
+    "wikipedia": "en:Johor Bahru City Square"
+  }
+},
+{
+  "type": "way",
+  "id": 106590698,
+  "center": {
+    "lat": 1.4588297,
+    "lon": 103.7557185
+  },
+  "tags": {
+    "alt_name": "Istana Besar",
+    "alt_name:ms": "Taman Istana",
+    "leisure": "park",
+    "name": "Taman Istana Besar",
+    "name:en": "Grand Palace Park"
+  }
+},
+{
+  "type": "way",
+  "id": 176304884,
+  "center": {
+    "lat": 1.4685558,
+    "lon": 103.7597008
+  },
+  "tags": {
+    "amenity": "place_of_worship",
+    "building": "yes",
+    "name": "Arulmigu Sri Rajakaliamman Glass Temple",
+    "name:en": "Arulmigu Sri Rajakaliamman Glass Temple",
+    "opening_hours": "Mo-Su 07:00-22:00",
+    "religion": "hindu",
+    "wikidata": "Q4802043",
+    "wikipedia": "en:Arulmigu Sri Rajakaliamman Glass Temple"
+  }
+},
+{
+  "type": "way",
+  "id": 201940666,
+  "center": {
+    "lat": 1.4595043,
+    "lon": 103.7628835
+  },
+  "tags": {
+    "addr:city": "Johor Bahru",
+    "addr:country": "MY",
+    "addr:postcode": "80000",
+    "addr:street": "Jalan Trus",
+    "building": "yes",
+    "building:levels": "5",
+    "description": "Galleria @ Kotaraya has become a Lifestyle Mall targeting the middle market, suitable for s since its rebranding in July 2012. Covering five (5) Levels with Net Lettable area of 193,809 square feet and a total retail outlet of 179.",
+    "email": "info@galleriakotaraya.com",
+    "internet_access": "wlan",
+    "internet_access:fee": "no",
+    "name": "Gallaria@Kotaraya",
+    "name:en": "UTC Johor",
+    "name:zh": "新山大城市广场",
+    "old_name": "Plaza Kotaraya",
+    "opening_hours": "Mo-Su 10:00-22:00",
+    "phone": "+607-2088888",
+    "shop": "mall",
+    "website": "http://www.galleriakotaraya.com",
+    "wikidata": "Q95711073",
+    "wikimedia_commons": "Category:Galleria @ Kotaraya"
+  }
+},
+{
+  "type": "way",
+  "id": 201941136,
+  "center": {
+    "lat": 1.4686787,
+    "lon": 103.7671123
+  },
+  "tags": {
+    "addr:country": "MY",
+    "addr:postcode": "80300",
+    "addr:state": "Johor",
+    "addr:street": "Jalan Bukit Cagar",
+    "building": "residential",
+    "name": "Apartment PDRM",
+    "source": "Bing"
+  }
+},
+{
+  "type": "way",
+  "id": 201941163,
+  "center": {
+    "lat": 1.4610538,
+    "lon": 103.7591443
+  },
+  "tags": {
+    "addr:city": "Johor Bahru",
+    "addr:postcode": "80000",
+    "addr:street": "Jalan Dato Dalam",
+    "building": "yes",
+    "name": "Swiss Inn",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "way",
+  "id": 201941393,
+  "center": {
+    "lat": 1.4651298,
+    "lon": 103.7588760
+  },
+  "tags": {
+    "amenity": "place_of_worship",
+    "building": "yes",
+    "denomination": "catholic",
+    "name": "The Vicar Church of Immaculate Conception",
+    "religion": "christian",
+    "source": "Bing"
+  }
+},
+{
+  "type": "way",
+  "id": 201941419,
+  "center": {
+    "lat": 1.4605758,
+    "lon": 103.7630645
+  },
+  "tags": {
+    "addr:city": "Johor Bahru",
+    "addr:housenumber": "Lot 653",
+    "addr:postcode": "80000",
+    "addr:street": "Jalan Trus",
+    "amenity": "place_of_worship",
+    "building": "yes",
+    "name": "Kuil Kuno Johor",
+    "name:en": "Johor Old Chinese Temple",
+    "name:zh": "柔佛古庙",
+    "religion": "buddhist",
+    "source": "Bing",
+    "wikidata": "Q2117455",
+    "wikimedia_commons": "Category:Johor Bahru Old Chinese Temple",
+    "wikipedia": "en:Johor Bahru Old Chinese Temple"
+  }
+},
+{
+  "type": "way",
+  "id": 201941463,
+  "center": {
+    "lat": 1.4609918,
+    "lon": 103.7622876
+  },
+  "tags": {
+    "abandoned": "yes",
+    "addr:city": "Johor Bahru",
+    "addr:country": "MY",
+    "addr:postcode": "80730",
+    "addr:street": "Jalan Abdullah Ibrahim",
+    "building": "yes",
+    "building:levels": "1",
+    "building:part": "yes",
+    "name": "Puteri Pan Pacific Hotel",
+    "tourism": "hotel",
+    "wikidata": "Q95696510",
+    "wikimedia_commons": "Category:The Puteri Pacific Hotel"
+  }
+},
+{
+  "type": "way",
+  "id": 201941476,
+  "center": {
+    "lat": 1.4609981,
+    "lon": 103.7690141
+  },
+  "tags": {
+    "building": "yes",
+    "building:levels": "5",
+    "name": "Grand Bluewave Hotel",
+    "source": "Bing",
+    "tourism": "hotel",
+    "wikidata": "Q95697411",
+    "wikimedia_commons": "Category:GBW Hotel"
+  }
+},
+{
+  "type": "way",
+  "id": 285845913,
+  "center": {
+    "lat": 1.4578152,
+    "lon": 103.7611326
+  },
+  "tags": {
+    "addr:city": "Johor Bahru",
+    "addr:postcode": "80000",
+    "addr:street": "Jalan Bukit Timbalan Bandar Johor Bahru",
+    "building": "yes",
+    "name": "Bangunan Sultan Ibrahim",
+    "name:zh": "苏丹依布拉欣大楼",
+    "tourism": "attraction",
+    "wikidata": "Q7636665",
+    "wikimedia_commons": "Category:Sultan Ibrahim Building",
+    "wikipedia": "en:Sultan Ibrahim Building"
+  }
+},
+{
+  "type": "way",
+  "id": 369210523,
+  "center": {
+    "lat": 1.4692111,
+    "lon": 103.7613837
+  },
+  "tags": {
+    "addr:city": "Johor Bahru",
+    "addr:housenumber": "49",
+    "addr:postcode": "80300",
+    "addr:street": "Jalan Storey",
+    "building": "residential",
+    "name": "Cher Cher Kor Moral Uplifting Association J.B",
+    "name:en": "Cher Cher Kor Moral Uplifting Association J.B"
+  }
+},
+{
+  "type": "way",
+  "id": 443496405,
+  "center": {
+    "lat": 1.4655461,
+    "lon": 103.7595786
+  },
+  "tags": {
+    "addr:city": "Johor Bahru",
+    "addr:housenumber": "12",
+    "addr:postcode": "80888",
+    "addr:street": "Jalan Ngee Heng",
+    "address": "01-02 Menara Landmark, No. 12, Jalan Ngee Heng Ibrahim International Business District ,, Johor Bahru 80888 Malaysia",
+    "brand": "DoubleTree",
+    "brand:wikidata": "Q2504643",
+    "brand:wikipedia": "en:DoubleTree",
+    "building": "hotel",
+    "building:colour": "#8EA4CF",
+    "building:levels": "7",
+    "contact:email": "johorbahru.info@hilton.com",
+    "contact:facebook": "https://www.facebook.com/doubletreeJB",
+    "contact:phone": "+60-7-2686868",
+    "image": "https://images.mapillary.com/YnA3XHi76-UYEIpAYoRktw/thumb-2048.jpg",
+    "internet_access": "yes",
+    "layer": "1",
+    "mapillary": "791101188193232",
+    "name": "DoubleTree by Hilton Johor Bahru",
+    "official_name": "DoubleTree by Hilton",
+    "operator": "Hilton Worldwide",
+    "roof:colour": "#8EA4CF",
+    "smoking": "isolated",
+    "source": "Mapbox",
+    "stars": "4",
+    "toilets:wheelchair": "yes",
+    "tourism": "hotel",
+    "website": "https://www.hilton.com/en/hotels/jhbdtdi-doubletree-johor-bahru/",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 443599764,
+  "center": {
+    "lat": 1.4672446,
+    "lon": 103.7648447
+  },
+  "tags": {
+    "landuse": "residential",
+    "name": "TriTower Residences",
+    "residential": "apartments",
+    "website": "https://tritowerresidence.com/"
+  }
+},
+{
+  "type": "way",
+  "id": 486339608,
+  "center": {
+    "lat": 1.4625402,
+    "lon": 103.7701072
+  },
+  "tags": {
+    "addr:subdistrict": "Meldrum Hills",
+    "addr:suburb": "Johor Bahru",
+    "building": "apartments",
+    "building:levels": "40",
+    "name": "V Summerplace",
+    "start_date": "2018",
+    "website": "https://www.sksgroup.com.my/portfolio/skyhabitat/"
+  }
+},
+{
+  "type": "way",
+  "id": 492139305,
+  "center": {
+    "lat": 1.4675183,
+    "lon": 103.7663031
+  },
+  "tags": {
+    "amenity": "place_of_worship",
+    "building": "mosque",
+    "name": "Surau ciq",
+    "religion": "muslim"
+  }
+},
+{
+  "type": "way",
+  "id": 492139312,
+  "center": {
+    "lat": 1.4682142,
+    "lon": 103.7660369
+  },
+  "tags": {
+    "building": "apartments",
+    "building:levels": "13",
+    "name": "Apartment Bukit Chagar",
+    "name:en": "Apartment Bukit Chagar",
+    "name:ms": "Pangsapuri Bukit Chagar",
+    "roof:colour": "red",
+    "roof:levels": "1",
+    "roof:material": "roof_tiles",
+    "roof:shape": "pyramidal"
+  }
+},
+{
+  "type": "way",
+  "id": 536592592,
+  "center": {
+    "lat": 1.4635051,
+    "lon": 103.7619279
+  },
+  "tags": {
+    "building": "residential",
+    "building:levels": "35",
+    "building:min_level": "6",
+    "layer": "1",
+    "name": "Suasana",
+    "name:en": "Suasana",
+    "name:ms": "Suasana"
+  }
+},
+{
+  "type": "way",
+  "id": 536594588,
+  "center": {
+    "lat": 1.4636923,
+    "lon": 103.7627790
+  },
+  "tags": {
+    "air_conditioning": "yes",
+    "branch": "Johor Bahru City Centre",
+    "brand": "Komtar",
+    "brand:en": "Komtar",
+    "brand:zh": "光大",
+    "building": "retail",
+    "building:levels": "8",
+    "contact:facebook": "Mith252",
+    "email": "info@komtarjbcc.com",
+    "fax": "607-267 9968",
+    "name": "Komtar JBCC",
+    "name:en": "Komtar JBCC",
+    "name:ms": "Komtar JBCC",
+    "name:zh": "新山光大",
+    "name:zh-Hans": "新山光大",
+    "name:zh-Hant": "新山光大",
+    "phone": "607-267 9900",
+    "shop": "mall",
+    "short_name": "Komtar JBCC",
+    "website": "https://www.komtarjbcc.com.my/",
+    "wheelchair": "yes",
+    "wikidata": "Q19840304",
+    "wikimedia_commons": "Category:KOMTAR JBCC",
+    "wikipedia": "en:Komtar JBCC"
+  }
+},
+{
+  "type": "way",
+  "id": 536598363,
+  "center": {
+    "lat": 1.4683795,
+    "lon": 103.7672478
+  },
+  "tags": {
+    "addr:country": "MY",
+    "addr:postcode": "80300",
+    "addr:state": "Johor",
+    "addr:street": "Jalan Bukit Cagar",
+    "landuse": "residential",
+    "name": "Apartment PDRM"
+  }
+},
+{
+  "type": "way",
+  "id": 577338211,
+  "center": {
+    "lat": 1.4664363,
+    "lon": 103.7582376
+  },
+  "tags": {
+    "addr:city": "Johor Bahru",
+    "addr:postcode": "80100",
+    "addr:street": "Jalan Abdul Rahman Andak",
+    "amenity": "school",
+    "name": "Sekolah Kebangsaan (P) Bandar Tinggi"
+  }
+},
+{
+  "type": "way",
+  "id": 577338212,
+  "center": {
+    "lat": 1.4658805,
+    "lon": 103.7586567
+  },
+  "tags": {
+    "addr:city": "Johor Bahru",
+    "addr:postcode": "80100",
+    "addr:street": "Jalan Abdul Rahman Andak",
+    "amenity": "school",
+    "name": "Sekolah Jenis Kebangsaan (C) St. Joseph dan Sekolah Kebangsaan St. Joseph",
+    "name:zh": "若瑟华小和若瑟国小"
+  }
+},
+{
+  "type": "way",
+  "id": 577338214,
+  "center": {
+    "lat": 1.4653631,
+    "lon": 103.7565048
+  },
+  "tags": {
+    "addr:city": "Johor Bahru",
+    "addr:postcode": "80100",
+    "addr:street": "Jalan Abdul Rahman Andak",
+    "amenity": "school",
+    "name": "Sekolah Sri Johor Bahru"
+  }
+},
+{
+  "type": "way",
+  "id": 577338215,
+  "center": {
+    "lat": 1.4658966,
+    "lon": 103.7572015
+  },
+  "tags": {
+    "addr:city": "Johor Bahru",
+    "addr:postcode": "80100",
+    "addr:street": "Jalan Abdul Rahman Andak",
+    "amenity": "school",
+    "name": "Sekolah Sri Johor Bahru"
+  }
+},
+{
+  "type": "way",
+  "id": 700816860,
+  "center": {
+    "lat": 1.4671900,
+    "lon": 103.7647982
+  },
+  "tags": {
+    "building": "apartments",
+    "height": "0",
+    "landuse": "residential",
+    "name": "TriTower Residences",
+    "name:en": "TriTower Residences",
+    "operator": "SKS Group",
+    "residential": "apartments",
+    "start_date": "2017",
+    "website": "https://tritowerresidence.com/"
+  }
+},
+{
+  "type": "way",
+  "id": 744597950,
+  "center": {
+    "lat": 1.4618727,
+    "lon": 103.7579822
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "SK Ayer Molek"
+  }
+},
+{
+  "type": "way",
+  "id": 769491111,
+  "center": {
+    "lat": 1.4620504,
+    "lon": 103.7693995
+  },
+  "tags": {
+    "addr:city": "Johor Bahru",
+    "addr:housenumber": "11",
+    "addr:postcode": "80300",
+    "addr:street": "Jalan Tenteram",
+    "building": "residential",
+    "building:levels": "33",
+    "name": "Sky Habitat @ Meldrum Hills"
+  }
+},
+{
+  "type": "way",
+  "id": 809925655,
+  "center": {
+    "lat": 1.4690598,
+    "lon": 103.7629928
+  },
+  "tags": {
+    "alt_name": "Bukit Ungku Aziz",
+    "landuse": "residential",
+    "name": "Kim Teng Park",
+    "name:en": "Kim Teng Park",
+    "name:zh": "锦堂花园",
+    "name:zh-Hans": "锦堂花园",
+    "name:zh-Hant": "錦堂花園",
+    "note": "First residential garden (taman perumahan) in Johor Bahru",
+    "place": "neighbourhood",
+    "residential": "garden",
+    "source:name": "https://www.mapillary.com/app/?pKey=1205668816534061",
+    "start_date": "1962"
+  }
+},
+{
+  "type": "way",
+  "id": 1041724154,
+  "center": {
+    "lat": 1.4679376,
+    "lon": 103.7653648
+  },
+  "tags": {
+    "construction": "residential",
+    "landuse": "residential",
+    "name": "Twin Tower Residence",
+    "name:en": "Twin Tower Residence",
+    "website": "https://www.sksgroup.com.my/portfolio/twin-tower-residence/"
+  }
+},
+{
+  "type": "way",
+  "id": 1124579072,
+  "center": {
+    "lat": 1.4681586,
+    "lon": 103.7659691
+  },
+  "tags": {
+    "landuse": "residential",
+    "name": "Pangsapuri Bukit Chagar",
+    "name:en": "Apartment Bukit Chagar",
+    "name:ms": "Pangsapuri Bukit Chagar"
+  }
+},
+{
+  "type": "way",
+  "id": 1124579079,
+  "center": {
+    "lat": 1.4679021,
+    "lon": 103.7653575
+  },
+  "tags": {
+    "building": "apartments",
+    "height": "0",
+    "name": "Twin Tower Residence",
+    "residential": "apartments",
+    "website": "https://www.sksgroup.com.my/portfolio/twin-tower-residence/"
+  }
+},
+{
+  "type": "way",
+  "id": 1124600957,
+  "center": {
+    "lat": 1.4639513,
+    "lon": 103.7682888
+  },
+  "tags": {
+    "building": "apartments",
+    "height": "0",
+    "name": "Orchid View Condominium"
+  }
+},
+{
+  "type": "way",
+  "id": 1163007667,
+  "center": {
+    "lat": 1.4593682,
+    "lon": 103.7638675
+  },
+  "tags": {
+    "addr:housenumber": "1A",
+    "addr:street": "Jalan Ungku Puan",
+    "amenity": "place_of_worship",
+    "landuse": "religious",
+    "name": "Arulmigu Rajamariamman Devasthanam Temple",
+    "religion": "hindu",
+    "wikidata": "Q95706346",
+    "wikimedia_commons": "Category:Arulmigu Rajamariamman Devasthanam Temple"
+  }
+},
+{
+  "type": "way",
+  "id": 1163007668,
+  "center": {
+    "lat": 1.4598802,
+    "lon": 103.7637328
+  },
+  "tags": {
+    "amenity": "place_of_worship",
+    "landuse": "religious",
+    "name": "Gurudwara Sahib Sikh Temple",
+    "religion": "sikh"
+  }
+},
+{
+  "type": "way",
+  "id": 1163007696,
+  "center": {
+    "lat": 1.4596334,
+    "lon": 103.7692940
+  },
+  "tags": {
+    "landuse": "residential",
+    "name": "R&F Tanjung Puteri",
+    "name:en": "R&F Princess Cove",
+    "name:ms": "R&F Tanjung Puteri",
+    "name:zh": "富力公主湾",
+    "name:zh-Hans": "富力公主湾",
+    "name:zh-Hant": "富力公主灣",
+    "residential": "apartments"
+  }
+},
+{
+  "type": "way",
+  "id": 1242931001,
+  "center": {
+    "lat": 1.4577865,
+    "lon": 103.7707404
+  },
+  "tags": {
+    "alt_name": "R&F Princess Cove Phase 2",
+    "landuse": "residential",
+    "name": "R&F Seine Region",
+    "name:en": "R&F Seine Region",
+    "name:zh": "塞纳天地",
+    "name:zh-Hans": "塞纳天地",
+    "name:zh-Hant": "塞納天地",
+    "residential": "apartments",
+    "website": "https://www.rfprincesscove.com.my/site-plan/#phase2"
+  }
+},
+{
+  "type": "way",
+  "id": 1266088577,
+  "center": {
+    "lat": 1.4613377,
+    "lon": 103.7694426
+  },
+  "tags": {
+    "landuse": "residential",
+    "name": "Meldrum Heights"
+  }
+},
+{
+  "type": "way",
+  "id": 1329676377,
+  "center": {
+    "lat": 1.4653475,
+    "lon": 103.7611284
+  },
+  "tags": {
+    "amenity": "place_of_worship",
+    "building": "mosque",
+    "name": "Masjid Al-Attas",
+    "name:en": "Al-Attas Mosque",
+    "name:ms": "Masjid Al-Attas",
+    "religion": "muslim"
+  }
+},
+{
+  "type": "way",
+  "id": 1453530518,
+  "center": {
+    "lat": 1.4611409,
+    "lon": 103.7607700
+  },
+  "tags": {
+    "amenity": "restaurant",
+    "building": "yes",
+    "name": "Nasi Ayam Kee Chup"
+  }
+},
+{
+  "type": "relation",
+  "id": 17323500,
+  "center": {
+    "lat": 1.4595570,
+    "lon": 103.7692760
+  },
+  "tags": {
+    "building": "commercial",
+    "building:levels": "3",
+    "layer": "1",
+    "name": "R&F Mall",
+    "name:zh": "富力广场",
+    "shop": "mall",
+    "type": "multipolygon",
+    "website": "https://rnfmalljb.com/",
+    "wikidata": "Q95677378",
+    "wikimedia_commons": "Category:R&F Mall"
+  }
+}
+
+  ]
+}

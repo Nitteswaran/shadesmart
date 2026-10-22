@@ -17,6 +17,7 @@ import {
   X,
 } from 'lucide-react'
 import { useMemo, useState } from 'react'
+import { authority } from '../lib/engine'
 import { fmtRM } from '../lib/meta'
 import { computeOverrides, headline, itemsSummary, placementImpact, TOOL_INFO, type Placement, type Tool } from '../lib/placements'
 import { REASONS, type Proposal, type Reason, type Status } from '../lib/proposals'
@@ -56,7 +57,7 @@ export function ProposeCard({ onStart, mine, active }: { onStart: () => void; mi
         </span>
         <span className="flex-1">
           <span className="block text-[14.5px] font-bold leading-tight">{active ? 'Placing on the map…' : 'Suggest trees, shade or lights'}</span>
-          <span className="block text-[12px] text-ink-2">Send your idea to Sime Darby</span>
+          <span className="block text-[12px] text-ink-2">Send your idea to {authority().short}</span>
         </span>
       </button>
       {mine.length > 0 && (
@@ -212,7 +213,7 @@ export function ProposeOverlay({
               onClick={() => onSubmit(reasons, note.trim())}
               className="mt-2 flex w-full items-center justify-center gap-2 rounded-2xl bg-leaf py-3 text-[14px] font-bold text-white transition hover:bg-forest disabled:opacity-40"
             >
-              <Send size={15} /> Send to Sime Darby
+              <Send size={15} /> Send to {authority().short}
             </button>
           </div>
         )}
@@ -245,7 +246,7 @@ export function ProposalSent({ proposal, onClose }: { proposal: Proposal | null;
               <Send size={26} />
             </span>
             <h2 className="mt-5 font-display text-[30px] font-extrabold leading-none tracking-[-0.03em]">Proposal sent</h2>
-            <p className="mt-2 text-[13.5px] text-ink-2">Sime Darby Property · Elmina Township Office</p>
+            <p className="mt-2 text-[13.5px] text-ink-2">{authority().office}</p>
             <div className="mt-4 rounded-2xl bg-paper-2 px-4 py-3 font-mono text-[14px] font-semibold">{proposal.ref}</div>
             <ol className="mt-5 space-y-2.5 text-left text-[13px]">
               {[

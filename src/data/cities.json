@@ -1,0 +1,1085 @@
+[
+ {
+  "id": "elmina",
+  "name": "Elmina",
+  "area": "Shah Alam, Selangor",
+  "bounds": [
+   101.498137,
+   3.167123,
+   101.524458,
+   3.198352
+  ],
+  "places": [
+   {
+    "id": "cendana",
+    "name": "Pangsapuri Cendana",
+    "kind": "home"
+   },
+   {
+    "id": "melati",
+    "name": "Pangsapuri Melati",
+    "kind": "home"
+   },
+   {
+    "id": "melor",
+    "name": "Pangsapuri Melor",
+    "kind": "home"
+   },
+   {
+    "id": "teratai",
+    "name": "Pangsapuri Teratai",
+    "kind": "home"
+   },
+   {
+    "id": "kanopi",
+    "name": "Kanopi Residences",
+    "kind": "home"
+   },
+   {
+    "id": "valley1",
+    "name": "Elmina Valley 1",
+    "kind": "home"
+   },
+   {
+    "id": "gardens",
+    "name": "Elmina Gardens",
+    "kind": "home"
+   },
+   {
+    "id": "mall",
+    "name": "Elmina Lakeside Mall",
+    "kind": "shop"
+   },
+   {
+    "id": "jaya",
+    "name": "Jaya Grocer",
+    "kind": "shop"
+   },
+   {
+    "id": "kompleks",
+    "name": "Tasik Elmina Shophouses",
+    "kind": "shop"
+   },
+   {
+    "id": "matahari",
+    "name": "Pasar Raya Matahari",
+    "kind": "shop"
+   },
+   {
+    "id": "zus",
+    "name": "ZUS Coffee",
+    "kind": "food"
+   },
+   {
+    "id": "kopitiam",
+    "name": "Rich Kopitiam",
+    "kind": "food"
+   },
+   {
+    "id": "centralpark",
+    "name": "Elmina Valley Central Park",
+    "kind": "park"
+   },
+   {
+    "id": "urbanpark",
+    "name": "Elmina Urban Park",
+    "kind": "park"
+   },
+   {
+    "id": "ecolake",
+    "name": "Eco Lake Promenade",
+    "kind": "park"
+   },
+   {
+    "id": "busstop",
+    "name": "Bus Stop · Cendana",
+    "kind": "transit"
+   },
+   {
+    "id": "surau",
+    "name": "Surau At Taqwa",
+    "kind": "civic"
+   },
+   {
+    "id": "surau2",
+    "name": "Surau Melor",
+    "kind": "civic"
+   },
+   {
+    "id": "childcare",
+    "name": "Al-Hafiz Childcare",
+    "kind": "civic"
+   },
+   {
+    "id": "gym",
+    "name": "Anytime Fitness",
+    "kind": "civic"
+   },
+   {
+    "id": "gallery",
+    "name": "Elmina Sales Gallery",
+    "kind": "civic"
+   }
+  ],
+  "scenarios": {
+   "heat": {
+    "origin": "cendana",
+    "dest": "mall"
+   },
+   "rain": {
+    "origin": "kanopi",
+    "dest": "centralpark"
+   },
+   "night": {
+    "origin": "cendana",
+    "dest": "centralpark"
+   }
+  }
+ },
+ {
+  "id": "kl",
+  "name": "Kuala Lumpur",
+  "area": "Bukit Bintang – KLCC",
+  "bounds": [
+   101.699446,
+   3.140318,
+   101.722667,
+   3.161415
+  ],
+  "places": [
+   {
+    "id": "ampang-park-station",
+    "name": "Ampang Park Station",
+    "kind": "transit"
+   },
+   {
+    "id": "bukit-bintang-station",
+    "name": "Bukit Bintang Station",
+    "kind": "transit"
+   },
+   {
+    "id": "bukit-nanas-station",
+    "name": "Bukit Nanas Station",
+    "kind": "transit"
+   },
+   {
+    "id": "conlay-station",
+    "name": "Conlay Station",
+    "kind": "transit"
+   },
+   {
+    "id": "jalan-alor",
+    "name": "Jalan Alor",
+    "kind": "shop"
+   },
+   {
+    "id": "klcc-park",
+    "name": "KLCC Park",
+    "kind": "park"
+   },
+   {
+    "id": "menara-berkembar-petronas",
+    "name": "Menara Berkembar Petronas",
+    "kind": "civic"
+   },
+   {
+    "id": "menara-kuala-lumpur",
+    "name": "Menara Kuala Lumpur",
+    "kind": "civic"
+   },
+   {
+    "id": "pavilion-kuala-lumpur",
+    "name": "Pavilion Kuala Lumpur",
+    "kind": "shop"
+   },
+   {
+    "id": "plaza-ombak-klcc",
+    "name": "Plaza Ombak KLCC",
+    "kind": "shop"
+   },
+   {
+    "id": "sungei-wang-plaza",
+    "name": "Sungei Wang Plaza",
+    "kind": "shop"
+   },
+   {
+    "id": "taman-eko-rimba-kuala-lumpur",
+    "name": "Taman Eko Rimba Kuala Lumpur",
+    "kind": "civic"
+   },
+   {
+    "id": "ain-arabia",
+    "name": "Ain Arabia",
+    "kind": "park"
+   },
+   {
+    "id": "laman-standard-chartered-kuala-lumpur",
+    "name": "Laman Standard Chartered Kuala Lumpur",
+    "kind": "park"
+   },
+   {
+    "id": "upside-down-house",
+    "name": "Upside Down House",
+    "kind": "civic"
+   },
+   {
+    "id": "four-seasons-place-kuala-lumpur",
+    "name": "Four Seasons Place Kuala Lumpur",
+    "kind": "home"
+   },
+   {
+    "id": "grand-hyatt",
+    "name": "Grand Hyatt",
+    "kind": "home"
+   },
+   {
+    "id": "jw-marriott-hotel-kuala-lumpur",
+    "name": "JW Marriott Hotel Kuala Lumpur",
+    "kind": "home"
+   },
+   {
+    "id": "oxley-towers",
+    "name": "Oxley Towers",
+    "kind": "home"
+   },
+   {
+    "id": "al-amber",
+    "name": "Al Amber",
+    "kind": "food"
+   }
+  ],
+  "scenarios": {
+   "heat": {
+    "origin": "grand-hyatt",
+    "dest": "menara-kuala-lumpur"
+   },
+   "rain": {
+    "origin": "jw-marriott-hotel-kuala-lumpur",
+    "dest": "klcc-park"
+   },
+   "night": {
+    "origin": "grand-hyatt",
+    "dest": "jalan-alor"
+   }
+  }
+ },
+ {
+  "id": "georgetown",
+  "name": "George Town",
+  "area": "Penang heritage core",
+  "bounds": [
+   100.324531,
+   5.406104,
+   100.344599,
+   5.424495
+  ],
+  "places": [
+   {
+    "id": "goddess-of-mercy-temple",
+    "name": "Goddess of Mercy Temple",
+    "kind": "civic"
+   },
+   {
+    "id": "kota-cornwallis",
+    "name": "Kota Cornwallis",
+    "kind": "civic"
+   },
+   {
+    "id": "prangin-mall",
+    "name": "Prangin Mall",
+    "kind": "shop"
+   },
+   {
+    "id": "taman-bandar-arkeologi-sia-boey",
+    "name": "Taman Bandar Arkeologi Sia Boey",
+    "kind": "park"
+   },
+   {
+    "id": "camera-museum",
+    "name": "Camera Museum",
+    "kind": "civic"
+   },
+   {
+    "id": "cheong-fatt-tze-mansion",
+    "name": "Cheong Fatt Tze Mansion",
+    "kind": "civic"
+   },
+   {
+    "id": "armenian-park",
+    "name": "Armenian Park",
+    "kind": "park"
+   },
+   {
+    "id": "chew-jetty",
+    "name": "Chew Jetty",
+    "kind": "home"
+   },
+   {
+    "id": "friendship-park",
+    "name": "Friendship Park",
+    "kind": "park"
+   },
+   {
+    "id": "the-whiteaways-arcade",
+    "name": "The Whiteaways Arcade",
+    "kind": "shop"
+   },
+   {
+    "id": "eastern-oriental-hotel",
+    "name": "Eastern & Oriental Hotel",
+    "kind": "home"
+   },
+   {
+    "id": "pangkalan-raja-tun-uda-station",
+    "name": "Pangkalan Raja Tun Uda Station",
+    "kind": "transit"
+   },
+   {
+    "id": "pasar-chowrasta",
+    "name": "Pasar Chowrasta",
+    "kind": "shop"
+   },
+   {
+    "id": "penaga-hotel",
+    "name": "Penaga Hotel",
+    "kind": "home"
+   },
+   {
+    "id": "people-s-court",
+    "name": "People's Court",
+    "kind": "home"
+   },
+   {
+    "id": "gama-supermarket-and-departmental-store",
+    "name": "GAMA Supermarket and Departmental Store",
+    "kind": "shop"
+   },
+   {
+    "id": "abu-penang",
+    "name": "Abu Penang",
+    "kind": "food"
+   },
+   {
+    "id": "adyar-anadar-bhavan",
+    "name": "Adyar Anadar Bhavan",
+    "kind": "food"
+   },
+   {
+    "id": "ah-lai-caffee",
+    "name": "Ah Lai Caffee",
+    "kind": "food"
+   },
+   {
+    "id": "banana-boutique",
+    "name": "Banana Boutique",
+    "kind": "transit"
+   }
+  ],
+  "scenarios": {
+   "heat": {
+    "origin": "eastern-oriental-hotel",
+    "dest": "armenian-park"
+   },
+   "rain": {
+    "origin": "penaga-hotel",
+    "dest": "goddess-of-mercy-temple"
+   },
+   "night": {
+    "origin": "penaga-hotel",
+    "dest": "taman-bandar-arkeologi-sia-boey"
+   }
+  }
+ },
+ {
+  "id": "ipoh",
+  "name": "Ipoh",
+  "area": "Old & New Town, Perak",
+  "bounds": [
+   101.067892,
+   4.586774,
+   101.087259,
+   4.607462
+  ],
+  "places": [
+   {
+    "id": "birch-memorial-clock-tower",
+    "name": "Birch Memorial Clock Tower",
+    "kind": "civic"
+   },
+   {
+    "id": "ipoh-station",
+    "name": "Ipoh Station",
+    "kind": "transit"
+   },
+   {
+    "id": "little-india",
+    "name": "Little India",
+    "kind": "civic"
+   },
+   {
+    "id": "han-chin-pet-soo",
+    "name": "Han Chin Pet Soo",
+    "kind": "civic"
+   },
+   {
+    "id": "fantasy-house-trick-art",
+    "name": "Fantasy House Trick Art",
+    "kind": "civic"
+   },
+   {
+    "id": "people-s-park",
+    "name": "People's Park",
+    "kind": "park"
+   },
+   {
+    "id": "kinta-riverfront-walk",
+    "name": "Kinta Riverfront Walk",
+    "kind": "park"
+   },
+   {
+    "id": "wisma-kinta",
+    "name": "Wisma Kinta",
+    "kind": "shop"
+   },
+   {
+    "id": "apartment-city-view",
+    "name": "Apartment City View",
+    "kind": "home"
+   },
+   {
+    "id": "bridal-cafe",
+    "name": "Bridal Café",
+    "kind": "food"
+   },
+   {
+    "id": "cold-blue",
+    "name": "Cold Blue",
+    "kind": "food"
+   },
+   {
+    "id": "f-m-s-bar-and-restaurant-9",
+    "name": "F.M.S Bar and Restaurant (#9)",
+    "kind": "park"
+   },
+   {
+    "id": "hoong-tho-restaurant",
+    "name": "Hoong Tho Restaurant",
+    "kind": "food"
+   },
+   {
+    "id": "hotel-grand-park",
+    "name": "Hotel Grand Park",
+    "kind": "home"
+   },
+   {
+    "id": "ipoh-french-hotel",
+    "name": "Ipoh French Hotel",
+    "kind": "home"
+   },
+   {
+    "id": "kinta-heights",
+    "name": "Kinta Heights",
+    "kind": "home"
+   },
+   {
+    "id": "stesen-bas-medan-kidd",
+    "name": "Stesen Bas Medan Kidd",
+    "kind": "transit"
+   },
+   {
+    "id": "gerbang-malam",
+    "name": "Gerbang Malam",
+    "kind": "shop"
+   },
+   {
+    "id": "gerbang-malam-lou-wong-entrance",
+    "name": "Gerbang Malam (Lou Wong Entrance)",
+    "kind": "shop"
+   },
+   {
+    "id": "night-market",
+    "name": "Night Market",
+    "kind": "shop"
+   }
+  ],
+  "scenarios": {
+   "heat": {
+    "origin": "apartment-city-view",
+    "dest": "f-m-s-bar-and-restaurant-9"
+   },
+   "rain": {
+    "origin": "kinta-heights",
+    "dest": "gerbang-malam"
+   },
+   "night": {
+    "origin": "hotel-grand-park",
+    "dest": "birch-memorial-clock-tower"
+   }
+  }
+ },
+ {
+  "id": "jb",
+  "name": "Johor Bahru",
+  "area": "City centre, Johor",
+  "bounds": [
+   103.756162,
+   1.456234,
+   103.771875,
+   1.471281
+  ],
+  "places": [
+   {
+    "id": "gallaria-kotaraya",
+    "name": "Gallaria@Kotaraya",
+    "kind": "shop"
+   },
+   {
+    "id": "johor-bahru-city-square",
+    "name": "Johor Bahru City Square",
+    "kind": "shop"
+   },
+   {
+    "id": "johor-bahru-sentral",
+    "name": "Johor Bahru Sentral",
+    "kind": "transit"
+   },
+   {
+    "id": "komtar-jbcc",
+    "name": "Komtar JBCC",
+    "kind": "shop"
+   },
+   {
+    "id": "r-f-mall",
+    "name": "R&F Mall",
+    "kind": "shop"
+   },
+   {
+    "id": "kwong-siew-heritage-gallery",
+    "name": "Kwong Siew Heritage Gallery",
+    "kind": "civic"
+   },
+   {
+    "id": "arulmigu-sri-rajakaliamman-glass-temple",
+    "name": "Arulmigu Sri Rajakaliamman Glass Temple",
+    "kind": "civic"
+   },
+   {
+    "id": "kuil-kuno-johor",
+    "name": "Kuil Kuno Johor",
+    "kind": "civic"
+   },
+   {
+    "id": "citrus-hotel",
+    "name": "Citrus Hotel",
+    "kind": "home"
+   },
+   {
+    "id": "grand-bluewave-hotel",
+    "name": "Grand Bluewave Hotel",
+    "kind": "home"
+   },
+   {
+    "id": "jb-hotel",
+    "name": "JB Hotel",
+    "kind": "home"
+   },
+   {
+    "id": "apartment-bukit-chagar",
+    "name": "Apartment Bukit Chagar",
+    "kind": "home"
+   },
+   {
+    "id": "masjid-al-attas",
+    "name": "Masjid Al-Attas",
+    "kind": "civic"
+   },
+   {
+    "id": "restaurant-muthu",
+    "name": "Restaurant Muthu",
+    "kind": "food"
+   },
+   {
+    "id": "restoran-cmj-kitchen",
+    "name": "Restoran CMJ Kitchen",
+    "kind": "food"
+   },
+   {
+    "id": "adam-hawa-cafe",
+    "name": "Adam Hawa Cafe",
+    "kind": "food"
+   },
+   {
+    "id": "johor-bahru-checkpoint",
+    "name": "Johor Bahru Checkpoint",
+    "kind": "transit"
+   },
+   {
+    "id": "menara-landmark",
+    "name": "Menara Landmark",
+    "kind": "transit"
+   },
+   {
+    "id": "menara-tabung-haji",
+    "name": "Menara Tabung Haji",
+    "kind": "transit"
+   }
+  ],
+  "scenarios": {
+   "heat": {
+    "origin": "apartment-bukit-chagar",
+    "dest": "kuil-kuno-johor"
+   },
+   "rain": {
+    "origin": "grand-bluewave-hotel",
+    "dest": "masjid-al-attas"
+   },
+   "night": {
+    "origin": "apartment-bukit-chagar",
+    "dest": "kwong-siew-heritage-gallery"
+   }
+  }
+ },
+ {
+  "id": "melaka",
+  "name": "Melaka",
+  "area": "Heritage city, Melaka",
+  "bounds": [
+   102.239066,
+   2.185179,
+   102.262307,
+   2.207932
+  ],
+  "places": [
+   {
+    "id": "dataran-pahlawan-melaka-megamall",
+    "name": "Dataran Pahlawan Melaka Megamall",
+    "kind": "shop"
+   },
+   {
+    "id": "hang-li-poh-s-well",
+    "name": "Hang Li Poh's Well",
+    "kind": "civic"
+   },
+   {
+    "id": "jonker-walk",
+    "name": "Jonker Walk",
+    "kind": "shop"
+   },
+   {
+    "id": "little-india-malacca",
+    "name": "Little India, Malacca",
+    "kind": "civic"
+   },
+   {
+    "id": "mahkota-parade",
+    "name": "Mahkota Parade",
+    "kind": "shop"
+   },
+   {
+    "id": "melaka-folks-art-gallery",
+    "name": "Melaka Folks Art Gallery",
+    "kind": "civic"
+   },
+   {
+    "id": "menara-taming-sari",
+    "name": "Menara Taming Sari",
+    "kind": "civic"
+   },
+   {
+    "id": "hatten-square",
+    "name": "Hatten Square",
+    "kind": "shop"
+   },
+   {
+    "id": "taman-larangan",
+    "name": "Taman Larangan",
+    "kind": "park"
+   },
+   {
+    "id": "a-h-house-hotel",
+    "name": "A&H House Hotel",
+    "kind": "home"
+   },
+   {
+    "id": "abc-and-cendol-plus-more",
+    "name": "ABC and Cendol plus more",
+    "kind": "food"
+   },
+   {
+    "id": "abc-lodging",
+    "name": "ABC Lodging",
+    "kind": "home"
+   },
+   {
+    "id": "ah-hui-bak-kit-teh",
+    "name": "Ah Hui Bak Kit Teh",
+    "kind": "food"
+   },
+   {
+    "id": "ah-ma-ho-liao-kopitiam-street",
+    "name": "Ah Ma Ho Liao Kopitiam (Street)",
+    "kind": "food"
+   },
+   {
+    "id": "aldy-hotel-stadthuys",
+    "name": "Aldy Hotel Stadthuys",
+    "kind": "home"
+   },
+   {
+    "id": "bao-shu",
+    "name": "Bao Shu",
+    "kind": "home"
+   },
+   {
+    "id": "malacca-international-ferry-terminal",
+    "name": "Malacca International Ferry Terminal",
+    "kind": "transit"
+   },
+   {
+    "id": "equatorial-coach-bay",
+    "name": "Equatorial Coach Bay",
+    "kind": "transit"
+   },
+   {
+    "id": "klinik-chin",
+    "name": "Klinik Chin",
+    "kind": "transit"
+   },
+   {
+    "id": "medan-samudera",
+    "name": "Medan Samudera",
+    "kind": "transit"
+   }
+  ],
+  "scenarios": {
+   "heat": {
+    "origin": "bao-shu",
+    "dest": "menara-taming-sari"
+   },
+   "rain": {
+    "origin": "abc-lodging",
+    "dest": "taman-larangan"
+   },
+   "night": {
+    "origin": "bao-shu",
+    "dest": "dataran-pahlawan-melaka-megamall"
+   }
+  }
+ },
+ {
+  "id": "putrajaya",
+  "name": "Putrajaya",
+  "area": "Presint 1 – 2",
+  "bounds": [
+   101.675968,
+   2.9058,
+   101.702377,
+   2.947643
+  ],
+  "places": [
+   {
+    "id": "astaka-morocco",
+    "name": "Astaka Morocco",
+    "kind": "civic"
+   },
+   {
+    "id": "laman-perdana",
+    "name": "Laman Perdana",
+    "kind": "park"
+   },
+   {
+    "id": "malaysia-madani-sign",
+    "name": "MALAYSIA MADANI sign",
+    "kind": "civic"
+   },
+   {
+    "id": "taman-megalit",
+    "name": "Taman Megalit",
+    "kind": "park"
+   },
+   {
+    "id": "taman-putra-perdana",
+    "name": "Taman Putra Perdana",
+    "kind": "park"
+   },
+   {
+    "id": "changkat",
+    "name": "Changkat",
+    "kind": "food"
+   },
+   {
+    "id": "kasbin",
+    "name": "Kasbin",
+    "kind": "food"
+   },
+   {
+    "id": "people-s-market",
+    "name": "People's Market",
+    "kind": "shop"
+   },
+   {
+    "id": "kompleks-b-laman-perdana-timur",
+    "name": "Kompleks B / Laman Perdana (Timur)",
+    "kind": "transit"
+   }
+  ],
+  "scenarios": {
+   "heat": {
+    "origin": "kompleks-b-laman-perdana-timur",
+    "dest": "malaysia-madani-sign"
+   },
+   "rain": {
+    "origin": "kasbin",
+    "dest": "astaka-morocco"
+   },
+   "night": {
+    "origin": "changkat",
+    "dest": "astaka-morocco"
+   }
+  }
+ },
+ {
+  "id": "kk",
+  "name": "Kota Kinabalu",
+  "area": "City centre, Sabah",
+  "bounds": [
+   116.068268,
+   5.975717,
+   116.08897,
+   5.993729
+  ],
+  "places": [
+   {
+    "id": "jesselton-mall",
+    "name": "Jesselton Mall",
+    "kind": "shop"
+   },
+   {
+    "id": "suria-sabah",
+    "name": "Suria Sabah",
+    "kind": "shop"
+   },
+   {
+    "id": "centre-point-sabah",
+    "name": "Centre Point Sabah",
+    "kind": "shop"
+   },
+   {
+    "id": "kota-kinabalu-city-park",
+    "name": "Kota Kinabalu City Park",
+    "kind": "park"
+   },
+   {
+    "id": "kota-kinabalu-plaza",
+    "name": "Kota Kinabalu Plaza",
+    "kind": "shop"
+   },
+   {
+    "id": "suria-waterfront",
+    "name": "Suria Waterfront",
+    "kind": "park"
+   },
+   {
+    "id": "lintasan-deasoka",
+    "name": "Lintasan Deasoka",
+    "kind": "park"
+   },
+   {
+    "id": "ruins-of-3rd-oldest-building-in-kk",
+    "name": "Ruins of 3rd oldest building in KK",
+    "kind": "civic"
+   },
+   {
+    "id": "le-me-ridien-kota-kinabalu",
+    "name": "Le Méridien Kota Kinabalu",
+    "kind": "home"
+   },
+   {
+    "id": "the-jesselton-hotel",
+    "name": "The Jesselton Hotel",
+    "kind": "home"
+   },
+   {
+    "id": "dreamtel",
+    "name": "Dreamtel",
+    "kind": "home"
+   },
+   {
+    "id": "gaya-centre-hotel",
+    "name": "Gaya Centre Hotel",
+    "kind": "home"
+   },
+   {
+    "id": "hawker-s-stall",
+    "name": "Hawker's Stall",
+    "kind": "food"
+   },
+   {
+    "id": "jesselton-point-waterfront-station",
+    "name": "Jesselton Point Waterfront Station",
+    "kind": "transit"
+   },
+   {
+    "id": "kedai-kopi-kinabalu",
+    "name": "Kedai Kopi Kinabalu",
+    "kind": "food"
+   },
+   {
+    "id": "kim-fah-bandaran",
+    "name": "Kim Fah Bandaran",
+    "kind": "food"
+   },
+   {
+    "id": "airport-bus",
+    "name": "Airport Bus",
+    "kind": "transit"
+   },
+   {
+    "id": "pasar-besar-kota-kinabalu",
+    "name": "Pasar Besar Kota Kinabalu",
+    "kind": "transit"
+   }
+  ],
+  "scenarios": {
+   "heat": {
+    "origin": "le-me-ridien-kota-kinabalu",
+    "dest": "suria-waterfront"
+   },
+   "rain": {
+    "origin": "dreamtel",
+    "dest": "jesselton-mall"
+   },
+   "night": {
+    "origin": "dreamtel",
+    "dest": "suria-sabah"
+   }
+  }
+ },
+ {
+  "id": "kuching",
+  "name": "Kuching",
+  "area": "Waterfront, Sarawak",
+  "bounds": [
+   110.336194,
+   1.549003,
+   110.352974,
+   1.562559
+  ],
+  "places": [
+   {
+    "id": "muzium-sarawak",
+    "name": "Muzium Sarawak",
+    "kind": "civic"
+   },
+   {
+    "id": "sarawak-islamic-heritage-museum",
+    "name": "Sarawak Islamic Heritage Museum",
+    "kind": "civic"
+   },
+   {
+    "id": "chinese-history-museum",
+    "name": "Chinese History Museum",
+    "kind": "civic"
+   },
+   {
+    "id": "cruise-boat-service",
+    "name": "Cruise Boat Service",
+    "kind": "civic"
+   },
+   {
+    "id": "taman-perpaduan",
+    "name": "Taman Perpaduan",
+    "kind": "park"
+   },
+   {
+    "id": "electra-house",
+    "name": "Electra House",
+    "kind": "shop"
+   },
+   {
+    "id": "majma-tuanku-abdul-halim-mu-adzam-shah",
+    "name": "Majma' Tuanku Abdul Halim Mu'adzam Shah",
+    "kind": "shop"
+   },
+   {
+    "id": "padang-merdeka",
+    "name": "Padang Merdeka",
+    "kind": "park"
+   },
+   {
+    "id": "plaza-merdeka",
+    "name": "Plaza Merdeka",
+    "kind": "shop"
+   },
+   {
+    "id": "wisma-hopoh",
+    "name": "Wisma Hopoh",
+    "kind": "shop"
+   },
+   {
+    "id": "hilton-kuching",
+    "name": "Hilton Kuching",
+    "kind": "home"
+   },
+   {
+    "id": "aladdin-chicken-rice-shop",
+    "name": "Aladdin Chicken Rice Shop",
+    "kind": "food"
+   },
+   {
+    "id": "aroma-cafe",
+    "name": "Aroma Cafe",
+    "kind": "food"
+   },
+   {
+    "id": "commons",
+    "name": "Commons",
+    "kind": "food"
+   },
+   {
+    "id": "john-s-place",
+    "name": "John's Place",
+    "kind": "home"
+   },
+   {
+    "id": "bus-k21-to-kubah-national-park-station",
+    "name": "Bus K21 to Kubah National Park Station",
+    "kind": "transit"
+   },
+   {
+    "id": "dormani-hotel",
+    "name": "Dormani Hotel",
+    "kind": "home"
+   },
+   {
+    "id": "fata-garden-hotel",
+    "name": "Fata Garden Hotel",
+    "kind": "home"
+   },
+   {
+    "id": "pangkalan-panjang-station",
+    "name": "Pangkalan Panjang Station",
+    "kind": "transit"
+   },
+   {
+    "id": "pangkalan-sapi-station",
+    "name": "Pangkalan Sapi Station",
+    "kind": "transit"
+   }
+  ],
+  "scenarios": {
+   "heat": {
+    "origin": "hilton-kuching",
+    "dest": "electra-house"
+   },
+   "rain": {
+    "origin": "john-s-place",
+    "dest": "sarawak-islamic-heritage-museum"
+   },
+   "night": {
+    "origin": "fata-garden-hotel",
+    "dest": "majma-tuanku-abdul-halim-mu-adzam-shah"
+   }
+  }
+ }
+]

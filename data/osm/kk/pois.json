@@ -1,0 +1,2773 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "timestamp_osm_base": "2026-10-22T18:38:51Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+
+{
+  "type": "node",
+  "id": 1368607038,
+  "lat": 5.9801996,
+  "lon": 116.0762818,
+  "tags": {
+    "bus": "yes",
+    "highway": "bus_stop",
+    "name": "City Bus",
+    "operator": "City bus",
+    "public_transport": "platform",
+    "shelter": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 1446839510,
+  "lat": 5.9795187,
+  "lon": 116.0713935,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Kobe Sizzlers",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 1597102302,
+  "lat": 5.9850109,
+  "lon": 116.0779717,
+  "tags": {
+    "addr:housenumber": "53",
+    "addr:postcode": "88000",
+    "addr:street": "Jalan Gaya",
+    "amenity": "cafe",
+    "brand": "OldTown White Coffee",
+    "brand:wikidata": "Q7085308",
+    "brand:wikipedia": "en:OldTown White Coffee",
+    "cuisine": "coffee_shop;malaysian",
+    "fax": "088254881",
+    "internet_access:fee": "no",
+    "level": "0",
+    "name": "OldTown White Coffee",
+    "name:ko": "올드타운 화이트 커피",
+    "name:zh": "舊街場咖啡",
+    "phone": "088259881",
+    "smoking": "separated",
+    "takeaway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 1613009459,
+  "lat": 5.9848423,
+  "lon": 116.0778435,
+  "tags": {
+    "addr:city": "Kota Kinabalu",
+    "addr:country": "MY",
+    "addr:housenumber": "69",
+    "addr:postcode": "88000",
+    "addr:state": "Sabah",
+    "addr:street": "Jalan Gaya",
+    "contact:email": "reservation@jesseltonhotel.com",
+    "contact:facebook": "thejesseltonhotel",
+    "contact:phone": "+60 88 223 333; +60 88 211 808; +60 88 210 054",
+    "contact:website": "http://jesseltonhotel.com/",
+    "contact:whatsapp": "+60 88 223 333",
+    "internet_access": "wlan",
+    "name": "The Jesselton Hotel",
+    "opening_hours": "24/7",
+    "rooms": "44",
+    "tourism": "hotel",
+    "wikidata": "Q28403398"
+  }
+},
+{
+  "type": "node",
+  "id": 1718983489,
+  "lat": 5.9859120,
+  "lon": 116.0759904,
+  "tags": {
+    "bus": "yes",
+    "highway": "bus_stop",
+    "name": "Courtesey Shuttle Bus Stop for Sutera Harbour",
+    "name:en": "Courtesey Shuttle Bus Stop for Sutera Harbour",
+    "public_transport": "platform"
+  }
+},
+{
+  "type": "node",
+  "id": 2103857035,
+  "lat": 5.9898488,
+  "lon": 116.0792234,
+  "tags": {
+    "amenity": "ferry_terminal",
+    "ferry": "yes",
+    "name": "Jesselton Point Waterfront",
+    "name:en": "Jesselton Point Waterfront",
+    "name:ko": "제셀톤 포인트(반디불 출발",
+    "name:zh": "亚庇渡轮",
+    "name:zh-Hans": "亚庇渡轮",
+    "name:zh-Hant": "亞庇渡輪",
+    "opening_hours": "Mo-Su 06:00-02:00",
+    "public_transport": "station"
+  }
+},
+{
+  "type": "node",
+  "id": 2124957462,
+  "lat": 5.9850600,
+  "lon": 116.0764973,
+  "tags": {
+    "addr:housenumber": "Block 9",
+    "addr:postcode": "88000",
+    "addr:street": "Jalan Pantai",
+    "brand": "Best Western",
+    "brand:wikidata": "Q830334",
+    "brand:wikipedia": "en:Best Western",
+    "email": "kinabaludayahotel@gmail.com",
+    "name": "Kinabalu Daya",
+    "operator": "Best Western",
+    "phone": "0168320195",
+    "tourism": "hotel",
+    "website": "https://kinabaludayahotel.com/"
+  }
+},
+{
+  "type": "node",
+  "id": 2468673945,
+  "lat": 5.9844139,
+  "lon": 116.0751604,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "asian;american;italian",
+    "name": "Upperstar"
+  }
+},
+{
+  "type": "node",
+  "id": 2470681732,
+  "lat": 5.9786500,
+  "lon": 116.0711892,
+  "tags": {
+    "name": "The Klagan Hotel",
+    "tourism": "hotel",
+    "wheelchair": "limited"
+  }
+},
+{
+  "type": "node",
+  "id": 2474740203,
+  "lat": 5.9823776,
+  "lon": 116.0722713,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Gerai Makanan Laut",
+    "name:ms": "Gerai Makanan Laut"
+  }
+},
+{
+  "type": "node",
+  "id": 2474740684,
+  "lat": 5.9829003,
+  "lon": 116.0735162,
+  "tags": {
+    "name": "Servay",
+    "shop": "supermarket"
+  }
+},
+{
+  "type": "node",
+  "id": 2474762643,
+  "lat": 5.9821650,
+  "lon": 116.0760211,
+  "tags": {
+    "name": "Mandarin Hotel",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 2475176701,
+  "lat": 5.9880774,
+  "lon": 116.0777989,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "japanese",
+    "level": "0",
+    "name": "SUSHIHAN"
+  }
+},
+{
+  "type": "node",
+  "id": 2475184427,
+  "lat": 5.9823035,
+  "lon": 116.0725458,
+  "tags": {
+    "bus": "yes",
+    "covered": "yes",
+    "highway": "bus_stop",
+    "name": "Pasar Besar Kota Kinabalu",
+    "name:en": "Pasar Besar Kota Kinabalu KK05",
+    "name:ms": "Pasar Besar Kota Kinabalu",
+    "public_transport": "platform",
+    "ref": "KK05",
+    "seats": "yes",
+    "shelter": "yes",
+    "tactile_paving": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 2475186051,
+  "lat": 5.9786805,
+  "lon": 116.0697704,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "irish",
+    "name": "The Shamrock Irish Bar",
+    "name:ko": "샴록 아이리쉬바",
+    "wheelchair": "limited"
+  }
+},
+{
+  "type": "node",
+  "id": 2475199903,
+  "lat": 5.9848760,
+  "lon": 116.0778628,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "french",
+    "email": "kudosbistro@gmail.com",
+    "name": "Kudos Bistro",
+    "opening_hours": "Mo-Su 07:30-22:00",
+    "phone": "+6088 532166",
+    "website": "http://kudosbistro.com"
+  }
+},
+{
+  "type": "node",
+  "id": 2475202300,
+  "lat": 5.9850955,
+  "lon": 116.0780050,
+  "tags": {
+    "amenity": "cafe",
+    "cuisine": "coffee_shop",
+    "name": "Fook Yuen",
+    "name:zh": "富源茶室",
+    "survey:date": "2023-08-13"
+  }
+},
+{
+  "type": "node",
+  "id": 2475209696,
+  "lat": 5.9854266,
+  "lon": 116.0768565,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "name": "Little Italy"
+  }
+},
+{
+  "type": "node",
+  "id": 2475220479,
+  "lat": 5.9831748,
+  "lon": 116.0762729,
+  "tags": {
+    "amenity": "cafe",
+    "cuisine": "coffee_shop",
+    "internet_access": "no",
+    "name": "Rainforest Cafe"
+  }
+},
+{
+  "type": "node",
+  "id": 2486254644,
+  "lat": 5.9783783,
+  "lon": 116.0739020,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "asian",
+    "name": "Sri Melaka Restoren"
+  }
+},
+{
+  "type": "node",
+  "id": 3189592072,
+  "lat": 5.9819651,
+  "lon": 116.0764127,
+  "tags": {
+    "internet_access": "no",
+    "name": "Gaya Hotel",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 3192546061,
+  "lat": 5.9792910,
+  "lon": 116.0714260,
+  "tags": {
+    "addr:city": "Kota Kinabalu",
+    "addr:housenumber": "A P 02 Block A",
+    "addr:street": "Jalan Tun Fuad Stephens",
+    "amenity": "cafe",
+    "cuisine": "coffee_shop",
+    "internet_access": "wlan",
+    "internet_access:fee": "no",
+    "name": "Big Apple Donuts & Coffee",
+    "outdoor_seating": "no",
+    "phone": "+88447277",
+    "smoking": "separated",
+    "takeaway": "yes",
+    "wheelchair": "limited"
+  }
+},
+{
+  "type": "node",
+  "id": 4198134790,
+  "lat": 5.9823322,
+  "lon": 116.0764718,
+  "tags": {
+    "addr:street": "127 Jalan Gaya",
+    "amenity": "restaurant",
+    "cuisine": "malaysian;chinese",
+    "name": "Yee Fung Laksa",
+    "name:en": "Kedai Kopi Yee Fung",
+    "name:ko": "이펑",
+    "name:zh": "怡豐茶室",
+    "opening_hours": "Mo-Fr 06:30-18:00; Sa-Su 06:30-16:00",
+    "phone": "+60 88 312 042",
+    "survey:date": "2023-08-06",
+    "website": "https://www.yeefunglaksa.com/"
+  }
+},
+{
+  "type": "node",
+  "id": 4210148005,
+  "lat": 5.9791106,
+  "lon": 116.0707002,
+  "tags": {
+    "bus": "yes",
+    "highway": "bus_stop",
+    "name": "KK03",
+    "public_transport": "platform",
+    "wheelchair": "limited"
+  }
+},
+{
+  "type": "node",
+  "id": 4210148006,
+  "lat": 5.9862737,
+  "lon": 116.0757715,
+  "tags": {
+    "bus": "yes",
+    "highway": "bus_stop",
+    "name": "Wisma Sabah Wisma Merdeka",
+    "name:ms": "Wisma Sabah Wisma Merdeka",
+    "public_transport": "platform",
+    "ref": "KK09"
+  }
+},
+{
+  "type": "node",
+  "id": 4210148007,
+  "lat": 5.9827239,
+  "lon": 116.0749306,
+  "tags": {
+    "bus": "yes",
+    "highway": "bus_stop",
+    "name": "Segama",
+    "name:en": "Segama",
+    "name:ms": "Segama",
+    "public_transport": "platform",
+    "ref": "KK15"
+  }
+},
+{
+  "type": "node",
+  "id": 4210148010,
+  "lat": 5.9804064,
+  "lon": 116.0760337,
+  "tags": {
+    "bus": "yes",
+    "highway": "bus_stop",
+    "name": "KK24",
+    "public_transport": "platform"
+  }
+},
+{
+  "type": "node",
+  "id": 4210148111,
+  "lat": 5.9830300,
+  "lon": 116.0753732,
+  "tags": {
+    "bus": "yes",
+    "highway": "bus_stop",
+    "name": "Jalan Pantai (airport bus)",
+    "public_transport": "platform",
+    "ref": "KK15"
+  }
+},
+{
+  "type": "node",
+  "id": 4210148112,
+  "lat": 5.9856382,
+  "lon": 116.0791035,
+  "tags": {
+    "access": "no",
+    "name": "Signal Hill Observatory Tower",
+    "name:en": "Signal Hill Observatory Tower",
+    "note": "closed due to reconstructions of the whole trail area",
+    "tourism": "viewpoint",
+    "website": "https://signalhill.my/"
+  }
+},
+{
+  "type": "node",
+  "id": 4216397290,
+  "lat": 5.9811260,
+  "lon": 116.0746556,
+  "tags": {
+    "amenity": "bus_station",
+    "bus": "yes",
+    "name": "West (inc Brunei & Sarawak)",
+    "public_transport": "station"
+  }
+},
+{
+  "type": "node",
+  "id": 4242275389,
+  "lat": 5.9793133,
+  "lon": 116.0741209,
+  "tags": {
+    "name": "Victoria hotel & hostel",
+    "tourism": "hotel",
+    "wheelchair": "limited"
+  }
+},
+{
+  "type": "node",
+  "id": 4270824789,
+  "lat": 5.9821253,
+  "lon": 116.0736838,
+  "tags": {
+    "addr:street": "Jalan 18",
+    "amenity": "restaurant",
+    "name": "味雅海南雞飯"
+  }
+},
+{
+  "type": "node",
+  "id": 4324648591,
+  "lat": 5.9782541,
+  "lon": 116.0705966,
+  "tags": {
+    "addr:street": "Lorong Centre point",
+    "internet_access": "wlan",
+    "name": "UNIC Hotel",
+    "tourism": "hotel",
+    "wheelchair": "limited"
+  }
+},
+{
+  "type": "node",
+  "id": 4365169591,
+  "lat": 5.9834785,
+  "lon": 116.0771109,
+  "tags": {
+    "addr:street": "Jalan Gaya",
+    "amenity": "restaurant",
+    "contact:phone": "+60 88 250 339",
+    "cuisine": "indonesian;indian;malaysian",
+    "name": "Restoran Nurhidayah (Makanan & Minuman)",
+    "name:en": "Azlina Sulawesi",
+    "opening_hours": "24/7",
+    "survey:date": "2023-08-06"
+  }
+},
+{
+  "type": "node",
+  "id": 4366623889,
+  "lat": 5.9846192,
+  "lon": 116.0774145,
+  "tags": {
+    "addr:housenumber": "80",
+    "addr:street": "Jalan Gaya",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "name": "Keng Wan Hing",
+    "name:en": "Keng Wan Hing",
+    "name:zh": "瓊萬興茶店",
+    "opening_hours": "Mo-Fr 05:00-17:00; Sa-Su 05:30-13:00",
+    "phone": "+60 16 849 4708"
+  }
+},
+{
+  "type": "node",
+  "id": 4367831289,
+  "lat": 5.9847997,
+  "lon": 116.0775248,
+  "tags": {
+    "addr:street": "74 Jalan Gaya",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "name": "Yu Kee Bak Kut Teh",
+    "name:en": "Yu Kee Bak Kut Teh",
+    "name:zh": "佑記肉骨茶",
+    "opening_hours": "Mo-Su 16:00-23:00",
+    "phone": "+60 88 221 192"
+  }
+},
+{
+  "type": "node",
+  "id": 4373289995,
+  "lat": 5.9810372,
+  "lon": 116.0763069,
+  "tags": {
+    "bus": "yes",
+    "highway": "bus_stop",
+    "name": "Airport Bus",
+    "name:en": "Airport Bus",
+    "public_transport": "platform"
+  }
+},
+{
+  "type": "node",
+  "id": 4373307991,
+  "lat": 5.9829720,
+  "lon": 116.0753472,
+  "tags": {
+    "bus": "yes",
+    "highway": "bus_stop",
+    "name": "Airport Bus",
+    "name:en": "Airport Bus",
+    "public_transport": "platform"
+  }
+},
+{
+  "type": "node",
+  "id": 4406380493,
+  "lat": 5.9838283,
+  "lon": 116.0767940,
+  "tags": {
+    "addr:street": "Jalan Gaya",
+    "amenity": "restaurant",
+    "name": "Kedai Kopi Kinabalu",
+    "name:en": "Kedai Kopi Kinabalu"
+  }
+},
+{
+  "type": "node",
+  "id": 4432599287,
+  "lat": 5.9843719,
+  "lon": 116.0827746,
+  "tags": {
+    "addr:city": "Kota Kinabalu",
+    "addr:postcode": "88400",
+    "addr:street": "Jalan Wong Thau Yong",
+    "amenity": "restaurant",
+    "cuisine": "regional",
+    "delivery": "no",
+    "name": "Signal Hill Eco Farm",
+    "opening_hours": "11:00-22:00",
+    "phone": "+60-(0)16-7891873",
+    "takeaway": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 4448635790,
+  "lat": 5.9842678,
+  "lon": 116.0761169,
+  "tags": {
+    "addr:housenumber": "33-35",
+    "addr:postcode": "88804",
+    "addr:street": "Jalan Haji Saman",
+    "email": "htlnewnanxing@yahoo.com",
+    "internet_access": "wlan",
+    "name": "Hotel New Nan Xing",
+    "phone": "+6088263390",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 4450057790,
+  "lat": 5.9805449,
+  "lon": 116.0762465,
+  "tags": {
+    "alt_name": "Padang Merdeka Station",
+    "amenity": "bus_station",
+    "bus": "yes",
+    "description": "Minivan to Ranau & Kinabalu NP (25RM)",
+    "name": "Minivan to Ranau & Kinabalu NP (25RM)",
+    "name:en": "Minivan to Ranau & Kinabalu NP (25RM)",
+    "public_transport": "station"
+  }
+},
+{
+  "type": "node",
+  "id": 4454297089,
+  "lat": 5.9841418,
+  "lon": 116.0774663,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "vietnamese",
+    "name": "Peppermint",
+    "name:en": "Peppermint"
+  }
+},
+{
+  "type": "node",
+  "id": 4456221889,
+  "lat": 5.9836323,
+  "lon": 116.0760567,
+  "tags": {
+    "amenity": "cafe",
+    "name": "The Royal Coconut",
+    "name:en": "The Royal Coconut"
+  }
+},
+{
+  "type": "node",
+  "id": 4491649595,
+  "lat": 5.9834489,
+  "lon": 116.0752435,
+  "tags": {
+    "amenity": "cafe",
+    "name": "Kedai Kope Ah Chee Tom Yam"
+  }
+},
+{
+  "type": "node",
+  "id": 4525670689,
+  "lat": 5.9804561,
+  "lon": 116.0725487,
+  "tags": {
+    "addr:street": "Lorong Sinsuran 3",
+    "amenity": "cafe",
+    "cuisine": "asian",
+    "name": "Kedai Kope Soon Chuan"
+  }
+},
+{
+  "type": "node",
+  "id": 4723902487,
+  "lat": 5.9875270,
+  "lon": 116.0780650,
+  "tags": {
+    "bus": "yes",
+    "highway": "bus_stop",
+    "name": "Suria Sabah",
+    "public_transport": "platform",
+    "ref": "KK16"
+  }
+},
+{
+  "type": "node",
+  "id": 4723902638,
+  "lat": 5.9826293,
+  "lon": 116.0748693,
+  "tags": {
+    "bus": "yes",
+    "highway": "bus_stop",
+    "name": "Segama Jalan Pantai",
+    "name:ms": "Segama Jalan Pantai",
+    "public_transport": "platform",
+    "ref": "KK14"
+  }
+},
+{
+  "type": "node",
+  "id": 4723902641,
+  "lat": 5.9882640,
+  "lon": 116.0776941,
+  "tags": {
+    "name": "Hotel Grandis",
+    "name:en": "Hotel Grandis",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 4723902646,
+  "lat": 5.9845599,
+  "lon": 116.0767945,
+  "tags": {
+    "brand": "OYO",
+    "brand:wikidata": "Q24906315",
+    "name": "OYO 819 Hotel 11",
+    "phone": "60104011393",
+    "tourism": "hotel",
+    "website": "https://www.oyorooms.com/51888/"
+  }
+},
+{
+  "type": "node",
+  "id": 4723902647,
+  "lat": 5.9884543,
+  "lon": 116.0794754,
+  "tags": {
+    "brand": "Mercure",
+    "brand:wikidata": "Q1709809",
+    "brand:wikipedia": "en:Mercure (hotel)",
+    "name": "Mercure",
+    "name:en": "Mercure",
+    "name:ms": "Mercure",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 4725187607,
+  "lat": 5.9838458,
+  "lon": 116.0781977,
+  "tags": {
+    "air_conditioning": "yes",
+    "amenity": "cafe",
+    "name": "October Coffee House",
+    "opening_hours": "Mo-Su 11:00-00:00"
+  }
+},
+{
+  "type": "node",
+  "id": 4725191495,
+  "lat": 5.9841328,
+  "lon": 116.0783457,
+  "tags": {
+    "addr:housenumber": "7",
+    "amenity": "cafe",
+    "name": "Cozy"
+  }
+},
+{
+  "type": "node",
+  "id": 4725320391,
+  "lat": 5.9839312,
+  "lon": 116.0780281,
+  "tags": {
+    "amenity": "cafe",
+    "name": "Print Cafe"
+  }
+},
+{
+  "type": "node",
+  "id": 4725320768,
+  "lat": 5.9829796,
+  "lon": 116.0753138,
+  "tags": {
+    "bus": "yes",
+    "highway": "bus_stop",
+    "name": "Jalan Pantai Segama",
+    "public_transport": "platform",
+    "ref": "KK14"
+  }
+},
+{
+  "type": "node",
+  "id": 4725497739,
+  "lat": 5.9846963,
+  "lon": 116.0774641,
+  "tags": {
+    "name": "Never Close Super Mart",
+    "shop": "supermarket"
+  }
+},
+{
+  "type": "node",
+  "id": 4725799031,
+  "lat": 5.9855629,
+  "lon": 116.0779482,
+  "tags": {
+    "addr:housenumber": "62",
+    "addr:street": "Jalan Gaya",
+    "amenity": "restaurant",
+    "cuisine": "malaysian",
+    "name": "Roots"
+  }
+},
+{
+  "type": "node",
+  "id": 4725817428,
+  "lat": 5.9857213,
+  "lon": 116.0780144,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "japanese",
+    "name": "Nishiki Japanese Restaurant"
+  }
+},
+{
+  "type": "node",
+  "id": 4725899206,
+  "lat": 5.9870647,
+  "lon": 116.0787509,
+  "tags": {
+    "name": "hotel eden 54",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 4725899207,
+  "lat": 5.9871785,
+  "lon": 116.0788332,
+  "tags": {
+    "name": "Buah-Buahan Yong",
+    "shop": "supermarket"
+  }
+},
+{
+  "type": "node",
+  "id": 4740053724,
+  "lat": 5.9867587,
+  "lon": 116.0786375,
+  "tags": {
+    "name": "Eden 54",
+    "name:en": "Eden 54",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 4748990523,
+  "lat": 5.9844031,
+  "lon": 116.0761810,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "hungarian",
+    "internet_access": "wlan",
+    "name": "Chilli Vanilla"
+  }
+},
+{
+  "type": "node",
+  "id": 4750059221,
+  "lat": 5.9867592,
+  "lon": 116.0785625,
+  "tags": {
+    "amenity": "cafe",
+    "name": "Cafe on Fifty5",
+    "name:en": "Cafe on Fifty5"
+  }
+},
+{
+  "type": "node",
+  "id": 4945492921,
+  "lat": 5.9794894,
+  "lon": 116.0719841,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "CFC City Food Corner",
+    "name:en": "CFC City Food Corner",
+    "opening_hours": "24/7"
+  }
+},
+{
+  "type": "node",
+  "id": 4949087821,
+  "lat": 5.9804404,
+  "lon": 116.0762117,
+  "tags": {
+    "amenity": "bus_station",
+    "bus": "yes",
+    "name": "Padang Merdeka Station: Ranau, Tambunan, Keningau, Kota, Kota Belud, Kota Marudu",
+    "public_transport": "station",
+    "website": "https://sabahbooking.com/tips-42"
+  }
+},
+{
+  "type": "node",
+  "id": 4956076221,
+  "lat": 5.9846344,
+  "lon": 116.0765109,
+  "tags": {
+    "amenity": "cafe",
+    "name": "Ming Ge Cafe",
+    "name:en": "Ming Ge Cafe"
+  }
+},
+{
+  "type": "node",
+  "id": 4985545922,
+  "lat": 5.9795025,
+  "lon": 116.0710188,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "korean",
+    "name": "Koryo-Jeong",
+    "name:en": "Koryo-Jeong",
+    "name:ko": "고려정",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 4985554321,
+  "lat": 5.9844998,
+  "lon": 116.0742866,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Seremban Seafood",
+    "name:en": "Seremban Seafood"
+  }
+},
+{
+  "type": "node",
+  "id": 5000982932,
+  "lat": 5.9844741,
+  "lon": 116.0775914,
+  "tags": {
+    "addr:housenumber": "79",
+    "addr:street": "Jalan Gaya",
+    "amenity": "restaurant",
+    "cuisine": "malaysian",
+    "name": "kungfu bak kut teh",
+    "opening_hours": "Mo-Su 17:00-23:55"
+  }
+},
+{
+  "type": "node",
+  "id": 5093740927,
+  "lat": 5.9782006,
+  "lon": 116.0759796,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "name": "Kim Fah Bandaran",
+    "name:en": "Kim Fah Bandaran"
+  }
+},
+{
+  "type": "node",
+  "id": 5102183721,
+  "lat": 5.9846847,
+  "lon": 116.0765472,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Sin Kee Bah Kut Teh",
+    "name:en": "Sin Kee Bah Kut Teh"
+  }
+},
+{
+  "type": "node",
+  "id": 5235740923,
+  "lat": 5.9829576,
+  "lon": 116.0759066,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Yuit Cheong"
+  }
+},
+{
+  "type": "node",
+  "id": 5287023964,
+  "lat": 5.9843029,
+  "lon": 116.0784156,
+  "tags": {
+    "name": "Garden Hotel",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 5319483122,
+  "lat": 5.9840621,
+  "lon": 116.0764989,
+  "tags": {
+    "amenity": "cafe",
+    "name": "Gaya Coconut Shake",
+    "opening_hours": "Mo-Sa 10:30-19:00",
+    "website": "https://www.facebook.com/加雅椰-Gaya-Coconut-Shake-145633099506708/"
+  }
+},
+{
+  "type": "node",
+  "id": 5321342121,
+  "lat": 5.9841670,
+  "lon": 116.0771744,
+  "tags": {
+    "amenity": "cafe",
+    "cuisine": "pancake;savory_pancakes",
+    "internet_access": "wlan",
+    "name": "Eggies",
+    "opening_hours": "Mo-Su 09:00-21:00"
+  }
+},
+{
+  "type": "node",
+  "id": 5330834821,
+  "lat": 5.9842154,
+  "lon": 116.0781780,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "pasta;burger;american;seafood;italian_pizza",
+    "internet_access": "wlan",
+    "name": "Chopping Block",
+    "opening_hours": "Tu-Su 11:00-23:00",
+    "phone": "088255492"
+  }
+},
+{
+  "type": "node",
+  "id": 5341339221,
+  "lat": 5.9837441,
+  "lon": 116.0727982,
+  "tags": {
+    "amenity": "ferry_terminal",
+    "ferry": "yes",
+    "name": "Water Taxi and Boat Transport",
+    "name:en": "Water Taxi and Boat Transport",
+    "public_transport": "station"
+  }
+},
+{
+  "type": "node",
+  "id": 5421587623,
+  "lat": 5.9826552,
+  "lon": 116.0763906,
+  "tags": {
+    "addr:street": "Jalan Gaya",
+    "amenity": "cafe",
+    "cuisine": "breakfast",
+    "name": "Fruto Juice Bar"
+  }
+},
+{
+  "type": "node",
+  "id": 5502618137,
+  "lat": 5.9851055,
+  "lon": 116.0767871,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Nasi Ayam Ho Chak"
+  }
+},
+{
+  "type": "node",
+  "id": 5502749821,
+  "lat": 5.9877484,
+  "lon": 116.0776217,
+  "tags": {
+    "amenity": "restaurant",
+    "brand": "Pizza Hut",
+    "brand:wikidata": "Q191615",
+    "brand:wikipedia": "en:Pizza Hut",
+    "cuisine": "pizza",
+    "level": "-1",
+    "name": "Pizza Hut"
+  }
+},
+{
+  "type": "node",
+  "id": 5502763624,
+  "lat": 5.9880058,
+  "lon": 116.0778919,
+  "tags": {
+    "amenity": "cafe",
+    "brand": "Starbucks",
+    "brand:wikidata": "Q37158",
+    "brand:wikipedia": "en:Starbucks",
+    "cuisine": "coffee_shop",
+    "level": "0",
+    "name": "Starbucks",
+    "official_name": "Starbucks Coffee",
+    "takeaway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 5505189926,
+  "lat": 5.9880251,
+  "lon": 116.0758938,
+  "tags": {
+    "name": "Sunset",
+    "name:en": "Sunset",
+    "tourism": "viewpoint"
+  }
+},
+{
+  "type": "node",
+  "id": 5507943024,
+  "lat": 5.9828702,
+  "lon": 116.0764725,
+  "tags": {
+    "amenity": "restaurant",
+    "brand": "Pizza Hut",
+    "brand:wikidata": "Q191615",
+    "brand:wikipedia": "en:Pizza Hut",
+    "cuisine": "pizza",
+    "name": "Pizza Hut",
+    "opening_hours": "Mo-Su 11:00-23:00",
+    "survey:date": "2023-08-13"
+  }
+},
+{
+  "type": "node",
+  "id": 5514080825,
+  "lat": 5.9841604,
+  "lon": 116.0781448,
+  "tags": {
+    "addr:street": "Lorong Dewan",
+    "amenity": "cafe",
+    "cuisine": "burger",
+    "name": "Damn Good Burger",
+    "opening_hours": "We-Mo 12:00-23:00",
+    "phone": "0128416922"
+  }
+},
+{
+  "type": "node",
+  "id": 5579818922,
+  "lat": 5.9806775,
+  "lon": 116.0726709,
+  "tags": {
+    "amenity": "cafe",
+    "name": "Seng Hing"
+  }
+},
+{
+  "type": "node",
+  "id": 5722335321,
+  "lat": 5.9780605,
+  "lon": 116.0713627,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Wan Chai Food Corner",
+    "wheelchair": "limited"
+  }
+},
+{
+  "type": "node",
+  "id": 5938465789,
+  "lat": 5.9861094,
+  "lon": 116.0759866,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "diet:vegan": "yes",
+    "diet:vegetarian": "yes",
+    "name": "Vege Garden",
+    "name:en": "Vege Garden"
+  }
+},
+{
+  "type": "node",
+  "id": 5961270195,
+  "lat": 5.9806972,
+  "lon": 116.0735688,
+  "tags": {
+    "amenity": "restaurant",
+    "level": "0",
+    "name": "Maimunah Food Corner",
+    "opening_hours": "24/7"
+  }
+},
+{
+  "type": "node",
+  "id": 6026836686,
+  "lat": 5.9824303,
+  "lon": 116.0762536,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "malaysian",
+    "name": "MaRi Makan"
+  }
+},
+{
+  "type": "node",
+  "id": 6029417285,
+  "lat": 5.9797325,
+  "lon": 116.0721313,
+  "tags": {
+    "amenity": "cafe",
+    "name": "Kedai Kopi Seng Hing"
+  }
+},
+{
+  "type": "node",
+  "id": 6031078085,
+  "lat": 5.9866799,
+  "lon": 116.0781487,
+  "tags": {
+    "name": "Ruins of 3rd oldest building in KK",
+    "tourism": "attraction"
+  }
+},
+{
+  "type": "node",
+  "id": 6031980385,
+  "lat": 5.9834393,
+  "lon": 116.0762108,
+  "tags": {
+    "amenity": "cafe",
+    "name": "The Royal Coconut"
+  }
+},
+{
+  "type": "node",
+  "id": 6033540587,
+  "lat": 5.9807463,
+  "lon": 116.0735553,
+  "tags": {
+    "amenity": "cafe",
+    "name": "Maimunah Food Corner"
+  }
+},
+{
+  "type": "node",
+  "id": 6038365289,
+  "lat": 5.9795834,
+  "lon": 116.0737881,
+  "tags": {
+    "amenity": "cafe",
+    "name": "Malay food",
+    "wheelchair": "limited"
+  }
+},
+{
+  "type": "node",
+  "id": 6048117685,
+  "lat": 5.9824836,
+  "lon": 116.0762870,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Claypot Bak Kut Teh"
+  }
+},
+{
+  "type": "node",
+  "id": 6055959685,
+  "lat": 5.9784837,
+  "lon": 116.0760464,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Mustafa Muji Curry House"
+  }
+},
+{
+  "type": "node",
+  "id": 6057492586,
+  "lat": 5.9836989,
+  "lon": 116.0753493,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Restoran Maimunah Segama"
+  }
+},
+{
+  "type": "node",
+  "id": 6068450790,
+  "lat": 5.9819705,
+  "lon": 116.0765100,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Restaurant Pak Haji 2"
+  }
+},
+{
+  "type": "node",
+  "id": 6070679485,
+  "lat": 5.9823936,
+  "lon": 116.0765194,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "5 Star Hainanese Chicken Rice"
+  }
+},
+{
+  "type": "node",
+  "id": 6075816385,
+  "lat": 5.9876591,
+  "lon": 116.0768823,
+  "tags": {
+    "addr:city": "Kota Kinabalu",
+    "addr:country": "MY",
+    "addr:floor": "3",
+    "addr:housename": "Suria Sabah",
+    "addr:housenumber": "1",
+    "addr:lot": "3 - 41",
+    "addr:postcode": "88000",
+    "addr:state": "Sabah",
+    "addr:street": "Jalan Tun Fuad Stephens",
+    "alt_name": "Bataras Marketplace Suria",
+    "contact:email": "btr_sra@bataras.com.my",
+    "contact:phone": "+60 11 6108 8788",
+    "contact:website": "https://bataras.com.my/",
+    "level": "3",
+    "name": "Bataras Marketplace",
+    "old_name": "City Grocer",
+    "opening_hours": "Mo-Su 10:00-22:00",
+    "shop": "supermarket"
+  }
+},
+{
+  "type": "node",
+  "id": 6081020685,
+  "lat": 5.9826553,
+  "lon": 116.0766466,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "chinese;malaysian",
+    "name": "Sabah Chilli Pan Mee"
+  }
+},
+{
+  "type": "node",
+  "id": 6081025385,
+  "lat": 5.9826773,
+  "lon": 116.0766699,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Mad Ben Cafe"
+  }
+},
+{
+  "type": "node",
+  "id": 6090305385,
+  "lat": 5.9794412,
+  "lon": 116.0711649,
+  "tags": {
+    "amenity": "cafe",
+    "name": "Taiwan culture cafe",
+    "wheelchair": "limited"
+  }
+},
+{
+  "type": "node",
+  "id": 6411967285,
+  "lat": 5.9799575,
+  "lon": 116.0729559,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "raina restauran"
+  }
+},
+{
+  "type": "node",
+  "id": 6419070585,
+  "lat": 5.9801436,
+  "lon": 116.0727445,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Kedai kopi kim hing lee"
+  }
+},
+{
+  "type": "node",
+  "id": 6825150085,
+  "lat": 5.9795162,
+  "lon": 116.0728399,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Samaria Malay Restaurant"
+  }
+},
+{
+  "type": "node",
+  "id": 6831155973,
+  "lat": 5.9790265,
+  "lon": 116.0708292,
+  "tags": {
+    "amenity": "cafe",
+    "brand": "Starbucks",
+    "brand:wikidata": "Q37158",
+    "brand:wikipedia": "en:Starbucks",
+    "cuisine": "coffee_shop",
+    "internet_access": "wlan",
+    "name": "Starbucks",
+    "official_name": "Starbucks Coffee",
+    "opening_hours": "Mo-Su 08:00-23:59",
+    "takeaway": "yes",
+    "wheelchair": "limited"
+  }
+},
+{
+  "type": "node",
+  "id": 7081569988,
+  "lat": 5.9870594,
+  "lon": 116.0782097,
+  "tags": {
+    "name": "Horison Hotel",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 7103266994,
+  "lat": 5.9869860,
+  "lon": 116.0782052,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Nagasaki"
+  }
+},
+{
+  "type": "node",
+  "id": 7103267285,
+  "lat": 5.9794154,
+  "lon": 116.0701105,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Mai Yai Thai",
+    "wheelchair": "limited"
+  }
+},
+{
+  "type": "node",
+  "id": 7291037785,
+  "lat": 5.9870738,
+  "lon": 116.0763723,
+  "tags": {
+    "amenity": "restaurant",
+    "diet:vegetarian": "only",
+    "level": "1",
+    "name": "Living Seed",
+    "name:zh": "翠园素食馆",
+    "opening_hours": "Mo-Su 10:00-22:00",
+    "phone": "088278623"
+  }
+},
+{
+  "type": "node",
+  "id": 9155592535,
+  "lat": 5.9886073,
+  "lon": 116.0796159,
+  "tags": {
+    "addr:city": "Kota Kinabalu",
+    "addr:housenumber": "40",
+    "addr:postcode": "88000",
+    "addr:street": "Jalan Gaya",
+    "air_conditioning": "yes",
+    "amenity": "cafe",
+    "capacity": "5",
+    "cuisine": "cake;coffee_shop;coffee;tea;cafe",
+    "email": "gayastreet@leberriesbakery.com",
+    "internet_access": "no",
+    "name": "Le Berries Gaya Street",
+    "name:en": "Le Berries Gaya Street",
+    "opening_hours": "Mo-Su 11:00-19:00",
+    "payment:cash": "yes",
+    "phone": "+601154183318",
+    "website": "https://gayastreet.leberriesbakery.com"
+  }
+},
+{
+  "type": "node",
+  "id": 9565027919,
+  "lat": 5.9837890,
+  "lon": 116.0772968,
+  "tags": {
+    "name": "Gaia 95",
+    "survey:date": "2023-08-06",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 9906350513,
+  "lat": 5.9835650,
+  "lon": 116.0770031,
+  "tags": {
+    "amenity": "marketplace",
+    "name": "Gaya Street Sunday Market",
+    "name:zh": "加雅街市场",
+    "opening_hours": "Su 06:00-14:00",
+    "survey:date": "2023-08-06"
+  }
+},
+{
+  "type": "node",
+  "id": 10114383912,
+  "lat": 5.9843183,
+  "lon": 116.0784902,
+  "tags": {
+    "air_conditioning": "no",
+    "amenity": "restaurant",
+    "cuisine": "local",
+    "name": "Little Sulap",
+    "outdoor_seating": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 10114385467,
+  "lat": 5.9831977,
+  "lon": 116.0766677,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Nur Dapur"
+  }
+},
+{
+  "type": "node",
+  "id": 10114393240,
+  "lat": 5.9818827,
+  "lon": 116.0748774,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "KK Garden Seafood",
+    "name:en": "KK Garden Seafood"
+  }
+},
+{
+  "type": "node",
+  "id": 10114395771,
+  "lat": 5.9837271,
+  "lon": 116.0781252,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "mexican",
+    "name": "Mamasita",
+    "outdoor_seating": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 10114407022,
+  "lat": 5.9847945,
+  "lon": 116.0779154,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Rokuzen Sushi"
+  }
+},
+{
+  "type": "node",
+  "id": 11035378506,
+  "lat": 5.9851429,
+  "lon": 116.0768109,
+  "tags": {
+    "name": "Matata Hotel",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 11092405305,
+  "lat": 5.9835243,
+  "lon": 116.0773193,
+  "tags": {
+    "amenity": "cafe",
+    "name": "ATI Cafe",
+    "survey:date": "2023-08-06"
+  }
+},
+{
+  "type": "node",
+  "id": 11092409505,
+  "lat": 5.9837203,
+  "lon": 116.0772390,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "name": "Sharikat Sin Seng Fatt",
+    "survey:date": "2023-08-06"
+  }
+},
+{
+  "type": "node",
+  "id": 11704447569,
+  "lat": 5.9849062,
+  "lon": 116.0764793,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "name": "Kedai Kopi Fatt Kee"
+  }
+},
+{
+  "type": "node",
+  "id": 11704447570,
+  "lat": 5.9836051,
+  "lon": 116.0778622,
+  "tags": {
+    "addr:street": "Jalan Dewan",
+    "amenity": "restaurant",
+    "cuisine": "breakfast;burger;mexican;pizza",
+    "internet_access": "wlan",
+    "name": "El Centro",
+    "opening_hours": "Su-Th 08:30-23:00; Fr-Sa 08:30-00:00",
+    "phone": "+60 14 862 3877"
+  }
+},
+{
+  "type": "node",
+  "id": 11806633570,
+  "lat": 5.9830251,
+  "lon": 116.0768266,
+  "tags": {
+    "addr:housenumber": "115",
+    "addr:postcode": "88000",
+    "addr:street": "Jalan Gaya",
+    "air_conditioning": "yes",
+    "amenity": "cafe",
+    "changing_table": "no",
+    "check_date": "2025-12-08",
+    "cuisine": "cake;coffee_shop",
+    "email": "mizumizu.coffee@gmail.com",
+    "internet_access": "wlan",
+    "level": "1",
+    "name": "mizumizu coffee",
+    "name:ja": "みずみずコーヒー",
+    "name:ko": "미즈미즈 커피",
+    "opening_hours": "Mo, We-Sa 09:30-18:00; Su 08:00-18:00",
+    "outdoor_seating": "115",
+    "phone": "088532995",
+    "takeaway": "yes",
+    "toilets": "yes",
+    "toilets:menstrual_products": "no",
+    "toilets:wheelchair": "no",
+    "website": "https://mizumizu.coffee/",
+    "website:menu": "https://mizumizu.coffee/#beveragemenu"
+  }
+},
+{
+  "type": "node",
+  "id": 11806667669,
+  "lat": 5.9830317,
+  "lon": 116.0765746,
+  "tags": {
+    "addr:housenumber": "118",
+    "addr:postcode": "88000",
+    "addr:street": "Jalan Gaya",
+    "amenity": "restaurant",
+    "cuisine": "asian;chinese",
+    "name": "5 Star Hainanese Chicken Rice & BBQ",
+    "name:zh": "五星級雞飯和燒烤",
+    "outdoor_seating": "no",
+    "self_service": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 11808933769,
+  "lat": 5.9875695,
+  "lon": 116.0790637,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "asian;korean",
+    "name": "Merah Merah Korea",
+    "name:ko": "한식당"
+  }
+},
+{
+  "type": "node",
+  "id": 11809038369,
+  "lat": 5.9834751,
+  "lon": 116.0779909,
+  "tags": {
+    "amenity": "cafe",
+    "name": "Woo!"
+  }
+},
+{
+  "type": "node",
+  "id": 11811585169,
+  "lat": 5.9850670,
+  "lon": 116.0770032,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "asian;chinese",
+    "name": "Kee Hiong Bak Kut Teh (Kota Kinabalu)"
+  }
+},
+{
+  "type": "node",
+  "id": 11811723148,
+  "lat": 5.9869867,
+  "lon": 116.0763175,
+  "tags": {
+    "amenity": "cafe",
+    "cuisine": "bubble_tea",
+    "level": "0",
+    "name": "Chagee"
+  }
+},
+{
+  "type": "node",
+  "id": 11811723150,
+  "lat": 5.9880352,
+  "lon": 116.0777803,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "japanese",
+    "level": "-1",
+    "name": "Sushi Zanmai"
+  }
+},
+{
+  "type": "node",
+  "id": 11811723152,
+  "lat": 5.9894026,
+  "lon": 116.0797892,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "seafood",
+    "name": "The Crab House",
+    "name:en": "The Crab House"
+  }
+},
+{
+  "type": "node",
+  "id": 11813567383,
+  "lat": 5.9870809,
+  "lon": 116.0772337,
+  "tags": {
+    "amenity": "cafe",
+    "brand": "ZUS Coffee",
+    "brand:wikidata": "Q110811473",
+    "cuisine": "coffee_shop",
+    "level": "-1",
+    "name": "ZUS Coffee",
+    "takeaway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 11813567385,
+  "lat": 5.9871466,
+  "lon": 116.0770998,
+  "tags": {
+    "amenity": "cafe",
+    "brand": "Tealive",
+    "brand:wikidata": "Q95722097",
+    "cuisine": "tea;coffee_shop",
+    "level": "-1",
+    "name": "Tealive",
+    "takeaway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 11813567393,
+  "lat": 5.9872236,
+  "lon": 116.0769460,
+  "tags": {
+    "amenity": "cafe",
+    "cuisine": "bubble_tea",
+    "level": "-1",
+    "name": "Qong"
+  }
+},
+{
+  "type": "node",
+  "id": 11813567398,
+  "lat": 5.9873096,
+  "lon": 116.0767725,
+  "tags": {
+    "amenity": "cafe",
+    "cuisine": "bubble_tea",
+    "level": "-1",
+    "name": "Tea Co."
+  }
+},
+{
+  "type": "node",
+  "id": 11813567402,
+  "lat": 5.9870441,
+  "lon": 116.0774220,
+  "tags": {
+    "level": "-1",
+    "name": "Tong's Traveller Gear",
+    "shop": "department_store"
+  }
+},
+{
+  "type": "node",
+  "id": 11813567405,
+  "lat": 5.9872587,
+  "lon": 116.0775406,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "sushi",
+    "level": "-1",
+    "name": "Sushi Panda"
+  }
+},
+{
+  "type": "node",
+  "id": 11813567418,
+  "lat": 5.9876363,
+  "lon": 116.0775596,
+  "tags": {
+    "amenity": "cafe",
+    "cuisine": "bubble_tea",
+    "level": "-1",
+    "name": "Yoyo Cafe"
+  }
+},
+{
+  "type": "node",
+  "id": 11816273971,
+  "lat": 5.9877488,
+  "lon": 116.0778116,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "chinese;chicken",
+    "diet:chicken": "yes",
+    "diet:local": "yes",
+    "diet:meat": "yes",
+    "diet:non-halal": "yes",
+    "level": "-1",
+    "name": "5 Star Hainanese Chicken Rice"
+  }
+},
+{
+  "type": "node",
+  "id": 11816273975,
+  "lat": 5.9878863,
+  "lon": 116.0778877,
+  "tags": {
+    "amenity": "restaurant",
+    "brand": "Sushi King",
+    "brand:wikidata": "Q121089223",
+    "cuisine": "japanese",
+    "level": "-1",
+    "name": "Sushi King"
+  }
+},
+{
+  "type": "node",
+  "id": 11816273978,
+  "lat": 5.9875578,
+  "lon": 116.0765799,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "level": "0",
+    "name": "New WK Dining"
+  }
+},
+{
+  "type": "node",
+  "id": 11816273993,
+  "lat": 5.9872191,
+  "lon": 116.0774160,
+  "tags": {
+    "amenity": "cafe",
+    "brand": "Gong Cha",
+    "brand:wikidata": "Q5581670",
+    "brand:zh": "貢茶",
+    "cuisine": "bubble_tea",
+    "int_name": "Gong Cha",
+    "level": "-1",
+    "name": "Gong Cha",
+    "name:zh": "貢茶",
+    "takeaway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 11816274013,
+  "lat": 5.9872586,
+  "lon": 116.0764400,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "malaysian",
+    "name": "Citarasa Suria"
+  }
+},
+{
+  "type": "node",
+  "id": 11816274014,
+  "lat": 5.9874537,
+  "lon": 116.0764815,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "sushi",
+    "level": "1",
+    "name": "Sushi Jiro"
+  }
+},
+{
+  "type": "node",
+  "id": 11816274017,
+  "lat": 5.9872901,
+  "lon": 116.0764575,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "korean",
+    "name": "Seoul Garden Hotpot"
+  }
+},
+{
+  "type": "node",
+  "id": 11816274018,
+  "lat": 5.9873765,
+  "lon": 116.0764385,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "name": "Hing's Cuisine"
+  }
+},
+{
+  "type": "node",
+  "id": 11891412269,
+  "lat": 5.9781175,
+  "lon": 116.0703370,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Kalamatas"
+  }
+},
+{
+  "type": "node",
+  "id": 11900441169,
+  "lat": 5.9799257,
+  "lon": 116.0715721,
+  "tags": {
+    "addr:city": "Kota Kinabalu",
+    "addr:floor": "Lobby Level",
+    "addr:housename": "Le Méridien Kota Kinabalu",
+    "addr:postcode": "88200",
+    "addr:street": "Jalan Tun Fuad Stephens",
+    "amenity": "restaurant",
+    "level": "0",
+    "name": "Latest Recipe",
+    "opening_hours": "06:30-23:00",
+    "phone": "+60 88322222",
+    "website": "https://marriottbonvoyasia.com/restaurants-bars/le-meridien-kota-kinabalu-latest-recipe"
+  }
+},
+{
+  "type": "node",
+  "id": 12444059981,
+  "lat": 5.9917811,
+  "lon": 116.0811086,
+  "tags": {
+    "addr:building": "Jesselton Quay",
+    "addr:city": "Kota Kinabalu",
+    "addr:country": "MY",
+    "addr:floor": "G",
+    "addr:lot": "15",
+    "amenity": "restaurant",
+    "contact:facebook": "howdykk",
+    "contact:instagram": "howdykk",
+    "contact:phone": "+60 11 2083 2093",
+    "contact:website": "https://www.howdyjq.com/",
+    "cuisine": "american",
+    "diet:halal": "no",
+    "food": "beef;burger;chicken",
+    "name": "Howdy Grillhouse",
+    "opening_hours": "Mo-Su 11:00-23:00"
+  }
+},
+{
+  "type": "node",
+  "id": 12444059982,
+  "lat": 5.9919646,
+  "lon": 116.0813179,
+  "tags": {
+    "addr:building": "Jesselton Quay",
+    "addr:city": "Kota Kinabalu",
+    "addr:country": "MY",
+    "addr:floor": "G",
+    "addr:lot": "19",
+    "amenity": "cafe",
+    "contact:email": "TheGrandma2020@icloud.com",
+    "contact:facebook": "TheGrandma.Official",
+    "contact:instagram": "TheGrandma_Official",
+    "contact:mobile": "+60 14 602 5757;+60 16 985 5757",
+    "contact:phone": "+60 11 2866 5757",
+    "contact:whatsapp": "+60 16 985 5757",
+    "cuisine": "cake",
+    "name": "Grandma Sponge Cake",
+    "opening_hours": "Mo-Su 08:00-05:30"
+  }
+},
+{
+  "type": "node",
+  "id": 12695449047,
+  "lat": 5.9841055,
+  "lon": 116.0762359,
+  "tags": {
+    "name": "The Seraya Hotel",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 12695544858,
+  "lat": 5.9819586,
+  "lon": 116.0760905,
+  "tags": {
+    "amenity": "food_court",
+    "name": "Food market in the evening"
+  }
+},
+{
+  "type": "node",
+  "id": 12800544302,
+  "lat": 5.9782705,
+  "lon": 116.0748799,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Kedai Kopi Fun Sen",
+    "opening_hours": "Mo-Su 09:00-19:00"
+  }
+},
+{
+  "type": "node",
+  "id": 12800547401,
+  "lat": 5.9826486,
+  "lon": 116.0768534,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "indonesian",
+    "name": "Satay Jawi",
+    "opening_hours": "Mo-Su 11:30-22:30"
+  }
+},
+{
+  "type": "node",
+  "id": 12920957277,
+  "lat": 5.9818737,
+  "lon": 116.0727406,
+  "tags": {
+    "addr:city": "Kota Kinabalu",
+    "addr:housenumber": "G-08",
+    "addr:postcode": "88000",
+    "addr:street": "Jalan Tun Fuad Stephens",
+    "air_conditioning": "yes",
+    "brand": "Citadines",
+    "email": "enquiry.sabah@the-ascott.com",
+    "internet_access": "yes",
+    "internet_access:fee": "no",
+    "name": "Citadines Waterfront Kota Kinabalu",
+    "phone": "+6088262000",
+    "rooms": "396",
+    "tourism": "hotel",
+    "website": "https://www.discoverasr.com/en/citadines/malaysia/citadines-waterfront-kota-kinabalu"
+  }
+},
+{
+  "type": "node",
+  "id": 13399062780,
+  "lat": 5.9825594,
+  "lon": 116.0741175,
+  "tags": {
+    "addr:city": "Kota Kinabalu",
+    "addr:housenumber": "P. O. Box 14041",
+    "addr:postcode": "88846",
+    "amenity": "language_school",
+    "description": "书法导师: 许兼逢\n\nhttps://shuyimalaysia.org/useful-links/",
+    "education": "language_school",
+    "language:zh": "yes",
+    "name": "普陀寺书法班",
+    "name:zh": "普陀寺书法班",
+    "name:zh-Hans": "普陀寺书法班",
+    "name:zh-Hant": "普陀寺書法班",
+    "phone": "+60-109407117",
+    "website": "https://www.facebook.com/groups/218617148497340/posts/443030846055968/"
+  }
+},
+{
+  "type": "node",
+  "id": 13713393901,
+  "lat": 5.9797521,
+  "lon": 116.0701834,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "italian;italian_pizza",
+    "name": "Gusto food & wine"
+  }
+},
+{
+  "type": "node",
+  "id": 13716633375,
+  "lat": 5.9834836,
+  "lon": 116.0758859,
+  "tags": {
+    "amenity": "cafe",
+    "brand": "Mixue Ice Cream & Tea",
+    "brand:wikidata": "Q107406476",
+    "cuisine": "ice_cream;bubble_tea",
+    "name": "Mixue",
+    "takeaway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13716634067,
+  "lat": 5.9801498,
+  "lon": 116.0723597,
+  "tags": {
+    "amenity": "cafe",
+    "brand": "Mixue Ice Cream & Tea",
+    "brand:wikidata": "Q107406476",
+    "cuisine": "ice_cream;bubble_tea",
+    "name": "Mixue",
+    "takeaway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13716634219,
+  "lat": 5.9914942,
+  "lon": 116.0813838,
+  "tags": {
+    "amenity": "cafe",
+    "brand": "Mixue Ice Cream & Tea",
+    "brand:wikidata": "Q107406476",
+    "cuisine": "ice_cream;bubble_tea",
+    "name": "Mixue",
+    "takeaway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13716634415,
+  "lat": 5.9913690,
+  "lon": 116.0813506,
+  "tags": {
+    "amenity": "cafe",
+    "name": "Zus"
+  }
+},
+{
+  "type": "way",
+  "id": 117168820,
+  "center": {
+    "lat": 5.9827858,
+    "lon": 116.0735561
+  },
+  "tags": {
+    "addr:housename": "Kota Kinabalu Plaza",
+    "building": "yes",
+    "name": "Kota Kinabalu Plaza",
+    "name:en": "Kota Kinabalu Plaza",
+    "name:ko": "kk플라자",
+    "shop": "mall"
+  }
+},
+{
+  "type": "way",
+  "id": 117168833,
+  "center": {
+    "lat": 5.9831746,
+    "lon": 116.0728619
+  },
+  "tags": {
+    "amenity": "marketplace",
+    "building": "yes",
+    "name": "Pasar Awam",
+    "name:en": "Public Market",
+    "name:es": "Mercado de abastos",
+    "name:ja": "セントラルマーケット",
+    "name:ko": "센트럴마켓",
+    "name:ms": "Pasar Awam",
+    "name:zh": "亚庇中央巴刹",
+    "name:zh-Hans": "亚庇中央巴刹",
+    "name:zh-Hant": "亞庇中央巴剎"
+  }
+},
+{
+  "type": "way",
+  "id": 117168840,
+  "center": {
+    "lat": 5.9850504,
+    "lon": 116.0751918
+  },
+  "tags": {
+    "brand": "Hyatt Regency",
+    "brand:wikidata": "Q1425063",
+    "brand:wikipedia": "en:Hyatt",
+    "building": "yes",
+    "layer": "1",
+    "name": "Hyatt Regency Kinabalu",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "way",
+  "id": 117168865,
+  "center": {
+    "lat": 5.9800734,
+    "lon": 116.0717309
+  },
+  "tags": {
+    "addr:city": "Kota Kinabalu",
+    "addr:country": "MY",
+    "addr:postcode": "88000",
+    "addr:state": "Sabah",
+    "addr:street": "Jalan Tun Fuad Stephens",
+    "air_conditioning": "yes",
+    "brand": "Le Méridien",
+    "brand:wikidata": "Q261077",
+    "brand:wikipedia": "en:Le Méridien",
+    "building": "yes",
+    "building:levels": "15",
+    "contact:email": "lemeridien.kotakinabalu@lemeridien.com",
+    "contact:facebook": "lemeridienkotakinabalu",
+    "contact:fax": "+60 88 322 223",
+    "contact:phone": "+60 88 322 222",
+    "contact:website": "https://www.marriott.com/hotels/travel/bkimd-le-meridien-kota-kinabalu/",
+    "internet_access": "wlan",
+    "internet_access:fee": "no",
+    "name": "Le Méridien Kota Kinabalu",
+    "operator": "Marriott International",
+    "rooms": "711",
+    "smoking": "separated",
+    "stars": "5",
+    "tourism": "hotel",
+    "wheelchair": "yes",
+    "wikidata": "Q41799055"
+  }
+},
+{
+  "type": "way",
+  "id": 146431772,
+  "center": {
+    "lat": 5.9825139,
+    "lon": 116.0752574
+  },
+  "tags": {
+    "building": "yes",
+    "internet_access": "yes",
+    "internet_access:fee": "no",
+    "layer": "3",
+    "name": "Horizon Hotel",
+    "name:en": "Horizon Hotel",
+    "name:ms": "Horizon Hotel",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "way",
+  "id": 146431778,
+  "center": {
+    "lat": 5.9876194,
+    "lon": 116.0771666
+  },
+  "tags": {
+    "addr:city": "Kota Kinabalu",
+    "addr:country": "MY",
+    "addr:housenumber": "1",
+    "addr:postcode": "88000",
+    "addr:state": "Sabah",
+    "addr:street": "Jalan Tun Fuad Stephens",
+    "alt_name": "Suria Sabah Shopping Mall",
+    "building": "retail",
+    "contact:email": "info@suriasabah.com.my",
+    "contact:facebook": "SuriaSabah",
+    "contact:phone": "+60 88 288 800;+60 88 487 087",
+    "contact:website": "http://www.suriasabah.com.my/",
+    "layer": "1",
+    "name": "Suria Sabah",
+    "name:en": "Suria Sabah",
+    "name:ko": "수리아 사바몰",
+    "name:ms": "Suria Sabah",
+    "opening_hours": "Mo-Su 10:00-22:00",
+    "shop": "mall",
+    "wikidata": "Q12496276"
+  }
+},
+{
+  "type": "way",
+  "id": 146431779,
+  "center": {
+    "lat": 5.9837410,
+    "lon": 116.0759231
+  },
+  "tags": {
+    "addr:city": "Kota Kinabalu",
+    "addr:housename": "Kojasa Building",
+    "addr:postcode": "88100",
+    "addr:street": "Jalan Pantai",
+    "addr:unit": "1",
+    "air_conditioning": "yes",
+    "branch": "Gaya Street",
+    "brand": "Bataras",
+    "brand:website": "https://bataras.com.my/",
+    "building": "yes",
+    "building:levels": "2",
+    "email": "btr_gys@bataras.com.my",
+    "name": "Bataras Marketplace",
+    "opening_hours": "Mo-Su 09:00-22:00",
+    "operator": "Bataras Sdn. Bhd.",
+    "phone": "+60 88-212 328",
+    "shop": "supermarket",
+    "website": "https://www.facebook.com/BatarasGayaStreet/"
+  }
+},
+{
+  "type": "way",
+  "id": 201230557,
+  "center": {
+    "lat": 5.9811576,
+    "lon": 116.0744700
+  },
+  "tags": {
+    "description": "City Park is a landscaped garden in the heart of Kota Kinabalu, Sabah, East Malaysia.",
+    "leisure": "park",
+    "name": "Kota Kinabalu City Park",
+    "name:en": "Kota Kinabalu City Park"
+  }
+},
+{
+  "type": "way",
+  "id": 201230558,
+  "center": {
+    "lat": 5.9802732,
+    "lon": 116.0749096
+  },
+  "tags": {
+    "leisure": "park",
+    "name": "Taman Chong Thien Vun"
+  }
+},
+{
+  "type": "way",
+  "id": 201377025,
+  "center": {
+    "lat": 5.9779072,
+    "lon": 116.0769009
+  },
+  "tags": {
+    "addr:city": "Kota Kinabalu",
+    "addr:housenumber": "12",
+    "addr:postcode": "88000",
+    "addr:street": "Jalan Masjid Lama",
+    "building": "hotel",
+    "name": "Toojou",
+    "phone": "+6088534888",
+    "tourism": "hotel",
+    "website": "https://www.toojou.com/"
+  }
+},
+{
+  "type": "way",
+  "id": 201377029,
+  "center": {
+    "lat": 5.9779478,
+    "lon": 116.0761449
+  },
+  "tags": {
+    "building": "hotel",
+    "name": "King Park Hotel",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "way",
+  "id": 201377034,
+  "center": {
+    "lat": 5.9783334,
+    "lon": 116.0761653
+  },
+  "tags": {
+    "building": "public",
+    "name": "Hung Hung Inn",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "way",
+  "id": 201715631,
+  "center": {
+    "lat": 5.9866159,
+    "lon": 116.0764229
+  },
+  "tags": {
+    "addr:postcode": "88000",
+    "addr:street": "Jalan Tun Fuad Stephens",
+    "building": "yes",
+    "name": "Gaya Centre Hotel",
+    "name:en": "Gaya Centre Hotel",
+    "name:id": "Hotel Gaya Centre",
+    "phone": "088245567",
+    "stars": "3",
+    "tourism": "hotel",
+    "website": "https://www.gayacentre.com/"
+  }
+},
+{
+  "type": "way",
+  "id": 239051849,
+  "center": {
+    "lat": 5.9812496,
+    "lon": 116.0717331
+  },
+  "tags": {
+    "amenity": "marketplace",
+    "name": "Anjung Kinabalu",
+    "name:en": "Anjung Kinabalu",
+    "name:ms": "Anjung Kinabalu"
+  }
+},
+{
+  "type": "way",
+  "id": 239698388,
+  "center": {
+    "lat": 5.9805509,
+    "lon": 116.0712012
+  },
+  "tags": {
+    "amenity": "marketplace",
+    "building": "market",
+    "name": "Fruit Market",
+    "name:en": "Fruit Market"
+  }
+},
+{
+  "type": "way",
+  "id": 239698409,
+  "center": {
+    "lat": 5.9808844,
+    "lon": 116.0712095
+  },
+  "tags": {
+    "amenity": "marketplace",
+    "name": "Tapak Pasar Malam",
+    "name:en": "Night Market Area",
+    "name:ms": "Tapak Pasar Malam"
+  }
+},
+{
+  "type": "way",
+  "id": 239698652,
+  "center": {
+    "lat": 5.9841049,
+    "lon": 116.0734977
+  },
+  "tags": {
+    "air_conditioning": "no",
+    "amenity": "food_court",
+    "cuisine": "seafood",
+    "description": "Fish and seafood restaurants",
+    "diet:halal": "yes",
+    "name": "Hawker's Stall",
+    "name:en": "Hawker's Stall"
+  }
+},
+{
+  "type": "way",
+  "id": 239700210,
+  "center": {
+    "lat": 5.9898623,
+    "lon": 116.0788190
+  },
+  "tags": {
+    "amenity": "restaurant",
+    "building": "yes",
+    "cuisine": "malaysian",
+    "name": "Restoran Nasi Padang",
+    "name:ms": "Restoran Nasi Padang"
+  }
+},
+{
+  "type": "way",
+  "id": 239700485,
+  "center": {
+    "lat": 5.9816348,
+    "lon": 116.0756023
+  },
+  "tags": {
+    "addr:city": "Kota Kinabalu",
+    "addr:housenumber": "1",
+    "addr:postcode": "88675",
+    "addr:state": "Sabah",
+    "addr:street": "Jalan Bandaran",
+    "amenity": "townhall",
+    "building": "yes",
+    "name": "Dewan Bandaraya Kota Kinabalu",
+    "name:en": "Kota Kinabalu City Hall",
+    "operator": "Dewan Bandaraya Kota Kinabalu",
+    "short_name": "DBKK",
+    "townhall:type": "city",
+    "website": "https://dbkk.sabah.gov.my",
+    "wikidata": "Q1207081",
+    "wikipedia": "en:Kota Kinabalu City Hall"
+  }
+},
+{
+  "type": "way",
+  "id": 239818120,
+  "center": {
+    "lat": 5.9868884,
+    "lon": 116.0785654
+  },
+  "tags": {
+    "name": "Tong Hing Supermarket",
+    "shop": "supermarket"
+  }
+},
+{
+  "type": "way",
+  "id": 240681105,
+  "center": {
+    "lat": 5.9875877,
+    "lon": 116.0808813
+  },
+  "tags": {
+    "building": "yes",
+    "name": "Habiba Suite Hotel and Apartment",
+    "source": "habibasuite.blogspot.com",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "way",
+  "id": 240890585,
+  "center": {
+    "lat": 5.9854873,
+    "lon": 116.0778124
+  },
+  "tags": {
+    "addr:housenumber": "63",
+    "addr:postcode": "88000",
+    "addr:street": "Jalan Gaya",
+    "alt_name": "Hotel 63",
+    "building": "yes",
+    "email": "info@hotelsixty3.com",
+    "fax": "+60 88 318 863",
+    "name": "Hotel Sixty3",
+    "phone": "+60 88 212 663",
+    "tourism": "hotel",
+    "website": "https://www.hotelsixty3.com/"
+  }
+},
+{
+  "type": "way",
+  "id": 240940884,
+  "center": {
+    "lat": 5.9781235,
+    "lon": 116.0743855
+  },
+  "tags": {
+    "name": "Ruby Hotel",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "way",
+  "id": 461260552,
+  "center": {
+    "lat": 5.9782880,
+    "lon": 116.0817139
+  },
+  "tags": {
+    "landuse": "residential",
+    "name": "Taman Fantasi"
+  }
+},
+{
+  "type": "way",
+  "id": 469550122,
+  "center": {
+    "lat": 5.9875603,
+    "lon": 116.0760310
+  },
+  "tags": {
+    "leisure": "park",
+    "name": "Suria Waterfront",
+    "name:en": "Suria Waterfront"
+  }
+},
+{
+  "type": "way",
+  "id": 718813892,
+  "center": {
+    "lat": 5.9890296,
+    "lon": 116.0781056
+  },
+  "tags": {
+    "addr:city": "Kota Kinabalu",
+    "addr:country": "MY",
+    "addr:postcode": "88300",
+    "addr:state": "Sabah",
+    "addr:street": "Lorong Jesselton",
+    "building": "retail",
+    "layer": "1",
+    "name": "Jesselton Mall",
+    "name:en": "Jesselton Mall",
+    "shop": "mall",
+    "wikidata": "Q28219562",
+    "wikipedia": "en:Jesselton Residences"
+  }
+},
+{
+  "type": "way",
+  "id": 1073812931,
+  "center": {
+    "lat": 5.9803237,
+    "lon": 116.0765547
+  },
+  "tags": {
+    "addr:city": "Kota Kinabalu",
+    "addr:country": "MY",
+    "addr:housenumber": "5",
+    "addr:postcode": "88000",
+    "addr:state": "Sabah",
+    "addr:street": "Jalan Padang",
+    "contact:email": "enquiry.kotakinabalu@dreamtelgroup.com",
+    "contact:mobile": "+60 10 369 9242",
+    "contact:phone": "+60 88 240 333",
+    "contact:website": "http://www.dreamtelgroup.com/",
+    "contact:whatsapp": "+60 10 369 9242",
+    "name": "Dreamtel",
+    "name:en": "Dreamtel",
+    "opening_hours": "24/7",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "way",
+  "id": 1076724804,
+  "center": {
+    "lat": 5.9835090,
+    "lon": 116.0780558
+  },
+  "tags": {
+    "addr:city": "Kota Kinabalu",
+    "addr:country": "MY",
+    "addr:housenumber": "19",
+    "addr:postcode": "88000",
+    "addr:state": "Sabah",
+    "addr:street": "Jalan Dewan",
+    "amenity": "cafe",
+    "contact:email": "nookcafekk@gmail.com",
+    "contact:facebook": "nookcafekk",
+    "contact:mobile": "+60 12 866 3900",
+    "contact:phone": "+60 88 275 834",
+    "cuisine": "breakfast;cake;coffee_shop",
+    "internet_access": "wlan",
+    "internet_access:fee": "no",
+    "name": "Nook Cafe",
+    "opening_hours": "Mo-Su 08:00-21:00"
+  }
+},
+{
+  "type": "way",
+  "id": 1081423601,
+  "center": {
+    "lat": 5.9820076,
+    "lon": 116.0759906
+  },
+  "tags": {
+    "leisure": "park",
+    "name": "Lintasan Deasoka"
+  }
+},
+{
+  "type": "way",
+  "id": 1395928020,
+  "center": {
+    "lat": 5.9819567,
+    "lon": 116.0731120
+  },
+  "tags": {
+    "addr:city": "Kota Kinabalu",
+    "addr:housenumber": "G-08",
+    "addr:postcode": "88000",
+    "addr:street": "Jalan Tun Fuad Stephens",
+    "air_conditioning": "yes",
+    "brand": "Citadines",
+    "building": "apartments",
+    "email": "enquiry.sabah@the-ascott.com",
+    "internet_access": "yes",
+    "internet_access:fee": "no",
+    "layer": "-1",
+    "name": "Citadines Waterfront Kota Kinabalu",
+    "phone": "+6088262000",
+    "rooms": "396",
+    "tourism": "hotel",
+    "website": "https://www.discoverasr.com/en/citadines/malaysia/citadines-waterfront-kota-kinabalu"
+  }
+},
+{
+  "type": "relation",
+  "id": 15015872,
+  "center": {
+    "lat": 5.9808499,
+    "lon": 116.0771197
+  },
+  "tags": {
+    "alt_name": "Independence Field",
+    "description": "The historic Padang Merdeka has seen many sporting matches and parades during its century-old history, as well as being the site of the historic ceremony marking the formation of Malaysia in 1963.",
+    "leisure": "park",
+    "name": "Padang Merdeka",
+    "type": "multipolygon"
+  }
+},
+{
+  "type": "relation",
+  "id": 15038091,
+  "center": {
+    "lat": 5.9782901,
+    "lon": 116.0718288
+  },
+  "tags": {
+    "addr:city": "Kota Kinabalu",
+    "addr:country": "MY",
+    "addr:district": "Kota Kinabalu",
+    "addr:housenumber": "1",
+    "addr:postcode": "88000",
+    "addr:state": "Sabah",
+    "addr:street": "Jalan Centre Point",
+    "building": "retail",
+    "building:levels": "11",
+    "contact:email": "centrepointsabah@gmail.com",
+    "contact:facebook": "centrepointsabah",
+    "contact:phone": "+60 88 246 900",
+    "contact:website": "https://centrepointsabah.com/",
+    "description": "Centre Point Sabah is a one-stop shopping, dinning, office, car park and amusement complex serving the State Capital. This project was constructed on a 4.6 acres site in three phases.",
+    "description_1": "Level -1, B - Foodcourt;Level 0, G - Favorite;Level 1, A - Trends",
+    "level": "-1;0;1;2;3;4;5",
+    "name": "Centre Point Sabah",
+    "old_name": "Palm Square",
+    "opening_hours": "Mo-Su 10:00-21:30",
+    "shop": "mall",
+    "type": "multipolygon",
+    "wheelchair": "limited",
+    "wikidata": "Q28219533",
+    "wikipedia": "en:Centre Point Sabah (Shopping Mall)"
+  }
+},
+{
+  "type": "relation",
+  "id": 15049957,
+  "center": {
+    "lat": 5.9778550,
+    "lon": 116.0719170
+  },
+  "tags": {
+    "addr:city": "Kota Kinabalu",
+    "addr:country": "MY",
+    "addr:district": "Kota Kinabalu",
+    "addr:floor": "-1",
+    "addr:housename": "Centre Point Sabah",
+    "addr:postcode": "88000",
+    "addr:state": "Sabah",
+    "addr:village": "Air",
+    "contact:fax": "+60 88 203 816",
+    "contact:phone": "+60 88 203 818",
+    "level": "-1",
+    "level:ref": "B",
+    "name": "Servay Premier",
+    "shop": "supermarket",
+    "type": "multipolygon"
+  }
+},
+{
+  "type": "relation",
+  "id": 16442335,
+  "center": {
+    "lat": 5.9819587,
+    "lon": 116.0731356
+  },
+  "tags": {
+    "brand": "Citadines",
+    "building": "yes",
+    "name": "Citadines Waterfrom Kota Kinabalu",
+    "tourism": "hotel",
+    "type": "multipolygon"
+  }
+}
+
+  ]
+}

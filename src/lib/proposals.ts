@@ -42,19 +42,21 @@ function along(edges: number[], tool: Tool, count: number): Placement[] {
 
 /** A few proposals other residents "already sent", placed on the worst real heat gaps. */
 export function seedProposals(): Proposal[] {
+  const homes = town.places.filter((p) => p.kind === 'home').map((p) => p.name)
+  const where = (i: number) => homes[i % Math.max(1, homes.length)] ?? town.meta.township
   const hot = allCorridorStats(PEAK)
     .filter((s) => s.peakShade < 0.2)
     .sort((a, b) => b.priority - a.priority)
   const dark = allCorridorStats(PEAK)
     .filter((s) => s.lit < 0.4)
     .sort((a, b) => b.footfall - a.footfall)
-  const [a, b] = hot
-  const c = dark[0]
+  const [a, b] = hot.length >= 2 ? hot : allCorridorStats(PEAK).sort((x, y) => x.peakShade - y.peakShade)
+  const c = dark[0] ?? a
   return [
     {
       id: 'p1',
       ref: 'PRP-2026-0138',
-      author: 'Aishah R. · Pangsapuri Cendana',
+      author: `Aishah R. · ${where(0)}`,
       when: '2 days ago',
       reasons: ['heat', 'access'],
       note: 'My kids walk this way to the mall after school and there is zero shade. Please plant trees here.',
@@ -65,7 +67,7 @@ export function seedProposals(): Proposal[] {
     {
       id: 'p2',
       ref: 'PRP-2026-0135',
-      author: 'Mr. Tan K. L. · Elmina Valley 1',
+      author: `Mr. Tan K. L. · ${where(1)}`,
       when: '4 days ago',
       reasons: ['heat'],
       note: 'A short covered link would let us walk to the shops even at lunch time.',
@@ -76,7 +78,7 @@ export function seedProposals(): Proposal[] {
     {
       id: 'p3',
       ref: 'PRP-2026-0129',
-      author: 'Priya S. · Kanopi Residences',
+      author: `Priya S. · ${where(2)}`,
       when: '1 week ago',
       reasons: ['unsafe'],
       note: 'This footpath is pitch dark after 8pm. A few lights would make a big difference.',

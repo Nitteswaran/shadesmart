@@ -1,6 +1,7 @@
 import clsx from 'clsx'
 import {
   Accessibility,
+  MapPin,
   ArrowUp,
   ArrowUpLeft,
   ArrowUpRight,
@@ -47,6 +48,7 @@ import { SunShadow } from './SunShadow'
 import { buildDirections, type Turn } from '../lib/directions'
 import { ProposeCard } from './Propose'
 import type { Proposal } from '../lib/proposals'
+import { CITIES, type CityInfo } from '../lib/cities'
 
 export interface Scenario {
   id: string
@@ -58,41 +60,43 @@ export interface Scenario {
   cond: Partial<Conditions>
 }
 
-export const SCENARIOS: Scenario[] = [
-  {
-    id: 'heat',
-    label: 'Noon heatwave',
-    sub: 'Cendana → Lakeside Mall',
-    icon: Sun,
-    origin: 'cendana',
-    dest: 'mall',
-    cond: { weather: 'sunny', night: false, hour: 13, shadeWeight: 3.5 },
-  },
-  {
-    id: 'rain',
-    label: 'Monsoon downpour',
-    sub: 'Kanopi → Central Park',
-    icon: CloudRain,
-    origin: 'kanopi',
-    dest: 'centralpark',
-    cond: { weather: 'rainy', night: false, hour: 16.5, shadeWeight: 3.5 },
-  },
-  {
-    id: 'night',
-    label: 'Late-night walk',
-    sub: 'Cendana → Central Park',
-    icon: Moon,
-    origin: 'cendana',
-    dest: 'centralpark',
-    cond: { weather: 'sunny', night: true, hour: 21.5, shadeWeight: 4 },
-  },
+const SCENARIO_BASE: Omit<Scenario, 'origin' | 'dest' | 'sub'>[] = [
+  { id: 'heat', label: 'Noon heatwave', icon: Sun, cond: { weather: 'sunny', night: false, hour: 13, shadeWeight: 3.5 } },
+  { id: 'rain', label: 'Monsoon downpour', icon: CloudRain, cond: { weather: 'rainy', night: false, hour: 16.5, shadeWeight: 3.5 } },
+  { id: 'night', label: 'Late-night walk', icon: Moon, cond: { weather: 'sunny', night: true, hour: 21.5, shadeWeight: 4 } },
 ]
 
-const placeOptions: SelectOption[] = KIND_ORDER.flatMap((k) =>
-  town.places
-    .filter((p) => p.kind === k)
-    .map((p) => ({ value: p.id, label: p.name, group: KIND_META[k].group, icon: KIND_META[k].icon, color: KIND_META[k].color })),
-)
+const shortName = (n: string) => n.split(/[ ,]/).slice(0, 2).join(' ')
+
+/** The three demo trips, wired to each city's curated origin/destination pairs. */
+export function scenariosFor(city: CityInfo): Scenario[] {
+  const name = (id: string) => city.places.find((p) => p.id === id)?.name ?? id
+  return SCENARIO_BASE.map((b) => {
+    const t = city.scenarios[b.id as 'heat' | 'rain' | 'night']
+    return { ...b, origin: t.origin, dest: t.dest, sub: `${shortName(name(t.origin))} → ${shortName(name(t.dest))}` }
+  })
+}
+
+const OTHER = '::'
+/** Places in the loaded city, plus (when searching) every other city's places. */
+function buildOptions(current: CityInfo): SelectOption[] {
+  const here = KIND_ORDER.flatMap((k) =>
+    town.places
+      .filter((p) => p.kind === k)
+      .map((p) => ({ value: p.id, label: p.name, group: KIND_META[k].group, icon: KIND_META[k].icon, color: KIND_META[k].color })),
+  )
+  const elsewhere = CITIES.filter((c) => c.id !== current.id).flatMap((c) =>
+    c.places.map((p) => ({
+      value: `${c.id}${OTHER}${p.id}`,
+      label: p.name,
+      group: c.name,
+      icon: KIND_META[p.kind].icon,
+      color: KIND_META[p.kind].color,
+      searchOnly: true,
+    })),
+  )
+  return [...here, ...elsewhere]
+}
 
 export const coverageLabel = (c: Conditions) => (c.night ? 'Lit' : c.weather === 'rainy' ? 'Rain cover' : 'Shade')
 
@@ -156,6 +160,9 @@ export function NavigatePanel({
   proposing,
   myProposals,
   onPropose,
+  city,
+  scenarios,
+  onCity,
 }: {
   origin: string
   dest: string
@@ -173,7 +180,18 @@ export function NavigatePanel({
   proposing: boolean
   myProposals: Proposal[]
   onPropose: () => void
+  city: CityInfo
+  scenarios: Scenario[]
+  onCity: (city: string, origin?: string, dest?: string) => void
 }) {
+  const placeOptions = useMemo(() => buildOptions(city), [city])
+  const pick = (which: 'origin' | 'dest') => (v: string) => {
+    if (v.includes(OTHER)) {
+      const [c, id] = v.split(OTHER)
+      onCity(c, which === 'origin' ? id : undefined, which === 'dest' ? id : undefined)
+    } else if (which === 'origin') setOrigin(v)
+    else setDest(v)
+  }
   const [allSteps, setAllSteps] = useState(false)
   const segments = useMemo(() => buildDirections(smart, cond), [smart, cond])
   const destName = placeById(dest).name
@@ -202,13 +220,35 @@ export function NavigatePanel({
         </div>
       </div>
 
+      {/* city */}
+      <div>
+        <Eyebrow className="mb-2 flex items-center gap-1.5">
+          <MapPin size={11} /> City
+        </Eyebrow>
+        <div className="no-scrollbar -mx-5 flex gap-1.5 overflow-x-auto px-5 md:-mx-6 md:px-6">
+          {CITIES.map((c) => (
+            <button
+              key={c.id}
+              onClick={() => c.id !== city.id && onCity(c.id)}
+              aria-pressed={c.id === city.id}
+              className={clsx(
+                'shrink-0 rounded-full border px-3 py-1.5 text-[12.5px] font-semibold transition-all active:scale-95',
+                c.id === city.id ? 'border-ink bg-ink text-white' : 'border-line bg-card text-ink-2 hover:border-ink/30 hover:text-ink',
+              )}
+            >
+              {c.name}
+            </button>
+          ))}
+        </div>
+      </div>
+
       {/* scenarios */}
       <div>
         <Eyebrow className="mb-2 flex items-center gap-1.5">
           <Sparkles size={11} /> Try a scenario
         </Eyebrow>
         <div className="grid grid-cols-3 gap-2">
-          {SCENARIOS.map((s) => {
+          {scenarios.map((s) => {
             const Icon = s.icon
             const active = scenario === s.id
             return (
@@ -234,7 +274,7 @@ export function NavigatePanel({
         <PlaceSelect
           label="From"
           value={origin}
-          onChange={setOrigin}
+          onChange={pick('origin')}
           options={placeOptions}
           disabledValue={dest}
           accent={<span className="ml-1 size-3 shrink-0 rounded-full border-[3px] border-ink bg-card" />}
@@ -243,7 +283,7 @@ export function NavigatePanel({
         <PlaceSelect
           label="To"
           value={dest}
-          onChange={setDest}
+          onChange={pick('dest')}
           options={placeOptions}
           disabledValue={origin}
           accent={<span className="ml-1 size-3 shrink-0 rounded-[4px] bg-leaf" />}

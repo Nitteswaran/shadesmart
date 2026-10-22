@@ -54,7 +54,7 @@ import {
   PEAK,
   recommend,
   simulate,
-  SOS_LOG,
+  sosLog,
   surfaceMix,
   type CorridorStats,
   type Intervention,
@@ -869,7 +869,7 @@ function Safety() {
           <Eyebrow>Recent SOS alerts</Eyebrow>
         </div>
         <ul className="mt-2 divide-y divide-line">
-          {SOS_LOG.map((s) => (
+          {sosLog().map((s) => (
             <li key={s.id} className="flex items-center gap-3 py-2.5">
               <span className="grid size-8 shrink-0 place-items-center rounded-lg bg-sos/10 text-sos">
                 <Siren size={14} />

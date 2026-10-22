@@ -53,14 +53,16 @@ interface Props {
 const STYLE_LIGHT = 'https://tiles.openfreemap.org/styles/positron'
 const STYLE_DARK = 'https://tiles.openfreemap.org/styles/dark'
 
-const corridorOfEdge = new Map<number, string>()
-for (const c of town.corridors) for (const id of c.edges) corridorOfEdge.set(id, c.id)
 
-const [minX, minY, maxX, maxY] = town.meta.bounds
-const TOWN_BOUNDS: LngLatBoundsLike = [
-  [minX, minY],
-  [maxX, maxY],
-]
+const townBounds = (): LngLatBoundsLike => {
+  const [minX, minY, maxX, maxY] = town.meta.bounds
+  return [
+    [minX, minY],
+    [maxX, maxY],
+  ]
+}
+/** Camera carried across city switches so the new city flies in from where the old one was. */
+let lastCamera: { center: [number, number]; zoom: number } = { center: [102.2, 4.1], zoom: 5.6 }
 
 const rampExpr = (prop: string) =>
   ['interpolate', ['linear'], ['get', prop], ...SHADE_STOPS.flat()] as unknown as maplibregl.ExpressionSpecification
@@ -248,6 +250,12 @@ export default function MapView(p: Props) {
   const darkMap = p.view === 'navigate' ? p.cond.night : p.plannerLayer === 'night'
   const darkRef = useRef(darkMap)
   const markers = useRef<maplibregl.Marker[]>([])
+  const corridorOfEdge = useMemo(() => {
+    const m = new Map<number, string>()
+    for (const c of town.corridors) for (const id of c.edges) m.set(id, c.id)
+    return m
+  }, [])
+  const firstFrame = useRef(true)
   const hazardMarkers = useRef<maplibregl.Marker[]>([])
   const badgeMarkers = useRef<maplibregl.Marker[]>([])
   const tagMarkers = useRef<maplibregl.Marker[]>([])
@@ -269,8 +277,8 @@ export default function MapView(p: Props) {
     const map = new maplibregl.Map({
       container: box.current!,
       style: darkRef.current ? STYLE_DARK : STYLE_LIGHT,
-      bounds: TOWN_BOUNDS,
-      fitBoundsOptions: { padding: 40 },
+      center: lastCamera.center,
+      zoom: lastCamera.zoom,
       attributionControl: { compact: true },
       maxZoom: 18.5,
       minZoom: 12,
@@ -320,6 +328,8 @@ export default function MapView(p: Props) {
     const ro = new ResizeObserver(() => map.resize())
     ro.observe(box.current!)
     return () => {
+      const c = map.getCenter()
+      lastCamera = { center: [c.lng, c.lat], zoom: map.getZoom() }
       ro.disconnect()
       map.remove()
       mapRef.current = null
@@ -509,15 +519,17 @@ export default function MapView(p: Props) {
         if (!pts.length) return
         const b = pts.reduce((acc, c) => acc.extend(c), new maplibregl.LngLatBounds(pts[0], pts[0]))
         const narrow = (box.current?.clientWidth ?? 1000) < 640
-        map.fitBounds(b, {
+        const cam = map.cameraForBounds(b, {
           padding: narrow ? { top: 190, bottom: 30, left: 30, right: 30 } : { top: 170, bottom: 50, left: 70, right: 70 },
-          duration: 900,
           maxZoom: 17,
         })
+        // the first frame of a city flies in from wherever the camera was (Malaysia overview or the last city)
+        if (cam) map.flyTo({ ...cam, duration: firstFrame.current ? 2600 : 900, essential: true })
+        firstFrame.current = false
       } else if (!p.selectedCorridor) {
-        map.fitBounds(TOWN_BOUNDS, { padding: { top: 70, bottom: 80, left: 20, right: 20 }, duration: 900 })
+        map.fitBounds(townBounds(), { padding: { top: 70, bottom: 80, left: 20, right: 20 }, duration: 900 })
       }
-    }, 60)
+    }, firstFrame.current ? 250 : 60)
     return () => clearTimeout(t)
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [p.fitKey, p.view])

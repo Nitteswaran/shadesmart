@@ -1,4 +1,3 @@
-import raw from '../data/township.json'
 
 export type LngLat = [number, number]
 export type Surface = 'open' | 'covered' | 'canopy' | 'building'
@@ -42,7 +41,7 @@ export interface Corridor {
 }
 
 export interface Township {
-  meta: { township: string; city: string; source: string; bounds: [number, number, number, number] }
+  meta: { id: string; township: string; city: string; source: string; bounds: [number, number, number, number] }
   nodes: LngLat[]
   edges: Edge[]
   places: Place[]
@@ -53,7 +52,38 @@ export interface Township {
   areas: { parks: LngLat[][]; water: { name: string | null; poly: LngLat[] }[] }
 }
 
-export const town = raw as unknown as Township
+/** The city currently loaded. Swapped by setTown() when the user switches city. */
+export let town: Township
+
+export function setTown(t: Township) {
+  town = t
+  majorNodes.clear()
+  for (const e of t.edges) {
+    if (MAJOR_HW.has(e.hw)) {
+      majorNodes.add(e.a)
+      majorNodes.add(e.b)
+    }
+  }
+  adjacency = t.nodes.map(() => [])
+  for (const e of t.edges) {
+    adjacency[e.a].push({ to: e.b, edge: e })
+    adjacency[e.b].push({ to: e.a, edge: e })
+  }
+}
+
+/** Who receives proposals and SOS alerts in each city. */
+const AUTHORITIES: Record<string, { short: string; office: string; police: string }> = {
+  elmina: { short: 'Sime Darby', office: 'Sime Darby Property · Elmina Township Office', police: 'Sime Darby Auxiliary Police' },
+  kl: { short: 'DBKL', office: 'Dewan Bandaraya Kuala Lumpur', police: 'PDRM Dang Wangi' },
+  georgetown: { short: 'MBPP', office: 'Majlis Bandaraya Pulau Pinang', police: 'PDRM Georgetown' },
+  ipoh: { short: 'MBI', office: 'Majlis Bandaraya Ipoh', police: 'PDRM Ipoh' },
+  jb: { short: 'MBJB', office: 'Majlis Bandaraya Johor Bahru', police: 'PDRM Johor Bahru Selatan' },
+  melaka: { short: 'MBMB', office: 'Majlis Bandaraya Melaka Bersejarah', police: 'PDRM Melaka Tengah' },
+  putrajaya: { short: 'PPj', office: 'Perbadanan Putrajaya', police: 'PDRM Putrajaya' },
+  kk: { short: 'DBKK', office: 'Dewan Bandaraya Kota Kinabalu', police: 'PDRM Kota Kinabalu' },
+  kuching: { short: 'DBKU', office: 'Dewan Bandaraya Kuching Utara', police: 'PDRM Kuching' },
+}
+export const authority = () => AUTHORITIES[town.meta.id] ?? AUTHORITIES.elmina
 
 export type Weather = 'sunny' | 'rainy'
 
@@ -124,21 +154,10 @@ export function edgeCost(e: Edge, c: Conditions): number {
 }
 
 // ---------- graph ----------
-const MAJOR_HW = new Set(['secondary', 'secondary_link', 'tertiary', 'tertiary_link'])
+const MAJOR_HW = new Set(['primary', 'primary_link', 'secondary', 'secondary_link', 'tertiary', 'tertiary_link'])
 /** Nodes that sit on an arterial road — where a footpath meets one, the walker has to cross. */
 export const majorNodes = new Set<number>()
-for (const e of town.edges) {
-  if (MAJOR_HW.has(e.hw)) {
-    majorNodes.add(e.a)
-    majorNodes.add(e.b)
-  }
-}
-
-const adjacency: { to: number; edge: Edge }[][] = town.nodes.map(() => [])
-for (const e of town.edges) {
-  adjacency[e.a].push({ to: e.b, edge: e })
-  adjacency[e.b].push({ to: e.a, edge: e })
-}
+let adjacency: { to: number; edge: Edge }[][] = []
 
 export interface Step {
   edge: Edge

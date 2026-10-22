@@ -2,7 +2,7 @@ import clsx from 'clsx'
 import { AnimatePresence, motion } from 'motion/react'
 import { Check, Loader2, Phone, Radio, ShieldCheck, Siren, Users, Vibrate, X } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
-import { town, type LngLat } from '../lib/engine'
+import { authority, town, type LngLat } from '../lib/engine'
 
 export type Phase = 'idle' | 'arming' | 'sent'
 
@@ -137,7 +137,7 @@ export function SOSSheet({
   const eta = Math.max(2, Math.round(guardDist / 220))
 
   const recipients = [
-    { icon: Siren, label: 'Sime Darby Auxiliary Police', sub: 'Elmina Command Centre' },
+    { icon: Siren, label: authority().police, sub: `${town.meta.township} command centre` },
     { icon: ShieldCheck, label: guard.name, sub: `${Math.round(guardDist)} m away · patrol dispatched` },
     { icon: Users, label: 'Emergency contacts (2)', sub: 'SMS + WhatsApp with live link' },
     { icon: Radio, label: 'Live GPS sharing', sub: 'Updating every 5s for 30 min' },
@@ -189,7 +189,7 @@ export function SOSSheet({
                   Sending SOS alert
                 </h2>
                 <p className="mx-auto mt-3 max-w-[320px] text-[14px] leading-relaxed text-ink-2">
-                  Your live GPS location will be shared with Sime Darby Auxiliary Police and the nearest guard post.
+                  Your live GPS location will be shared with {authority().police} and the nearest guard post.
                 </p>
                 <div className="mt-6 grid grid-cols-2 gap-2.5">
                   <button

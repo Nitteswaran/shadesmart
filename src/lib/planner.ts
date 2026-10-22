@@ -8,8 +8,7 @@ export const FOOTFALL_PROFILE: Record<number, number> = {
   7: 0.08, 8: 0.11, 9: 0.06, 10: 0.05, 11: 0.06, 12: 0.09, 13: 0.09, 14: 0.06, 15: 0.06, 16: 0.08, 17: 0.1, 18: 0.1, 19: 0.06,
 }
 
-const edgeById = new Map(town.edges.map((e) => [e.id, e]))
-export const edgesOf = (c: Corridor) => c.edges.map((id) => edgeById.get(id)!)
+export const edgesOf = (c: Corridor) => c.edges.map((id) => town.edges[id])
 
 const weighted = (es: Edge[], f: (e: Edge) => number) => {
   const total = es.reduce((s, e) => s + e.len, 0) || 1
@@ -141,10 +140,14 @@ export function recommend(s: CorridorStats): Intervention {
 }
 
 // ---------- safety log (mock) ----------
-export const SOS_LOG = [
-  { id: 'SOS-2291', time: '22:41', date: 'Yesterday', where: 'Park trail near Elmina Valley Central Park', kind: 'Felt followed', response: 3.8, status: 'Resolved' },
-  { id: 'SOS-2287', time: '20:12', date: '2 days ago', where: 'Persiaran Alstonia underpass', kind: 'Flash flood', response: 5.1, status: 'Resolved' },
-  { id: 'SOS-2284', time: '13:26', date: '3 days ago', where: 'Persiaran Metafasa', kind: 'Heat exhaustion', response: 4.2, status: 'Resolved' },
-  { id: 'SOS-2279', time: '23:05', date: '5 days ago', where: 'Lane near Eco Lake Promenade', kind: 'Poor lighting', response: 6.4, status: 'Work order' },
-  { id: 'SOS-2270', time: '07:48', date: '1 week ago', where: 'Bulatan Elmina crossing', kind: 'Near-miss vehicle', response: 4.9, status: 'Resolved' },
-]
+export function sosLog() {
+  const names = town.corridors.map((c) => c.name.replace(/ · Segment [A-Z]$/, ''))
+  const pick = (i: number) => names[(i * 37) % Math.max(1, names.length)] ?? 'Footpath'
+  return [
+    { id: 'SOS-2291', time: '22:41', date: 'Yesterday', where: pick(1), kind: 'Felt followed', response: 3.8, status: 'Resolved' },
+    { id: 'SOS-2287', time: '20:12', date: '2 days ago', where: pick(2), kind: 'Flash flood', response: 5.1, status: 'Resolved' },
+    { id: 'SOS-2284', time: '13:26', date: '3 days ago', where: pick(3), kind: 'Heat exhaustion', response: 4.2, status: 'Resolved' },
+    { id: 'SOS-2279', time: '23:05', date: '5 days ago', where: pick(4), kind: 'Poor lighting', response: 6.4, status: 'Work order' },
+    { id: 'SOS-2270', time: '07:48', date: '1 week ago', where: pick(5), kind: 'Near-miss vehicle', response: 4.9, status: 'Resolved' },
+  ]
+}
