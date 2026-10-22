@@ -131,7 +131,7 @@ function Chip({ on, onClick, icon: Icon, label }: { on: boolean; onClick: () => 
       onClick={onClick}
       aria-pressed={on}
       className={clsx(
-        'flex items-center gap-1.5 rounded-full border px-3 py-2 text-[12.5px] font-semibold transition-all',
+        'flex shrink-0 items-center gap-1.5 rounded-full border px-3 py-2 text-[12.5px] font-semibold transition-all',
         on ? 'border-leaf bg-leaf text-white shadow-soft' : 'border-line bg-card text-ink-2 hover:border-ink/25 hover:text-ink',
       )}
     >
@@ -393,6 +393,7 @@ export function NavigatePanel({
  </>
       )}
       {/* preferences */}
+      {!section && (
       <section className="space-y-3">
         <Eyebrow>Preferences</Eyebrow>
         <div className="rounded-2xl border border-line px-4 pb-2.5 pt-3">
@@ -415,6 +416,7 @@ export function NavigatePanel({
           <Chip on={showNetwork} onClick={() => setShowNetwork(!showNetwork)} icon={Layers} label="Shade layer" />
         </div>
       </section>
+      )}
 
       </>
       )}
@@ -822,6 +824,43 @@ export function ConditionsStrip({ cond, setCond }: { cond: Conditions; setCond: 
           onChange={(v) => setCond({ hour: v })}
           fill={cond.night ? '#4b55a8' : '#f2b33d'}
         />
+      </div>
+    </div>
+  )
+}
+
+/** Shade-vs-distance slider and route options, shown under the map in the Steps tab on phones. */
+export function PreferencesStrip({
+  cond,
+  setCond,
+  showNetwork,
+  setShowNetwork,
+}: {
+  cond: Conditions
+  setCond: (c: Partial<Conditions>) => void
+  showNetwork: boolean
+  setShowNetwork: (v: boolean) => void
+}) {
+  return (
+    <div className="rounded-[20px] border border-line bg-card px-3 pb-2.5 pt-2.5 shadow-soft">
+      <div className="flex items-center justify-between">
+        <span className="flex items-center gap-1.5 text-[13px] font-semibold">
+          {cond.night ? <Lightbulb size={14} /> : cond.weather === 'rainy' ? <Umbrella size={14} /> : <Sun size={14} />}
+          {cond.night ? 'Light vs. distance' : cond.weather === 'rainy' ? 'Cover vs. distance' : 'Shade vs. distance'}
+        </span>
+        <span className="rounded-full bg-ink px-2.5 py-0.5 text-[11.5px] font-semibold text-white">{weightLabel(cond.shadeWeight)}</span>
+      </div>
+      <div className="mt-0.5 flex items-center gap-2.5">
+        <span className="shrink-0 text-[11px] font-medium text-ink-3">Shortest</span>
+        <Range label="Shade preference" value={cond.shadeWeight} min={1} max={5} step={0.1} onChange={(v) => setCond({ shadeWeight: v })} />
+        <span className="shrink-0 text-[11px] font-medium text-ink-3">
+          {cond.night ? 'Brightest' : cond.weather === 'rainy' ? 'Driest' : 'Shadiest'}
+        </span>
+      </div>
+      <div className="no-scrollbar mt-1.5 flex gap-1.5 overflow-x-auto">
+        <Chip on={cond.wheelchair} onClick={() => setCond({ wheelchair: !cond.wheelchair })} icon={Accessibility} label="Step-free" />
+        <Chip on={cond.fewerCrossings} onClick={() => setCond({ fewerCrossings: !cond.fewerCrossings })} icon={TrafficCone} label="Fewer crossings" />
+        <Chip on={showNetwork} onClick={() => setShowNetwork(!showNetwork)} icon={Layers} label="Shade layer" />
       </div>
     </div>
   )
