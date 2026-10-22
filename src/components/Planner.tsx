@@ -3,6 +3,8 @@ import {
   ArrowLeft,
   Building2,
   ChevronRight,
+  ChevronDown,
+  MapPin,
   CircleDollarSign,
   CloudRain,
   Droplets,
@@ -63,6 +65,7 @@ import {
 import type { PlannerLayer } from './MapView'
 import { headline, placementImpact, TOOL_INFO, type Tool } from '../lib/placements'
 import { WalkOrDrive } from './WalkOrDrive'
+import { CITIES, type CityInfo } from '../lib/cities'
 import { AnimatePresence, motion } from 'motion/react'
 import { TOOL_COLOR, TOOL_ICON, ToolPicker } from './icons'
 import { ProposalsInbox } from './Propose'
@@ -343,7 +346,11 @@ export function PlannerPanel({
   reviewing,
   setReviewing,
   onDecide,
+  city,
+  onCity,
 }: {
+  city: CityInfo
+  onCity: (id: string) => void
   hour: number
   layer: PlannerLayer
   selected: string | null
@@ -380,6 +387,25 @@ export function PlannerPanel({
           Infrastructure Heat
           <br />& Safety Insights
         </h2>
+        <label className="mt-4 flex items-center gap-2.5 rounded-2xl border border-line bg-card px-3 py-2 shadow-soft">
+          <MapPin size={15} className="shrink-0 text-leaf" />
+          <span className="min-w-0 flex-1">
+            <span className="block text-[11px] font-semibold uppercase tracking-[0.04em] text-ink-3">City</span>
+            <select
+              value={city.id}
+              onChange={(e) => onCity(e.target.value)}
+              aria-label="City"
+              className="-ml-1 w-full cursor-pointer appearance-none bg-transparent text-[15px] font-bold outline-none"
+            >
+              {CITIES.map((c) => (
+                <option key={c.id} value={c.id}>
+                  {c.name} · {c.area}
+                </option>
+              ))}
+            </select>
+          </span>
+          <ChevronDown size={16} className="shrink-0 text-ink-3" />
+        </label>
         <div className="no-scrollbar -mx-1 mt-4 flex gap-1 overflow-x-auto px-1">
           {(
             [
@@ -600,6 +626,7 @@ function HotspotRow({ s, rank, onPick }: { s: CorridorStats; rank: number; onPic
 
 function Hotspots({ stats, onPick }: { stats: CorridorStats[]; onPick: (id: string) => void }) {
   const [filter, setFilter] = useState<'hot' | 'all'>('hot')
+  const [more, setMore] = useState(false)
   const list = [...stats]
     .filter((s) => (filter === 'hot' ? s.peakShade < 0.2 : true))
     .sort((a, b) => b.priority - a.priority)
@@ -625,9 +652,14 @@ function Hotspots({ stats, onPick }: { stats: CorridorStats[]; onPick: (id: stri
         <b>{stats.filter((s) => s.peakShade < 0.2).length} corridors</b> have under 20% shade between 12pm and 3pm.
       </div>
       <div className="mt-2">
-        {list.map((s, i) => (
+        {(more ? list : list.slice(0, 12)).map((s, i) => (
           <HotspotRow key={s.corridor.id} s={s} rank={i + 1} onPick={onPick} />
         ))}
+        {list.length > 12 && (
+          <button onClick={() => setMore(!more)} className="mt-2 w-full rounded-xl bg-paper-2 py-2.5 text-[13px] font-semibold text-ink-2 hover:text-ink">
+            {more ? 'Show top 12' : `Show all ${list.length}`}
+          </button>
+        )}
       </div>
     </div>
   )

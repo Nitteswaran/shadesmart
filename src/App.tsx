@@ -22,6 +22,7 @@ interface Target {
   city: string
   origin?: string
   dest?: string
+  view?: View
   n: number
 }
 
@@ -60,7 +61,7 @@ export default function App() {
       city={cityById(ready.city)}
       start={ready}
       loadingCity={target !== ready ? cityById(target.city).name : null}
-      onCity={(city, origin, dest) => setTarget({ city, origin, dest, n: target.n + 1 })}
+      onCity={(city, origin, dest, view) => setTarget({ city, origin, dest, view, n: target.n + 1 })}
     />
   )
 }
@@ -74,7 +75,7 @@ function CityApp({
   city: CityInfo
   start: Target
   loadingCity: string | null
-  onCity: (city: string, origin?: string, dest?: string) => void
+  onCity: (city: string, origin?: string, dest?: string, view?: View) => void
 }) {
   const scenarios = useMemo(() => scenariosFor(city), [city])
   const DEFAULT = scenarios[0]
@@ -109,7 +110,7 @@ function CityApp({
   const [sentProposal, setSentProposal] = useState<Proposal | null>(null)
   const reviewed = proposals.find((p) => p.id === reviewing)
 
-  const [view, setViewState] = useState<View>('navigate')
+  const [view, setViewState] = useState<View>(start.view ?? 'navigate')
   const mapPlacements = useMemo<Placement[]>(() => {
     if (view === 'navigate') return [...placements, ...(draft ?? []).map((p) => ({ ...p, proposed: true }))]
     return reviewed && reviewed.status === 'review' ? [...placements, ...reviewed.placements.map((p) => ({ ...p, proposed: true }))] : placements
@@ -258,7 +259,7 @@ function CityApp({
   const fitKey = `${origin}-${dest}-${cond.weather}-${cond.night}-${cond.wheelchair}`
 
   const desktop = useIsDesktop()
-  const [mtab, setMtab] = useState<MobileTab>('route')
+  const [mtab, setMtab] = useState<MobileTab>(start.view === 'planner' ? 'planner' : 'route')
   const mobileMain = useRef<HTMLElement>(null)
   const goTab = (t: MobileTab) => {
     setMtab(t)
@@ -396,15 +397,23 @@ function CityApp({
   )
   const plannerPanel = (
   <PlannerPanel
+    city={city}
+    onCity={(id) => id !== city.id && onCity(id, undefined, undefined, 'planner')}
     hour={plannerHour}
     layer={plannerLayer}
     selected={selectedCorridor}
-    setSelected={setSelectedCorridor}
+    setSelected={(id) => {
+      setSelectedCorridor(id)
+      if (id) mobileMain.current?.scrollTo({ top: 0, behavior: 'smooth' })
+    }}
     plan={plan}
     setPlan={setPlan}
     proposals={proposals}
     reviewing={reviewing}
-    setReviewing={setReviewing}
+    setReviewing={(id) => {
+      setReviewing(id)
+      if (id) mobileMain.current?.scrollTo({ top: 0, behavior: 'smooth' })
+    }}
     onDecide={decideProposal}
     onPlanAdded={(item) =>
       pushToast({
