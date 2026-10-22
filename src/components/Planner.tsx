@@ -62,6 +62,8 @@ import {
 import type { PlannerLayer } from './MapView'
 import { TOOL_INFO, type Tool } from '../lib/placements'
 import { WalkOrDrive } from './WalkOrDrive'
+import { ProposalsInbox } from './Propose'
+import type { Proposal, Status } from '../lib/proposals'
 import { Card, Eyebrow, Range, Segmented } from './ui'
 
 export interface PlanItem {
@@ -89,8 +91,8 @@ export interface PlantImpact {
   counts: Record<Tool, number>
 }
 
-const TOOL_ICON: Record<Tool, LucideIcon> = { tree: Trees, canopy: Umbrella, light: Lightbulb }
-const TOOL_COLOR: Record<Tool, string> = { tree: '#1d7a4b', canopy: '#3b6fd8', light: '#c98a0b' }
+export const TOOL_ICON: Record<Tool, LucideIcon> = { tree: Trees, canopy: Umbrella, light: Lightbulb }
+export const TOOL_COLOR: Record<Tool, string> = { tree: '#1d7a4b', canopy: '#3b6fd8', light: '#c98a0b' }
 
 function PlantToolbar({
   tool,
@@ -261,7 +263,7 @@ export function PlannerMapOverlay({
 
 // ---------- side panel ----------
 
-type Tab = 'overview' | 'hotspots' | 'plan' | 'safety'
+type Tab = 'overview' | 'proposals' | 'hotspots' | 'plan' | 'safety'
 
 export function PlannerPanel({
   hour,
@@ -271,6 +273,10 @@ export function PlannerPanel({
   plan,
   setPlan,
   onPlanAdded,
+  proposals,
+  reviewing,
+  setReviewing,
+  onDecide,
 }: {
   hour: number
   layer: PlannerLayer
@@ -279,8 +285,16 @@ export function PlannerPanel({
   plan: PlanItem[]
   setPlan: (p: PlanItem[]) => void
   onPlanAdded: (item: PlanItem) => void
+  proposals: Proposal[]
+  reviewing: string | null
+  setReviewing: (id: string | null) => void
+  onDecide: (id: string, s: Status) => void
 }) {
   const [tab, setTab] = useState<Tab>('overview')
+  const pending = proposals.filter((p) => p.status === 'review').length
+  useEffect(() => {
+    if (reviewing) setTab('proposals')
+  }, [reviewing])
   const stats = useMemo(() => allCorridorStats(PEAK), [])
   useEffect(() => {
     if (selected) setTab('hotspots')
@@ -304,9 +318,10 @@ export function PlannerPanel({
           {(
             [
               ['overview', 'Overview'],
+              ['proposals', `Proposals${pending ? ` · ${pending}` : ''}`],
               ['hotspots', 'Hotspots'],
-              ['plan', `Capital plan${plan.length ? ` · ${plan.length}` : ''}`],
-              ['safety', 'Safety & flood'],
+              ['plan', `Plan${plan.length ? ` · ${plan.length}` : ''}`],
+              ['safety', 'Safety'],
             ] as [Tab, string][]
           ).map(([k, l]) => (
             <button
@@ -342,6 +357,7 @@ export function PlannerPanel({
           ))}
         {tab === 'plan' && <CapitalPlan plan={plan} setPlan={setPlan} goHotspots={() => setTab('hotspots')} />}
         {tab === 'safety' && <Safety />}
+        {tab === 'proposals' && <ProposalsInbox proposals={proposals} selected={reviewing} setSelected={setReviewing} onDecide={onDecide} />}
       </div>
     </div>
   )

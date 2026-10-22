@@ -183,3 +183,5 @@ input[type='range'].ss-range:active::-webkit-slider-thumb { transform: scale(1.1
 .ss-tag-short { background: #fff; color: #c2410c; border: 2px solid #e4572e; }
 .ss-tag-smart { background: #143826; color: #fff; border: 2px solid #7bd389; }
 .ss-tag-smart span { color: #7bd389; opacity: 1; }
+
+.ss-proposed .ss-badge { outline: 2px dashed #13140f; outline-offset: 2px; }

@@ -37,6 +37,8 @@ import { fmtDist, fmtTime, KIND_META, KIND_ORDER, pct, SURFACE_META } from '../l
 import { Card, Eyebrow, PlaceSelect, Range, Segmented, Toggle, type SelectOption } from './ui'
 import { SOSButton } from './SOS'
 import { SunShadow } from './SunShadow'
+import { ProposeCard } from './Propose'
+import type { Proposal } from '../lib/proposals'
 
 export interface Scenario {
   id: string
@@ -120,6 +122,9 @@ export function NavigatePanel({
   setShowNetwork,
   onSOSTap,
   onSOSHold,
+  proposing,
+  myProposals,
+  onPropose,
 }: {
   origin: string
   dest: string
@@ -134,6 +139,9 @@ export function NavigatePanel({
   setShowNetwork: (v: boolean) => void
   onSOSTap: () => void
   onSOSHold: () => void
+  proposing: boolean
+  myProposals: Proposal[]
+  onPropose: () => void
 }) {
   const [allSteps, setAllSteps] = useState(false)
   const segments = useMemo(() => {
@@ -334,6 +342,8 @@ export function NavigatePanel({
           </ol>
         </section>
       )}
+
+      <ProposeCard onStart={onPropose} mine={myProposals} active={proposing} />
 
       <section>
         <Eyebrow className="mb-2">Township Guardian</Eyebrow>

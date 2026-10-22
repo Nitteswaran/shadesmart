@@ -250,7 +250,7 @@ export function RaceHUD({
           )
         })}
       </div>
-      <div className="mt-1.5 flex justify-end font-mono text-[9.5px] uppercase tracking-[0.12em] text-white/40">
+      <div className="mt-1.5 flex justify-end text-[12px] font-semibold uppercase tracking-[0.04em] text-white/40">
         {mode === 'night' ? 'unease meter' : mode === 'rain' ? 'soaked meter' : 'body heat load'}
       </div>
 

@@ -221,7 +221,7 @@ export function SOSSheet({
                   >
                     <X size={16} />
                   </button>
-                  <div className="flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.16em] text-white/80">
+                  <div className="flex items-center gap-2 text-[12px] font-semibold uppercase tracking-[0.04em] text-white/80">
                     <span className="size-2 animate-pulse rounded-full bg-white" />
                     {silent ? 'Silent alert active' : 'Alert active'}
                   </div>
@@ -232,13 +232,13 @@ export function SOSSheet({
                   </h2>
                   <div className="mt-5 flex items-end justify-between gap-4">
                     <div>
-                      <div className="font-mono text-[10.5px] uppercase tracking-[0.14em] text-white/70">Live GPS</div>
+                      <div className="text-[12px] font-semibold uppercase tracking-[0.04em] text-white/70">Live GPS</div>
                       <div className="mt-1 font-mono text-[13px] tabular">
                         {position[1].toFixed(5)}° N, {position[0].toFixed(5)}° E
                       </div>
                     </div>
                     <div className="text-right">
-                      <div className="font-mono text-[10.5px] uppercase tracking-[0.14em] text-white/70">Patrol ETA</div>
+                      <div className="text-[12px] font-semibold uppercase tracking-[0.04em] text-white/70">Patrol ETA</div>
                       <div className="font-display text-[34px] font-extrabold leading-none tabular">
                         {eta}
                         <span className="text-[16px]"> min</span>

@@ -12,13 +12,14 @@ import { routeBadges, routeTags } from './lib/features'
 import { isNightHour } from './lib/daylight'
 import { computeOverrides, placementImpact, snapToNetwork, type Placement, type Tool } from './lib/placements'
 import { RaceHUD, type MapApi } from './components/Race'
+import { ProposalSent, ProposeOverlay } from './components/Propose'
+import { newRef, seedProposals, type Proposal, type Reason, type Status } from './lib/proposals'
 import { BadgeIcon, BADGE_META } from './components/icons'
 import type { BadgeKind } from './lib/features'
 
 const DEFAULT = SCENARIOS[0]
 
 export default function App() {
-  const [view, setView] = useState<View>('navigate')
   const [origin, setOrigin] = useState(DEFAULT.origin)
   const [dest, setDest] = useState(DEFAULT.dest)
   const [cond, setCondState] = useState<Conditions>({
@@ -36,8 +37,23 @@ export default function App() {
   const [placements, setPlacements] = useState<Placement[]>([])
   const [plantTool, setPlantTool] = useState<Tool | null>(null)
   const placeId = useRef(0)
-  const overrides = useMemo(() => computeOverrides(placements), [placements])
-  const impact = useMemo(() => placementImpact(placements, overrides), [placements, overrides])
+  const plannerOverrides = useMemo(() => computeOverrides(placements), [placements])
+  const impact = useMemo(() => placementImpact(placements, plannerOverrides), [placements, plannerOverrides])
+
+  // resident proposals
+  const [proposals, setProposals] = useState<Proposal[]>(seedProposals)
+  const [draft, setDraft] = useState<Placement[] | null>(null)
+  const [proposeTool, setProposeTool] = useState<Tool | null>(null)
+  const [reviewing, setReviewing] = useState<string | null>(null)
+  const [sentProposal, setSentProposal] = useState<Proposal | null>(null)
+  const reviewed = proposals.find((p) => p.id === reviewing)
+
+  const [view, setViewState] = useState<View>('navigate')
+  const mapPlacements = useMemo<Placement[]>(() => {
+    if (view === 'navigate') return [...placements, ...(draft ?? []).map((p) => ({ ...p, proposed: true }))]
+    return reviewed && reviewed.status === 'review' ? [...placements, ...reviewed.placements.map((p) => ({ ...p, proposed: true }))] : placements
+  }, [view, placements, draft, reviewed])
+  const overrides = useMemo(() => computeOverrides(mapPlacements), [mapPlacements])
   const [toasts, setToasts] = useState<Toast[]>([])
   const [sos, setSos] = useState<Phase>('idle')
   const [silent, setSilent] = useState(false)
@@ -155,6 +171,38 @@ export default function App() {
     [pushToast],
   )
 
+  const submitProposal = (reasons: Reason[], note: string) => {
+    if (!draft?.length) return
+    const p: Proposal = {
+      id: `m${Date.now()}`,
+      ref: newRef(),
+      author: `You · ${o.name}`,
+      when: 'Just now',
+      reasons,
+      note,
+      placements: draft,
+      supporters: 1,
+      status: 'review',
+      mine: true,
+    }
+    setProposals((ps) => [p, ...ps])
+    setDraft(null)
+    setProposeTool(null)
+    setSentProposal(p)
+  }
+
+  const decideProposal = (id: string, status: Status) => {
+    const p = proposals.find((x) => x.id === id)
+    if (!p) return
+    setProposals((ps) => ps.map((x) => (x.id === id ? { ...x, status } : x)))
+    if (status === 'approved') setPlacements((ps) => [...ps, ...p.placements.map((x) => ({ ...x, id: ++placeId.current, proposed: false }))])
+    pushToast(
+      status === 'approved'
+        ? { tone: 'leaf', icon: CircleCheck, title: `${p.ref} approved`, body: 'Added to the works plan — the heat map now shows the new shade.' }
+        : { tone: 'heat', icon: TriangleAlert, title: `${p.ref} declined`, body: 'The resident has been notified.' },
+    )
+  }
+
   const sosButton = (
     <SOSButton onTap={() => setSos('arming')} onHoldComplete={() => sendSOS(true)} />
   )
@@ -166,7 +214,9 @@ export default function App() {
       <Header
         view={view}
         onView={(v) => {
-          setView(v)
+          setViewState(v)
+          setDraft(null)
+          setProposeTool(null)
           setWalking(false)
         }}
         cond={view === 'planner' ? { ...cond, weather: 'sunny', night: plannerLayer === 'night', hour: plannerHour } : cond}
@@ -190,6 +240,13 @@ export default function App() {
               setShowNetwork={setShowNetwork}
               onSOSTap={() => setSos('arming')}
               onSOSHold={() => sendSOS(true)}
+              proposing={draft !== null}
+              myProposals={proposals.filter((p) => p.mine)}
+              onPropose={() => {
+                setDraft([])
+                setProposeTool('tree')
+                setWalking(false)
+              }}
             />
           </aside>
         )}
@@ -203,20 +260,22 @@ export default function App() {
               smart={smartRoute.found ? smartRoute : null}
               origin={o}
               dest={d}
-              showNetwork={showNetwork}
+              showNetwork={showNetwork || draft !== null}
               plannerLayer={plannerLayer}
               plannerHour={plannerHour}
               selectedCorridor={selectedCorridor}
               onSelectCorridor={setSelectedCorridor}
               apiRef={mapApi}
               overrides={overrides}
-              placements={placements}
-              plantTool={view === 'planner' ? plantTool : null}
+              placements={mapPlacements}
+              plantTool={view === 'planner' ? plantTool : draft ? proposeTool : null}
               onPlace={(click, tolerance) => {
                 const at = snapToNetwork(click, tolerance)
-                if (!at || !plantTool) return
-                setPlacements((ps) => [...ps, { id: ++placeId.current, tool: plantTool, at }])
+                if (!at) return
+                if (view === 'planner' && plantTool) setPlacements((ps) => [...ps, { id: ++placeId.current, tool: plantTool, at }])
+                else if (draft && proposeTool) setDraft([...draft, { id: ++placeId.current, tool: proposeTool, at }])
               }}
+              focus={reviewed ? reviewed.placements.map((p) => p.at) : null}
               floodHazards={floodHazards}
               badges={badges}
               tags={tags}
@@ -224,6 +283,20 @@ export default function App() {
             />
             {view === 'navigate' ? (
               <>
+                {draft && (
+                  <ProposeOverlay
+                    tool={proposeTool}
+                    setTool={setProposeTool}
+                    draft={draft}
+                    onUndo={() => setDraft(draft.slice(0, -1))}
+                    onClear={() => setDraft([])}
+                    onCancel={() => {
+                      setDraft(null)
+                      setProposeTool(null)
+                    }}
+                    onSubmit={submitProposal}
+                  />
+                )}
                 <RouteCompare
                   cond={cond}
                   short={shortStats}
@@ -233,7 +306,7 @@ export default function App() {
                   rerouted={cond.weather === 'rainy' && (shortStats?.floodSegments.length ?? 0) > 0}
                 />
                 <AnimatePresence>
-                  {walking && shortRoute.found && smartRoute.found && (
+                  {walking && !draft && shortRoute.found && smartRoute.found && (
                     <RaceHUD
                       key={`${origin}-${dest}`}
                       shortRoute={shortRoute}
@@ -245,7 +318,7 @@ export default function App() {
                     />
                   )}
                 </AnimatePresence>
-                <MapLegend night={cond.night} rainy={cond.weather === 'rainy'} kinds={[...new Set(badges.map((b) => b.kind))]} />
+                {!draft && <MapLegend night={cond.night} rainy={cond.weather === 'rainy'} kinds={[...new Set(badges.map((b) => b.kind))]} />}
               </>
             ) : (
               <PlannerMapOverlay
@@ -275,6 +348,10 @@ export default function App() {
               setSelected={setSelectedCorridor}
               plan={plan}
               setPlan={setPlan}
+              proposals={proposals}
+              reviewing={reviewing}
+              setReviewing={setReviewing}
+              onDecide={decideProposal}
               onPlanAdded={(item) =>
                 pushToast({
                   tone: 'leaf',
@@ -289,6 +366,7 @@ export default function App() {
       </main>
 
       <Toasts toasts={toasts} onDismiss={(id) => setToasts((ts) => ts.filter((t) => t.id !== id))} />
+      <ProposalSent proposal={sentProposal} onClose={() => setSentProposal(null)} />
       <SOSSheet
         phase={sos}
         silent={silent}

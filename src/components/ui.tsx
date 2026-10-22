@@ -8,7 +8,7 @@ export function Card({ className, children }: { className?: string; children: Re
 
 export function Eyebrow({ children, className }: { children: ReactNode; className?: string }) {
   return (
-    <div className={clsx('font-mono text-[10.5px] font-medium uppercase tracking-[0.14em] text-ink-3', className)}>
+    <div className={clsx('text-[12px] font-semibold uppercase tracking-[0.04em] text-ink-3', className)}>
       {children}
     </div>
   )
@@ -201,7 +201,7 @@ export function PlaceSelect({
       >
         {accent}
         <span className="min-w-0 flex-1">
-          <span className="block font-mono text-[10px] uppercase tracking-[0.14em] text-ink-3">{label}</span>
+          <span className="block text-[12px] font-semibold uppercase tracking-[0.04em] text-ink-3">{label}</span>
           <span className="block truncate text-[15px] font-semibold">{current.label}</span>
         </span>
         <ChevronDown size={16} className={clsx('text-ink-3 transition-transform', open && 'rotate-180')} />

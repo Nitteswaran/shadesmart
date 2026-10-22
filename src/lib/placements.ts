@@ -6,6 +6,8 @@ export interface Placement {
   id: number
   tool: Tool
   at: LngLat
+  /** suggested by a resident, not yet built */
+  proposed?: boolean
 }
 
 /** Edge id → edge with the planner's what-if changes applied. */

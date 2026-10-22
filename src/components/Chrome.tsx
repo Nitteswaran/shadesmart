@@ -48,7 +48,7 @@ export function Header({
         <Logo />
         <div className="hidden leading-none sm:block">
           <div className="font-display text-[22px] font-extrabold tracking-[-0.03em]">ShadeSmart</div>
-          <div className="mt-1 hidden items-center gap-1 font-mono text-[10px] uppercase tracking-[0.14em] text-ink-3 sm:flex">
+          <div className="mt-1 hidden items-center gap-1 text-[12px] font-semibold uppercase tracking-[0.04em] text-ink-3 sm:flex">
             <MapPin size={10} strokeWidth={2.5} /> Elmina · Shah Alam
           </div>
         </div>

@@ -46,6 +46,7 @@ interface Props {
   floodHazards: Edge[]
   badges: Badge[]
   tags: RouteTag[]
+  focus: LngLat[] | null
   fitKey: string
 }
 
@@ -294,11 +295,11 @@ export default function MapView(p: Props) {
       ).addTo(map)
     })
     map.on('mouseleave', 'network', () => {
-      map.getCanvas().style.cursor = ''
+      map.getCanvas().style.cursor = toolRef.current ? 'crosshair' : ''
       popup.current!.remove()
     })
     map.on('click', (e) => {
-      if (viewRef.current !== 'planner' || !toolRef.current) return
+      if (!toolRef.current) return
       // accept clicks within ~28px of a path at the current zoom
       const mpp = (156543.03 * Math.cos((e.lngLat.lat * Math.PI) / 180)) / 2 ** map.getZoom()
       onPlaceRef.current([e.lngLat.lng, e.lngLat.lat], Math.max(25, 28 * mpp))
@@ -458,6 +459,16 @@ export default function MapView(p: Props) {
     }
   }, [p.badges, p.view])
 
+  // ---------- focus a set of points (e.g. a proposal under review) ----------
+  const focusKey = p.focus?.map((x) => x.join()).join('|') ?? ''
+  useEffect(() => {
+    const map = mapRef.current
+    if (!map || !p.focus?.length) return
+    const b = p.focus.reduce((acc, x) => acc.extend(x), new maplibregl.LngLatBounds(p.focus[0], p.focus[0]))
+    map.fitBounds(b, { padding: 160, maxZoom: 17, duration: 800 })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [focusKey])
+
   // ---------- route name tags ----------
   useEffect(() => {
     const map = mapRef.current
@@ -534,7 +545,6 @@ export default function MapView(p: Props) {
     if (!map) return
     for (const m of placeMarkers.current) m.remove()
     placeMarkers.current = []
-    if (p.view !== 'planner') return
     const look = {
       tree: { icon: <Trees size={14} strokeWidth={2.4} />, bg: '#1d7a4b' },
       canopy: { icon: <Umbrella size={14} strokeWidth={2.4} />, bg: '#3b6fd8' },
@@ -542,15 +552,15 @@ export default function MapView(p: Props) {
     }
     for (const pl of p.placements) {
       const el = document.createElement('div')
-      el.className = 'ss-place'
+      el.className = pl.proposed ? 'ss-place ss-proposed' : 'ss-place'
       el.innerHTML = `<span class="ss-badge" style="--c:${look[pl.tool].bg};width:26px;height:26px">${icon(look[pl.tool].icon)}</span>`
       placeMarkers.current.push(new maplibregl.Marker({ element: el }).setLngLat(pl.at).addTo(map))
     }
-  }, [p.placements, p.view])
+  }, [p.placements])
 
   useEffect(() => {
     const canvas = mapRef.current?.getCanvas()
-    if (canvas) canvas.style.cursor = p.view === 'planner' && p.plantTool ? 'crosshair' : ''
+    if (canvas) canvas.style.cursor = p.plantTool ? 'crosshair' : ''
   }, [p.plantTool, p.view])
 
   return (
