@@ -1,0 +1,147 @@
+@import '@fontsource-variable/bricolage-grotesque';
+@import '@fontsource-variable/geist';
+@import '@fontsource-variable/geist-mono';
+@import 'maplibre-gl/dist/maplibre-gl.css';
+@import 'tailwindcss';
+
+@theme {
+  --font-display: 'Bricolage Grotesque Variable', 'Geist Variable', system-ui, sans-serif;
+  --font-sans: 'Geist Variable', system-ui, sans-serif;
+  --font-mono: 'Geist Mono Variable', ui-monospace, monospace;
+
+  --color-paper: #f3efe6;
+  --color-paper-2: #ebe5d8;
+  --color-card: #fbf9f4;
+  --color-ink: #13140f;
+  --color-ink-2: #4a4b44;
+  --color-ink-3: #8a897f;
+  --color-line: #e0d9ca;
+  --color-forest: #143826;
+  --color-leaf: #1d7a4b;
+  --color-mint: #7bd389;
+  --color-heat: #e4572e;
+  --color-sun: #f2b33d;
+  --color-rain: #2f6fdb;
+  --color-night: #171c36;
+  --color-sos: #d92d20;
+
+  --shadow-float: 0 1px 0 rgb(255 255 255 / 0.7) inset, 0 12px 32px -12px rgb(30 25 10 / 0.22), 0 2px 6px -2px rgb(30 25 10 / 0.08);
+  --shadow-soft: 0 1px 2px rgb(30 25 10 / 0.06), 0 4px 14px -6px rgb(30 25 10 / 0.12);
+
+  --animate-pulse-ring: pulse-ring 1.8s cubic-bezier(0.2, 0.7, 0.3, 1) infinite;
+  --animate-fade-up: fade-up 0.5s cubic-bezier(0.2, 0.7, 0.3, 1) both;
+
+  @keyframes pulse-ring {
+    0% { transform: scale(0.6); opacity: 0.55; }
+    100% { transform: scale(2.4); opacity: 0; }
+  }
+  @keyframes fade-up {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: none; }
+  }
+}
+
+@layer base {
+  html, body, #root { height: 100%; }
+  body {
+    background: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    font-feature-settings: 'ss01', 'cv11';
+  }
+  ::selection { background: var(--color-mint); color: var(--color-forest); }
+  button { cursor: pointer; }
+  button:disabled { cursor: not-allowed; }
+  :focus-visible { outline: 2px solid var(--color-leaf); outline-offset: 2px; border-radius: 6px; }
+}
+
+@utility tabular { font-variant-numeric: tabular-nums; }
+@utility no-scrollbar {
+  scrollbar-width: none;
+  &::-webkit-scrollbar { display: none; }
+}
+@utility thin-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: #d6cfbf transparent;
+}
+@utility grain {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .05 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* range input */
+input[type='range'].ss-range {
+  appearance: none;
+  width: 100%;
+  height: 28px;
+  background: transparent;
+}
+input[type='range'].ss-range::-webkit-slider-runnable-track {
+  height: 6px;
+  border-radius: 99px;
+  background: linear-gradient(to right, var(--track-fill, var(--color-leaf)) var(--p, 50%), #ddd5c4 var(--p, 50%));
+}
+input[type='range'].ss-range::-moz-range-track {
+  height: 6px;
+  border-radius: 99px;
+  background: linear-gradient(to right, var(--track-fill, var(--color-leaf)) var(--p, 50%), #ddd5c4 var(--p, 50%));
+}
+input[type='range'].ss-range::-webkit-slider-thumb {
+  appearance: none;
+  width: 22px;
+  height: 22px;
+  margin-top: -8px;
+  border-radius: 99px;
+  background: #fff;
+  border: 0;
+  box-shadow: 0 0 0 1px rgb(0 0 0 / 0.08), 0 2px 8px rgb(0 0 0 / 0.22);
+  transition: transform 0.15s;
+}
+input[type='range'].ss-range::-moz-range-thumb {
+  width: 22px;
+  height: 22px;
+  border-radius: 99px;
+  background: #fff;
+  border: 0;
+  box-shadow: 0 0 0 1px rgb(0 0 0 / 0.08), 0 2px 8px rgb(0 0 0 / 0.22);
+}
+input[type='range'].ss-range:active::-webkit-slider-thumb { transform: scale(1.12); }
+
+/* maplibre chrome */
+.maplibregl-ctrl-attrib { font-size: 10px; background: rgb(251 249 244 / 0.8) !important; border-radius: 8px 0 0 0; }
+.maplibregl-ctrl-group { border-radius: 12px !important; box-shadow: var(--shadow-soft) !important; overflow: hidden; }
+.maplibregl-ctrl-group button { width: 34px !important; height: 34px !important; }
+.maplibregl-popup-content {
+  border-radius: 14px !important;
+  padding: 12px 14px !important;
+  box-shadow: var(--shadow-float) !important;
+  font-family: var(--font-sans);
+  background: var(--color-card) !important;
+}
+.maplibregl-popup-tip { border-top-color: var(--color-card) !important; border-bottom-color: var(--color-card) !important; }
+.maplibregl-popup-close-button { display: none; }
+
+.ss-marker { position: relative; display: grid; place-items: center; }
+.ss-pin {
+  display: grid; place-items: center;
+  width: 34px; height: 34px; border-radius: 12px;
+  color: #fff; border: 2.5px solid #fff;
+  box-shadow: 0 6px 16px -4px rgb(0 0 0 / 0.35);
+}
+.ss-dot {
+  display: grid; place-items: center;
+  width: 24px; height: 24px; border-radius: 99px;
+  color: #fff; border: 2px solid #fff;
+  box-shadow: 0 3px 10px -2px rgb(0 0 0 / 0.35);
+}
+.ss-hazard {
+  display: grid; place-items: center;
+  width: 32px; height: 32px; border-radius: 10px;
+  background: var(--color-sos); color: #fff; border: 2.5px solid #fff;
+  box-shadow: 0 6px 18px -4px rgb(217 45 32 / 0.6);
+}
+.ss-ring {
+  position: absolute; inset: 0; border-radius: 12px;
+  background: currentColor; opacity: 0.4;
+  animation: pulse-ring 1.8s cubic-bezier(0.2, 0.7, 0.3, 1) infinite;
+}

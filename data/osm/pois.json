@@ -1,0 +1,291 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "timestamp_osm_base": "2026-10-22T16:49:02Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+
+{
+  "type": "node",
+  "id": 9498654376,
+  "lat": 3.1734895,
+  "lon": 101.5107532,
+  "tags": {
+    "name": "Pasar Raya Borong Matahari",
+    "shop": "supermarket"
+  }
+},
+{
+  "type": "node",
+  "id": 10939781876,
+  "lat": 3.1766818,
+  "lon": 101.5106305,
+  "tags": {
+    "addr:city": "Elmina",
+    "addr:housenumber": "26",
+    "addr:postcode": "40160",
+    "addr:street": "Jalan U16/162",
+    "amenity": "childcare",
+    "name": "Al-Hafiz Childcare Centre @ Elmina City",
+    "phone": "0194135338"
+  }
+},
+{
+  "type": "node",
+  "id": 11738673281,
+  "lat": 3.1733491,
+  "lon": 101.5121056,
+  "tags": {
+    "bench": "yes",
+    "bus": "yes",
+    "highway": "bus_stop",
+    "name": "Pangsapuri Cendana",
+    "network": "MRT Feeder Bus;Smart Selangor Bus",
+    "operator": "Rapid Bus",
+    "public_transport": "platform",
+    "ref": "SA759",
+    "shelter": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 12001705555,
+  "lat": 3.1795520,
+  "lon": 101.5170343,
+  "tags": {
+    "amenity": "waste_basket"
+  }
+},
+{
+  "type": "node",
+  "id": 12001736409,
+  "lat": 3.1795542,
+  "lon": 101.5170183,
+  "tags": {
+    "amenity": "bench"
+  }
+},
+{
+  "type": "node",
+  "id": 12001743124,
+  "lat": 3.1793828,
+  "lon": 101.5175098,
+  "tags": {
+    "amenity": "bench"
+  }
+},
+{
+  "type": "node",
+  "id": 12001746252,
+  "lat": 3.1793665,
+  "lon": 101.5175149,
+  "tags": {
+    "amenity": "waste_basket"
+  }
+},
+{
+  "type": "node",
+  "id": 12001746507,
+  "lat": 3.1796843,
+  "lon": 101.5162390,
+  "tags": {
+    "amenity": "bench"
+  }
+},
+{
+  "type": "node",
+  "id": 12001752608,
+  "lat": 3.1788946,
+  "lon": 101.5128095,
+  "tags": {
+    "amenity": "waste_basket"
+  }
+},
+{
+  "type": "node",
+  "id": 12001757574,
+  "lat": 3.1795527,
+  "lon": 101.5166734,
+  "tags": {
+    "amenity": "bench"
+  }
+},
+{
+  "type": "node",
+  "id": 12001761367,
+  "lat": 3.1796795,
+  "lon": 101.5162589,
+  "tags": {
+    "amenity": "waste_basket"
+  }
+},
+{
+  "type": "node",
+  "id": 12001767621,
+  "lat": 3.1795515,
+  "lon": 101.5166948,
+  "tags": {
+    "amenity": "waste_basket"
+  }
+},
+{
+  "type": "node",
+  "id": 12001769039,
+  "lat": 3.1788925,
+  "lon": 101.5127977,
+  "tags": {
+    "amenity": "bench"
+  }
+},
+{
+  "type": "node",
+  "id": 12150238749,
+  "lat": 3.1732063,
+  "lon": 101.5120425,
+  "tags": {
+    "bus": "yes",
+    "highway": "bus_stop",
+    "name": "Pangsapuri Cendana (Opp)",
+    "network": "Smart Selangor Bus",
+    "operator": "Rapid Bus",
+    "public_transport": "platform",
+    "ref": "SA771",
+    "shelter": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 12199228069,
+  "lat": 3.1823759,
+  "lon": 101.5106845,
+  "tags": {
+    "name": "Harvey Norman",
+    "shop": "electronics"
+  }
+},
+{
+  "type": "node",
+  "id": 12199228074,
+  "lat": 3.1820928,
+  "lon": 101.5093697,
+  "tags": {
+    "brand": "MR.DIY",
+    "brand:wikidata": "Q105044323",
+    "name": "MR.DIY",
+    "shop": "doityourself"
+  }
+},
+{
+  "type": "node",
+  "id": 12199228075,
+  "lat": 3.1823385,
+  "lon": 101.5096916,
+  "tags": {
+    "addr:housenumber": "Lot GF-29, GF",
+    "addr:place": "Elmina Lakeside Mall",
+    "branch": "Elmina City",
+    "brand": "Jaya Grocer",
+    "brand:wikidata": "Q116275052",
+    "name": "Jaya Grocer",
+    "operator": "Trendcell Sdn Bhd",
+    "phone": "+60376141670",
+    "shop": "supermarket"
+  }
+},
+{
+  "type": "node",
+  "id": 12246279401,
+  "lat": 3.1818374,
+  "lon": 101.5102230,
+  "tags": {
+    "amenity": "atm",
+    "brand": "Maybank",
+    "brand:wikidata": "Q1364018",
+    "operator": "Maybank",
+    "operator:wikidata": "Q1364018"
+  }
+},
+{
+  "type": "node",
+  "id": 12438281912,
+  "lat": 3.1807002,
+  "lon": 101.5088448,
+  "tags": {
+    "addr:city": "Shah Alam",
+    "addr:housenumber": "GF-82 & 83",
+    "addr:postcode": "40170",
+    "addr:street": "Persiaran Garcinia",
+    "amenity": "restaurant",
+    "cuisine": "sushi",
+    "name": "Sushi Zanmai",
+    "operator": "Super Sushi Sdn Bhd",
+    "phone": "+60350350070"
+  }
+},
+{
+  "type": "node",
+  "id": 12450949000,
+  "lat": 3.1806665,
+  "lon": 101.5081705,
+  "tags": {
+    "amenity": "cafe",
+    "brand": "ZUS Coffee",
+    "brand:wikidata": "Q110811473",
+    "cuisine": "coffee_shop",
+    "name": "ZUS Coffee",
+    "takeaway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13304706834,
+  "lat": 3.1815907,
+  "lon": 101.5096934,
+  "tags": {
+    "amenity": "cafe",
+    "brand": "Tealive",
+    "brand:wikidata": "Q95722097",
+    "cuisine": "tea;coffee_shop",
+    "name": "Tealive",
+    "source": "https://kartaview.org/details/11615092/223",
+    "takeaway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13384720201,
+  "lat": 3.1809956,
+  "lon": 101.5066683,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "malaysian;regional",
+    "name": "Rich Kopitiam",
+    "opening_hours": "Mo-Su 10:00-22:00",
+    "website": "https://richkopi.com/"
+  }
+},
+{
+  "type": "node",
+  "id": 13817498302,
+  "lat": 3.1802385,
+  "lon": 101.5089638,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Ole-Ole Bali"
+  }
+},
+{
+  "type": "node",
+  "id": 13817498303,
+  "lat": 3.1808247,
+  "lon": 101.5098329,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Fish & Co"
+  }
+}
+
+  ]
+}
