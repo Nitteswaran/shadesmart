@@ -229,6 +229,41 @@ export function NavigatePanel({
       {show('plan') && (
       <>
 
+      {section && (
+ <>
+      {/* route */}
+      <Card className="relative p-1.5">
+        <PlaceSelect
+          label="From"
+          value={origin}
+          onChange={pick('origin')}
+          options={placeOptions}
+          disabledValue={dest}
+          accent={<span className="ml-1 size-3 shrink-0 rounded-full border-[3px] border-ink bg-card" />}
+        />
+        <div className="ml-[13px] h-4 border-l-2 border-dotted border-ink-3/60" />
+        <PlaceSelect
+          label="To"
+          value={dest}
+          onChange={pick('dest')}
+          options={placeOptions}
+          disabledValue={origin}
+          accent={<span className="ml-1 size-3 shrink-0 rounded-[4px] bg-leaf" />}
+        />
+        <button
+          aria-label="Swap origin and destination"
+          onClick={() => {
+            setOrigin(dest)
+            setDest(origin)
+          }}
+          className="absolute right-11 top-1/2 grid size-9 -translate-y-1/2 place-items-center rounded-full border border-line bg-card text-ink-2 shadow-soft transition hover:rotate-180 hover:text-ink"
+        >
+          <ArrowDownUp size={15} />
+        </button>
+      </Card>
+
+ </>
+      )}
       {/* city */}
       <div>
         <Eyebrow className="mb-2 flex items-center gap-1.5">
@@ -278,6 +313,8 @@ export function NavigatePanel({
         </div>
       </div>
 
+      {!section && (
+ <>
       {/* route */}
       <Card className="relative p-1.5">
         <PlaceSelect
@@ -309,6 +346,10 @@ export function NavigatePanel({
         </button>
       </Card>
 
+ </>
+      )}
+      {!section && (
+ <>
       {/* conditions */}
       <section className="space-y-3">
         <Eyebrow>Conditions</Eyebrow>
@@ -349,6 +390,8 @@ export function NavigatePanel({
         />
       </section>
 
+ </>
+      )}
       {/* preferences */}
       <section className="space-y-3">
         <Eyebrow>Preferences</Eyebrow>
@@ -481,7 +524,7 @@ export function RouteCompare({
         !inline && 'pointer-events-none absolute inset-x-3 top-3 z-10 md:inset-x-4 md:top-4 md:max-w-[600px] md:gap-3',
       )}
     >
-      <div className="pointer-events-auto rounded-[20px] border border-line bg-card/95 p-3.5 shadow-float backdrop-blur md:p-4">
+      <div className={clsx('pointer-events-auto rounded-[20px] border border-line bg-card/95 shadow-float backdrop-blur', inline ? 'p-3' : 'p-3.5 md:p-4')}>
         <div className="flex items-center gap-2">
           <svg width="26" height="6" aria-hidden>
             <line x1="1" y1="3" x2="25" y2="3" stroke="#e4572e" strokeWidth="4" strokeDasharray="5 3.5" />
@@ -489,7 +532,7 @@ export function RouteCompare({
           <span className="text-[12.5px] font-bold">Shortest path</span>
         </div>
         <div className="mt-2.5 flex items-baseline gap-1">
-          <span className="font-display text-[30px] font-extrabold leading-none tracking-[-0.03em] tabular text-heat md:text-[36px]">
+          <span className={clsx('font-display font-extrabold leading-none tracking-[-0.03em] tabular text-heat', inline ? 'text-[24px]' : 'text-[30px] md:text-[36px]')}>
             <CountUp value={Math.round(short.coverage * 100)} />%
           </span>
           <span className="text-[12px] font-semibold text-ink-3">{label.toLowerCase()}</span>
@@ -502,7 +545,7 @@ export function RouteCompare({
           )}
         </div>
       </div>
-      <div className="pointer-events-auto relative overflow-hidden rounded-[20px] bg-forest p-3.5 text-white shadow-float md:p-4">
+      <div className={clsx('pointer-events-auto relative overflow-hidden rounded-[20px] bg-forest text-white shadow-float', inline ? 'p-3' : 'p-3.5 md:p-4')}>
         <div className="absolute -right-8 -top-10 size-32 rounded-full bg-mint/15 blur-xl" />
         <div className="relative flex items-center justify-between gap-2">
           <div className="flex min-w-0 items-center gap-2">
@@ -519,7 +562,7 @@ export function RouteCompare({
           </button>
         </div>
         <div className="relative mt-2.5 flex items-baseline gap-1">
-          <span className="font-display text-[30px] font-extrabold leading-none tracking-[-0.03em] tabular text-mint md:text-[36px]">
+          <span className={clsx('font-display font-extrabold leading-none tracking-[-0.03em] tabular text-mint', inline ? 'text-[24px]' : 'text-[30px] md:text-[36px]')}>
             <CountUp value={Math.round(smart.coverage * 100)} />%
           </span>
           <span className="text-[12px] font-semibold text-white/60">{label.toLowerCase()}</span>
@@ -736,4 +779,50 @@ function CountUp({ value }: { value: number }) {
     }
   }, [value])
   return <span className="tabular">{shown}</span>
+}
+
+/** Weather + clock right under the map on phones, so changing them visibly changes the map. */
+export function ConditionsStrip({ cond, setCond }: { cond: Conditions; setCond: (c: Partial<Conditions>) => void }) {
+  return (
+    <div className="rounded-[20px] border border-line bg-card px-3 pb-1.5 pt-2.5 shadow-soft">
+      <div className="flex items-center gap-2">
+        <div className="min-w-0 flex-1">
+          <Segmented
+            size="sm"
+            value={cond.weather}
+            onChange={(v) => setCond({ weather: v })}
+            options={[
+              { value: 'sunny', label: 'Sunny', icon: Sun },
+              { value: 'rainy', label: 'Rain', icon: CloudRain },
+            ]}
+          />
+        </div>
+        <button
+          onClick={() => setCond({ night: !cond.night })}
+          aria-pressed={cond.night}
+          className={clsx(
+            'flex shrink-0 items-center gap-1.5 rounded-full px-3 py-1.5 text-[12.5px] font-semibold transition-colors',
+            cond.night ? 'bg-night text-white' : 'bg-paper-2 text-ink-2',
+          )}
+        >
+          <Moon size={14} /> Night
+        </button>
+      </div>
+      <div className="mt-1.5 flex items-center gap-2.5">
+        <span className="flex w-[62px] shrink-0 items-center gap-1 font-mono text-[12.5px] font-semibold tabular">
+          {cond.night ? <Moon size={12} /> : <Sun size={12} />}
+          {fmtTime(cond.hour)}
+        </span>
+        <Range
+          label="Time of day"
+          value={cond.hour}
+          min={DAY_START}
+          max={DAY_END}
+          step={0.25}
+          onChange={(v) => setCond({ hour: v })}
+          fill={cond.night ? '#4b55a8' : '#f2b33d'}
+        />
+      </div>
+    </div>
+  )
 }

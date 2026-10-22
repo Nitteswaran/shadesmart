@@ -4,7 +4,7 @@ import { AnimatePresence, motion } from 'motion/react'
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { BottomNav, Header, Logo, Toasts, useIsDesktop, type MobileTab, type Toast, type View } from './components/Chrome'
 import MapView, { type PlannerLayer } from './components/MapView'
-import { InsightsStrip, NavigatePanel, RouteCompare, scenariosFor, type Scenario } from './components/Navigate'
+import { ConditionsStrip, InsightsStrip, NavigatePanel, RouteCompare, scenariosFor, type Scenario } from './components/Navigate'
 import { PlannerMapOverlay, PlannerPanel, type PlanItem } from './components/Planner'
 import { SOSButton, SOSSheet, type Phase } from './components/SOS'
 import { authority, dijkstra, edgeCost, placeById, routeStats, setTown, town, type Conditions } from './lib/engine'
@@ -498,6 +498,11 @@ function CityApp({
                 </div>
               )}
             </AnimatePresence>
+            {view === 'navigate' && !draft && (
+              <div className="px-3 pt-3">
+                <ConditionsStrip cond={cond} setCond={setCond} />
+              </div>
+            )}
             {view === 'navigate' && draft && (
               <div className="px-3 pt-3">
                 <ProposeOverlay
