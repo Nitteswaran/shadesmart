@@ -43,7 +43,7 @@ export default function App() {
   const [silent, setSilent] = useState(false)
 
   const [plannerLayer, setPlannerLayer] = useState<PlannerLayer>('heat')
-  const [plannerHour, setPlannerHour] = useState(13)
+  const plannerHour = 13 // planner analyses the peak-heat hour
   const [selectedCorridor, setSelectedCorridor] = useState<string | null>(null)
   const [plan, setPlan] = useState<PlanItem[]>([])
 
@@ -246,7 +246,6 @@ export default function App() {
                 layer={plannerLayer}
                 setLayer={setPlannerLayer}
                 hour={plannerHour}
-                setHour={setPlannerHour}
                 tool={plantTool}
                 setTool={setPlantTool}
                 impact={impact}

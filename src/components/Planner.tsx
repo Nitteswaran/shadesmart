@@ -9,8 +9,6 @@ import {
   Flame,
   Lightbulb,
   Moon,
-  Pause,
-  Play,
   Plus,
   ShieldAlert,
   Siren,
@@ -196,7 +194,6 @@ export function PlannerMapOverlay({
   layer,
   setLayer,
   hour,
-  setHour,
   tool,
   setTool,
   impact,
@@ -207,7 +204,6 @@ export function PlannerMapOverlay({
   layer: PlannerLayer
   setLayer: (l: PlannerLayer) => void
   hour: number
-  setHour: (h: number) => void
   tool: Tool | null
   setTool: (t: Tool | null) => void
   impact: PlantImpact
@@ -215,12 +211,6 @@ export function PlannerMapOverlay({
   onUndo: () => void
   onClear: () => void
 }) {
-  const [playing, setPlaying] = useState(false)
-  useEffect(() => {
-    if (!playing) return
-    const t = setInterval(() => setHour(hour >= 19 ? 7 : hour + 0.25), 110)
-    return () => clearInterval(t)
-  }, [playing, hour, setHour])
   const legend = {
     heat: ['Fully exposed', 'Fully shaded'],
     flood: ['Floods in downpour', 'Dry & elevated'],
@@ -266,21 +256,6 @@ export function PlannerMapOverlay({
         )}
       </div>
 
-      {layer === 'heat' && (
-        <div className="absolute bottom-3 right-14 z-10 hidden w-[min(420px,calc(100%-260px))] items-center gap-3 rounded-2xl border border-line bg-card/95 px-3 py-2 shadow-float backdrop-blur sm:flex md:bottom-4 md:right-16">
-          <button
-            onClick={() => setPlaying(!playing)}
-            aria-label={playing ? 'Pause day animation' : 'Play day animation'}
-            className="grid size-9 shrink-0 place-items-center rounded-full bg-ink text-white"
-          >
-            {playing ? <Pause size={15} fill="currentColor" /> : <Play size={15} fill="currentColor" />}
-          </button>
-          <div className="min-w-0 flex-1">
-            <Range label="Hour of day" value={hour} min={7} max={19} step={0.25} onChange={setHour} fill="#f2b33d" />
-          </div>
-          <span className="w-12 shrink-0 text-right font-mono text-[13px] font-semibold tabular">{fmtTime(hour)}</span>
-        </div>
-      )}
     </>
   )
 }
